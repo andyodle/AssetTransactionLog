@@ -1,0 +1,9 @@
+*.kra~
+Development/.import/
+Development/level_data.txt
+Release/
+.~*
+youtube/Videos
+youtube/VideoSounds
+*.aup~
+*.png~
