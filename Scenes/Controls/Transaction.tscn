@@ -1,0 +1,87 @@
+[gd_scene format=2]
+
+[node name="Transaction" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -447.0
+margin_bottom = -548.0
+rect_min_size = Vector2( 584, 52 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_right = 611.0
+margin_bottom = 60.0
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+margin_right = 611.0
+margin_bottom = 4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 611.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 584, 52 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlankSpaceControl" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 16, 52 )
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 20.0
+margin_right = 83.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 63, 52 )
+focus_mode = 0
+enabled_focus_mode = 0
+align = 1
+
+[node name="DateAcquired" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 87.0
+margin_top = -1.0
+margin_right = 210.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 123, 52 )
+text = "02/17/2021"
+valign = 1
+
+[node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 214.0
+margin_top = -1.0
+margin_right = 353.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 139, 52 )
+text = "0.001920220"
+valign = 1
+
+[node name="ExchangePrice" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 357.0
+margin_top = -1.0
+margin_right = 484.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 127, 52 )
+text = "$52,077.37"
+valign = 1
+
+[node name="AmountSpent" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 488.0
+margin_top = -1.0
+margin_right = 611.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 123, 52 )
+text = "$100.00"
+valign = 1
