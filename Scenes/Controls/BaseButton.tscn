@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Theme/Hover-RoundedActionButton.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Theme/Pressed-RoundedActionButton.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Theme/Normal-RoundedActionButton.tres" type="StyleBox" id=3]
+
+[node name="BaseButton" type="Button"]
+margin_left = 16.0
+margin_right = 106.0
+margin_bottom = 20.0
+focus_mode = 0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "BASE BUTTON"
+__meta__ = {
+"_edit_use_anchors_": false
+}

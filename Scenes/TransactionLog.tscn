@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/TransactionLog.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Controls/TransactionColumns.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Controls/Transaction.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Controls/BaseButton.tscn" type="PackedScene" id=4]
 
 [node name="TransactionLog" type="Control"]
 anchor_right = 1.0
@@ -11,43 +12,103 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false,
-"_edit_vertical_guides_": [ 293.504 ]
+"_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 16
+custom_constants/margin_top = 8
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundColor" type="ColorRect" parent="MarginContainer"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 1008.0
+margin_bottom = 584.0
+color = Color( 0.207843, 0.231373, 0.341176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 1008.0
+margin_bottom = 584.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TransactionColumns" parent="VBoxContainer" instance=ExtResource( 2 )]
+[node name="BlankSpace" type="Control" parent="MarginContainer/VBoxContainer"]
+margin_right = 992.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 992.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 0, 36 )
+custom_constants/separation = 48
+alignment = 2
+
+[node name="AddTransactonButton" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 668.0
+margin_right = 792.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 0, 36 )
+text = "ADD TRANSACTION"
+
+[node name="CalculateSellButton" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 840.0
+margin_right = 944.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 0, 36 )
+text = "CALCULATE SELL"
+
+[node name="BlankSpace" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 992.0
+margin_right = 992.0
+margin_bottom = 36.0
+
+[node name="TransactionColumns" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1024.0
-margin_bottom = 56.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 margin_top = 60.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 992.0
+margin_bottom = 116.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 120.0
+margin_right = 992.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Trasactions" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
-margin_right = 1024.0
-margin_bottom = 540.0
+[node name="Trasactions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+margin_right = 992.0
+margin_bottom = 456.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Transaction" parent="VBoxContainer/ScrollContainer/Trasactions" instance=ExtResource( 3 )]
+[node name="Transaction" parent="MarginContainer/VBoxContainer/ScrollContainer/Trasactions" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1024.0
+margin_right = 992.0
 margin_bottom = 52.0
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/AddTransactonButton" to="." method="_on_AddTransactonButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CalculateSellButton" to="." method="_on_CalculateSellButton_pressed"]
