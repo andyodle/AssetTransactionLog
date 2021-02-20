@@ -3,11 +3,13 @@ extends Control
 signal AddTransactionClick;
 signal CalcualteSellClick;
 signal CalculatedNumberOfCoins;
+signal CalcualteTotalPrice;
 
 onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Trasactions;
 
 var transaction_view = preload("res://Scenes/Controls/TransactionView.tscn");
 
+# Calcualte the total number of coins acquired.
 func calcualte_total_coins():
 	# Get all of the coin transactions.
 	var coin_count : float = 0.0;
@@ -18,6 +20,18 @@ func calcualte_total_coins():
 		else:
 			coin_count -= transaction_view.get_number_of_coins();
 	emit_signal("CalculatedNumberOfCoins", coin_count);
+
+# Calcualte the total price paid for the coins.
+func calculate_total_price():
+	# Get all of the price transactions.
+	var total_price : float = 0.0;
+	var transaction_views = get_tree().get_nodes_in_group("Transaction");
+	for transaction_view in transaction_views:
+		if transaction_view.is_credit_trans():
+			total_price += transaction_view.get_amount_paid();
+		else:
+			total_price -= transaction_view.get_amount_paid();
+	emit_signal("CalcualteTotalPrice", total_price);
 
 func add_transaction():
 	var temp_trans_view = transaction_view.instance();

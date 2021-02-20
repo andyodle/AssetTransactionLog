@@ -30,7 +30,10 @@ func set_tras_data(transaction_p):
 
 # Get the number of coins for the current transaction.
 func get_number_of_coins():
-	return float(number_of_coins.text);
+	return float(trans_data.number_of_coins_m);
+
+func get_amount_paid():
+	return float(trans_data.amount_m);
 
 # Get weither the transaction is a credit or debit.
 func is_credit_trans():
