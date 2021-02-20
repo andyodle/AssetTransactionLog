@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/TransactionLog.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Controls/TransactionColumns.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Controls/Transaction.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Controls/BaseButton.tscn" type="PackedScene" id=4]
 
 [node name="TransactionLog" type="Control"]
@@ -104,11 +103,5 @@ margin_right = 992.0
 margin_bottom = 456.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Transaction" parent="MarginContainer/VBoxContainer/ScrollContainer/Trasactions" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 992.0
-margin_bottom = 52.0
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/AddTransactonButton" to="." method="_on_AddTransactonButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CalculateSellButton" to="." method="_on_CalculateSellButton_pressed"]

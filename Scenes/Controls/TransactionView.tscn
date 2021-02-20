@@ -1,13 +1,15 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/Transaction.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/TransactionView.gd" type="Script" id=1]
 
-[node name="Transaction" type="Control"]
+[node name="TransactionView" type="Control" groups=[
+"Transaction",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -447.0
 margin_bottom = -548.0
-rect_min_size = Vector2( 584, 52 )
+rect_min_size = Vector2( 737, 52 )
 size_flags_horizontal = 3
 script = ExtResource( 1 )
 __meta__ = {
@@ -62,7 +64,9 @@ rect_min_size = Vector2( 123, 52 )
 text = "02/17/2021"
 valign = 1
 
-[node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=[
+"NumberOfCoins-Trans",
+]]
 margin_left = 214.0
 margin_right = 353.0
 margin_bottom = 52.0
@@ -84,7 +88,7 @@ margin_right = 611.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 123, 52 )
 custom_colors/font_color = Color( 0.352941, 0.729412, 0.278431, 1 )
-text = "$100.00"
+text = "$100"
 valign = 1
 
 [node name="DebitAmount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
@@ -93,5 +97,5 @@ margin_right = 737.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 122, 52 )
 custom_colors/font_color = Color( 0.913725, 0.129412, 0.152941, 1 )
-text = "$75.00"
+text = "$75"
 valign = 1

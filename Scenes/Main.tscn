@@ -56,12 +56,24 @@ margin_right = 4.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 4, 0 )
 
-[node name="DataPanel" parent="HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 5 )]
+[node name="TotalCoinsDataPanel" parent="HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
 margin_right = 241.0
 margin_bottom = 96.0
+
+[node name="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/TotalCoinsDataPanel/MarginContainer/CenterContainer" index="0"]
+margin_left = 41.0
+margin_right = 167.0
+
+[node name="Title" parent="HBoxContainer/VBoxContainer/HBoxContainer/TotalCoinsDataPanel/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 126.0
+text = "Total Coins"
+
+[node name="Data" parent="HBoxContainer/VBoxContainer/HBoxContainer/TotalCoinsDataPanel/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 126.0
+text = "0.000000000"
 
 [node name="DataPanel2" parent="HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 5 )]
 anchor_right = 0.0
@@ -92,3 +104,6 @@ margin_right = 952.0
 margin_bottom = 600.0
 [connection signal="AddTransactionClick" from="HBoxContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_AddTransactionClick"]
 [connection signal="CalcualteSellClick" from="HBoxContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteSellClick"]
+[connection signal="CalculatedNumberOfCoins" from="HBoxContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculatedNumberOfCoins"]
+
+[editable path="HBoxContainer/VBoxContainer/HBoxContainer/TotalCoinsDataPanel"]
