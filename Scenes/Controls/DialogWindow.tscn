@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/DialogWindow.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Controls/DialogContainer.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -35,7 +36,6 @@ tracks/0/keys = {
 }
 
 [node name="DialogWindow" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
@@ -57,43 +57,21 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DialogWrapper" type="Control" parent="CenterContainer"]
-margin_left = 356.0
-margin_top = 246.0
-margin_right = 668.0
-margin_bottom = 354.0
-rect_min_size = Vector2( 312, 108 )
-
-[node name="BackgroundColor" type="ColorRect" parent="CenterContainer/DialogWrapper"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/DialogWrapper"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 24
-custom_constants/margin_top = 8
-custom_constants/margin_left = 24
-custom_constants/margin_bottom = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/DialogWrapper/MarginContainer"]
-margin_left = 24.0
-margin_top = 8.0
-margin_right = 288.0
-margin_bottom = 100.0
+[node name="DialogContainer" parent="CenterContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 348.0
+margin_top = 241.0
+margin_right = 676.0
+margin_bottom = 359.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
 [connection signal="pressed" from="OverlayMaskButton" to="." method="_on_OverlayMaskButton_pressed"]
+
+[editable path="CenterContainer/DialogContainer"]

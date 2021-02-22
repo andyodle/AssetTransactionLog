@@ -82,9 +82,9 @@ __meta__ = {
 }
 
 [node name="Data" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
-margin_top = 26.0
+margin_top = 27.0
 margin_right = 54.0
-margin_bottom = 52.0
+margin_bottom = 53.0
 rect_min_size = Vector2( 0, 26 )
 rect_clip_content = true
 custom_fonts/font = SubResource( 2 )
