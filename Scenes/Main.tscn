@@ -129,7 +129,6 @@ margin_bottom = 600.0
 
 [node name="AddTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
-mouse_filter = 0
 [connection signal="AddTransactionClick" from="HBoxContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_AddTransactionClick"]
 [connection signal="CalcualteSellClick" from="HBoxContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteSellClick"]
 [connection signal="CalcualteTotalPrice" from="HBoxContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteTotalPrice"]

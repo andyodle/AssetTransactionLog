@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Controls/BaseButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/ActionButtonContainer.gd" type="Script" id=2]
+
+[node name="ActionButtonContainer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+rect_min_size = Vector2( 220, 72 )
+size_flags_horizontal = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 220, 72 )
+size_flags_horizontal = 3
+custom_constants/margin_right = 8
+custom_constants/margin_top = 16
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 212.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddTransactonButton" parent="MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 100.0
+margin_bottom = 40.0
+
+[node name="CalculateSellButton" parent="MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 40.0
+[connection signal="ButtonClicked" from="MarginContainer/HBoxContainer/AddTransactonButton" to="." method="_on_AddTransactonButton_ButtonClicked"]
+[connection signal="ButtonClicked" from="MarginContainer/HBoxContainer/CalculateSellButton" to="." method="_on_CalculateSellButton_ButtonClicked"]
+
+[editable path="MarginContainer/HBoxContainer/AddTransactonButton"]
+
+[editable path="MarginContainer/HBoxContainer/CalculateSellButton"]

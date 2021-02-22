@@ -68,9 +68,9 @@ func add_transaction():
 	temp_trans_view.set_tras_data(temp_class);
 
 # User wants to add a new transaction.
-func _on_AddTransactonButton_pressed():
+func _on_ActionButtonContainer_AddTransClicked():
 	emit_signal("AddTransactionClick");
 
 # User wants to calcualte a sell.
-func _on_CalculateSellButton_pressed():
+func _on_ActionButtonContainer_CalcualteSellClicked():
 	emit_signal("CalcualteSellClick");

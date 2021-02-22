@@ -14,42 +14,32 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 176.0
+margin_right = 40.0
 margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 19
-alignment = 2
+custom_constants/separation = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="OkButton" parent="HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 0.0
-margin_right = 52.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 100.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 52, 40 )
+
+[node name="Button" parent="HBoxContainer/OkButton/MarginContainer" index="0"]
 text = "OK"
 
-[node name="BlankSpace1" type="Control" parent="HBoxContainer"]
-margin_left = 71.0
-margin_right = 71.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CancelButton" parent="HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 90.0
-margin_right = 142.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 108.0
+margin_right = 208.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 52, 40 )
-text = "Cancel"
 
-[node name="BlankSpace2" type="Control" parent="HBoxContainer"]
-margin_left = 161.0
-margin_right = 177.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 16, 0 )
-[connection signal="pressed" from="HBoxContainer/OkButton" to="." method="_on_OkButton_pressed"]
-[connection signal="pressed" from="HBoxContainer/CancelButton" to="." method="_on_CancelButton_pressed"]
+[node name="Button" parent="HBoxContainer/CancelButton/MarginContainer" index="0"]
+text = "CANCEL"
+
+[editable path="HBoxContainer/OkButton"]
+
+[editable path="HBoxContainer/CancelButton"]
