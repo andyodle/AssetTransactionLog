@@ -39,6 +39,8 @@ margin_bottom = 40.0
 
 [node name="Button" parent="HBoxContainer/CancelButton/MarginContainer" index="0"]
 text = "CANCEL"
+[connection signal="ButtonClicked" from="HBoxContainer/OkButton" to="." method="_on_OkButton_ButtonClicked"]
+[connection signal="ButtonClicked" from="HBoxContainer/CancelButton" to="." method="_on_CancelButton_ButtonClicked"]
 
 [editable path="HBoxContainer/OkButton"]
 

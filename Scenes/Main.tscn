@@ -134,6 +134,7 @@ visible = false
 [connection signal="CalcualteTotalPrice" from="HBoxContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteTotalPrice"]
 [connection signal="CalculateCostAverage" from="HBoxContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculateCostAverage"]
 [connection signal="CalculatedNumberOfCoins" from="HBoxContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculatedNumberOfCoins"]
+[connection signal="AddNewTransaction" from="AddTransaction" to="." method="_on_AddTransaction_AddNewTransaction"]
 
 [editable path="HBoxContainer/VBoxContainer/HBoxContainer/TotalCoins"]
 

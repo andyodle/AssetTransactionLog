@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Controls/DialogWindow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/AddTransaction.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Controls/TextInput.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Fonts/Swansea-q3pd.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=4]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 4 )
 
 [node name="AddTransaction" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0 )
 script = ExtResource( 2 )
 
 [node name="CenterContainer" parent="." index="1"]
@@ -12,52 +39,99 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="DialogContainer" parent="CenterContainer" index="0"]
-margin_top = 61.0
-margin_bottom = 537.0
-rect_min_size = Vector2( 328, 476 )
+margin_top = 34.0
+margin_bottom = 566.0
+rect_min_size = Vector2( 328, 532 )
+mouse_filter = 2
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
 margin_right = 3.05176e-05
 margin_bottom = 4.00003
-rect_min_size = Vector2( 328, 476 )
+rect_min_size = Vector2( 328, 532 )
+mouse_filter = 2
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
-margin_bottom = 480.0
-rect_min_size = Vector2( 280, 476 )
+margin_bottom = 536.0
+rect_min_size = Vector2( 280, 532 )
+mouse_filter = 2
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
 margin_left = 0.0
-margin_top = 54.0
+margin_top = 2.0
 margin_right = 280.0
-margin_bottom = 426.0
+margin_bottom = 534.0
+rect_min_size = Vector2( 0, 532 )
+mouse_filter = 2
 custom_constants/separation = 32
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
 margin_right = 280.0
+margin_bottom = 50.0
 
-[node name="TextInput" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
-margin_top = 52.0
+[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
+margin_top = 82.0
 margin_right = 280.0
-margin_bottom = 100.0
+margin_bottom = 130.0
 
-[node name="TextInput2" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2" instance=ExtResource( 3 )]
-margin_top = 132.0
-margin_right = 280.0
-margin_bottom = 180.0
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins" index="6"]
+custom_fonts/font = SubResource( 4 )
+text = "Number of Coins"
 
-[node name="TextInput3" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 3 )]
-margin_top = 212.0
+[node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2" instance=ExtResource( 3 )]
+margin_top = 162.0
 margin_right = 280.0
-margin_bottom = 260.0
+margin_bottom = 210.0
 
-[node name="TextInput4" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4" instance=ExtResource( 3 )]
-margin_top = 292.0
-margin_right = 280.0
-margin_bottom = 340.0
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ExchangePrice" index="6"]
+custom_fonts/font = SubResource( 2 )
+text = "Exchange Price"
 
-[node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="5"]
-margin_top = 372.0
+[node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 3 )]
+margin_top = 242.0
 margin_right = 280.0
-margin_bottom = 372.0
+margin_bottom = 290.0
+
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount" index="6"]
+custom_fonts/font = SubResource( 1 )
+text = "Transaction Amount"
+
+[node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4" instance=ExtResource( 3 )]
+margin_top = 322.0
+margin_right = 280.0
+margin_bottom = 370.0
+
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate" index="6"]
+custom_fonts/font = SubResource( 3 )
+text = "Date"
+
+[node name="TextInput" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="5" instance=ExtResource( 3 )]
+margin_top = 402.0
+margin_right = 280.0
+margin_bottom = 450.0
+
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TextInput" index="6"]
+custom_fonts/font = SubResource( 5 )
+text = "Debit or Credit"
+
+[node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="6"]
+margin_top = 482.0
+margin_right = 280.0
+margin_bottom = 532.0
+mouse_filter = 1
+[connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]
+[connection signal="OkClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_OkClicked"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="CenterContainer/DialogContainer"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ExchangePrice"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TextInput"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]

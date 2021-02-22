@@ -10,14 +10,6 @@ onready var add_trans_dialog = $AddTransaction;
 func _on_TransactionLog_AddTransactionClick():
 	# Step 1: Show the add transaction dialog.
 	add_trans_dialog.fade_in();
-	
-	# Step 2: Add the transaction to the transaction log.
-	transaction_log.add_transaction();
-	
-	# Step 3: Recalulate the displayed totals.
-	transaction_log.calcualte_total_coins();
-	transaction_log.calculate_total_price();
-	transaction_log.calcualte_cost_average();
 
 # User wants to calcualte a sell.
 func _on_TransactionLog_CalcualteSellClick():
@@ -37,3 +29,13 @@ func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):
 func _on_TransactionLog_CalculateCostAverage(cost_average_p):
 	if cost_average_data_panel != null:
 		cost_average_data_panel.set_data(String("$" + "%3.2f" % cost_average_p));
+
+# Add a new transaction.
+func _on_AddTransaction_AddNewTransaction(transaction_p):
+	# Step 2: Add the transaction to the transaction log.
+	transaction_log.add_transaction(transaction_p);
+	
+	# Step 3: Recalulate the displayed totals.
+	transaction_log.calcualte_total_coins();
+	transaction_log.calculate_total_price();
+	transaction_log.calcualte_cost_average();

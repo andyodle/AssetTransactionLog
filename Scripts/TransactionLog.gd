@@ -50,22 +50,12 @@ func calcualte_cost_average():
 	var cost_average = (total_price / coin_count);
 	emit_signal("CalculateCostAverage", cost_average);
 
-func add_transaction():
+func add_transaction(transaction_p):
 	var temp_trans_view = transaction_view.instance();
 	transaction_list.add_child(temp_trans_view);
 	
-	# Trade 1
-	var temp_class : Transaction;
-	temp_class = load("res://Scripts/Autoload/Transaction.gd").new();
-	temp_class.set_trans_data("02/17/2021", 0.001932000, 51759.83, 100.00, true);
-	temp_trans_view.set_tras_data(temp_class);
-	
-	# Trade 2
-	temp_trans_view = transaction_view.instance();
-	transaction_list.add_child(temp_trans_view);
-	temp_class = load("res://Scripts/Autoload/Transaction.gd").new();
-	temp_class.set_trans_data("02/17/2021", 0.001928520, 51853.23, 100, true);
-	temp_trans_view.set_tras_data(temp_class);
+	# Add the transaction to the list.
+	temp_trans_view.set_tras_data(transaction_p);
 
 # User wants to add a new transaction.
 func _on_ActionButtonContainer_AddTransClicked():
