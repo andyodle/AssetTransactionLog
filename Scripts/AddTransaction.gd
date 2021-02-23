@@ -6,6 +6,7 @@ onready var transaction_ammount = $CenterContainer/DialogContainer/MarginContain
 onready var exchange_price = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ExchangePrice;
 onready var transaction_date = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate;
 onready var number_of_coins = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins;
+onready var credit_or_debit = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit;
 
 func _ready():
 	reset_form();
@@ -16,27 +17,39 @@ func reset_form():
 	exchange_price.text = "";
 	transaction_date.text = "";
 	number_of_coins.text = "";
+	credit_or_debit.set_checked(true);
 
 # Check to see if the user entered valid data.
+# Return true if valid input else false.
 func verify_input():
-	pass;
+	var valid_input = true;
+	
+	# Exchange Price
+	if(transaction_ammount.text == ""):
+		valid_input = false;
+	# Transaction Date
+	if(transaction_date.text == ""):
+		valid_input = false;
+	# Number of Coins
+	if(number_of_coins.text == ""):
+		valid_input = false;
+	
+	return valid_input;
 
 # Ok Clicked
 func _on_DialogActionButtons_OkClicked():
 	# Step1: Validate User Input.
-	# Step2: Create and fillout a Transaction obect.
-	# Trade 1
-	var temp_class : Transaction;
-	temp_class = load("res://Scripts/Autoload/Transaction.gd").new();
-	temp_class.set_trans_data(transaction_date.text, float(number_of_coins.text), float(exchange_price.text), float(transaction_ammount.text), true);
-	#temp_trans_view.set_tras_data(temp_class);
-	
-	print(temp_class);
-	
-	# Step3: Emit signal with transaction data.
-	emit_signal("AddNewTransaction", temp_class);
-	
-	self.fade_out();
+	if verify_input():
+		# Step2: Create and fillout a Transaction obect.
+		# Trade 1
+		var temp_class : Transaction;
+		temp_class = load("res://Scripts/Autoload/Transaction.gd").new();
+		temp_class.set_trans_data(transaction_date.text, float(number_of_coins.text), float(exchange_price.text), float(transaction_ammount.text), credit_or_debit.get_checked());
+		
+		# Step3: Emit signal with transaction data.
+		emit_signal("AddNewTransaction", temp_class);
+		
+		self.fade_out();
 
 # Cancel Clicked
 func _on_DialogActionButtons_CancelClicked():
