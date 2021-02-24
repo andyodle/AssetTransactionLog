@@ -30,6 +30,7 @@ __meta__ = {
 margin_right = 100.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 100, 40 )
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 16

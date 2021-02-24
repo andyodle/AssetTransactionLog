@@ -39,14 +39,19 @@ anchor_bottom = 0.0
 margin_right = 72.0
 margin_bottom = 600.0
 
-[node name="CoinTransactoinsView" parent="HBoxContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Control" type="Control" parent="HBoxContainer"]
 margin_left = 76.0
 margin_right = 1028.0
 margin_bottom = 600.0
+rect_min_size = Vector2( 952, 600 )
+
+[node name="ActiveTransactionsView" parent="HBoxContainer/Control" instance=ExtResource( 1 )]
+
+[node name="ProfitTransactionsView" parent="HBoxContainer/Control" instance=ExtResource( 1 )]
 
 [node name="AddTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
-[connection signal="AddTransactoinClick" from="HBoxContainer/CoinTransactoinsView" to="." method="_on_CoinTransactoinsView_AddTransactoinClick"]
+[connection signal="ActiveTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ActiveTransClicked"]
+[connection signal="ProfitTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ProfitTransClicked"]
+[connection signal="AddTransactoinClick" from="HBoxContainer/Control/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_AddTransactoinClick"]
 [connection signal="AddNewTransaction" from="AddTransaction" to="." method="_on_AddTransaction_AddNewTransaction"]

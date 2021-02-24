@@ -110,11 +110,9 @@ margin_bottom = 450.0
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit/MarginContainer" index="0"]
 margin_bottom = 49.0
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit/MarginContainer/HBoxContainer" index="0"]
-text = "Credit"
-
 [node name="CheckButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit/MarginContainer" index="1"]
 margin_bottom = 49.0
+text = "Deposit"
 
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="6"]
 margin_top = 482.0
