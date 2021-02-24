@@ -1,0 +1,203 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Controls/DialogWindow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/SellTransactionDialog.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Controls/DataPanel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TransactionLog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Fonts/Swansea-q3pd.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scenes/Controls/TextInput.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 5 )
+
+[node name="SellTransactionDialog" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="DialogContainer" parent="CenterContainer" index="0"]
+margin_left = 27.0
+margin_top = 31.0
+margin_right = 995.0
+margin_bottom = 568.0
+rect_min_size = Vector2( 968, 537 )
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
+margin_right = 15.9999
+margin_bottom = -136.0
+rect_min_size = Vector2( 968, 465 )
+
+[node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
+margin_right = 960.0
+margin_bottom = 521.0
+
+[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
+margin_left = 8.0
+margin_top = 0.0
+margin_right = 928.0
+margin_bottom = 521.0
+
+[node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 920.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 920, 41 )
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle" index="0"]
+margin_bottom = 0.0
+
+[node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
+margin_right = 912.0
+text = "Sell Transaction"
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_top = 49.0
+margin_right = 920.0
+margin_bottom = 97.0
+custom_constants/margin_right = 16
+custom_constants/margin_left = 8
+
+[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/MarginContainer" index="0" instance=ExtResource( 6 )]
+margin_left = 8.0
+margin_right = 904.0
+margin_bottom = 48.0
+
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/MarginContainer/NumberOfCoins" index="6"]
+custom_fonts/font = SubResource( 1 )
+text = "Number of Coins"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2"]
+margin_top = 105.0
+margin_right = 920.0
+margin_bottom = 201.0
+rect_min_size = Vector2( 920, 96 )
+
+[node name="TotalCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 227.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 223, 96 )
+
+[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
+margin_left = 63.0
+margin_right = 145.0
+
+[node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 82.0
+text = "Total Coins"
+
+[node name="Data" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 82.0
+
+[node name="TotalAmountPaid" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 231.0
+margin_right = 458.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 223, 96 )
+
+[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer" index="0"]
+margin_left = 67.0
+margin_right = 140.0
+
+[node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 73.0
+text = "Total Paid"
+
+[node name="Data" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 73.0
+
+[node name="CostAverage" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 462.0
+margin_right = 689.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 223, 96 )
+
+[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer" index="0"]
+margin_left = 55.0
+margin_right = 152.0
+
+[node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 97.0
+text = "Cost Average"
+
+[node name="Data" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 97.0
+
+[node name="DataPanel4" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 693.0
+margin_right = 920.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 223, 96 )
+
+[node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 209.0
+margin_right = 920.0
+margin_bottom = 473.0
+rect_min_size = Vector2( 920, 264 )
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="0"]
+margin_bottom = -88.0
+rect_min_size = Vector2( 920, 264 )
+custom_constants/margin_left = 8
+
+[node name="BackgroundColor" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="0"]
+margin_left = 8.0
+margin_right = 904.0
+margin_bottom = 248.0
+
+[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="1"]
+margin_left = 8.0
+margin_right = 904.0
+margin_bottom = 248.0
+
+[node name="ActionButtonContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="0"]
+visible = false
+
+[node name="TransactionColumns" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="1"]
+margin_top = 0.0
+margin_right = 896.0
+margin_bottom = 56.0
+
+[node name="ScrollContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
+margin_top = 60.0
+margin_right = 896.0
+margin_bottom = 240.0
+
+[node name="Trasactions" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
+margin_right = 896.0
+margin_bottom = 180.0
+
+[node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4"]
+margin_top = 481.0
+margin_right = 920.0
+margin_bottom = 521.0
+rect_min_size = Vector2( 920, 40 )
+[connection signal="CalcualteTotalPrice" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteTotalPrice"]
+[connection signal="CalculateCostAverage" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculateCostAverage"]
+[connection signal="CalculatedNumberOfCoins" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculatedNumberOfCoins"]
+[connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]
+[connection signal="OkClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_OkClicked"]
+
+[editable path="CenterContainer/DialogContainer"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/MarginContainer/NumberOfCoins"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]

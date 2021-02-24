@@ -47,7 +47,7 @@ margin_right = 16.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 16, 52 )
 
-[node name="CheckBox" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="SelectedTrans" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 20.0
 margin_right = 83.0
 margin_bottom = 52.0

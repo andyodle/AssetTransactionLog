@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/CoinTransactionsView.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Theme/MainTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Scenes/Controls/SideNavigationRail.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/SellTransactionDialog.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Controls/AddTransaction.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Control"]
@@ -39,19 +40,40 @@ anchor_bottom = 0.0
 margin_right = 72.0
 margin_bottom = 600.0
 
-[node name="Control" type="Control" parent="HBoxContainer"]
+[node name="TabsContainer" type="Control" parent="HBoxContainer"]
 margin_left = 76.0
 margin_right = 1028.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 952, 600 )
 
-[node name="ActiveTransactionsView" parent="HBoxContainer/Control" instance=ExtResource( 1 )]
+[node name="ActiveTransactionsView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 1 )]
 
-[node name="ProfitTransactionsView" parent="HBoxContainer/Control" instance=ExtResource( 1 )]
+[node name="Title" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/TabTitle/MarginContainer" index="0"]
+text = "Active Transactions"
+
+[node name="ProfitTransactionsView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 1 )]
+visible = false
+
+[node name="Title" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TabTitle/MarginContainer" index="0"]
+text = "Active Profits"
 
 [node name="AddTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
+
+[node name="SellTransactionDialog" parent="." instance=ExtResource( 5 )]
+visible = false
 [connection signal="ActiveTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ActiveTransClicked"]
 [connection signal="ProfitTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ProfitTransClicked"]
-[connection signal="AddTransactoinClick" from="HBoxContainer/Control/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_AddTransactoinClick"]
+[connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_AddTransactoinClick"]
+[connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_SellTransactionClick"]
+[connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ProfitTransactionsView" to="." method="_on_ProfitTransactionsView_AddTransactoinClick"]
 [connection signal="AddNewTransaction" from="AddTransaction" to="." method="_on_AddTransaction_AddNewTransaction"]
+[connection signal="AddSellTransaction" from="SellTransactionDialog" to="." method="_on_SellTransactionDialog_AddSellTransaction"]
+
+[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView"]
+
+[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/TabTitle"]
+
+[editable path="HBoxContainer/TabsContainer/ProfitTransactionsView"]
+
+[editable path="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TabTitle"]

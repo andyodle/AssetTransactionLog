@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Controls/DataPanel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/CoinTransactionsView.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Controls/TabTitle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TransactionLog.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -39,13 +40,17 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 952, 600 )
+custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TabTitle" parent="VBoxContainer" instance=ExtResource( 3 )]
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 72.0
 margin_right = 952.0
-margin_bottom = 96.0
+margin_bottom = 168.0
 rect_min_size = Vector2( 952, 96 )
 
 [node name="BlankSpace" type="Control" parent="VBoxContainer/HBoxContainer"]
@@ -114,21 +119,22 @@ margin_left = 719.0
 margin_right = 952.0
 margin_bottom = 96.0
 
-[node name="TransactionLog" parent="." instance=ExtResource( 6 )]
+[node name="TransactionLog" parent="VBoxContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 100.0
+margin_top = 168.0
 margin_right = 952.0
-margin_bottom = 604.0
-rect_min_size = Vector2( 952, 504 )
+margin_bottom = 600.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )
-[connection signal="AddTransactionClick" from="TransactionLog" to="." method="_on_TransactionLog_AddTransactionClick"]
-[connection signal="CalcualteSellClick" from="TransactionLog" to="." method="_on_TransactionLog_CalcualteSellClick"]
-[connection signal="CalcualteTotalPrice" from="TransactionLog" to="." method="_on_TransactionLog_CalcualteTotalPrice"]
-[connection signal="CalculateCostAverage" from="TransactionLog" to="." method="_on_TransactionLog_CalculateCostAverage"]
-[connection signal="CalculatedNumberOfCoins" from="TransactionLog" to="." method="_on_TransactionLog_CalculatedNumberOfCoins"]
+[connection signal="AddTransactionClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_AddTransactionClick"]
+[connection signal="CalcualteSellClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteSellClick"]
+[connection signal="CalcualteTotalPrice" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteTotalPrice"]
+[connection signal="CalculateCostAverage" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculateCostAverage"]
+[connection signal="CalculatedNumberOfCoins" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculatedNumberOfCoins"]
+
+[editable path="VBoxContainer/TabTitle"]
 
 [editable path="VBoxContainer/HBoxContainer/TotalCoins"]
 

@@ -1,11 +1,12 @@
 extends Control
 
 signal AddTransactoinClick;
+signal SellTransactionClick;
 
 onready var total_coins_data_panel = $VBoxContainer/HBoxContainer/TotalCoins;
 onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
 onready var cost_average_data_panel = $VBoxContainer/HBoxContainer/CostAverage;
-onready var transaction_log = $TransactionLog;
+onready var transaction_log = $VBoxContainer/TransactionLog;
 onready var animation_player = $AnimationPlayer;
 
 func _ready():
@@ -25,10 +26,6 @@ func add_new_transaction(transaction_p):
 	transaction_log.calculate_total_price();
 	transaction_log.calcualte_cost_average();
 
-# User wants to calcualte a sell.
-func _on_TransactionLog_CalcualteSellClick():
-	pass # Replace with function body.
-
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
 	if total_coins_data_panel != null:
@@ -47,3 +44,7 @@ func _on_TransactionLog_CalculateCostAverage(cost_average_p):
 # Attempt to open the add transaction dialog.
 func _on_TransactionLog_AddTransactionClick():
 	emit_signal("AddTransactoinClick");
+
+# User wants to calcualte a sell.
+func _on_TransactionLog_CalcualteSellClick():
+	emit_signal("SellTransactionClick");

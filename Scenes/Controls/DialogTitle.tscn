@@ -22,19 +22,22 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -4.0
-rect_min_size = Vector2( 200, 20 )
+rect_min_size = Vector2( 200, 41 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/margin_right = 8
 custom_constants/margin_top = 8
+custom_constants/margin_left = 8
 custom_constants/margin_bottom = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title" type="Label" parent="MarginContainer"]
-margin_top = 7.0
-margin_right = 200.0
-margin_bottom = 32.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 208.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 200, 25 )
 custom_fonts/font = SubResource( 1 )
 text = "Dialog Title"
