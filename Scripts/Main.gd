@@ -66,5 +66,12 @@ func _on_ActiveTransactionsView_SellTransactionClick():
 		sell_trans_dialog.fade_in();
 
 # Add sell transaction to proper locations.
-func _on_SellTransactionDialog_AddSellTransaction(transaction_p):
-	print(transaction_p)
+func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
+	# Create a profit transaction.
+	profit_transactions_view.add_new_transaction(sell_transaction_p.profit_trans_m);
+	
+	print("Added Profit Trans!")
+	
+	# Create a sold history transaction.
+	
+	#TODO: Remove previously selected active transactions.
