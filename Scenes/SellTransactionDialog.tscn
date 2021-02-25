@@ -16,9 +16,9 @@ font_data = ExtResource( 5 )
 script = ExtResource( 2 )
 
 [node name="DialogContainer" parent="CenterContainer" index="0"]
-margin_left = 27.0
+margin_left = 28.0
 margin_top = 31.0
-margin_right = 995.0
+margin_right = 996.0
 margin_bottom = 568.0
 rect_min_size = Vector2( 968, 537 )
 
@@ -28,13 +28,13 @@ margin_bottom = -136.0
 rect_min_size = Vector2( 968, 465 )
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
-margin_right = 960.0
+margin_right = 959.0
 margin_bottom = 521.0
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
-margin_left = 8.0
+margin_left = 7.0
 margin_top = 0.0
-margin_right = 928.0
+margin_right = 927.0
 margin_bottom = 521.0
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
@@ -127,13 +127,24 @@ text = "Cost Average"
 [node name="Data" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="1"]
 margin_right = 97.0
 
-[node name="DataPanel4" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="3" instance=ExtResource( 3 )]
+[node name="TotalProfit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="3" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 693.0
 margin_right = 920.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 223, 96 )
+
+[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer" index="0"]
+margin_left = 65.0
+margin_right = 142.0
+
+[node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 77.0
+text = "Total Profit"
+
+[node name="Data" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 77.0
 
 [node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -180,6 +191,7 @@ margin_top = 481.0
 margin_right = 920.0
 margin_bottom = 521.0
 rect_min_size = Vector2( 920, 40 )
+[connection signal="text_changed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/MarginContainer/NumberOfCoins" to="." method="_on_NumberOfCoins_text_changed"]
 [connection signal="CalcualteTotalPrice" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteTotalPrice"]
 [connection signal="CalculateCostAverage" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculateCostAverage"]
 [connection signal="CalculatedNumberOfCoins" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculatedNumberOfCoins"]
@@ -197,6 +209,8 @@ rect_min_size = Vector2( 920, 40 )
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid"]
 
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit"]
 
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog"]
 
