@@ -78,15 +78,25 @@ margin_right = 227.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 223, 96 )
 
+[node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="0"]
+margin_right = 219.0
+margin_bottom = 88.0
+
+[node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="1"]
+margin_right = 219.0
+margin_bottom = 88.0
+
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
-margin_left = 63.0
-margin_right = 145.0
+margin_left = 64.0
+margin_top = 13.0
+margin_right = 146.0
+margin_bottom = 66.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
 margin_right = 82.0
 text = "Total Coins"
 
-[node name="Data" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+[node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
 margin_right = 82.0
 
 [node name="TotalAmountPaid" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 3 )]
@@ -97,15 +107,25 @@ margin_right = 458.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 223, 96 )
 
+[node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="0"]
+margin_right = 219.0
+margin_bottom = 88.0
+
+[node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="1"]
+margin_right = 219.0
+margin_bottom = 88.0
+
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer" index="0"]
-margin_left = 67.0
-margin_right = 140.0
+margin_left = 69.0
+margin_top = 13.0
+margin_right = 142.0
+margin_bottom = 66.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="0"]
 margin_right = 73.0
 text = "Total Paid"
 
-[node name="Data" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+[node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="1"]
 margin_right = 73.0
 
 [node name="CostAverage" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="2" instance=ExtResource( 3 )]
@@ -116,15 +136,25 @@ margin_right = 689.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 223, 96 )
 
+[node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="0"]
+margin_right = 219.0
+margin_bottom = 88.0
+
+[node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="1"]
+margin_right = 219.0
+margin_bottom = 88.0
+
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer" index="0"]
-margin_left = 55.0
-margin_right = 152.0
+margin_left = 57.0
+margin_top = 13.0
+margin_right = 154.0
+margin_bottom = 66.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="0"]
 margin_right = 97.0
 text = "Cost Average"
 
-[node name="Data" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+[node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="1"]
 margin_right = 97.0
 
 [node name="TotalProfit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="3" instance=ExtResource( 3 )]
@@ -135,15 +165,25 @@ margin_right = 920.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 223, 96 )
 
+[node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer" index="0"]
+margin_right = 219.0
+margin_bottom = 88.0
+
+[node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer" index="1"]
+margin_right = 219.0
+margin_bottom = 88.0
+
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer" index="0"]
-margin_left = 65.0
-margin_right = 142.0
+margin_left = 67.0
+margin_top = 13.0
+margin_right = 144.0
+margin_bottom = 66.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer" index="0"]
 margin_right = 77.0
 text = "Total Profit"
 
-[node name="Data" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+[node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer" index="1"]
 margin_right = 77.0
 
 [node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 4 )]

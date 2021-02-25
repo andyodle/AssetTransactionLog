@@ -57,13 +57,14 @@ func _on_ActiveTransactionsView_SellTransactionClick():
 	
 	# Get all of the selected transactions.
 	var transaction_views = get_tree().get_nodes_in_group("Transaction");
-	for transaction_view in transaction_views:
-		if transaction_view.is_selected():
-			sell_trans_dialog.add_sell_transaction(transaction_view.trans_data);
-	
-	# Show the sell transaction dialog.
-	sell_trans_dialog.fade_in();
+	if transaction_views.size() > 0:
+		for transaction_view in transaction_views:
+			if transaction_view.is_selected():
+				sell_trans_dialog.add_sell_transaction(transaction_view.trans_data);
+		
+		# Show the sell transaction dialog.
+		sell_trans_dialog.fade_in();
 
 # Add sell transaction to proper locations.
 func _on_SellTransactionDialog_AddSellTransaction(transaction_p):
-	pass # Replace with function body.
+	print(transaction_p)

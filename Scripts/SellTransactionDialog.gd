@@ -9,7 +9,10 @@ onready var cost_average_data_panel = $CenterContainer/DialogContainer/MarginCon
 onready var total_profit_data_panel = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit;
 onready var transaction_log = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog;
 
+var sold_transactoin_class = preload("res://Scripts/Classes/SoldTransaction.gd").new();
+
 func reset_dialog():
+	number_of_coins.text = "";
 	total_coins_data_panel.set_data("");
 	total_amount_paid_data_panel.set_data("");
 	cost_average_data_panel.set_data("");
@@ -53,8 +56,7 @@ func _on_TransactionLog_CalculateCostAverage(cost_average_p):
 # Add new sell transactoin to the proper places.
 func _on_DialogActionButtons_OkClicked():
 	if verify_input():
-		#TODO: Send the transaction in the signal.
-		emit_signal("AddSellTransaction", "");
+		emit_signal("AddSellTransaction", sold_transactoin_class);
 		self.fade_out();
 
 # Cancel adding a sell transaction.
@@ -72,6 +74,7 @@ func calculate_total_gain():
 	
 	# Sold Data
 	var sold_exchange_rate : float;
+	var sold_total_price : float = purchased_total_price;
 	var sold_number_of_coins : float = float(number_of_coins.text);
 	
 	# Left Over Data
@@ -90,6 +93,38 @@ func calculate_total_gain():
 		
 		# Display the total gains.
 		total_profit_data_panel.set_data(String("$" + "%3.2f" % total_gains));
+		
+		sold_transactoin_class.initalize();
+		
+		# Store the profit transaction.
+		#sold_transactoin_class.profit_trans_m.date_acquired_m;
+		sold_transactoin_class.profit_trans_m.number_of_coins_m = left_over_number_of_coins;
+		sold_transactoin_class.profit_trans_m.exchange_price_m = left_over_exchange_rate;
+		sold_transactoin_class.profit_trans_m.amount_m = total_gains;
+		if total_gains >= 0:
+			sold_transactoin_class.profit_trans_m.is_credit_m = true;
+		else:
+			sold_transactoin_class.profit_trans_m.is_credit_m = false;
+		
+		# Store the sell transaction.
+		#sold_transactoin_class.sold_trans_m.date_acquired_m;
+		sold_transactoin_class.sold_trans_m.number_of_coins_m = sold_number_of_coins;
+		sold_transactoin_class.sold_trans_m.exchange_price_m = sold_exchange_rate;
+		sold_transactoin_class.sold_trans_m.amount_m = sold_total_price;
+		if total_gains >= 0:
+			sold_transactoin_class.sold_trans_m.is_credit_m = true;
+		else:
+			sold_transactoin_class.sold_trans_m.is_credit_m = false;
+
+		# Store the purchase transaction.
+		#sold_transactoin_class.bought_trans_m.date_acquired_m;
+		sold_transactoin_class.bought_trans_m.number_of_coins_m = purchased_number_of_coins;
+		sold_transactoin_class.bought_trans_m.exchange_price_m = purchased_cost_average;
+		sold_transactoin_class.bought_trans_m.amount_m = purchased_total_price;
+		if total_gains >= 0:
+			sold_transactoin_class.bought_trans_m.is_credit_m = true;
+		else:
+			sold_transactoin_class.bought_trans_m.is_credit_m = false;
 
 # User entered a number recalulate the possilbe gains.
 func _on_NumberOfCoins_text_changed():

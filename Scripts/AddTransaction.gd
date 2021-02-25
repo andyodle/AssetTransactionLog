@@ -43,8 +43,12 @@ func _on_DialogActionButtons_OkClicked():
 		# Step2: Create and fillout a Transaction obect.
 		# Trade 1
 		var temp_class : Transaction;
-		temp_class = load("res://Scripts/Autoload/Transaction.gd").new();
-		temp_class.set_trans_data(transaction_date.text, float(number_of_coins.text), float(exchange_price.text), float(transaction_ammount.text), credit_or_debit.get_checked());
+		temp_class = load("res://Scripts/Classes/Transaction.gd").new();
+		temp_class.date_acquired_m = transaction_date.text;
+		temp_class.number_of_coins_m = float(number_of_coins.text);
+		temp_class.exchange_price_m = float(exchange_price.text);
+		temp_class.amount_m = float(transaction_ammount.text);
+		temp_class.is_credit_m = credit_or_debit.get_checked();
 		
 		# Step3: Emit signal with transaction data.
 		emit_signal("AddNewTransaction", temp_class);
