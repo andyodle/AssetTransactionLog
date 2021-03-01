@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Fonts/Swansea-q3pd.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/TimeburnerBold-peGR.ttf" type="DynamicFontData" id=1]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 40
 font_data = ExtResource( 1 )
 
@@ -30,9 +30,9 @@ __meta__ = {
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 936.0
-margin_bottom = 56.0
+margin_bottom = 68.0
 rect_min_size = Vector2( 0, 40 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Title"
 align = 1
 valign = 1

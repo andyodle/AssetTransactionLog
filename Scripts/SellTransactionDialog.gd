@@ -97,7 +97,7 @@ func calculate_total_gain():
 		sold_transactoin_class.initalize();
 		
 		# Store the profit transaction.
-		#sold_transactoin_class.profit_trans_m.date_acquired_m;
+		#sold_transactoin_class.profit_trans_m.date_m;
 		sold_transactoin_class.profit_trans_m.number_of_coins_m = left_over_number_of_coins;
 		sold_transactoin_class.profit_trans_m.exchange_price_m = left_over_exchange_rate;
 		sold_transactoin_class.profit_trans_m.amount_m = total_gains;
@@ -107,7 +107,7 @@ func calculate_total_gain():
 			sold_transactoin_class.profit_trans_m.is_credit_m = false;
 		
 		# Store the sell transaction.
-		#sold_transactoin_class.sold_trans_m.date_acquired_m;
+		#sold_transactoin_class.sold_trans_m.date_m;
 		sold_transactoin_class.sold_trans_m.number_of_coins_m = sold_number_of_coins;
 		sold_transactoin_class.sold_trans_m.exchange_price_m = sold_exchange_rate;
 		sold_transactoin_class.sold_trans_m.amount_m = sold_total_price;
@@ -117,7 +117,7 @@ func calculate_total_gain():
 			sold_transactoin_class.sold_trans_m.is_credit_m = false;
 
 		# Store the purchase transaction.
-		#sold_transactoin_class.bought_trans_m.date_acquired_m;
+		#sold_transactoin_class.bought_trans_m.date_m;
 		sold_transactoin_class.bought_trans_m.number_of_coins_m = purchased_number_of_coins;
 		sold_transactoin_class.bought_trans_m.exchange_price_m = purchased_cost_average;
 		sold_transactoin_class.bought_trans_m.amount_m = purchased_total_price;

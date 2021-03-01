@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Fonts/Swansea-q3pd.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/TimeburnerBold-peGR.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -37,7 +37,7 @@ __meta__ = {
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 208.0
-margin_bottom = 33.0
+margin_bottom = 41.0
 rect_min_size = Vector2( 200, 25 )
 custom_fonts/font = SubResource( 1 )
 text = "Dialog Title"

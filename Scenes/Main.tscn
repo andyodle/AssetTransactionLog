@@ -74,6 +74,12 @@ visible = false
 
 [editable path="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/TabTitle"]
 
+[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins"]
+
+[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid"]
+
+[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/CostAverage"]
+
 [editable path="HBoxContainer/TabsContainer/ProfitTransactionsView"]
 
 [editable path="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TabTitle"]

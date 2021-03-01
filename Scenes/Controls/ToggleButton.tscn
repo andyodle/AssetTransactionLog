@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Fonts/Swansea-q3pd.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/TimeburnerBold-peGR.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ToggleButton.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 20
 font_data = ExtResource( 1 )
 
@@ -45,7 +45,7 @@ margin_left = 16.0
 margin_right = 268.0
 margin_bottom = 48.0
 focus_mode = 0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 pressed = true
 enabled_focus_mode = 0
 text = "Toggle Button"

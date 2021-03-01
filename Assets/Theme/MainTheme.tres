@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Fonts/Swansea-q3pd.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/TimeburnerBold-peGR.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.207843, 0.231373, 0.341176, 1 )
@@ -15,6 +15,7 @@ corner_radius_bottom_left = 8
 [sub_resource type="DynamicFont" id=3]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
 font_data = ExtResource( 1 )
 
 [resource]

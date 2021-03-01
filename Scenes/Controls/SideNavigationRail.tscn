@@ -35,17 +35,18 @@ __meta__ = {
 [node name="ActiveTransButton" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_right = 72.0
 margin_bottom = 82.0
+toggle_mode = true
 
 [node name="TextureRect" parent="VBoxContainer/ActiveTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 4 )
 
 [node name="CenterContainer2" parent="VBoxContainer/ActiveTransButton/VBoxContainer" index="2"]
-margin_bottom = 63.0
+margin_bottom = 83.0
 
 [node name="Label" parent="VBoxContainer/ActiveTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 1.0
-margin_right = 71.0
-margin_bottom = 17.0
+margin_left = 2.0
+margin_right = 70.0
+margin_bottom = 37.0
 text = "Active
 Transactions"
 
@@ -53,30 +54,32 @@ Transactions"
 margin_top = 86.0
 margin_right = 72.0
 margin_bottom = 168.0
+toggle_mode = true
 
 [node name="TextureRect" parent="VBoxContainer/ProfitTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 3 )
 
 [node name="Label" parent="VBoxContainer/ProfitTransButton/VBoxContainer/CenterContainer2" index="0"]
 margin_left = 1.0
-margin_right = 71.0
+margin_right = 70.0
 text = "Active Profits"
 
 [node name="SoldPositionsTransButton" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 172.0
 margin_right = 72.0
 margin_bottom = 254.0
+toggle_mode = true
 
 [node name="TextureRect" parent="VBoxContainer/SoldPositionsTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 5 )
 
 [node name="CenterContainer2" parent="VBoxContainer/SoldPositionsTransButton/VBoxContainer" index="2"]
-margin_bottom = 63.0
+margin_bottom = 83.0
 
 [node name="Label" parent="VBoxContainer/SoldPositionsTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 11.0
-margin_right = 61.0
-margin_bottom = 17.0
+margin_left = 13.0
+margin_right = 58.0
+margin_bottom = 37.0
 text = "Sold
 Positions"
 
@@ -101,6 +104,7 @@ margin_right = 72.0
 margin_bottom = 600.0
 [connection signal="pressed" from="VBoxContainer/ActiveTransButton" to="." method="_on_ActiveTransButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/ProfitTransButton" to="." method="_on_ProfitTransButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/SoldPositionsTransButton" to="." method="_on_SoldPositionsTransButton_pressed"]
 
 [editable path="VBoxContainer/ActiveTransButton"]
 

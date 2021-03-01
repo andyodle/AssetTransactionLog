@@ -51,7 +51,7 @@ __meta__ = {
 margin_top = 72.0
 margin_right = 952.0
 margin_bottom = 168.0
-rect_min_size = Vector2( 952, 96 )
+rect_min_size = Vector2( 950, 96 )
 
 [node name="BlankSpace" type="Control" parent="VBoxContainer/HBoxContainer"]
 margin_right = 4.0
@@ -75,9 +75,9 @@ margin_bottom = 88.0
 
 [node name="VBoxContainer" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
 margin_left = 67.0
-margin_top = 13.0
+margin_top = 12.0
 margin_right = 149.0
-margin_bottom = 66.0
+margin_bottom = 68.0
 
 [node name="Title" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
 margin_right = 82.0
@@ -103,9 +103,9 @@ margin_bottom = 88.0
 
 [node name="VBoxContainer" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer" index="0"]
 margin_left = 72.0
-margin_top = 13.0
+margin_top = 12.0
 margin_right = 145.0
-margin_bottom = 66.0
+margin_bottom = 68.0
 
 [node name="Title" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="0"]
 margin_right = 73.0
@@ -130,17 +130,17 @@ margin_right = 225.0
 margin_bottom = 88.0
 
 [node name="VBoxContainer" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer" index="0"]
-margin_left = 60.0
-margin_top = 13.0
-margin_right = 157.0
-margin_bottom = 66.0
+margin_left = 58.0
+margin_top = 12.0
+margin_right = 159.0
+margin_bottom = 68.0
 
 [node name="Title" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-margin_right = 97.0
+margin_right = 101.0
 text = "Cost Average"
 
 [node name="HBoxContainer" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-margin_right = 97.0
+margin_right = 101.0
 
 [node name="DataPanel4" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0

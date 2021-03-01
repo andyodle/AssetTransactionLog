@@ -44,7 +44,7 @@ func _on_DialogActionButtons_OkClicked():
 		# Trade 1
 		var temp_class : Transaction;
 		temp_class = load("res://Scripts/Classes/Transaction.gd").new();
-		temp_class.date_acquired_m = transaction_date.text;
+		temp_class.date_m = transaction_date.text;
 		temp_class.number_of_coins_m = float(number_of_coins.text);
 		temp_class.exchange_price_m = float(exchange_price.text);
 		temp_class.amount_m = float(transaction_ammount.text);
