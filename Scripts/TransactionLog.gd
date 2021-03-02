@@ -44,6 +44,7 @@ func calcualte_cost_average():
 	# Get all of the price transactions.
 	var total_price : float = 0.0;
 	var coin_count : float = 0.0;
+	var cost_average : float = 0.0;
 	var transaction_views = transaction_list.get_children();
 	for transaction_view in transaction_views:
 		if transaction_view.is_credit_trans():
@@ -52,7 +53,8 @@ func calcualte_cost_average():
 		else:
 			total_price -= transaction_view.get_amount_paid();
 			coin_count -= transaction_view.get_number_of_coins();
-	var cost_average = (total_price / coin_count);
+	if coin_count != 0:
+		cost_average = (total_price / coin_count);
 	emit_signal("CalculateCostAverage", cost_average);
 
 func add_transaction(transaction_p):
