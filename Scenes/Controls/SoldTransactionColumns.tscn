@@ -1,0 +1,115 @@
+[gd_scene format=2]
+
+[node name="SoldTransactionColumns" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -95.9999
+margin_bottom = -544.0
+rect_min_size = Vector2( 928, 56 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -5.0
+rect_min_size = Vector2( 928, 56 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+margin_right = 928.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 928, 56 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlankSpace" type="Control" parent="CenterContainer/HBoxContainer"]
+margin_right = 48.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 48, 56 )
+
+[node name="DateSold" type="Label" parent="CenterContainer/HBoxContainer"]
+margin_left = 52.0
+margin_top = -1.0
+margin_right = 152.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 100, 56 )
+text = "Date Sold"
+align = 1
+valign = 1
+
+[node name="NumberOfCoins" type="Label" parent="CenterContainer/HBoxContainer"]
+margin_left = 156.0
+margin_right = 295.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 139, 56 )
+text = "Number of Coins"
+align = 1
+valign = 1
+
+[node name="ExchangePaid" type="Label" parent="CenterContainer/HBoxContainer"]
+margin_left = 299.0
+margin_top = -1.0
+margin_right = 399.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 100, 56 )
+text = "Exchange Paid"
+align = 1
+valign = 1
+
+[node name="TotalPaid" type="Label" parent="CenterContainer/HBoxContainer"]
+margin_left = 403.0
+margin_top = -1.0
+margin_right = 503.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 100, 56 )
+text = "Total Paid"
+align = 1
+valign = 1
+
+[node name="ExchangeSold" type="Label" parent="CenterContainer/HBoxContainer"]
+margin_left = 507.0
+margin_top = -1.0
+margin_right = 607.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 100, 56 )
+text = "Exchange Sold"
+align = 1
+valign = 1
+
+[node name="TotalSold" type="Label" parent="CenterContainer/HBoxContainer"]
+margin_left = 611.0
+margin_top = -1.0
+margin_right = 711.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 100, 56 )
+text = "Total Sold"
+align = 1
+valign = 1
+
+[node name="TotalGains" type="Label" parent="CenterContainer/HBoxContainer"]
+margin_left = 715.0
+margin_top = -1.0
+margin_right = 815.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 100, 56 )
+text = "Total Gains"
+align = 1
+valign = 1
+
+[node name="PercentGains" type="Label" parent="CenterContainer/HBoxContainer"]
+margin_left = 819.0
+margin_top = -1.0
+margin_right = 919.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 100, 56 )
+text = "% Gain"
+align = 1
+valign = 1

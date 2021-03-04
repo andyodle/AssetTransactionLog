@@ -2,6 +2,7 @@ extends Control
 
 onready var active_transactions_view = $HBoxContainer/TabsContainer/ActiveTransactionsView;
 onready var profit_transactions_view = $HBoxContainer/TabsContainer/ProfitTransactionsView;
+onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/SoldTransactionLogView;
 onready var add_trans_dialog = $AddTransaction;
 onready var sell_trans_dialog = $SellTransactionDialog;
 
@@ -40,6 +41,12 @@ func _on_SideNavigationRail_ProfitTransClicked():
 	profit_transactions_view.visible = true;
 	profit_transactions_view.fade_in();
 
+# Show the sold transactions log view.
+func _on_SideNavigationRail_SoldPositionsTransClicked():
+	hide_tabs();
+	sold_transactions_log_view.visible = true;
+	sold_transactions_log_view.fade_in();
+
 # Add a active transaction.
 func _on_ActiveTransactionsView_AddTransactoinClick():
 	# Step 1: Show the add transaction dialog.
@@ -56,7 +63,7 @@ func _on_ActiveTransactionsView_SellTransactionClick():
 	sell_trans_dialog.reset_dialog();
 	
 	# Get all of the selected transactions.
-	var transaction_views = get_tree().get_nodes_in_group("Transaction");
+	var transaction_views = active_transactions_view.get_selected_transactions();
 	if transaction_views.size() > 0:
 		for transaction_view in transaction_views:
 			if transaction_view.is_selected():
@@ -67,11 +74,12 @@ func _on_ActiveTransactionsView_SellTransactionClick():
 
 # Add sell transaction to proper locations.
 func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
-	# Create a profit transaction.
+	# Step1: Create a profit transaction.
+	sell_transaction_p.profit_trans_m.date_m = Utility.get_current_date_str();
 	profit_transactions_view.add_new_transaction(sell_transaction_p.profit_trans_m);
 	
-	print("Added Profit Trans!")
+	# Step2: Create a sold history transaction.
+	sold_transactions_log_view.add_new_transaction(sell_transaction_p);
 	
-	# Create a sold history transaction.
-	
-	#TODO: Remove previously selected active transactions.
+	# Step3: Remove previously selected active transactions.
+	active_transactions_view.remove_selected_transactions();

@@ -90,7 +90,7 @@ func calculate_total_gain():
 		sold_exchange_rate = purchased_total_price / sold_number_of_coins;
 		
 		# Calcualte Possible Gains
-		left_over_number_of_coins = sold_number_of_coins - purchased_number_of_coins;
+		left_over_number_of_coins = purchased_number_of_coins - sold_number_of_coins;
 		left_over_exchange_rate = sold_exchange_rate;
 		total_gains = left_over_number_of_coins * left_over_exchange_rate;
 		

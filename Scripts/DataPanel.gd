@@ -10,7 +10,11 @@ var white_color : Color = Color(255,255,255,255);
 func _ready():
 	percent_label.visible = false;
 
-func _process(delta):
+# Moved the updateing of the text color to only occur once.
+# If the update is done in the _process function 1% of the cpu will be used.
+# If we are constanly using 1% of the CPU batteries will be drained faster
+# on laptop and portibale devices.
+func update_label_color():
 	# Color the data label.
 	var temp_data : float = float(data_label.text.replace("$", ""));
 	if temp_data > 0:
@@ -37,6 +41,7 @@ func _process(delta):
 
 func set_data(data_p):
 	data_label.text = String(data_p);
+	update_label_color();
 
 func get_data():
 	var temp_data = data_label.text.replace("$", "");

@@ -6,7 +6,7 @@ signal SellTransactionClick;
 onready var total_coins_data_panel = $VBoxContainer/HBoxContainer/TotalCoins;
 onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
 onready var cost_average_data_panel = $VBoxContainer/HBoxContainer/CostAverage;
-onready var transaction_log = $VBoxContainer/TransactionLog;
+onready var sold_transaction_log = $VBoxContainer/SoldTransactionsLog;
 onready var animation_player = $AnimationPlayer;
 
 func _ready():
@@ -18,21 +18,26 @@ func fade_in():
 
 # Add the new transactoin to the transaction log.
 func add_new_transaction(transaction_p):
+	# Step 1: Create a sell history transaction.
+	var temp_class : SoldTransactionRecord;
+	temp_class = load("res://Scripts/Classes/SoldTransactionRecord.gd").new();
+	temp_class.date_m = Utility.get_current_date_str();
+	temp_class.number_of_coins_m = transaction_p.bought_trans_m.number_of_coins_m;
+	temp_class.exchange_paid_m = transaction_p.bought_trans_m.exchange_price_m;
+	temp_class.total_paid_m = transaction_p.bought_trans_m.amount_m;
+	temp_class.exchange_sold_m = transaction_p.sold_trans_m.exchange_price_m;
+	temp_class.total_sold_m = (temp_class.number_of_coins_m * transaction_p.sold_trans_m.exchange_price_m);
+	temp_class.total_gains_m = (temp_class.total_sold_m - temp_class.total_paid_m);
+	if temp_class.total_paid_m != 0:
+		temp_class.percent_gains_m = (temp_class.total_gains_m / temp_class.total_paid_m) * 100;
+	
 	# Step 2: Add the transaction to the transaction log.
-	transaction_log.add_transaction(transaction_p);
+	sold_transaction_log.add_transaction(temp_class);
 	
 	# Step 3: Recalulate the displayed totals.
-	transaction_log.calcualte_total_coins();
-	transaction_log.calculate_total_price();
-	transaction_log.calcualte_cost_average();
-
-# Get the list of selected transactions.
-func get_selected_transactions():
-	return transaction_log.get_selected_transactions();
-
-# Remove the selected transactions.
-func remove_selected_transactions():
-	transaction_log.remove_selected_transactions();
+	#sold_transaction_log.calcualte_total_coins();
+	#sold_transaction_log.calculate_total_price();
+	#sold_transaction_log.calcualte_cost_average();
 
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
@@ -56,3 +61,4 @@ func _on_TransactionLog_AddTransactionClick():
 # User wants to calcualte a sell.
 func _on_TransactionLog_CalcualteSellClick():
 	emit_signal("SellTransactionClick");
+

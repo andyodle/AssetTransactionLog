@@ -8,7 +8,7 @@ signal CalculateCostAverage;
 
 onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Trasactions;
 
-var transaction_view = preload("res://Scenes/Controls/TransactionView.tscn");
+var sold_transaction_view = preload("res://Scenes/Controls/SoldTransactionView.tscn");
 
 # Clear added transactions.
 func reset_trasactoins():
@@ -57,28 +57,13 @@ func calcualte_cost_average():
 		cost_average = (total_price / coin_count);
 	emit_signal("CalculateCostAverage", cost_average);
 
-func add_transaction(transaction_p):
-	var temp_trans_view = transaction_view.instance();
-	transaction_list.add_child(temp_trans_view);
-	transaction_list.move_child(temp_trans_view, 0);
+func add_transaction(sold_transaction_p):
+	var temp_sold_trans_view = sold_transaction_view.instance();
+	transaction_list.add_child(temp_sold_trans_view);
+	transaction_list.move_child(temp_sold_trans_view, 0);
 	
 	# Add the transaction to the list.
-	temp_trans_view.set_tras_data(transaction_p);
-
-# Get the list of selected transactions.
-func get_selected_transactions():
-	var temp_views = [];
-	var transaction_views = transaction_list.get_children();
-	for transaction_view in transaction_views:
-		if transaction_view.is_selected():
-			temp_views.append(transaction_view);
-	return temp_views;
-
-# Remove the selected transaction.
-func remove_selected_transactions():
-	for transaction in transaction_list.get_children():
-		if transaction.is_selected():
-			transaction_list.remove_child(transaction);
+	temp_sold_trans_view.set_tras_data(sold_transaction_p);
 
 # User wants to add a new transaction.
 func _on_ActionButtonContainer_AddTransClicked():
@@ -87,3 +72,4 @@ func _on_ActionButtonContainer_AddTransClicked():
 # User wants to calcualte a sell.
 func _on_ActionButtonContainer_CalcualteSellClicked():
 	emit_signal("CalcualteSellClick");
+

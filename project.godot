@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://Scripts/Classes/SoldTransaction.gd"
 }, {
 "base": "Node",
+"class": "SoldTransactionRecord",
+"language": "GDScript",
+"path": "res://Scripts/Classes/SoldTransactionRecord.gd"
+}, {
+"base": "Node",
 "class": "Transaction",
 "language": "GDScript",
 "path": "res://Scripts/Classes/Transaction.gd"
 } ]
 _global_script_class_icons={
 "SoldTransaction": "",
+"SoldTransactionRecord": "",
 "Transaction": ""
 }
 
@@ -28,7 +34,12 @@ _global_script_class_icons={
 
 config/name="BTC-Transactions"
 run/main_scene="res://Scenes/Main.tscn"
+run/low_processor_mode=true
 config/icon="res://icon.png"
+
+[autoload]
+
+Utility="*res://Scripts/AutoLoad/Utility.gd"
 
 [display]
 
