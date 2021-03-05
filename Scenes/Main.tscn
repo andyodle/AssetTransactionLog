@@ -53,13 +53,13 @@ rect_min_size = Vector2( 952, 600 )
 text = "Active Transactions"
 
 [node name="DataLabel" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 23.0
+margin_right = 25.0
 
 [node name="DataLabel" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 23.0
+margin_right = 25.0
 
 [node name="DataLabel" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 23.0
+margin_right = 25.0
 
 [node name="ProfitTransactionsView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 1 )]
 visible = false

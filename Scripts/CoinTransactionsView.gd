@@ -22,9 +22,7 @@ func add_new_transaction(transaction_p):
 	transaction_log.add_transaction(transaction_p);
 	
 	# Step 3: Recalulate the displayed totals.
-	transaction_log.calcualte_total_coins();
-	transaction_log.calculate_total_price();
-	transaction_log.calcualte_cost_average();
+	transaction_log.calculate_toals();
 
 # Get the list of selected transactions.
 func get_selected_transactions():
@@ -33,6 +31,9 @@ func get_selected_transactions():
 # Remove the selected transactions.
 func remove_selected_transactions():
 	transaction_log.remove_selected_transactions();
+	
+	# Recalulate the displayed totals.
+	transaction_log.calculate_toals();
 
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):

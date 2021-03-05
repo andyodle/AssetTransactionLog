@@ -10,7 +10,7 @@ onready var total_sold = $CenterContainer/VBoxContainer/HBoxContainer/TotalSold;
 onready var total_gains = $CenterContainer/VBoxContainer/HBoxContainer/TotalGains;
 onready var percent_gains = $CenterContainer/VBoxContainer/HBoxContainer/PercentGains;
 
-var sold_trans_data = null;
+var trans_data = null;
 
 func _ready():
 	clear_data();
@@ -27,26 +27,25 @@ func clear_data():
 
 # Fill out the transaction.
 func set_tras_data(sold_transaction_p):
-	sold_trans_data = sold_transaction_p;
+	trans_data = sold_transaction_p;
 	# Date Sold
-	if sold_trans_data.date_m != null:
-		date_sold.text = String(sold_trans_data.date_m);
+	if trans_data.date_m != null:
+		date_sold.text = String(trans_data.date_m);
 	# Number of Coins
-	number_of_coins.text = String("%10.9f" % sold_trans_data.number_of_coins_m);
+	number_of_coins.text = String("%10.9f" % trans_data.number_of_coins_m);
 	# Exchange Paid
-	exchange_paid.text = String("$" + "%3.2f" % sold_trans_data.exchange_paid_m);
+	exchange_paid.text = String("$" + "%3.2f" % trans_data.exchange_paid_m);
 	# Total Paid
-	total_paid.text = String("$" + "%3.2f" % sold_trans_data.total_paid_m);
+	total_paid.text = String("$" + "%3.2f" % trans_data.total_paid_m);
 	# Exchange Sold
-	exchange_sold.text = String("$" + "%3.2f" % sold_trans_data.exchange_sold_m);
+	exchange_sold.text = String("$" + "%3.2f" % trans_data.exchange_sold_m);
 	# Total Sold
-	total_sold.text = String("$" + "%3.2f" % sold_trans_data.total_sold_m);
+	total_sold.text = String("$" + "%3.2f" % trans_data.total_sold_m);
 	# Total Gains
-	total_gains.text = String("$" + "%3.2f" % sold_trans_data.total_gains_m);
+	total_gains.text = String("$" + "%3.2f" % trans_data.total_gains_m);
 	# Percent Gains
-	percent_gains.text = String("%3.2f" % sold_trans_data.percent_gains_m) +  "%";
-	
-	#if(sold_trans_data.is_credit_m == true):
-	#	credit_amount.text = String("$" + "%3.2f" % sold_trans_data.amount_m);
-	#else:
-	#	debit_amount.text = String("$" + "%3.2f" % sold_trans_data.amount_m);
+	percent_gains.text = String("%3.2f" % trans_data.percent_gains_m) +  "%";
+
+# Flag to check if a row was selected.
+func is_selected():
+	return selected_trans.pressed;

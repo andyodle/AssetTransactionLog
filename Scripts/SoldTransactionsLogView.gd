@@ -3,7 +3,7 @@ extends Control
 signal AddTransactoinClick;
 signal SellTransactionClick;
 
-onready var total_coins_data_panel = $VBoxContainer/HBoxContainer/TotalCoins;
+onready var total_gains_data_panel = $VBoxContainer/HBoxContainer/TotalGains;
 onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
 onready var cost_average_data_panel = $VBoxContainer/HBoxContainer/CostAverage;
 onready var sold_transaction_log = $VBoxContainer/SoldTransactionsLog;
@@ -35,14 +35,12 @@ func add_new_transaction(transaction_p):
 	sold_transaction_log.add_transaction(temp_class);
 	
 	# Step 3: Recalulate the displayed totals.
-	#sold_transaction_log.calcualte_total_coins();
-	#sold_transaction_log.calculate_total_price();
-	#sold_transaction_log.calcualte_cost_average();
+	sold_transaction_log.calculate_toals();
 
-# Number of coins was calculated. Refresh your data.
-func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
-	if total_coins_data_panel != null:
-		total_coins_data_panel.set_data(String("%10.9f" % number_of_coins_p));
+# Total gains was calcualted. Refresh your data.
+func _on_SoldTransactionsLog_CalculatedTotalGains(total_gains_p):
+	if total_gains_data_panel != null:
+		total_gains_data_panel.set_data(String("$" + "%3.2f" % total_gains_p));
 
 # Total price was calcualted. Refresh your data.
 func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):
@@ -61,4 +59,3 @@ func _on_TransactionLog_AddTransactionClick():
 # User wants to calcualte a sell.
 func _on_TransactionLog_CalcualteSellClick():
 	emit_signal("SellTransactionClick");
-

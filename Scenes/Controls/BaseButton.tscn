@@ -9,6 +9,7 @@
 [sub_resource type="DynamicFont" id=1]
 extra_spacing_top = 8
 extra_spacing_bottom = 8
+extra_spacing_char = 1
 font_data = ExtResource( 4 )
 
 [node name="BaseButton" type="Control"]
@@ -16,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -924.0
 margin_bottom = -564.0
-rect_min_size = Vector2( 100, 40 )
+rect_min_size = Vector2( 123, 40 )
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -28,26 +29,29 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_right = 100.0
 margin_bottom = 36.0
-rect_min_size = Vector2( 100, 40 )
+rect_min_size = Vector2( 123, 40 )
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_left = 0
+custom_constants/margin_right = 8
+custom_constants/margin_left = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="MarginContainer"]
-margin_right = 100.0
+margin_left = 8.0
+margin_right = 115.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 100, 40 )
+rect_min_size = Vector2( 107, 40 )
+focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 1 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
 text = "BASE BUTTON"
 __meta__ = {
 "_edit_use_anchors_": false

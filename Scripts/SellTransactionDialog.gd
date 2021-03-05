@@ -23,9 +23,8 @@ func add_sell_transaction(transaction_p):
 	transaction_log.add_transaction(transaction_p);
 	
 	# Recalulate the displayed totals.
-	transaction_log.calcualte_total_coins();
-	transaction_log.calculate_total_price();
-	transaction_log.calcualte_cost_average();
+	transaction_log.calculate_toals();
+
 
 # Check to see if the user entered valid data.
 # Return true if valid input else false.

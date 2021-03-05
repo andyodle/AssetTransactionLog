@@ -2,9 +2,10 @@ extends Control
 
 signal AddTransactionClick;
 signal CalcualteSellClick;
+signal CalculatedTotalGains;
 signal CalculatedNumberOfCoins;
-signal CalcualteTotalPrice;
-signal CalculateCostAverage;
+signal CalcualtedTotalPrice;
+signal CalculatedCostAverage;
 
 onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Trasactions;
 
@@ -15,47 +16,25 @@ func reset_trasactoins():
 	for transaction in transaction_list.get_children():
 		transaction_list.remove_child(transaction);
 
-# Calcualte the total number of coins acquired.
-func calcualte_total_coins():
-	# Get all of the coin transactions.
-	var coin_count : float = 0.0;
-	var transaction_views = transaction_list.get_children();
-	for transaction_view in transaction_views:
-		if transaction_view.is_credit_trans():
-			coin_count += transaction_view.get_number_of_coins();
-		else:
-			coin_count -= transaction_view.get_number_of_coins();
-	emit_signal("CalculatedNumberOfCoins", coin_count);
+# Calcualte the totals for the data panels.
+func calculate_toals():
+	# Total Gains
+	var total_gains = Utility.calculate_total_gains(transaction_list);
+	emit_signal("CalculatedTotalGains", total_gains);
+	
+	# Total Price
+	#var total_price = Utility.calculate_total_price(transaction_list);
+	#emit_signal("CalcualtedTotalPrice", total_price);
+	
+	# Cost Average
+	#var cost_average = Utility.calcualte_cost_average(transaction_list);
+	#emit_signal("CalculatedCostAverage", cost_average);
 
-# Calcualte the total price paid for the coins.
-func calculate_total_price():
-	# Get all of the price transactions.
-	var total_price : float = 0.0;
-	var transaction_views = transaction_list.get_children();
-	for transaction_view in transaction_views:
-		if transaction_view.is_credit_trans():
-			total_price += transaction_view.get_amount_paid();
-		else:
-			total_price -= transaction_view.get_amount_paid();
-	emit_signal("CalcualteTotalPrice", total_price);
-
-# Calcualte the cost average of the purchased coins.
-func calcualte_cost_average():
-	# Get all of the price transactions.
-	var total_price : float = 0.0;
-	var coin_count : float = 0.0;
-	var cost_average : float = 0.0;
-	var transaction_views = transaction_list.get_children();
-	for transaction_view in transaction_views:
-		if transaction_view.is_credit_trans():
-			total_price += transaction_view.get_amount_paid();
-			coin_count += transaction_view.get_number_of_coins();
-		else:
-			total_price -= transaction_view.get_amount_paid();
-			coin_count -= transaction_view.get_number_of_coins();
-	if coin_count != 0:
-		cost_average = (total_price / coin_count);
-	emit_signal("CalculateCostAverage", cost_average);
+# Remove the selected transaction.
+func remove_selected_transactions():
+	for transaction in transaction_list.get_children():
+		if transaction.is_selected():
+			transaction_list.remove_child(transaction);
 
 func add_transaction(sold_transaction_p):
 	var temp_sold_trans_view = sold_transaction_view.instance();
@@ -73,3 +52,11 @@ func _on_ActionButtonContainer_AddTransClicked():
 func _on_ActionButtonContainer_CalcualteSellClicked():
 	emit_signal("CalcualteSellClick");
 
+
+# User wants to delete selected items.
+func _on_ActionButtonContainer_DeleteClicked():
+	# Remove the selected items.
+	remove_selected_transactions();
+	
+	# Recalculate the data panels.
+	calculate_toals();

@@ -62,9 +62,8 @@ align = 1
 
 [node name="DateSold" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 56.0
-margin_top = -1.0
 margin_right = 156.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "02/17/2021"
 align = 1
@@ -85,9 +84,8 @@ autowrap = true
 
 [node name="ExchangePaid" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 303.0
-margin_top = -1.0
 margin_right = 403.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$52,077.37"
 align = 1
@@ -96,9 +94,8 @@ autowrap = true
 
 [node name="TotalPaid" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 407.0
-margin_top = -1.0
 margin_right = 507.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$100"
 align = 1
@@ -107,9 +104,8 @@ autowrap = true
 
 [node name="ExchangeSold" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 511.0
-margin_top = -1.0
 margin_right = 611.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$53,077.37"
 align = 1
@@ -118,9 +114,8 @@ autowrap = true
 
 [node name="TotalSold" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 615.0
-margin_top = -1.0
 margin_right = 715.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$75"
 align = 1
@@ -129,9 +124,8 @@ autowrap = true
 
 [node name="TotalGains" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 719.0
-margin_top = -1.0
 margin_right = 819.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$75"
 align = 1
@@ -140,9 +134,8 @@ autowrap = true
 
 [node name="PercentGains" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 823.0
-margin_top = -1.0
 margin_right = 923.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "100.03%"
 align = 1

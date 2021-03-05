@@ -13,6 +13,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="DynamicFont" id=3]
+extra_spacing_char = 1
 font_data = ExtResource( 1 )
 
 [resource]

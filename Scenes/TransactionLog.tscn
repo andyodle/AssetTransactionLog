@@ -21,6 +21,8 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -6.10352e-05
+margin_bottom = 3.05176e-05
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -59,24 +61,18 @@ anchor_bottom = 0.0
 margin_right = 920.0
 margin_bottom = 72.0
 
-[node name="HBoxContainer" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer" index="0"]
-margin_right = 296.0
-
 [node name="AddTransactonButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="0"]
-margin_right = 136.0
 rect_min_size = Vector2( 136, 40 )
 
 [node name="MarginContainer" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/AddTransactonButton" index="0"]
 rect_min_size = Vector2( 136, 40 )
 
 [node name="Button" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/AddTransactonButton/MarginContainer" index="0"]
-margin_right = 136.0
+margin_right = 150.0
 rect_min_size = Vector2( 136, 40 )
 text = "ADD TRANSACTON"
 
 [node name="CalculateSellButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="1"]
-margin_left = 152.0
-margin_right = 288.0
 rect_min_size = Vector2( 136, 40 )
 
 [node name="MarginContainer" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/CalculateSellButton" index="0"]
@@ -85,7 +81,7 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 136, 40 )
 
 [node name="Button" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/CalculateSellButton/MarginContainer" index="0"]
-margin_right = 171.0
+margin_right = 198.0
 rect_min_size = Vector2( 136, 40 )
 text = "ADD SELL TRANSACTION"
 
@@ -114,6 +110,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 [connection signal="AddTransClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_AddTransClicked"]
 [connection signal="CalcualteSellClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_CalcualteSellClicked"]
+[connection signal="DeleteClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_DeleteClicked"]
 
 [editable path="MarginContainer/VBoxContainer/ActionButtonContainer"]
 
