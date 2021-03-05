@@ -48,24 +48,96 @@ margin_bottom = 600.0
 rect_min_size = Vector2( 952, 600 )
 
 [node name="ActiveTransactionsView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 1 )]
+visible = false
 
 [node name="Title" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/TabTitle/MarginContainer" index="0"]
 text = "Active Transactions"
 
+[node name="VBoxContainer" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
+margin_left = 52.0
+margin_right = 165.0
+
+[node name="Title" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 113.0
+
+[node name="HBoxContainer" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 113.0
+
 [node name="DataLabel" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 25.0
+margin_right = 113.0
+text = "0.000000000"
 
 [node name="DataLabel" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 25.0
+margin_right = 46.0
+text = "$0.00"
 
 [node name="DataLabel" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 25.0
+margin_right = 46.0
+text = "$0.00"
 
 [node name="ProfitTransactionsView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 1 )]
-visible = false
 
 [node name="Title" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TabTitle/MarginContainer" index="0"]
 text = "Active Profits"
+
+[node name="TotalCoins" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer" index="1"]
+margin_right = 320.0
+
+[node name="ColorRect" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="0"]
+margin_right = 304.0
+
+[node name="CenterContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="1"]
+margin_right = 304.0
+
+[node name="VBoxContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
+margin_left = 91.0
+margin_right = 204.0
+
+[node name="Title" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 113.0
+
+[node name="HBoxContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 113.0
+
+[node name="DataLabel" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+margin_right = 113.0
+text = "0.000000000"
+
+[node name="TotalAmountPaid" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer" index="2"]
+margin_left = 324.0
+margin_right = 636.0
+
+[node name="ColorRect" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="0"]
+margin_right = 304.0
+
+[node name="CenterContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="1"]
+margin_right = 304.0
+
+[node name="VBoxContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer" index="0"]
+margin_left = 107.0
+margin_right = 189.0
+
+[node name="DataLabel" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+margin_right = 46.0
+text = "$0.00"
+
+[node name="CostAverage" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer" index="3"]
+margin_left = 640.0
+margin_right = 952.0
+
+[node name="ColorRect" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="0"]
+margin_right = 304.0
+
+[node name="CenterContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="1"]
+margin_right = 304.0
+
+[node name="VBoxContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer" index="0"]
+margin_left = 92.0
+margin_right = 204.0
+
+[node name="DataLabel" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+margin_right = 46.0
+text = "$0.00"
 
 [node name="DataPanel4" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer" index="4"]
 visible = false
@@ -78,6 +150,15 @@ margin_bottom = 416.0
 
 [node name="AddTransactonButton" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="0"]
 visible = false
+
+[node name="CalculateSellButton" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="1"]
+margin_left = 0.0
+
+[node name="ScrollContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
+margin_bottom = 408.0
+
+[node name="Trasactions" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
+margin_bottom = 272.0
 
 [node name="SoldTransactionLogView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 7 )]
 visible = false
@@ -109,6 +190,12 @@ visible = false
 [editable path="HBoxContainer/TabsContainer/ProfitTransactionsView"]
 
 [editable path="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TabTitle"]
+
+[editable path="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalCoins"]
+
+[editable path="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid"]
+
+[editable path="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/HBoxContainer/CostAverage"]
 
 [editable path="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog"]
 

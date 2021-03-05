@@ -14,8 +14,8 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -5.0
-rect_min_size = Vector2( 928, 56 )
+margin_right = -0.00012207
+rect_min_size = Vector2( 928, 0 )
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false

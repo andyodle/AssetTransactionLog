@@ -19,25 +19,25 @@ func update_label_color():
 	var temp_data : float = float(data_label.text.replace("$", ""));
 	if temp_data > 0:
 		# Green for positive profit.
-		data_label.set("custom_colors/font_color", green_color);
+		data_label.modulate = green_color;
 	elif temp_data < 0:
 		# Red for nagative profit.
-		data_label.set("custom_colors/font_color", red_color);
+		data_label.modulate = red_color;
 	else:
 		# White for zero profit.
-		data_label.set("custom_colors/font_color", white_color);
+		data_label.modulate = white_color;
 		
 	# Color the percent label.
 	var temp_percent : float = float(percent_label.text.replace("%", ""));
 	if temp_percent > 0:
 		# Green for positive profit.
-		percent_label.set("custom_colors/font_color", green_color);
+		percent_label.modulate = green_color;
 	elif temp_percent < 0:
 		# Red for nagative profit.
-		percent_label.set("custom_colors/font_color", red_color);
+		percent_label.modulate = red_color;
 	else:
 		# White for zero profit.
-		percent_label.set("custom_colors/font_color", white_color);
+		percent_label.modulate = white_color;
 
 func set_data(data_p):
 	data_label.text = String(data_p);
