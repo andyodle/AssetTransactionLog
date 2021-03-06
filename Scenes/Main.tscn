@@ -48,7 +48,6 @@ margin_bottom = 600.0
 rect_min_size = Vector2( 952, 600 )
 
 [node name="ActiveTransactionsView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 1 )]
-visible = false
 
 [node name="Title" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/TabTitle/MarginContainer" index="0"]
 text = "Active Transactions"
@@ -76,6 +75,7 @@ margin_right = 46.0
 text = "$0.00"
 
 [node name="ProfitTransactionsView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 1 )]
+visible = false
 
 [node name="Title" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TabTitle/MarginContainer" index="0"]
 text = "Active Profits"
