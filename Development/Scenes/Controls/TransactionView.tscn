@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/TransactionView.gd" type="Script" id=1]
+
+[node name="TransactionView" type="Control" groups=[
+"Transaction",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -447.0
+margin_bottom = -548.0
+rect_min_size = Vector2( 737, 52 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_right = 737.0
+margin_bottom = 60.0
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+margin_right = 737.0
+margin_bottom = 4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 737.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 584, 52 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlankSpace" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 16, 52 )
+
+[node name="SelectedTrans" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 20.0
+margin_right = 83.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 63, 52 )
+focus_mode = 0
+enabled_focus_mode = 0
+align = 1
+
+[node name="DateAcquired" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 87.0
+margin_right = 210.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 123, 52 )
+text = "02/17/2021"
+valign = 1
+
+[node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=[
+"NumberOfCoins-Trans",
+]]
+margin_left = 214.0
+margin_right = 353.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 139, 52 )
+text = "0.001920220"
+valign = 1
+
+[node name="ExchangePrice" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 357.0
+margin_right = 484.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 127, 52 )
+text = "$52,077.37"
+valign = 1
+
+[node name="CreditAmount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 488.0
+margin_right = 611.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 123, 52 )
+custom_colors/font_color = Color( 0.352941, 0.729412, 0.278431, 1 )
+text = "$100"
+valign = 1
+
+[node name="DebitAmount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 615.0
+margin_right = 737.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 122, 52 )
+custom_colors/font_color = Color( 0.913725, 0.129412, 0.152941, 1 )
+text = "$75"
+valign = 1
