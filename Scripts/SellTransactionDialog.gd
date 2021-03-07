@@ -65,15 +65,15 @@ func calculate_total_gain():
 	# Purchased Data
 	var purchased_total_price : float;
 	purchased_total_price = float(total_amount_paid_data_panel.get_data());
-	var purchased_number_of_coins : float;
-	purchased_number_of_coins = float(total_coins_data_panel.get_data());
+	var purchased_number_of_coins;
+	purchased_number_of_coins = total_coins_data_panel.get_data();
 	var purchased_cost_average : float;
 	purchased_cost_average = float(cost_average_data_panel.get_data());
 	
 	# Sold Data
 	var sold_exchange_rate : float;
 	var sold_total_price : float = purchased_total_price;
-	var sold_number_of_coins : float = float(number_of_coins.text);
+	var sold_number_of_coins = number_of_coins.text;
 	
 	# Left Over Data
 	var total_gains : float;
@@ -84,11 +84,11 @@ func calculate_total_gain():
 	var percent_gains : float;
 	
 	# Make sure we have some coins.
-	if sold_number_of_coins != 0:
-		sold_exchange_rate = purchased_total_price / sold_number_of_coins;
+	if float(sold_number_of_coins) != 0:
+		sold_exchange_rate = purchased_total_price / float(sold_number_of_coins);
 		
 		# Calcualte Possible Gains
-		left_over_number_of_coins = purchased_number_of_coins - sold_number_of_coins;
+		left_over_number_of_coins = float(purchased_number_of_coins) - float(sold_number_of_coins);
 		left_over_exchange_rate = sold_exchange_rate;
 		total_gains = left_over_number_of_coins * left_over_exchange_rate;
 		
