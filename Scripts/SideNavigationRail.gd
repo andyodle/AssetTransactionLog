@@ -3,6 +3,8 @@ extends Control
 signal ActiveTransClicked;
 signal ProfitTransClicked;
 signal SoldPositionsTransClicked;
+signal LoadTransClicked;
+signal SaveTrasnClicked;
 
 func toggle_tab_buttons(active_button_p):
 	var navigation_buttons = get_tree().get_nodes_in_group("NavigationButton");
@@ -24,3 +26,11 @@ func _on_ProfitTransButton_pressed():
 func _on_SoldPositionsTransButton_pressed():
 	toggle_tab_buttons("SoldPositionsTransButton");
 	emit_signal("SoldPositionsTransClicked");
+
+# Load Transactions Button Clicked
+func _on_LoadTransButton_pressed():
+	emit_signal("LoadTransClicked");
+
+# Save Transactions Button Clicked
+func _on_SaveTransButton_pressed():
+	emit_signal("SaveTrasnClicked");

@@ -14,9 +14,9 @@ func calcualte_total_coins(transacion_list_p):
 	for transaction_view in transaction_views:
 		var trans_data = transaction_view.trans_data;
 		if trans_data.is_credit_m:
-			coin_count += trans_data.number_of_coins_m;
+			coin_count += float(trans_data.number_of_coins_m);
 		else:
-			coin_count -= trans_data.number_of_coins_m;
+			coin_count -= float(trans_data.number_of_coins_m);
 	
 	return coin_count;
 
@@ -28,9 +28,9 @@ func calculate_total_price(transacion_list_p):
 	for transaction_view in transaction_views:
 		var trans_data = transaction_view.trans_data;
 		if trans_data.is_credit_m:
-			total_price += trans_data.amount_m;
+			total_price += float(trans_data.amount_m);
 		else:
-			total_price -= trans_data.amount_m;
+			total_price -= float(trans_data.amount_m);
 	
 	return total_price;
 
@@ -44,11 +44,11 @@ func calcualte_cost_average(transacion_list_p):
 	for transaction_view in transaction_views:
 		var trans_data = transaction_view.trans_data;
 		if trans_data.is_credit_m:
-			total_price += trans_data.amount_m;
-			coin_count += trans_data.number_of_coins_m;
+			total_price += float(trans_data.amount_m);
+			coin_count += float(trans_data.number_of_coins_m);
 		else:
-			total_price -= trans_data.amount_m;
-			coin_count -= trans_data.number_of_coins_m;
+			total_price -= float(trans_data.amount_m);
+			coin_count -= float(trans_data.number_of_coins_m);
 	if coin_count != 0:
 		cost_average = (total_price / coin_count);
 	
@@ -61,6 +61,6 @@ func calculate_total_gains(transacion_list_p):
 	var transaction_views = transacion_list_p.get_children();
 	for transaction_view in transaction_views:
 		var trans_data = transaction_view.trans_data;
-		total_gains += trans_data.total_gains_m;
+		total_gains += float(trans_data.total_gains_m);
 	
 	return total_gains;

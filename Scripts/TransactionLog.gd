@@ -37,6 +37,14 @@ func add_transaction(transaction_p):
 	# Add the transaction to the list.
 	temp_trans_view.set_tras_data(transaction_p);
 
+# Get all of the transactions.
+func get_transactions():
+	var temp_views = [];
+	var transaction_views = transaction_list.get_children();
+	for transaction_view in transaction_views:
+		temp_views.append(transaction_view);
+	return temp_views;
+
 # Get the list of selected transactions.
 func get_selected_transactions():
 	var temp_views = [];

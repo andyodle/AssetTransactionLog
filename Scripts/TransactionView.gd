@@ -24,16 +24,16 @@ func set_tras_data(transaction_p):
 	trans_data = transaction_p;
 	if transaction_p.date_m != null:
 		date_acquired.text = String(transaction_p.date_m);
-	number_of_coins.text = String("%10.9f" % transaction_p.number_of_coins_m);
-	exchange_price.text = String("$" + "%3.2f" % transaction_p.exchange_price_m);
+	number_of_coins.text = String("%10.9f" % float(transaction_p.number_of_coins_m));
+	exchange_price.text = String("$" + "%3.2f" % float(transaction_p.exchange_price_m));
 	if(transaction_p.is_credit_m == true):
-		credit_amount.text = String("$" + "%3.2f" % transaction_p.amount_m);
+		credit_amount.text = String("$" + "%3.2f" % float(transaction_p.amount_m));
 	else:
-		debit_amount.text = String("$" + "%3.2f" % transaction_p.amount_m);
+		debit_amount.text = String("$" + "%3.2f" % float(transaction_p.amount_m));
 
 # Get the number of coins for the current transaction.
 func get_number_of_coins():
-	return float(trans_data.number_of_coins_m);
+	return trans_data.number_of_coins_m;
 
 # Get the amount paid.
 func get_amount_paid():

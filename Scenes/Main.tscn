@@ -169,7 +169,9 @@ visible = false
 [node name="SellTransactionDialog" parent="." instance=ExtResource( 5 )]
 visible = false
 [connection signal="ActiveTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ActiveTransClicked"]
+[connection signal="LoadTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_LoadTransClicked"]
 [connection signal="ProfitTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ProfitTransClicked"]
+[connection signal="SaveTrasnClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SaveTrasnClicked"]
 [connection signal="SoldPositionsTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SoldPositionsTransClicked"]
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_AddTransactoinClick"]
 [connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_SellTransactionClick"]

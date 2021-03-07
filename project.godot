@@ -40,6 +40,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Utility="*res://Scripts/AutoLoad/Utility.gd"
+JsonManager="*res://Scripts/AutoLoad/JsonManager.gd"
 
 [display]
 

@@ -121,6 +121,13 @@ margin_top = 482.0
 margin_right = 280.0
 margin_bottom = 532.0
 mouse_filter = 1
+
+[node name="OkButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="0"]
+margin_right = 123.0
+
+[node name="CancelButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="1"]
+margin_left = 131.0
+margin_right = 254.0
 [connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]
 [connection signal="OkClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_OkClicked"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

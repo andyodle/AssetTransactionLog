@@ -83,3 +83,105 @@ func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
 	
 	# Step3: Remove previously selected active transactions.
 	active_transactions_view.remove_selected_transactions();
+
+# Save the transaction log data.
+func _on_SideNavigationRail_SaveTrasnClicked():
+	var temp_data : Dictionary = {};
+	temp_data["ActiveTransactions"] = {};
+	temp_data["ProfitTransactions"] = {};
+	temp_data["SoldTransactions"] = {};
+	
+	# Get all of the selected transactions.
+	var transaction_views = active_transactions_view.get_transactions();
+	if transaction_views.size() > 0:
+		for count in range(0, transaction_views.size()):
+			var transaction_view = transaction_views[count];
+			temp_data["ActiveTransactions"][String(count)] = {};
+			temp_data["ActiveTransactions"][String(count)]["date_m"] = transaction_view.trans_data.date_m;
+			temp_data["ActiveTransactions"][String(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
+			temp_data["ActiveTransactions"][String(count)]["exchange_price_m"] = transaction_view.trans_data.exchange_price_m;
+			temp_data["ActiveTransactions"][String(count)]["amount_m"] = transaction_view.trans_data.amount_m;
+			temp_data["ActiveTransactions"][String(count)]["is_credit_m"] = transaction_view.trans_data.is_credit_m;
+	
+	# Get all of the selected transactions.
+	transaction_views = profit_transactions_view.get_transactions();
+	if transaction_views.size() > 0:
+		for count in range(0, transaction_views.size()):
+			var transaction_view = transaction_views[count];
+			temp_data["ProfitTransactions"][String(count)] = {};
+			temp_data["ProfitTransactions"][String(count)]["date_m"] = transaction_view.trans_data.date_m;
+			temp_data["ProfitTransactions"][String(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
+			temp_data["ProfitTransactions"][String(count)]["exchange_price_m"] = transaction_view.trans_data.exchange_price_m;
+			temp_data["ProfitTransactions"][String(count)]["amount_m"] = transaction_view.trans_data.amount_m;
+			temp_data["ProfitTransactions"][String(count)]["is_credit_m"] = transaction_view.trans_data.is_credit_m;
+	
+	# Get all of the selected transactions.
+	transaction_views = sold_transactions_log_view.get_transactions();
+	if transaction_views.size() > 0:
+		for count in range(0, transaction_views.size()):
+			var transaction_view = transaction_views[count];
+			temp_data["SoldTransactions"][String(count)] = {};
+			temp_data["SoldTransactions"][String(count)]["date_m"] = transaction_view.trans_data.date_m;
+			temp_data["SoldTransactions"][String(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
+			temp_data["SoldTransactions"][String(count)]["exchange_paid_m"] = transaction_view.trans_data.exchange_paid_m;
+			temp_data["SoldTransactions"][String(count)]["total_paid_m"] = transaction_view.trans_data.total_paid_m;
+			temp_data["SoldTransactions"][String(count)]["exchange_sold_m"] = transaction_view.trans_data.exchange_sold_m;
+	
+	# Save out the transactions.
+	var test_file_path = "res://Tests/transactions.json";
+	JsonManager.save_json_file(test_file_path, temp_data);
+	
+	print("Saved Transactions!");
+
+# Create a new transaction record from json data.
+func create_transaction_record(trans_data_p):
+	var temp_class : Transaction;
+	temp_class = load("res://Scripts/Classes/Transaction.gd").new();
+	temp_class.date_m = trans_data_p["date_m"];
+	temp_class.number_of_coins_m = trans_data_p["number_of_coins_m"];
+	temp_class.exchange_price_m = trans_data_p["exchange_price_m"];
+	temp_class.amount_m = trans_data_p["amount_m"];
+	temp_class.is_credit_m = trans_data_p["is_credit_m"];
+	return temp_class;
+
+# Create a new sold transaction record from json data.
+func create_sold_transaction_record(sold_trans_data_p):
+	var temp_class = preload("res://Scripts/Classes/SoldTransaction.gd").new();
+	temp_class.initalize();
+	temp_class.bought_trans_m.date_m = sold_trans_data_p["date_m"];
+	temp_class.bought_trans_m.number_of_coins_m = sold_trans_data_p["number_of_coins_m"];
+	temp_class.bought_trans_m.exchange_price_m = sold_trans_data_p["exchange_paid_m"];
+	temp_class.bought_trans_m.amount_m = sold_trans_data_p["total_paid_m"];
+	temp_class.sold_trans_m.exchange_price_m = sold_trans_data_p["exchange_sold_m"];
+	return temp_class;
+
+# Load the transaction log data.
+func _on_SideNavigationRail_LoadTransClicked():
+	var test_file_path = "res://Tests/transactions.json";
+	var temp_data = JsonManager.load_json_file(test_file_path);
+	
+	# Active Transactions
+	active_transactions_view.reset_trasactoins();
+	var active_transactions = temp_data["ActiveTransactions"];
+	if active_transactions.size() > 0:
+		for count in range(0, active_transactions.size()):
+			var temp_trans = create_transaction_record(temp_data["ActiveTransactions"][String(count)]);
+			active_transactions_view.add_new_transaction(temp_trans);
+	
+	# Profit Transactions
+	profit_transactions_view.reset_trasactoins();
+	var profit_transactions = temp_data["ProfitTransactions"];
+	if profit_transactions.size() > 0:
+		for count in range(0, profit_transactions.size()):
+			var temp_trans = create_transaction_record(temp_data["ProfitTransactions"][String(count)]);
+			profit_transactions_view.add_new_transaction(temp_trans);
+	
+	# Sold Transactions
+	sold_transactions_log_view.reset_trasactoins();
+	var sold_transactions = temp_data["SoldTransactions"];
+	if sold_transactions.size() > 0:
+		for count in range(0, sold_transactions.size()):
+			var temp_trans = create_sold_transaction_record(temp_data["SoldTransactions"][String(count)]);
+			sold_transactions_log_view.add_new_transaction(temp_trans);
+	
+	print("Loaded Transactions!");

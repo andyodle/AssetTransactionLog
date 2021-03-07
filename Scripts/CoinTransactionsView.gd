@@ -16,6 +16,10 @@ func fade_in():
 	animation_player.play("FadeIn");
 	yield(animation_player,"animation_finished");
 
+# Reset the transaction list.
+func reset_trasactoins():
+	transaction_log.reset_trasactoins();
+
 # Add the new transactoin to the transaction log.
 func add_new_transaction(transaction_p):
 	# Step 2: Add the transaction to the transaction log.
@@ -23,6 +27,10 @@ func add_new_transaction(transaction_p):
 	
 	# Step 3: Recalulate the displayed totals.
 	transaction_log.calculate_toals();
+
+# Get all of the current transactions.
+func get_transactions():
+	return transaction_log.get_transactions();
 
 # Get the list of selected transactions.
 func get_selected_transactions():
@@ -38,17 +46,17 @@ func remove_selected_transactions():
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
 	if total_coins_data_panel != null:
-		total_coins_data_panel.set_data(String("%10.9f" % number_of_coins_p));
+		total_coins_data_panel.set_data(String("%10.9f" % float(number_of_coins_p)));
 
 # Total price was calcualted. Refresh your data.
 func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):
 	if total_amount_paid_data_panel != null:
-		total_amount_paid_data_panel.set_data(String("$" + "%3.2f" % amount_paid_p));
+		total_amount_paid_data_panel.set_data(String("$" + "%3.2f" % float(amount_paid_p)));
 
 # Cost average was calcualted. Refresh your data.
 func _on_TransactionLog_CalculateCostAverage(cost_average_p):
 	if cost_average_data_panel != null:
-		cost_average_data_panel.set_data(String("$" + "%3.2f" % cost_average_p));
+		cost_average_data_panel.set_data(String("$" + "%3.2f" % float(cost_average_p)));
 
 # Attempt to open the add transaction dialog.
 func _on_TransactionLog_AddTransactionClick():

@@ -25,7 +25,6 @@ func add_sell_transaction(transaction_p):
 	# Recalulate the displayed totals.
 	transaction_log.calculate_toals();
 
-
 # Check to see if the user entered valid data.
 # Return true if valid input else false.
 func verify_input():

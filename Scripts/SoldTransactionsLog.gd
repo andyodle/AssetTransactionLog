@@ -11,6 +11,14 @@ onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Tr
 
 var sold_transaction_view = preload("res://Scenes/Controls/SoldTransactionView.tscn");
 
+# Get all of the transactions.
+func get_transactions():
+	var temp_views = [];
+	var transaction_views = transaction_list.get_children();
+	for transaction_view in transaction_views:
+		temp_views.append(transaction_view);
+	return temp_views;
+
 # Clear added transactions.
 func reset_trasactoins():
 	for transaction in transaction_list.get_children():
