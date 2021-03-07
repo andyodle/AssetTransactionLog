@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/CoinTransactionsView.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/SellTransactionDialog.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Controls/AddTransaction.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/SoldTransactionLogView.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Controls/OpenFileDialog.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Controls/SaveFileDialog.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -168,6 +170,19 @@ visible = false
 
 [node name="SellTransactionDialog" parent="." instance=ExtResource( 5 )]
 visible = false
+
+[node name="OpenFileDialog" parent="." instance=ExtResource( 8 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -355.0
+margin_top = -218.0
+margin_right = 355.0
+margin_bottom = 218.0
+
+[node name="SaveFileDialog" parent="." instance=ExtResource( 9 )]
 [connection signal="ActiveTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ActiveTransClicked"]
 [connection signal="LoadTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_LoadTransClicked"]
 [connection signal="ProfitTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ProfitTransClicked"]
@@ -178,6 +193,8 @@ visible = false
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ProfitTransactionsView" to="." method="_on_ProfitTransactionsView_AddTransactoinClick"]
 [connection signal="AddNewTransaction" from="AddTransaction" to="." method="_on_AddTransaction_AddNewTransaction"]
 [connection signal="AddSellTransaction" from="SellTransactionDialog" to="." method="_on_SellTransactionDialog_AddSellTransaction"]
+[connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
+[connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
 
 [editable path="HBoxContainer/TabsContainer/ActiveTransactionsView"]
 
