@@ -1,0 +1,173 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Controls/DataPanel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/CoinTransactionsView.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Controls/TabTitle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TransactionLog.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="CoinTransactionsView" type="Control" groups=[
+"Tab",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -72.0
+rect_min_size = Vector2( 952, 600 )
+rect_clip_content = true
+mouse_filter = 1
+size_flags_horizontal = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 952, 600 )
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabTitle" parent="VBoxContainer" instance=ExtResource( 3 )]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 952.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 950, 96 )
+
+[node name="BlankSpace" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 4, 0 )
+
+[node name="TotalCoins" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_right = 241.0
+margin_bottom = 96.0
+
+[node name="ColorRect" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="0"]
+margin_right = 225.0
+margin_bottom = 88.0
+
+[node name="CenterContainer" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="1"]
+margin_right = 225.0
+margin_bottom = 88.0
+
+[node name="VBoxContainer" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
+margin_left = 62.0
+margin_top = 12.0
+margin_right = 154.0
+margin_bottom = 68.0
+
+[node name="Title" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 92.0
+text = "Total Coins"
+
+[node name="HBoxContainer" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 92.0
+
+[node name="TotalAmountPaid" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 245.0
+margin_right = 478.0
+margin_bottom = 96.0
+
+[node name="ColorRect" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="0"]
+margin_right = 225.0
+margin_bottom = 88.0
+
+[node name="CenterContainer" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="1"]
+margin_right = 225.0
+margin_bottom = 88.0
+
+[node name="VBoxContainer" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer" index="0"]
+margin_left = 67.0
+margin_top = 12.0
+margin_right = 149.0
+margin_bottom = 68.0
+
+[node name="Title" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 82.0
+text = "Total Paid"
+
+[node name="HBoxContainer" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 82.0
+
+[node name="CostAverage" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 482.0
+margin_right = 715.0
+margin_bottom = 96.0
+
+[node name="ColorRect" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="0"]
+margin_right = 225.0
+margin_bottom = 88.0
+
+[node name="CenterContainer" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="1"]
+margin_right = 225.0
+margin_bottom = 88.0
+
+[node name="VBoxContainer" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer" index="0"]
+margin_left = 52.0
+margin_top = 12.0
+margin_right = 164.0
+margin_bottom = 68.0
+
+[node name="Title" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 112.0
+text = "Cost Average"
+
+[node name="HBoxContainer" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 112.0
+
+[node name="DataPanel4" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 719.0
+margin_right = 952.0
+margin_bottom = 96.0
+
+[node name="TransactionLog" parent="VBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 168.0
+margin_right = 952.0
+margin_bottom = 600.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 1 )
+[connection signal="AddTransactionClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_AddTransactionClick"]
+[connection signal="CalcualteSellClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteSellClick"]
+[connection signal="CalcualteTotalPrice" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteTotalPrice"]
+[connection signal="CalculateCostAverage" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculateCostAverage"]
+[connection signal="CalculatedNumberOfCoins" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculatedNumberOfCoins"]
+
+[editable path="VBoxContainer/TabTitle"]
+
+[editable path="VBoxContainer/HBoxContainer/TotalCoins"]
+
+[editable path="VBoxContainer/HBoxContainer/TotalAmountPaid"]
+
+[editable path="VBoxContainer/HBoxContainer/CostAverage"]
