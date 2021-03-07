@@ -3,7 +3,8 @@ extends Control
 onready var active_transactions_view = $HBoxContainer/TabsContainer/ActiveTransactionsView;
 onready var profit_transactions_view = $HBoxContainer/TabsContainer/ProfitTransactionsView;
 onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/SoldTransactionLogView;
-onready var add_trans_dialog = $AddTransaction;
+onready var add_active_trans_dialog = $AddActiveTransaction;
+onready var add_profit_trans_dialog = $AddProfitTransaction;
 onready var sell_trans_dialog = $SellTransactionDialog;
 onready var open_file_dialog = $OpenFileDialog;
 onready var safe_file_dialog = $SaveFileDialog;
@@ -21,15 +22,15 @@ func hide_tabs():
 	for trans_tab_view in trans_tab_views:
 		trans_tab_view.visible = false;
 
-# Add a new transaction.
+# Add a new active transaction.
 func _on_AddTransaction_AddNewTransaction(transaction_p):
 	# Add to the active transaction log.
-	if active_transactions_view.visible:
-		active_transactions_view.add_new_transaction(transaction_p);
-	
+	active_transactions_view.add_new_transaction(transaction_p);
+
+# User wants to add a profit transaction.
+func _on_AddProfitTransaction_AddNewTransaction(transaction_p):
 	# Add to the profit transaction log.
-	if profit_transactions_view.visible:
-		profit_transactions_view.add_new_transaction(transaction_p);
+	profit_transactions_view.add_new_transaction(transaction_p);
 
 # Show the active trans tab.
 func _on_SideNavigationRail_ActiveTransClicked():
@@ -52,12 +53,12 @@ func _on_SideNavigationRail_SoldPositionsTransClicked():
 # Add a active transaction.
 func _on_ActiveTransactionsView_AddTransactoinClick():
 	# Step 1: Show the add transaction dialog.
-	add_trans_dialog.fade_in();
+	add_active_trans_dialog.fade_in();
 
 # Add a profit transaction.
 func _on_ProfitTransactionsView_AddTransactoinClick():
 	# Step 1: Show the add transaction dialog.
-	add_trans_dialog.fade_in();
+	add_profit_trans_dialog.fade_in();
 
 # Calulate the sell transaction.
 func _on_ActiveTransactionsView_SellTransactionClick():

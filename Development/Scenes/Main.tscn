@@ -150,10 +150,8 @@ margin_bottom = 416.0
 [node name="VBoxContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer" index="1"]
 margin_bottom = 416.0
 
-[node name="AddTransactonButton" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="0"]
-visible = false
-
 [node name="CalculateSellButton" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="1"]
+visible = false
 margin_left = 0.0
 
 [node name="ScrollContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
@@ -165,7 +163,10 @@ margin_bottom = 272.0
 [node name="SoldTransactionLogView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 7 )]
 visible = false
 
-[node name="AddTransaction" parent="." instance=ExtResource( 6 )]
+[node name="AddActiveTransaction" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="AddProfitTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
 
 [node name="SellTransactionDialog" parent="." instance=ExtResource( 5 )]
@@ -191,7 +192,8 @@ margin_bottom = 218.0
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_AddTransactoinClick"]
 [connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_SellTransactionClick"]
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ProfitTransactionsView" to="." method="_on_ProfitTransactionsView_AddTransactoinClick"]
-[connection signal="AddNewTransaction" from="AddTransaction" to="." method="_on_AddTransaction_AddNewTransaction"]
+[connection signal="AddNewTransaction" from="AddActiveTransaction" to="." method="_on_AddTransaction_AddNewTransaction"]
+[connection signal="AddNewTransaction" from="AddProfitTransaction" to="." method="_on_AddProfitTransaction_AddNewTransaction"]
 [connection signal="AddSellTransaction" from="SellTransactionDialog" to="." method="_on_SellTransactionDialog_AddSellTransaction"]
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
