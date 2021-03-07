@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/SaveFileDialog.gd" type="Script" id=1]
+
+[node name="SaveFileDialog" type="FileDialog"]
+margin_right = 307.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 720, 436 )
+access = 2
+current_dir = "/home/isrelo/Andy/TransRegister-BTC/Development"
+current_path = "/home/isrelo/Andy/TransRegister-BTC/Development/"
+script = ExtResource( 1 )

@@ -5,6 +5,8 @@ onready var profit_transactions_view = $HBoxContainer/TabsContainer/ProfitTransa
 onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/SoldTransactionLogView;
 onready var add_trans_dialog = $AddTransaction;
 onready var sell_trans_dialog = $SellTransactionDialog;
+onready var open_file_dialog = $OpenFileDialog;
+onready var safe_file_dialog = $SaveFileDialog;
 
 func _ready():
 	# Show the active tab by default.
@@ -84,8 +86,8 @@ func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
 	# Step3: Remove previously selected active transactions.
 	active_transactions_view.remove_selected_transactions();
 
-# Save the transaction log data.
-func _on_SideNavigationRail_SaveTrasnClicked():
+# Helper function to save the users entered transactions.
+func save_transactions(file_path_p):
 	var temp_data : Dictionary = {};
 	temp_data["ActiveTransactions"] = {};
 	temp_data["ProfitTransactions"] = {};
@@ -128,10 +130,13 @@ func _on_SideNavigationRail_SaveTrasnClicked():
 			temp_data["SoldTransactions"][String(count)]["exchange_sold_m"] = transaction_view.trans_data.exchange_sold_m;
 	
 	# Save out the transactions.
-	var test_file_path = "res://Tests/transactions.json";
-	JsonManager.save_json_file(test_file_path, temp_data);
+	JsonManager.save_json_file(file_path_p, temp_data);
 	
 	print("Saved Transactions!");
+
+# Save the transaction log data.
+func _on_SideNavigationRail_SaveTrasnClicked():
+	safe_file_dialog.popup();
 
 # Create a new transaction record from json data.
 func create_transaction_record(trans_data_p):
@@ -155,10 +160,9 @@ func create_sold_transaction_record(sold_trans_data_p):
 	temp_class.sold_trans_m.exchange_price_m = sold_trans_data_p["exchange_sold_m"];
 	return temp_class;
 
-# Load the transaction log data.
-func _on_SideNavigationRail_LoadTransClicked():
-	var test_file_path = "res://Tests/transactions.json";
-	var temp_data = JsonManager.load_json_file(test_file_path);
+# Helper function to load a chosen file.
+func load_transactions(file_path_p):
+	var temp_data = JsonManager.load_json_file(file_path_p);
 	
 	# Active Transactions
 	active_transactions_view.reset_trasactoins();
@@ -185,3 +189,16 @@ func _on_SideNavigationRail_LoadTransClicked():
 			sold_transactions_log_view.add_new_transaction(temp_trans);
 	
 	print("Loaded Transactions!");
+
+# Load the transaction log data.
+func _on_SideNavigationRail_LoadTransClicked():
+	# Prompt the user to open a file.
+	open_file_dialog.popup();
+
+# User selected a file to load from the OpenFileDialog.
+func _on_OpenFileDialog_file_selected(path_p):
+	load_transactions(path_p);
+
+# User selected a file to save from the SaveFileDialog.
+func _on_SaveFileDialog_file_selected(path_p):
+	save_transactions(path_p);
