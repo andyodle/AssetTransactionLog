@@ -61,48 +61,51 @@ custom_constants/separation = 32
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
 margin_right = 280.0
-margin_bottom = 49.0
+margin_bottom = 90.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
+margin_top = 26.0
 margin_right = 272.0
+margin_bottom = 59.0
 
 [node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
-margin_top = 81.0
+margin_top = 122.0
 margin_right = 280.0
-margin_bottom = 129.0
+margin_bottom = 170.0
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins" index="6"]
 custom_fonts/font = SubResource( 1 )
 text = "Number of Coins"
 
 [node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2" instance=ExtResource( 3 )]
-margin_top = 161.0
+margin_top = 202.0
 margin_right = 280.0
-margin_bottom = 209.0
+margin_bottom = 250.0
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ExchangePrice" index="6"]
 custom_fonts/font = SubResource( 2 )
 text = "Exchange Price"
 
 [node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 3 )]
-margin_top = 241.0
+margin_top = 282.0
 margin_right = 280.0
-margin_bottom = 289.0
+margin_bottom = 330.0
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount" index="6"]
 custom_fonts/font = SubResource( 3 )
 text = "Transaction Amount"
 
 [node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4" instance=ExtResource( 3 )]
-margin_top = 321.0
+margin_top = 362.0
 margin_right = 280.0
-margin_bottom = 369.0
+margin_bottom = 410.0
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate" index="6"]
 custom_fonts/font = SubResource( 4 )
 text = "Date"
 
 [node name="CreditOrDebit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="5" instance=ExtResource( 5 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 401.0
@@ -117,7 +120,7 @@ margin_bottom = 49.0
 text = "Deposit"
 
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="6"]
-margin_top = 482.0
+margin_top = 442.0
 margin_right = 280.0
 margin_bottom = 532.0
 mouse_filter = 1
