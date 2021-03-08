@@ -40,7 +40,7 @@ func update_label_color():
 		percent_label.modulate = white_color;
 
 func set_data(data_p):
-	data_label.text = String(data_p);
+	data_label.text = data_p;
 	update_label_color();
 
 func get_data():
