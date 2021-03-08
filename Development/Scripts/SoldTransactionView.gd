@@ -32,7 +32,7 @@ func set_tras_data(sold_transaction_p):
 	if trans_data.date_m != null:
 		date_sold.text = String(trans_data.date_m);
 	# Number of Coins
-	number_of_coins.text = String("%10.9f" % float(trans_data.number_of_coins_m));
+	number_of_coins.text = String("%11.9f" % float(trans_data.number_of_coins_m));
 	# Exchange Paid
 	exchange_paid.text = String("$" + "%3.2f" % float(trans_data.exchange_paid_m));
 	# Total Paid

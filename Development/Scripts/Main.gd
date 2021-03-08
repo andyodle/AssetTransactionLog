@@ -177,7 +177,7 @@ func load_transactions(file_path_p):
 	profit_transactions_view.reset_trasactoins();
 	var profit_transactions = temp_data["ProfitTransactions"];
 	if profit_transactions.size() > 0:
-		for count in range(profit_transactions.size(), 0 -1):
+		for count in range(profit_transactions.size(), 0, -1):
 			var temp_trans = create_transaction_record(temp_data["ProfitTransactions"][String(count - 1)]);
 			profit_transactions_view.add_new_transaction(temp_trans);
 	
