@@ -41,10 +41,9 @@ func calcualte_cost_average(transacion_list_p):
 	for transaction_view in transaction_views:
 		var trans_data = transaction_view.trans_data;
 		total_price = calculator.add(total_price, trans_data.amount_m);
-		coin_count = calculator.add(coin_count, trans_data.exchange_price_m);
+		coin_count = calculator.add(coin_count, trans_data.number_of_coins_m);
 	if float(coin_count) != 0:
 		cost_average = calculator.divide(total_price, coin_count);
-	
 	return cost_average;
 
 # Calcualte the total gains
