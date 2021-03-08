@@ -24,7 +24,7 @@ func set_tras_data(transaction_p):
 	trans_data = transaction_p;
 	if transaction_p.date_m != null:
 		date_acquired.text = String(transaction_p.date_m);
-	number_of_coins.text = String("%10.9f" % float(transaction_p.number_of_coins_m));
+	number_of_coins.text = String("%11.9f" % float(transaction_p.number_of_coins_m));
 	exchange_price.text = String("$" + "%3.2f" % float(transaction_p.exchange_price_m));
 	if(transaction_p.is_credit_m == true):
 		credit_amount.text = String("$" + "%3.2f" % float(transaction_p.amount_m));

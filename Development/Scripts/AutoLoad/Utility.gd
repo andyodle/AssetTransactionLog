@@ -8,15 +8,16 @@ func get_current_date_str():
 
 # Calcualte the total number of coins acquired.
 func calcualte_total_coins(transacion_list_p):
+	var calculator = Calculator.new();
 	# Get all of the coin transactions.
-	var coin_count : float = 0.0;
+	var coin_count : String = "0.0";
 	var transaction_views = transacion_list_p.get_children();
 	for transaction_view in transaction_views:
 		var trans_data = transaction_view.trans_data;
-		if trans_data.is_credit_m:
-			coin_count += float(trans_data.number_of_coins_m);
-		else:
-			coin_count -= float(trans_data.number_of_coins_m);
+#		if trans_data.is_credit_m:
+		coin_count = calculator.add(coin_count, trans_data.number_of_coins_m);
+#		else:
+#			coin_count = calculator.subtract(coin_count, trans_data.number_of_coins_m);
 	
 	return coin_count;
 

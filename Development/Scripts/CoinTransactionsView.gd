@@ -46,7 +46,7 @@ func remove_selected_transactions():
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
 	if total_coins_data_panel != null:
-		total_coins_data_panel.set_data(String("%10.9f" % float(number_of_coins_p)));
+		total_coins_data_panel.set_data(String("%11.9f" % float(number_of_coins_p)));
 
 # Total price was calcualted. Refresh your data.
 func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):
