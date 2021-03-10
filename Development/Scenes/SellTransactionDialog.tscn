@@ -201,12 +201,12 @@ custom_constants/margin_left = 8
 
 [node name="BackgroundColor" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="0"]
 margin_left = 8.0
-margin_right = 904.0
+margin_right = 928.0
 margin_bottom = 248.0
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="1"]
 margin_left = 8.0
-margin_right = 904.0
+margin_right = 928.0
 margin_bottom = 248.0
 
 [node name="ActionButtonContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="0"]
@@ -214,17 +214,17 @@ visible = false
 
 [node name="TransactionColumns" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="1"]
 margin_top = 0.0
-margin_right = 896.0
 margin_bottom = 56.0
 
 [node name="ScrollContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
 margin_top = 60.0
-margin_right = 896.0
 margin_bottom = 240.0
 
 [node name="Trasactions" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
-margin_right = 896.0
 margin_bottom = 180.0
+
+[node name="BaseActionButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="1"]
+visible = false
 
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4"]
 margin_top = 481.0

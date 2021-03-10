@@ -150,9 +150,8 @@ margin_bottom = 416.0
 [node name="VBoxContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer" index="1"]
 margin_bottom = 416.0
 
-[node name="CalculateSellButton" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="1"]
+[node name="CalculateSellButton" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="0"]
 visible = false
-margin_left = 0.0
 
 [node name="ScrollContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
 margin_bottom = 408.0
@@ -166,8 +165,14 @@ visible = false
 [node name="AddActiveTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
 
+[node name="Title" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
+text = "Add Active Transaction"
+
 [node name="AddProfitTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
+
+[node name="Title" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
+text = "Add Profit Transaction"
 
 [node name="SellTransactionDialog" parent="." instance=ExtResource( 5 )]
 visible = false
@@ -192,7 +197,7 @@ margin_bottom = 218.0
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_AddTransactoinClick"]
 [connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_SellTransactionClick"]
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ProfitTransactionsView" to="." method="_on_ProfitTransactionsView_AddTransactoinClick"]
-[connection signal="AddNewTransaction" from="AddActiveTransaction" to="." method="_on_AddTransaction_AddNewTransaction"]
+[connection signal="AddNewTransaction" from="AddActiveTransaction" to="." method="_on_AddActiveTransaction_AddNewTransaction"]
 [connection signal="AddNewTransaction" from="AddProfitTransaction" to="." method="_on_AddProfitTransaction_AddNewTransaction"]
 [connection signal="AddSellTransaction" from="SellTransactionDialog" to="." method="_on_SellTransactionDialog_AddSellTransaction"]
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
@@ -221,3 +226,15 @@ margin_bottom = 218.0
 [editable path="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog"]
 
 [editable path="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer"]
+
+[editable path="AddActiveTransaction"]
+
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer"]
+
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
+
+[editable path="AddProfitTransaction"]
+
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer"]
+
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]

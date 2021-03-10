@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Theme/Pressed-NavigationButton.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Theme/Hover-NavigationButton.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Theme/Normal-NavigationButton.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/Icons/Add.png" type="Texture" id=4]
+
+[node name="BaseActionButton" type="Button"]
+margin_right = 56.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 56, 56 )
+focus_mode = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 56, 56 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

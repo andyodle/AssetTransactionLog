@@ -1,8 +1,5 @@
 extends Control
 
-signal AddTransactoinClick;
-signal SellTransactionClick;
-
 onready var total_gains_data_panel = $VBoxContainer/HBoxContainer/TotalGains;
 onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
 onready var cost_average_data_panel = $VBoxContainer/HBoxContainer/CostAverage;
@@ -59,11 +56,3 @@ func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):
 func _on_TransactionLog_CalculateCostAverage(cost_average_p):
 	if cost_average_data_panel != null:
 		cost_average_data_panel.set_data(String("$" + "%3.2f" % float(cost_average_p)));
-
-# Attempt to open the add transaction dialog.
-func _on_TransactionLog_AddTransactionClick():
-	emit_signal("AddTransactoinClick");
-
-# User wants to calcualte a sell.
-func _on_TransactionLog_CalcualteSellClick():
-	emit_signal("SellTransactionClick");
