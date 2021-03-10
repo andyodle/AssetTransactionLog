@@ -60,10 +60,6 @@ func remove_selected_transactions():
 		if transaction.is_selected():
 			transaction_list.remove_child(transaction);
 
-# User wants to add a new transaction.
-func _on_ActionButtonContainer_AddTransClicked():
-	emit_signal("AddTransactionClick");
-
 # User wants to calcualte a sell.
 func _on_ActionButtonContainer_CalcualteSellClicked():
 	emit_signal("CalcualteSellClick");
@@ -75,3 +71,7 @@ func _on_ActionButtonContainer_DeleteClicked():
 	
 	# Recalculate the data panels.
 	calculate_toals();
+
+# User wants to add a new transaction.
+func _on_BaseActionButton_pressed():
+	emit_signal("AddTransactionClick");

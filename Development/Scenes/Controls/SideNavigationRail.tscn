@@ -62,10 +62,15 @@ toggle_mode = true
 [node name="TextureRect" parent="VBoxContainer/ProfitTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 3 )
 
+[node name="CenterContainer2" parent="VBoxContainer/ProfitTransButton/VBoxContainer" index="2"]
+margin_bottom = 83.0
+
 [node name="Label" parent="VBoxContainer/ProfitTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 1.0
+margin_left = 2.0
 margin_right = 70.0
-text = "Active Profits"
+margin_bottom = 37.0
+text = "Profit
+Transactions"
 
 [node name="SoldPositionsTransButton" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 172.0

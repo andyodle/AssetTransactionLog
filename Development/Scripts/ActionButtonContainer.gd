@@ -1,17 +1,17 @@
 extends Control
 
-signal AddTransClicked;
 signal CalcualteSellClicked;
 signal DeleteClicked;
-
-# Add transaction clicked.
-func _on_AddTransactonButton_ButtonClicked():
-	emit_signal("AddTransClicked");
+signal EditClicked;
 
 # Calcualte sell clicked.
 func _on_CalculateSellButton_ButtonClicked():
 	emit_signal("CalcualteSellClicked");
 
-# Delete clicked.
+# Delete Clicked
 func _on_BaseIconButton_pressed():
 	emit_signal("DeleteClicked");
+
+# Edit Clicked
+func _on_EditButton_pressed():
+	emit_signal("EditClicked");
