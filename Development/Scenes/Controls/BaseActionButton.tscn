@@ -10,7 +10,6 @@ margin_right = 56.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 56, 56 )
 focus_mode = 0
-size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 1 )
@@ -26,7 +25,7 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 56, 56 )
 texture = ExtResource( 4 )
 expand = true
-stretch_mode = 1
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }

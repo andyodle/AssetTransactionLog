@@ -23,7 +23,7 @@ func hide_tabs():
 		trans_tab_view.visible = false;
 
 # Add a new active transaction.
-func _on_AddTransaction_AddNewTransaction(transaction_p):
+func _on_AddActiveTransaction_AddNewTransaction(transaction_p):
 	# Add to the active transaction log.
 	active_transactions_view.add_new_transaction(transaction_p);
 
