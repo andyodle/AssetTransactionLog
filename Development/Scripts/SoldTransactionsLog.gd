@@ -1,12 +1,11 @@
 extends Control
 
-signal AddTransactionClick;
-signal CalcualteSellClick;
 signal CalculatedTotalGains;
 signal CalculatedNumberOfCoins;
 signal CalcualtedTotalPrice;
 signal CalculatedCostAverage;
 
+onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
 onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Trasactions;
 
 var sold_transaction_view = preload("res://Scenes/Controls/SoldTransactionView.tscn");
@@ -49,22 +48,45 @@ func add_transaction(sold_transaction_p):
 	transaction_list.add_child(temp_sold_trans_view);
 	transaction_list.move_child(temp_sold_trans_view, 0);
 	
+	# Connect the transaction to the selected event.
+	temp_sold_trans_view.connect("SoldSelectedTransaction", self, "sold_transaction_selected");
+	
 	# Add the transaction to the list.
 	temp_sold_trans_view.set_tras_data(sold_transaction_p);
 
-# User wants to add a new transaction.
-func _on_ActionButtonContainer_AddTransClicked():
-	emit_signal("AddTransactionClick");
+# User selected a transaction.
+func sold_transaction_selected(pressed_p):
+	if pressed_p:
+		show_selection_controls();
+	else:
+		hide_selection_controls();
 
-# User wants to calcualte a sell.
-func _on_ActionButtonContainer_CalcualteSellClicked():
-	emit_signal("CalcualteSellClick");
+func show_selection_controls():
+	# Show the edit and delete buttons.
+	action_button_container.visible = true;
 
+func hide_selection_controls():
+	# Check to see if any transactions are still selected.
+	if get_selected_transactions().size() == 0:
+		# Hide the edit and delete buttons.
+		action_button_container.visible = false;
+
+# Get the list of selected transactions.
+func get_selected_transactions():
+	var temp_views = [];
+	var transaction_views = transaction_list.get_children();
+	for transaction_view in transaction_views:
+		if transaction_view.is_selected():
+			temp_views.append(transaction_view);
+	return temp_views;
 
 # User wants to delete selected items.
 func _on_ActionButtonContainer_DeleteClicked():
 	# Remove the selected items.
 	remove_selected_transactions();
+	
+	# Attempt to hide the selection controls.
+	hide_selection_controls();
 	
 	# Recalculate the data panels.
 	calculate_toals();

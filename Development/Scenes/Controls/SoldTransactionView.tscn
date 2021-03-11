@@ -141,3 +141,4 @@ text = "100.03%"
 align = 1
 valign = 1
 autowrap = true
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans" to="." method="_on_SelectedTrans_toggled"]

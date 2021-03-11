@@ -1,5 +1,7 @@
 extends Control
 
+signal SelectedTransaction;
+
 onready var date_acquired = $CenterContainer/VBoxContainer/HBoxContainer/DateAcquired;
 onready var number_of_coins = $CenterContainer/VBoxContainer/HBoxContainer/NumberOfCoins;
 onready var exchange_price = $CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice;
@@ -46,3 +48,7 @@ func is_selected():
 # Get weither the transaction is a credit or debit.
 func is_credit_trans():
 	return trans_data.is_credit_m;
+
+# Selected the individual transaction.
+func _on_SelectedTrans_toggled(button_pressed_p):
+	emit_signal("SelectedTransaction", button_pressed_p);

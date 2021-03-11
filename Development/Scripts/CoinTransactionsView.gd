@@ -23,7 +23,7 @@ func reset_trasactoins():
 # Add the new transactoin to the transaction log.
 func add_new_transaction(transaction_p):
 	# Step 2: Add the transaction to the transaction log.
-	transaction_log.add_transaction(transaction_p);
+	transaction_log.add_transaction(transaction_p, false);
 	
 	# Step 3: Recalulate the displayed totals.
 	transaction_log.calculate_toals();
@@ -62,6 +62,6 @@ func _on_TransactionLog_CalculateCostAverage(cost_average_p):
 func _on_TransactionLog_AddTransactionClick():
 	emit_signal("AddTransactoinClick");
 
-# User wants to calcualte a sell.
-func _on_TransactionLog_CalcualteSellClick():
+# User wants to sell transactions.
+func _on_TransactionLog_SellTransactoinClick():
 	emit_signal("SellTransactionClick");

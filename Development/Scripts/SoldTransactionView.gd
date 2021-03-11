@@ -1,5 +1,7 @@
 extends Control
 
+signal SoldSelectedTransaction;
+
 onready var selected_trans = $CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans;
 onready var date_sold = $CenterContainer/VBoxContainer/HBoxContainer/DateSold;
 onready var number_of_coins = $CenterContainer/VBoxContainer/HBoxContainer/NumberOfCoins;
@@ -49,3 +51,7 @@ func set_tras_data(sold_transaction_p):
 # Flag to check if a row was selected.
 func is_selected():
 	return selected_trans.pressed;
+
+# Selected the individual transaction.
+func _on_SelectedTrans_toggled(button_pressed_p):
+	emit_signal("SoldSelectedTransaction", button_pressed_p);

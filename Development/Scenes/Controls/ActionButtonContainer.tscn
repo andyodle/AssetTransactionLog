@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Controls/BaseButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/ActionButtonContainer.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Controls/BaseIconButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Icons/Edit.png" type="Texture" id=4]
@@ -43,12 +42,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CalculateSellButton" parent="MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 800.0
-margin_bottom = 40.0
-
 [node name="EditButton" parent="MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 804.0
 margin_right = 844.0
@@ -59,11 +52,8 @@ texture = ExtResource( 4 )
 [node name="DeleteButton" parent="MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 848.0
 margin_right = 888.0
-[connection signal="ButtonClicked" from="MarginContainer/HBoxContainer/CalculateSellButton" to="." method="_on_CalculateSellButton_ButtonClicked"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/EditButton" to="." method="_on_EditButton_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/DeleteButton" to="." method="_on_BaseIconButton_pressed"]
-
-[editable path="MarginContainer/HBoxContainer/CalculateSellButton"]
 
 [editable path="MarginContainer/HBoxContainer/EditButton"]
 
