@@ -117,3 +117,12 @@ func _on_BaseActionButton_pressed():
 # User wants to sell a transaction.
 func _on_SellActionButton_pressed():
 	emit_signal("SellTransactoinClick");
+
+# User wants to select all of the transactions.
+func _on_TransactionColumns_SelectAll(pressed_p):
+	for transaction in transaction_list.get_children():
+		if pressed_p:
+			transaction.selected_trans.pressed = true;
+		else:
+			transaction.selected_trans.pressed = false;
+
