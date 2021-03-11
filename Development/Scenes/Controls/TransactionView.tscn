@@ -99,3 +99,4 @@ rect_min_size = Vector2( 122, 52 )
 custom_colors/font_color = Color( 0.913725, 0.129412, 0.152941, 1 )
 text = "$75"
 valign = 1
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans" to="." method="_on_SelectedTrans_toggled"]

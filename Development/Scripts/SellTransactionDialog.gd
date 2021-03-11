@@ -20,7 +20,7 @@ func reset_dialog():
 
 # Add selected transactions to the sell log.
 func add_sell_transaction(transaction_p):
-	transaction_log.add_transaction(transaction_p);
+	transaction_log.add_transaction(transaction_p, true);
 	
 	# Recalulate the displayed totals.
 	transaction_log.calculate_toals();

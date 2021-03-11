@@ -212,16 +212,37 @@ margin_left = 8.0
 margin_right = 904.0
 margin_bottom = 248.0
 
-[node name="ActionButtonContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="0"]
+[node name="TransactionColumns" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="1"]
+margin_right = 896.0
+
+[node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer" index="0"]
+margin_left = 123.0
+margin_right = 773.0
+
+[node name="BlankSpace" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="0"]
 visible = false
 
-[node name="TransactionColumns" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="1"]
-margin_top = 0.0
-margin_right = 896.0
-margin_bottom = 56.0
+[node name="DateAcquired" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="1"]
+margin_left = 0.0
+margin_right = 123.0
+
+[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="2"]
+margin_left = 127.0
+margin_right = 266.0
+
+[node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="3"]
+margin_left = 270.0
+margin_right = 397.0
+
+[node name="CreditAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="4"]
+margin_left = 401.0
+margin_right = 524.0
+
+[node name="DebitAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="5"]
+margin_left = 528.0
+margin_right = 650.0
 
 [node name="ScrollContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
-margin_top = 60.0
 margin_right = 896.0
 margin_bottom = 240.0
 
@@ -229,7 +250,7 @@ margin_bottom = 240.0
 margin_right = 896.0
 margin_bottom = 180.0
 
-[node name="BaseActionButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="1"]
+[node name="AddActionButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="1"]
 visible = false
 
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4"]
@@ -266,5 +287,7 @@ margin_right = 254.0
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit"]
 
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns"]
 
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]

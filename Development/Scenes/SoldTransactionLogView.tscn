@@ -158,6 +158,18 @@ margin_top = 168.0
 margin_right = 952.0
 margin_bottom = 600.0
 
+[node name="BackgroundColor" parent="VBoxContainer/SoldTransactionsLog/MarginContainer" index="0"]
+margin_bottom = 416.0
+
+[node name="VBoxContainer" parent="VBoxContainer/SoldTransactionsLog/MarginContainer" index="1"]
+margin_bottom = 416.0
+
+[node name="ScrollContainer" parent="VBoxContainer/SoldTransactionsLog/MarginContainer/VBoxContainer" index="2"]
+margin_bottom = 408.0
+
+[node name="Trasactions" parent="VBoxContainer/SoldTransactionsLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
+margin_bottom = 348.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )
 [connection signal="CalculatedTotalGains" from="VBoxContainer/SoldTransactionsLog" to="." method="_on_SoldTransactionsLog_CalculatedTotalGains"]
@@ -169,3 +181,5 @@ anims/FadeIn = SubResource( 1 )
 [editable path="VBoxContainer/HBoxContainer/TotalAmountPaid"]
 
 [editable path="VBoxContainer/HBoxContainer/CostAverage"]
+
+[editable path="VBoxContainer/SoldTransactionsLog"]
