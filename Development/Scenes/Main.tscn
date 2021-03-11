@@ -145,18 +145,16 @@ text = "$0.00"
 visible = false
 
 [node name="BackgroundColor" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer" index="0"]
-margin_right = 935.0
 margin_bottom = 416.0
 
 [node name="VBoxContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer" index="1"]
-margin_right = 935.0
 margin_bottom = 416.0
 
 [node name="ScrollContainer" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
 margin_bottom = 408.0
 
 [node name="Trasactions" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
-margin_bottom = 348.0
+margin_bottom = 304.0
 
 [node name="SoldTransactionLogView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 7 )]
 visible = false

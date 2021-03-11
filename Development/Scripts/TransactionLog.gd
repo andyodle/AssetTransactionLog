@@ -13,6 +13,10 @@ onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Tr
 
 var transaction_view = preload("res://Scenes/Controls/TransactionView.tscn");
 
+func _ready():
+	# Hide the action buttons.
+	action_button_container.show_buttons(false);
+
 # Clear added transactions.
 func reset_trasactoins():
 	for transaction in transaction_list.get_children():
@@ -59,7 +63,7 @@ func show_selection_controls():
 	add_action_button.visible = false;
 	
 	# Show the edit and delete buttons.
-	action_button_container.visible = true;
+	action_button_container.show_buttons(true);
 	
 	# Show the sell transactoin button.
 	sell_action_button.visible = true;
@@ -71,7 +75,7 @@ func hide_selection_controls():
 		sell_action_button.visible = false;
 		
 		# Hide the edit and delete buttons.
-		action_button_container.visible = false;
+		action_button_container.show_buttons(false);
 		
 		# Show the add transaction button.
 		add_action_button.visible = true;
