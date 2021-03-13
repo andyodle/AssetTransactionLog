@@ -1,7 +1,7 @@
 extends Control
 
 onready var active_transactions_view = $HBoxContainer/TabsContainer/ActiveTransactionsView;
-onready var profit_transactions_view = $HBoxContainer/TabsContainer/ProfitTransactionsView;
+onready var profit_transactions_view = $HBoxContainer/TabsContainer/ProfitTransactionsTab;
 onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/SoldTransactionLogView;
 onready var add_active_trans_dialog = $AddActiveTransaction;
 onready var add_profit_trans_dialog = $AddProfitTransaction;
@@ -55,11 +55,6 @@ func _on_ActiveTransactionsView_AddTransactoinClick():
 	# Step 1: Show the add transaction dialog.
 	add_active_trans_dialog.fade_in();
 
-# Add a profit transaction.
-func _on_ProfitTransactionsView_AddTransactoinClick():
-	# Step 1: Show the add transaction dialog.
-	add_profit_trans_dialog.fade_in();
-
 # Calulate the sell transaction.
 func _on_ActiveTransactionsView_SellTransactionClick():
 	# Reset the dialog for a new trade.
@@ -67,6 +62,26 @@ func _on_ActiveTransactionsView_SellTransactionClick():
 	
 	# Get all of the selected transactions.
 	var transaction_views = active_transactions_view.get_selected_transactions();
+	if transaction_views.size() > 0:
+		for transaction_view in transaction_views:
+			if transaction_view.is_selected():
+				sell_trans_dialog.add_sell_transaction(transaction_view.trans_data);
+		
+		# Show the sell transaction dialog.
+		sell_trans_dialog.fade_in();
+
+# Add a profit transaction.
+func _on_ProfitTransactionTab_AddTransactoinClick():
+	# Step 1: Show the add transaction dialog.
+	add_profit_trans_dialog.fade_in();
+
+# Sell a profit transaction.
+func _on_ProfitTransactionTab_SellTransactionClick():
+	# Reset the dialog for a new trade.
+	sell_trans_dialog.reset_dialog();
+	
+	# Get all of the selected transactions.
+	var transaction_views = profit_transactions_view.get_selected_transactions();
 	if transaction_views.size() > 0:
 		for transaction_view in transaction_views:
 			if transaction_view.is_selected():
@@ -84,8 +99,9 @@ func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
 	# Step2: Create a sold history transaction.
 	sold_transactions_log_view.add_new_transaction(sell_transaction_p);
 	
-	# Step3: Remove previously selected active transactions.
+	# Step3: Remove previously selected transactions.
 	active_transactions_view.remove_selected_transactions();
+	profit_transactions_view.remove_selected_transactions();
 
 # Helper function to save the users entered transactions.
 func save_transactions(file_path_p):
