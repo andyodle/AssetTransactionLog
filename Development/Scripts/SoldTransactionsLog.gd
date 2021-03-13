@@ -10,6 +10,10 @@ onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Tr
 
 var sold_transaction_view = preload("res://Scenes/Controls/SoldTransactionView.tscn");
 
+func _ready():
+	# Hide the edit and delete buttons.
+	action_button_container.show_buttons(false);
+
 # Get all of the transactions.
 func get_transactions():
 	var temp_views = [];
@@ -63,13 +67,13 @@ func sold_transaction_selected(pressed_p):
 
 func show_selection_controls():
 	# Show the edit and delete buttons.
-	action_button_container.visible = true;
+	action_button_container.show_buttons(true);
 
 func hide_selection_controls():
 	# Check to see if any transactions are still selected.
 	if get_selected_transactions().size() == 0:
 		# Hide the edit and delete buttons.
-		action_button_container.visible = false;
+		action_button_container.show_buttons(false);
 
 # Get the list of selected transactions.
 func get_selected_transactions():
@@ -90,3 +94,11 @@ func _on_ActionButtonContainer_DeleteClicked():
 	
 	# Recalculate the data panels.
 	calculate_toals();
+
+# User wants to select all of the transactions.
+func _on_SoldTransactionColumns_SelectAll(pressed_p):
+	for transaction in transaction_list.get_children():
+		if pressed_p:
+			transaction.selected_trans.pressed = true;
+		else:
+			transaction.selected_trans.pressed = false;

@@ -154,7 +154,7 @@ func create_transaction_record(trans_data_p):
 func create_sold_transaction_record(sold_trans_data_p):
 	var temp_class = preload("res://Scripts/Classes/SoldTransaction.gd").new();
 	temp_class.initalize();
-	temp_class.bought_trans_m.date_m = sold_trans_data_p["date_m"];
+	temp_class.sold_trans_m.date_m = sold_trans_data_p["date_m"];
 	temp_class.bought_trans_m.number_of_coins_m = sold_trans_data_p["number_of_coins_m"];
 	temp_class.bought_trans_m.exchange_price_m = sold_trans_data_p["exchange_paid_m"];
 	temp_class.bought_trans_m.amount_m = sold_trans_data_p["total_paid_m"];
