@@ -5,6 +5,7 @@ signal ProfitTransClicked;
 signal SoldPositionsTransClicked;
 signal LoadTransClicked;
 signal SaveTrasnClicked;
+signal SettingsClicked;
 
 func toggle_tab_buttons(active_button_p):
 	var navigation_buttons = get_tree().get_nodes_in_group("NavigationButton");
@@ -34,3 +35,7 @@ func _on_LoadTransButton_pressed():
 # Save Transactions Button Clicked
 func _on_SaveTransButton_pressed():
 	emit_signal("SaveTrasnClicked");
+
+# Settings Button Clicked
+func _on_SettingsButton_pressed():
+	emit_signal("SettingsClicked");
