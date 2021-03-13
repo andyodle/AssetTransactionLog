@@ -23,7 +23,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_right = 727.0
+margin_right = 737.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 584, 56 )
 size_flags_horizontal = 3
@@ -32,55 +32,60 @@ __meta__ = {
 }
 
 [node name="BlankSpace" type="Control" parent="CenterContainer/HBoxContainer"]
-margin_right = 6.0
+margin_right = 16.0
 margin_bottom = 56.0
-rect_min_size = Vector2( 6, 56 )
+rect_min_size = Vector2( 16, 56 )
 
 [node name="SelectAll" type="CheckBox" parent="CenterContainer/HBoxContainer"]
-margin_left = 10.0
-margin_right = 73.0
+margin_left = 20.0
+margin_right = 83.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 63, 56 )
 focus_mode = 0
 enabled_focus_mode = 0
 
 [node name="DateAcquired" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 77.0
-margin_right = 200.0
+margin_left = 87.0
+margin_right = 210.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 123, 56 )
 text = "Date Acquired"
+align = 1
 valign = 1
 
 [node name="NumberOfCoins" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 204.0
-margin_right = 343.0
+margin_left = 214.0
+margin_right = 353.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 139, 56 )
 text = "Number of Coins"
+align = 1
 valign = 1
 
 [node name="ExchangePrice" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 347.0
-margin_right = 474.0
+margin_left = 357.0
+margin_right = 484.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 127, 56 )
 text = "Exchange Price"
+align = 1
 valign = 1
 
 [node name="CreditAmount" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 478.0
-margin_right = 601.0
+margin_left = 488.0
+margin_right = 611.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 123, 56 )
 text = "Credit Amount"
+align = 1
 valign = 1
 
 [node name="DebitAmount" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 605.0
-margin_right = 727.0
+margin_left = 615.0
+margin_right = 737.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 122, 56 )
 text = "Debit Amount"
+align = 1
 valign = 1
 [connection signal="toggled" from="CenterContainer/HBoxContainer/SelectAll" to="." method="_on_SelectAll_toggled"]

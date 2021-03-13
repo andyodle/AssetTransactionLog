@@ -26,7 +26,10 @@ func add_new_transaction(transaction_p):
 	# Step 1: Create a sell history transaction.
 	var temp_class : SoldTransactionRecord;
 	temp_class = load("res://Scripts/Classes/SoldTransactionRecord.gd").new();
-	temp_class.date_m = Utility.get_current_date_str();
+	if transaction_p.sold_trans_m.date_m == null:
+		temp_class.date_m = Utility.get_current_date_str();
+	else:
+		temp_class.date_m = transaction_p.sold_trans_m.date_m;
 	temp_class.number_of_coins_m = transaction_p.bought_trans_m.number_of_coins_m;
 	temp_class.exchange_paid_m = transaction_p.bought_trans_m.exchange_price_m;
 	temp_class.total_paid_m = transaction_p.bought_trans_m.amount_m;

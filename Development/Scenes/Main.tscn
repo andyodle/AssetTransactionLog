@@ -154,7 +154,7 @@ margin_bottom = 416.0
 margin_bottom = 408.0
 
 [node name="Trasactions" parent="HBoxContainer/TabsContainer/ProfitTransactionsView/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
-margin_bottom = 304.0
+margin_bottom = 288.0
 
 [node name="SoldTransactionLogView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 7 )]
 visible = false

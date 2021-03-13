@@ -168,7 +168,7 @@ margin_bottom = 416.0
 margin_bottom = 408.0
 
 [node name="Trasactions" parent="VBoxContainer/SoldTransactionsLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
-margin_bottom = 348.0
+margin_bottom = 288.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )

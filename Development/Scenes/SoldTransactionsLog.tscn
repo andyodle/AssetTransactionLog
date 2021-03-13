@@ -55,20 +55,20 @@ __meta__ = {
 }
 
 [node name="ActionButtonContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 936.0
-margin_bottom = 72.0
-
-[node name="SoldTransactionColumns" parent="MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 936.0
 margin_bottom = 56.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+[node name="SoldTransactionColumns" parent="MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 60.0
+margin_right = 936.0
+margin_bottom = 116.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 120.0
 margin_right = 936.0
 margin_bottom = 400.0
 size_flags_horizontal = 3
@@ -80,9 +80,10 @@ __meta__ = {
 
 [node name="Trasactions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
 margin_right = 936.0
-margin_bottom = 340.0
+margin_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 [connection signal="DeleteClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_DeleteClicked"]
+[connection signal="SelectAll" from="MarginContainer/VBoxContainer/SoldTransactionColumns" to="." method="_on_SoldTransactionColumns_SelectAll"]
 
 [editable path="MarginContainer/VBoxContainer/ActionButtonContainer"]

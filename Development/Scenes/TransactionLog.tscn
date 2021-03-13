@@ -61,17 +61,17 @@ __meta__ = {
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 920.0
-margin_bottom = 40.0
+margin_bottom = 56.0
 
 [node name="TransactionColumns" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 44.0
+margin_top = 60.0
 margin_right = 920.0
-margin_bottom = 100.0
+margin_bottom = 116.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 104.0
+margin_top = 120.0
 margin_right = 920.0
 margin_bottom = 400.0
 size_flags_horizontal = 3
@@ -83,7 +83,7 @@ __meta__ = {
 
 [node name="Trasactions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
 margin_right = 920.0
-margin_bottom = 296.0
+margin_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 

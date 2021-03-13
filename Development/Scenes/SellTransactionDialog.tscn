@@ -204,20 +204,24 @@ custom_constants/margin_left = 8
 
 [node name="BackgroundColor" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="0"]
 margin_left = 8.0
-margin_right = 904.0
+margin_right = 928.0
 margin_bottom = 248.0
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="1"]
 margin_left = 8.0
-margin_right = 904.0
+margin_right = 928.0
 margin_bottom = 248.0
 
+[node name="ActionButtonContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="0"]
+margin_bottom = 56.0
+
 [node name="TransactionColumns" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="1"]
-margin_right = 896.0
+margin_top = 60.0
+margin_bottom = 116.0
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer" index="0"]
-margin_left = 123.0
-margin_right = 773.0
+margin_left = 135.0
+margin_right = 785.0
 
 [node name="BlankSpace" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="0"]
 visible = false
@@ -248,12 +252,11 @@ margin_left = 528.0
 margin_right = 650.0
 
 [node name="ScrollContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
-margin_right = 896.0
+margin_top = 120.0
 margin_bottom = 240.0
 
 [node name="Trasactions" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
-margin_right = 896.0
-margin_bottom = 180.0
+margin_bottom = 120.0
 
 [node name="AddActionButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="1"]
 visible = false
