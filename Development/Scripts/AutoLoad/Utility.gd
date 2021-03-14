@@ -48,11 +48,12 @@ func calcualte_cost_average(transacion_list_p):
 
 # Calcualte the total gains
 func calculate_total_gains(transacion_list_p):
+	var calculator = Calculator.new();
 	# Get all of the price transactions.
-	var total_gains : float = 0.0;
+	var total_gains : String = "";
 	var transaction_views = transacion_list_p.get_children();
 	for transaction_view in transaction_views:
 		var trans_data = transaction_view.trans_data;
-		total_gains += float(trans_data.total_gains_m);
+		total_gains = calculator.add(total_gains, trans_data.total_gains_m);
 	
 	return total_gains;

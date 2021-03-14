@@ -1,6 +1,5 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scenes/CoinTransactionsView.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Theme/MainTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Scenes/Controls/SideNavigationRail.tscn" type="PackedScene" id=4]
@@ -10,6 +9,7 @@
 [ext_resource path="res://Scenes/Controls/OpenFileDialog.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Controls/SaveFileDialog.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Controls/ProfitTransactionTab.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Controls/ActiveTransactionsTab.tscn" type="PackedScene" id=11]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -50,38 +50,14 @@ margin_right = 1028.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 952, 600 )
 
-[node name="ActiveTransactionsView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 1 )]
-
-[node name="Title" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/TabTitle/MarginContainer" index="0"]
-text = "Active Transactions"
-
-[node name="VBoxContainer" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
-margin_left = 52.0
-margin_right = 165.0
-
-[node name="Title" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-margin_right = 113.0
-
-[node name="HBoxContainer" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-margin_right = 113.0
-
-[node name="DataLabel" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 113.0
-text = "0.000000000"
-
-[node name="DataLabel" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 46.0
-text = "$0.00"
-
-[node name="DataLabel" parent="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 46.0
-text = "$0.00"
+[node name="ActiveTransactionsTab" parent="HBoxContainer/TabsContainer" instance=ExtResource( 11 )]
+margin_right = 0.0
 
 [node name="ProfitTransactionsTab" parent="HBoxContainer/TabsContainer" instance=ExtResource( 10 )]
 visible = false
 margin_right = 0.0
 
-[node name="SoldTransactionLogView" parent="HBoxContainer/TabsContainer" instance=ExtResource( 7 )]
+[node name="SoldTransactionLogTab" parent="HBoxContainer/TabsContainer" instance=ExtResource( 7 )]
 visible = false
 
 [node name="AddActiveTransaction" parent="." instance=ExtResource( 6 )]
@@ -116,8 +92,8 @@ margin_bottom = 218.0
 [connection signal="ProfitTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ProfitTransClicked"]
 [connection signal="SaveTrasnClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SaveTrasnClicked"]
 [connection signal="SoldPositionsTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SoldPositionsTransClicked"]
-[connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_AddTransactoinClick"]
-[connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/ActiveTransactionsView" to="." method="_on_ActiveTransactionsView_SellTransactionClick"]
+[connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_AddTransactoinClick"]
+[connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_SellTransactionClick"]
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_AddTransactoinClick"]
 [connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_SellTransactionClick"]
 [connection signal="AddNewTransaction" from="AddActiveTransaction" to="." method="_on_AddActiveTransaction_AddNewTransaction"]
@@ -125,16 +101,6 @@ margin_bottom = 218.0
 [connection signal="AddSellTransaction" from="SellTransactionDialog" to="." method="_on_SellTransactionDialog_AddSellTransaction"]
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
-
-[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView"]
-
-[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/TabTitle"]
-
-[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalCoins"]
-
-[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/TotalAmountPaid"]
-
-[editable path="HBoxContainer/TabsContainer/ActiveTransactionsView/VBoxContainer/HBoxContainer/CostAverage"]
 
 [editable path="AddActiveTransaction"]
 

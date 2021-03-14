@@ -13,9 +13,10 @@ var sold_transactoin_class = preload("res://Scripts/Classes/SoldTransaction.gd")
 
 func reset_dialog():
 	number_of_coins.text = "";
-	total_coins_data_panel.set_data("");
-	total_amount_paid_data_panel.set_data("");
-	cost_average_data_panel.set_data("");
+	total_coins_data_panel.reset_data_panel();
+	total_amount_paid_data_panel.reset_data_panel();
+	cost_average_data_panel.reset_data_panel();
+	total_profit_data_panel.reset_data_panel();
 	transaction_log.reset_trasactoins();
 
 # Add selected transactions to the sell log.
