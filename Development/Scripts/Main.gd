@@ -102,6 +102,9 @@ func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
 	# Step3: Remove previously selected transactions.
 	active_transactions_view.remove_selected_transactions();
 	profit_transactions_view.remove_selected_transactions();
+	
+	# Dipslay a messge to the user that we added transactions.
+	SnackBar.display_message("Added profit and sold transactions.", "DISMISS");
 
 # Helper function to save the users entered transactions.
 func save_transactions(file_path_p):
@@ -149,7 +152,9 @@ func save_transactions(file_path_p):
 	# Save out the transactions.
 	JsonManager.save_json_file(file_path_p, temp_data);
 	
-	print("Saved Transactions!");
+	# Dipslay a messge to the user that we saved their data.
+	SnackBar.display_message("Transactions saved.", "DISMISS");
+	print("Saved Transactions");
 
 # Save the transaction log data.
 func _on_SideNavigationRail_SaveTrasnClicked():
@@ -205,6 +210,8 @@ func load_transactions(file_path_p):
 			var temp_trans = create_sold_transaction_record(temp_data["SoldTransactions"][String(count - 1)]);
 			sold_transactions_log_view.add_new_transaction(temp_trans);
 	
+	# Dipslay a messge to the user that we saved their data.
+	SnackBar.display_message("Transactions loaded.", "DISMISS");
 	print("Loaded Transactions!");
 
 # Load the transaction log data.
