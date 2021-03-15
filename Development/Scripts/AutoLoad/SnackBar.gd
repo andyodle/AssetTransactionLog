@@ -2,10 +2,15 @@ extends CanvasLayer
 
 signal ActionClicked;
 
+onready var control = $Control;
 onready var timer = $Control/Timer;
 onready var animation_player = $Control/AnimationPlayer;
 onready var button = $Control/MarginContainer/HBoxContainer/Button;
 onready var message_label = $Control/MarginContainer/HBoxContainer/MessageLabel;
+
+func _ready():
+	# Hide the snackbar initialy.
+	control.modulate = Color(1, 1, 1, 0);
 
 # Display the message to the user.
 func display_message(message_p, action_label_p):

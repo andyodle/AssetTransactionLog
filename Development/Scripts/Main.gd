@@ -52,6 +52,9 @@ func _on_SideNavigationRail_SoldPositionsTransClicked():
 
 # Add a active transaction.
 func _on_ActiveTransactionsTab_AddTransactoinClick():
+	# Reset the form to get it ready for new input.
+	add_active_trans_dialog.reset_form();
+	
 	# Step 1: Show the add transaction dialog.
 	add_active_trans_dialog.fade_in();
 
@@ -72,6 +75,9 @@ func _on_ActiveTransactionsTab_SellTransactionClick():
 
 # Add a profit transaction.
 func _on_ProfitTransactionTab_AddTransactoinClick():
+	# Reset the form to get it ready for new input.
+	add_profit_trans_dialog.reset_form();
+	
 	# Step 1: Show the add transaction dialog.
 	add_profit_trans_dialog.fade_in();
 
