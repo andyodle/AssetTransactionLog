@@ -136,6 +136,7 @@ Transactions"
 margin_top = 174.0
 margin_right = 72.0
 margin_bottom = 257.0
+toggle_mode = true
 
 [node name="TextureRect" parent="VBoxContainer/RegularButtons/SettingsButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 8 )

@@ -3,6 +3,7 @@ extends Control
 onready var active_transactions_view = $HBoxContainer/TabsContainer/ActiveTransactionsTab;
 onready var profit_transactions_view = $HBoxContainer/TabsContainer/ProfitTransactionsTab;
 onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/SoldTransactionLogTab;
+onready var settings_tab = $HBoxContainer/TabsContainer/SettingsTab;
 onready var add_active_trans_dialog = $AddActiveTransaction;
 onready var add_profit_trans_dialog = $AddProfitTransaction;
 onready var sell_trans_dialog = $SellTransactionDialog;
@@ -49,6 +50,12 @@ func _on_SideNavigationRail_SoldPositionsTransClicked():
 	hide_tabs();
 	sold_transactions_log_view.visible = true;
 	sold_transactions_log_view.fade_in();
+
+# User selected the settings tab.
+func _on_SideNavigationRail_SettingsClicked():
+	hide_tabs();
+	settings_tab.visible = true;
+	settings_tab.fade_in();
 
 # Add a active transaction.
 func _on_ActiveTransactionsTab_AddTransactoinClick():
