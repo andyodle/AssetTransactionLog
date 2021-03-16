@@ -38,4 +38,5 @@ func _on_SaveTransButton_pressed():
 
 # Settings Button Clicked
 func _on_SettingsButton_pressed():
+	toggle_tab_buttons("SettingsButton");
 	emit_signal("SettingsClicked");
