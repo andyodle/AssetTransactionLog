@@ -3,7 +3,7 @@ extends "res://Scripts/DialogWindow.gd"
 signal AddNewTransaction;
 
 onready var transaction_ammount = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount;
-onready var exchange_price = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ExchangePrice;
+onready var exchange_price = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice;
 onready var transaction_date = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate;
 onready var number_of_coins = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins;
 onready var credit_or_debit = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit;
@@ -63,3 +63,9 @@ func _on_DialogActionButtons_CancelClicked():
 func _on_AnimationPlayer_animation_finished(anim_name_p):
 	if anim_name_p == "FadeIn":
 		reset_form();
+
+# Calculate button was pressed.
+func _on_BaseIconButton_pressed():
+	exchange_price._on_TextInput_focus_entered();
+	var temp_price = Utility.calculate_exchange_rate(transaction_ammount.text, number_of_coins.text);
+	exchange_price.text = String("%3.2f" % float(temp_price));

@@ -67,11 +67,27 @@ visible = false
 [node name="AddActiveTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
 
+[node name="MarginContainer" parent="AddActiveTransaction/CenterContainer/DialogContainer" index="1"]
+custom_constants/margin_right = 24
+custom_constants/margin_left = 24
+
+[node name="CenterContainer" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer" index="0"]
+margin_left = 24.0
+margin_right = 396.0
+
 [node name="Title" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
 text = "Add Active Transaction"
 
 [node name="AddProfitTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
+
+[node name="MarginContainer" parent="AddProfitTransaction/CenterContainer/DialogContainer" index="1"]
+custom_constants/margin_right = 24
+custom_constants/margin_left = 24
+
+[node name="CenterContainer" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer" index="0"]
+margin_left = 24.0
+margin_right = 396.0
 
 [node name="Title" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
 text = "Add Profit Transaction"

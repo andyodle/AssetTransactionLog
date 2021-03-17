@@ -70,6 +70,18 @@ margin_top = 221.0
 margin_right = 676.0
 margin_bottom = 379.0
 
+[node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
+custom_constants/margin_right = 16
+custom_constants/margin_left = 16
+
+[node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
+margin_left = 16.0
+margin_right = 312.0
+
+[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
+margin_left = 48.0
+margin_right = 248.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
