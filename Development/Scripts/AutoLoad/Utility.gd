@@ -57,3 +57,11 @@ func calculate_total_gains(transacion_list_p):
 		total_gains = calculator.add(total_gains, trans_data.total_gains_m);
 	
 	return total_gains;
+
+# Calculate exchange rate.
+func calculate_exchange_rate(acquired_price_p, number_of_coins_p):
+	var exchange_rate = "";
+	if number_of_coins_p != "" and number_of_coins_p != "0" and acquired_price_p != "":
+		var calculator = Calculator.new();
+		exchange_rate = calculator.divide(acquired_price_p, number_of_coins_p);
+	return exchange_rate;
