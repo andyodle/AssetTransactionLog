@@ -12,6 +12,8 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=2]
 resource_local_to_scene = true
 size = 20
+extra_spacing_char = 2
+extra_spacing_space = 2
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=3]

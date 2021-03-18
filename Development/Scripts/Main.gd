@@ -199,33 +199,37 @@ func create_sold_transaction_record(sold_trans_data_p):
 func load_transactions(file_path_p):
 	var temp_data = JsonManager.load_json_file(file_path_p);
 	
-	# Active Transactions
-	active_transactions_view.reset_trasactoins();
-	var active_transactions = temp_data["ActiveTransactions"];
-	if active_transactions.size() > 0:
-		for count in range(active_transactions.size(), 0, -1):
-			var temp_trans = create_transaction_record(temp_data["ActiveTransactions"][String(count - 1)]);
-			active_transactions_view.add_new_transaction(temp_trans);
-	
-	# Profit Transactions
-	profit_transactions_view.reset_trasactoins();
-	var profit_transactions = temp_data["ProfitTransactions"];
-	if profit_transactions.size() > 0:
-		for count in range(profit_transactions.size(), 0, -1):
-			var temp_trans = create_transaction_record(temp_data["ProfitTransactions"][String(count - 1)]);
-			profit_transactions_view.add_new_transaction(temp_trans);
-	
-	# Sold Transactions
-	sold_transactions_log_view.reset_trasactoins();
-	var sold_transactions = temp_data["SoldTransactions"];
-	if sold_transactions.size() > 0:
-		for count in range(sold_transactions.size(), 0, -1):
-			var temp_trans = create_sold_transaction_record(temp_data["SoldTransactions"][String(count - 1)]);
-			sold_transactions_log_view.add_new_transaction(temp_trans);
-	
-	# Dipslay a messge to the user that we saved their data.
-	SnackBar.display_message("Transactions loaded.", "DISMISS");
-	print("Loaded Transactions!");
+	# Check and make sure that we loaded a transaction file.
+	if temp_data != null:
+		# Active Transactions
+		active_transactions_view.reset_trasactoins();
+		var active_transactions = temp_data["ActiveTransactions"];
+		if active_transactions.size() > 0:
+			for count in range(active_transactions.size(), 0, -1):
+				var temp_trans = create_transaction_record(temp_data["ActiveTransactions"][String(count - 1)]);
+				active_transactions_view.add_new_transaction(temp_trans);
+		
+		# Profit Transactions
+		profit_transactions_view.reset_trasactoins();
+		var profit_transactions = temp_data["ProfitTransactions"];
+		if profit_transactions.size() > 0:
+			for count in range(profit_transactions.size(), 0, -1):
+				var temp_trans = create_transaction_record(temp_data["ProfitTransactions"][String(count - 1)]);
+				profit_transactions_view.add_new_transaction(temp_trans);
+		
+		# Sold Transactions
+		sold_transactions_log_view.reset_trasactoins();
+		var sold_transactions = temp_data["SoldTransactions"];
+		if sold_transactions.size() > 0:
+			for count in range(sold_transactions.size(), 0, -1):
+				var temp_trans = create_sold_transaction_record(temp_data["SoldTransactions"][String(count - 1)]);
+				sold_transactions_log_view.add_new_transaction(temp_trans);
+		
+		# Dipslay a messge to the user that we saved their data.
+		SnackBar.display_message("Transactions loaded.", "DISMISS");
+		print("Loaded Transactions!");
+	else:
+		SnackBar.display_message("Error: Can not load selected file.", "DISMISS");
 
 # Load the transaction log data.
 func _on_SideNavigationRail_LoadTransClicked():
