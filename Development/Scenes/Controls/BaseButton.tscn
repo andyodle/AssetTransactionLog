@@ -9,7 +9,8 @@
 [sub_resource type="DynamicFont" id=1]
 extra_spacing_top = 8
 extra_spacing_bottom = 8
-extra_spacing_char = 1
+extra_spacing_char = 2
+extra_spacing_space = 2
 font_data = ExtResource( 4 )
 
 [node name="BaseButton" type="Control"]
@@ -41,7 +42,7 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="MarginContainer"]
 margin_left = 8.0
-margin_right = 115.0
+margin_right = 127.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 107, 40 )
 focus_mode = 0
