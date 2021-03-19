@@ -1,9 +1,9 @@
 extends Control
 
-onready var active_transactions_view = $HBoxContainer/TabsContainer/ActiveTransactionsTab;
-onready var profit_transactions_view = $HBoxContainer/TabsContainer/ProfitTransactionsTab;
-onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/SoldTransactionLogTab;
-onready var settings_tab = $HBoxContainer/TabsContainer/SettingsTab;
+onready var active_transactions_view = $HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab;
+onready var profit_transactions_view = $HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab;
+onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/MarginContainer/SoldTransactionLogTab;
+onready var settings_tab = $HBoxContainer/TabsContainer/MarginContainer/SettingsTab;
 onready var add_active_trans_dialog = $AddActiveTransaction;
 onready var add_profit_trans_dialog = $AddProfitTransaction;
 onready var sell_trans_dialog = $SellTransactionDialog;

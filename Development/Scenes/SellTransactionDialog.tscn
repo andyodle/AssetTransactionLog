@@ -26,18 +26,17 @@ margin_bottom = 568.0
 rect_min_size = Vector2( 968, 537 )
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
-margin_right = 15.9999
-margin_bottom = -136.0
+margin_bottom = -16.0
 rect_min_size = Vector2( 968, 465 )
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
-margin_right = 967.0
+margin_right = 952.0
 margin_bottom = 521.0
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
-margin_left = 15.0
+margin_left = 8.0
 margin_top = 0.0
-margin_right = 935.0
+margin_right = 928.0
 margin_bottom = 521.0
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
@@ -56,13 +55,12 @@ text = "Sell Transaction"
 margin_top = 49.0
 margin_right = 920.0
 margin_bottom = 97.0
-custom_constants/margin_right = 16
-custom_constants/margin_left = 8
+rect_min_size = Vector2( 920, 48 )
 
 [node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/MarginContainer" index="0" instance=ExtResource( 6 )]
-margin_left = 8.0
-margin_right = 904.0
+margin_right = 920.0
 margin_bottom = 48.0
+rect_min_size = Vector2( 920, 48 )
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/MarginContainer/NumberOfCoins" index="6"]
 custom_fonts/font = SubResource( 1 )
@@ -73,121 +71,118 @@ margin_top = 105.0
 margin_right = 920.0
 margin_bottom = 201.0
 rect_min_size = Vector2( 920, 96 )
+custom_constants/separation = 16
 
 [node name="TotalCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 227.0
+margin_right = 218.0
 margin_bottom = 96.0
-rect_min_size = Vector2( 223, 96 )
 
 [node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="0"]
-margin_right = 219.0
+margin_right = 218.0
 margin_bottom = 88.0
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="1"]
-margin_right = 219.0
+margin_right = 218.0
 margin_bottom = 88.0
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
-margin_left = 54.0
+margin_left = 57.0
 margin_top = 12.0
-margin_right = 156.0
+margin_right = 161.0
 margin_bottom = 68.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-margin_right = 102.0
+margin_right = 104.0
 text = "Total Coins"
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-margin_right = 102.0
+margin_right = 104.0
 
 [node name="TotalAmountPaid" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 231.0
-margin_right = 458.0
+margin_left = 234.0
+margin_right = 452.0
 margin_bottom = 96.0
-rect_min_size = Vector2( 223, 96 )
 
 [node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="0"]
-margin_right = 219.0
+margin_right = 218.0
 margin_bottom = 88.0
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="1"]
-margin_right = 219.0
+margin_right = 218.0
 margin_bottom = 88.0
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer" index="0"]
-margin_left = 60.0
+margin_left = 62.0
 margin_top = 12.0
-margin_right = 151.0
+margin_right = 155.0
 margin_bottom = 68.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-margin_right = 91.0
+margin_right = 93.0
 text = "Total Paid"
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-margin_right = 91.0
+margin_right = 93.0
 
 [node name="CostAverage" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="2" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 462.0
-margin_right = 689.0
+margin_left = 468.0
+margin_right = 686.0
 margin_bottom = 96.0
-rect_min_size = Vector2( 223, 96 )
 
 [node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="0"]
-margin_right = 219.0
+margin_right = 218.0
 margin_bottom = 88.0
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="1"]
-margin_right = 219.0
+margin_right = 218.0
 margin_bottom = 88.0
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer" index="0"]
-margin_left = 44.0
+margin_left = 46.0
 margin_top = 12.0
-margin_right = 167.0
+margin_right = 171.0
 margin_bottom = 68.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-margin_right = 123.0
+margin_right = 125.0
 text = "Cost Average"
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-margin_right = 123.0
+margin_right = 125.0
 
 [node name="TotalProfit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="3" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 693.0
+margin_left = 702.0
 margin_right = 920.0
 margin_bottom = 96.0
-rect_min_size = Vector2( 223, 96 )
 
 [node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer" index="0"]
-margin_right = 219.0
+margin_right = 218.0
 margin_bottom = 88.0
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer" index="1"]
-margin_right = 219.0
+margin_right = 218.0
 margin_bottom = 88.0
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer" index="0"]
-margin_left = 54.0
+margin_left = 56.0
 margin_top = 12.0
-margin_right = 157.0
+margin_right = 161.0
 margin_bottom = 68.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-margin_right = 103.0
+margin_right = 105.0
 text = "Total Profit"
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-margin_right = 103.0
+margin_right = 105.0
 
 [node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -198,19 +193,23 @@ margin_bottom = 473.0
 rect_min_size = Vector2( 920, 264 )
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="0"]
-margin_bottom = -88.0
+margin_right = 0.0
+margin_bottom = 0.0
 rect_min_size = Vector2( 920, 264 )
-custom_constants/margin_left = 8
 
 [node name="BackgroundColor" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="0"]
-margin_left = 8.0
-margin_right = 928.0
+margin_right = 920.0
 margin_bottom = 248.0
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="1"]
-margin_left = 8.0
-margin_right = 928.0
+margin_right = 920.0
 margin_bottom = 248.0
+
+[node name="ActionButtonContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="0"]
+margin_right = 920.0
+
+[node name="TransactionColumns" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="1"]
+margin_right = 920.0
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer" index="0"]
 margin_left = 135.0
@@ -245,9 +244,11 @@ margin_left = 528.0
 margin_right = 650.0
 
 [node name="ScrollContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
+margin_right = 920.0
 margin_bottom = 240.0
 
 [node name="Trasactions" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
+margin_right = 920.0
 margin_bottom = 120.0
 
 [node name="AddActionButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="1"]

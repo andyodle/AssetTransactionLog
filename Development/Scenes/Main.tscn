@@ -35,6 +35,7 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,23 +47,52 @@ margin_right = 72.0
 margin_bottom = 600.0
 
 [node name="TabsContainer" type="Control" parent="HBoxContainer"]
-margin_left = 76.0
-margin_right = 1028.0
+margin_left = 72.0
+margin_right = 1024.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 952, 600 )
 
-[node name="ActiveTransactionsTab" parent="HBoxContainer/TabsContainer" instance=ExtResource( 11 )]
-margin_right = 0.0
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/TabsContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 0
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ProfitTransactionsTab" parent="HBoxContainer/TabsContainer" instance=ExtResource( 10 )]
-visible = false
-margin_right = 0.0
+[node name="ActiveTransactionsTab" parent="HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_right = 936.0
+margin_bottom = 600.0
 
-[node name="SoldTransactionLogTab" parent="HBoxContainer/TabsContainer" instance=ExtResource( 7 )]
+[node name="ProfitTransactionsTab" parent="HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource( 10 )]
 visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_right = 936.0
+margin_bottom = 600.0
 
-[node name="SettingsTab" parent="HBoxContainer/TabsContainer" instance=ExtResource( 1 )]
+[node name="SoldTransactionLogTab" parent="HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource( 7 )]
 visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_right = 936.0
+margin_bottom = 600.0
+
+[node name="SettingsTab" parent="HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource( 1 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_right = 936.0
+margin_bottom = 600.0
 
 [node name="AddActiveTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -113,10 +143,10 @@ margin_bottom = 218.0
 [connection signal="SaveTrasnClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SaveTrasnClicked"]
 [connection signal="SettingsClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SettingsClicked"]
 [connection signal="SoldPositionsTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SoldPositionsTransClicked"]
-[connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_AddTransactoinClick"]
-[connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_SellTransactionClick"]
-[connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_AddTransactoinClick"]
-[connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_SellTransactionClick"]
+[connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_AddTransactoinClick"]
+[connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_SellTransactionClick"]
+[connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_AddTransactoinClick"]
+[connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_SellTransactionClick"]
 [connection signal="AddNewTransaction" from="AddActiveTransaction" to="." method="_on_AddActiveTransaction_AddNewTransaction"]
 [connection signal="AddNewTransaction" from="AddProfitTransaction" to="." method="_on_AddProfitTransaction_AddNewTransaction"]
 [connection signal="AddSellTransaction" from="SellTransactionDialog" to="." method="_on_SellTransactionDialog_AddSellTransaction"]

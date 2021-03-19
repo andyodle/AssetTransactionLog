@@ -77,6 +77,7 @@ custom_constants/margin_left = 16
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
 margin_left = 16.0
 margin_right = 312.0
+rect_min_size = Vector2( 296, 118 )
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
 margin_left = 48.0
