@@ -5,9 +5,9 @@
 [node name="SoldTransactionColumns" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -95.9999
+margin_right = -104.0
 margin_bottom = -544.0
-rect_min_size = Vector2( 928, 56 )
+rect_min_size = Vector2( 920, 56 )
 size_flags_horizontal = 3
 script = ExtResource( 1 )
 __meta__ = {
@@ -17,36 +17,36 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -0.00012207
-rect_min_size = Vector2( 928, 0 )
+rect_min_size = Vector2( 920, 56 )
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_right = 928.0
+margin_right = 920.0
 margin_bottom = 56.0
-rect_min_size = Vector2( 928, 56 )
+rect_min_size = Vector2( 920, 56 )
 size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BlankSpace" type="Control" parent="CenterContainer/HBoxContainer"]
-margin_right = 16.0
+margin_right = 8.0
 margin_bottom = 56.0
-rect_min_size = Vector2( 16, 56 )
+rect_min_size = Vector2( 8, 56 )
 
 [node name="SelectAll" type="CheckBox" parent="CenterContainer/HBoxContainer"]
-margin_left = 20.0
-margin_right = 52.0
+margin_left = 12.0
+margin_right = 44.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 32, 56 )
 
 [node name="DateSold" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 56.0
-margin_right = 156.0
+margin_left = 48.0
+margin_right = 148.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Date Sold"
@@ -54,8 +54,8 @@ align = 1
 valign = 1
 
 [node name="NumberOfCoins" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 160.0
-margin_right = 299.0
+margin_left = 152.0
+margin_right = 291.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 139, 56 )
 text = "Number of Coins"
@@ -63,8 +63,8 @@ align = 1
 valign = 1
 
 [node name="ExchangePaid" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 303.0
-margin_right = 403.0
+margin_left = 295.0
+margin_right = 395.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Exchange Paid"
@@ -72,8 +72,8 @@ align = 1
 valign = 1
 
 [node name="TotalPaid" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 407.0
-margin_right = 507.0
+margin_left = 399.0
+margin_right = 499.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Total Paid"
@@ -81,8 +81,8 @@ align = 1
 valign = 1
 
 [node name="ExchangeSold" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 511.0
-margin_right = 611.0
+margin_left = 503.0
+margin_right = 603.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Exchange Sold"
@@ -90,8 +90,8 @@ align = 1
 valign = 1
 
 [node name="TotalSold" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 615.0
-margin_right = 715.0
+margin_left = 607.0
+margin_right = 707.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Total Sold"
@@ -99,8 +99,8 @@ align = 1
 valign = 1
 
 [node name="TotalGains" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 719.0
-margin_right = 819.0
+margin_left = 711.0
+margin_right = 811.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Total Gains"
@@ -108,11 +108,11 @@ align = 1
 valign = 1
 
 [node name="PercentGains" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 823.0
-margin_right = 923.0
+margin_left = 815.0
+margin_right = 907.0
 margin_bottom = 56.0
-rect_min_size = Vector2( 100, 56 )
-text = "% Gain"
+rect_min_size = Vector2( 92, 56 )
+text = "%Gain"
 align = 1
 valign = 1
 [connection signal="toggled" from="CenterContainer/HBoxContainer/SelectAll" to="." method="_on_SelectAll_toggled"]

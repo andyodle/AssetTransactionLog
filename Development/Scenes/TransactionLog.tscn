@@ -9,9 +9,9 @@
 [node name="TransactionLog" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -71.9999
+margin_right = -104.0
 margin_bottom = -176.0
-rect_min_size = Vector2( 952, 424 )
+rect_min_size = Vector2( 920, 424 )
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -28,18 +28,15 @@ margin_bottom = 3.05176e-05
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
 custom_constants/margin_top = 8
-custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BackgroundColor" type="ColorRect" parent="MarginContainer"]
-margin_left = 16.0
 margin_top = 8.0
-margin_right = 936.0
+margin_right = 920.0
 margin_bottom = 408.0
 color = Color( 0.207843, 0.231373, 0.341176, 1 )
 __meta__ = {
@@ -47,9 +44,8 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 16.0
 margin_top = 8.0
-margin_right = 936.0
+margin_right = 920.0
 margin_bottom = 408.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

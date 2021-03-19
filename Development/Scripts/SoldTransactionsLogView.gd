@@ -8,6 +8,7 @@ onready var animation_player = $AnimationPlayer;
 
 func _ready():
 	self.modulate = Color(1, 1, 1, 0);
+	pass
 
 func fade_in():
 	animation_player.play("FadeIn");
