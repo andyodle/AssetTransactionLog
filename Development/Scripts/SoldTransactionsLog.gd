@@ -6,7 +6,7 @@ signal CalcualtedTotalPrice;
 signal CalculatedCostAverage;
 
 onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
-onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Trasactions;
+onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Transactions;
 
 var sold_transaction_view = preload("res://Scenes/Controls/SoldTransactionView.tscn");
 
