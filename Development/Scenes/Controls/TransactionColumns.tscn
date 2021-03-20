@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 14
 font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=2]
@@ -32,8 +31,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 4.0
-margin_right = 733.0
+margin_right = 729.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 584, 56 )
 size_flags_horizontal = 3

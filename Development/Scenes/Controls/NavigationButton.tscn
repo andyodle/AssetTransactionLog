@@ -7,12 +7,12 @@
 [ext_resource path="res://Assets/Theme/Hover-NavigationButton.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Theme/Pressed-NavigationButton.tres" type="StyleBox" id=6]
 
-[sub_resource type="DynamicFont" id=4]
-size = 10
+[sub_resource type="DynamicFont" id=1]
+size = 12
 font_data = ExtResource( 1 )
 
-[sub_resource type="Theme" id=5]
-default_font = SubResource( 4 )
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
 [node name="Button" type="Button" groups=[
 "NavigationButton",
@@ -21,7 +21,7 @@ margin_right = 0.32
 rect_min_size = Vector2( 72, 83 )
 focus_mode = 0
 size_flags_horizontal = 3
-theme = SubResource( 5 )
+theme = SubResource( 2 )
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/normal = ExtResource( 4 )
@@ -67,13 +67,13 @@ stretch_mode = 1
 [node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 46.0
 margin_right = 72.0
-margin_bottom = 71.0
+margin_bottom = 73.0
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer2"]
-margin_left = 21.0
-margin_right = 51.0
-margin_bottom = 25.0
+margin_left = 18.0
+margin_right = 54.0
+margin_bottom = 27.0
 rect_min_size = Vector2( 0, 12 )
 mouse_filter = 1
 text = "Nav 
