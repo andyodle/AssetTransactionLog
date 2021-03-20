@@ -2,7 +2,7 @@ extends Control
 
 onready var total_gains_data_panel = $VBoxContainer/HBoxContainer/TotalGains;
 onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
-onready var cost_average_data_panel = $VBoxContainer/HBoxContainer/CostAverage;
+onready var total_amount_sold_data_panel = $VBoxContainer/HBoxContainer/TotalAmountSold;
 onready var sold_transaction_log = $VBoxContainer/SoldTransactionsLog;
 onready var animation_player = $AnimationPlayer;
 
@@ -33,12 +33,12 @@ func add_new_transaction(transaction_p):
 		temp_class.date_m = transaction_p.sold_trans_m.date_m;
 	temp_class.number_of_coins_m = transaction_p.bought_trans_m.number_of_coins_m;
 	temp_class.exchange_paid_m = transaction_p.bought_trans_m.exchange_price_m;
-	temp_class.total_paid_m = transaction_p.bought_trans_m.amount_m;
+	temp_class.amount_m = transaction_p.bought_trans_m.amount_m;
 	temp_class.exchange_sold_m = transaction_p.sold_trans_m.exchange_price_m;
 	temp_class.total_sold_m = String(float(temp_class.number_of_coins_m) * float(transaction_p.sold_trans_m.exchange_price_m));
-	temp_class.total_gains_m = String(float(temp_class.total_sold_m) - float(temp_class.total_paid_m));
-	if float(temp_class.total_paid_m) != 0:
-		temp_class.percent_gains_m = String((float(temp_class.total_gains_m) / float(temp_class.total_paid_m)) * 100);
+	temp_class.total_gains_m = String(float(temp_class.total_sold_m) - float(temp_class.amount_m));
+	if float(temp_class.amount_m) != 0:
+		temp_class.percent_gains_m = String((float(temp_class.total_gains_m) / float(temp_class.amount_m)) * 100);
 	
 	# Step 2: Add the transaction to the transaction log.
 	sold_transaction_log.add_transaction(temp_class);
@@ -52,11 +52,15 @@ func _on_SoldTransactionsLog_CalculatedTotalGains(total_gains_p):
 		total_gains_data_panel.set_data(String("$" + "%3.2f" % float(total_gains_p)));
 
 # Total price was calcualted. Refresh your data.
-func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):
+func _on_SoldTransactionsLog_CalcualtedTotalPaidPrice(amount_paid_p):
 	if total_amount_paid_data_panel != null:
 		total_amount_paid_data_panel.set_data(String("$" + "%3.2f" % float(amount_paid_p)));
 
-# Cost average was calcualted. Refresh your data.
-func _on_TransactionLog_CalculateCostAverage(cost_average_p):
-	if cost_average_data_panel != null:
-		cost_average_data_panel.set_data(String("$" + "%3.2f" % float(cost_average_p)));
+# Total sold was calcualted. Refresh your data.
+func _on_SoldTransactionsLog_CalcualtedTotalSoldPrice(amount_sold_p):
+	if total_amount_sold_data_panel != null:
+		total_amount_sold_data_panel.set_data(String("$" + "%3.2f" % float(amount_sold_p)));
+
+# Percent gains was calcualted. Refresh your data.
+func _on_SoldTransactionsLog_CalculatedPercentGains(percent_gains_p):
+	total_gains_data_panel.set_percent(percent_gains_p);

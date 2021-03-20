@@ -38,7 +38,7 @@ func set_tras_data(sold_transaction_p):
 	# Exchange Paid
 	exchange_paid.text = String("$" + "%3.2f" % float(trans_data.exchange_paid_m));
 	# Total Paid
-	total_paid.text = String("$" + "%3.2f" % float(trans_data.total_paid_m));
+	total_paid.text = String("$" + "%3.2f" % float(trans_data.amount_m));
 	# Exchange Sold
 	exchange_sold.text = String("$" + "%3.2f" % float(trans_data.exchange_sold_m));
 	# Total Sold

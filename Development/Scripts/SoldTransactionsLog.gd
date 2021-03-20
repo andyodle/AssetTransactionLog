@@ -1,9 +1,9 @@
 extends Control
 
 signal CalculatedTotalGains;
-signal CalculatedNumberOfCoins;
-signal CalcualtedTotalPrice;
-signal CalculatedCostAverage;
+signal CalcualtedTotalPaidPrice;
+signal CalcualtedTotalSoldPrice;
+signal CalculatedPercentGains;
 
 onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
 onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Transactions;
@@ -33,9 +33,18 @@ func calculate_toals():
 	var total_gains = Utility.calculate_total_gains(transaction_list);
 	emit_signal("CalculatedTotalGains", total_gains);
 	
-	# Total Price
-	#var total_price = Utility.calculate_total_price(transaction_list);
-	#emit_signal("CalcualtedTotalPrice", total_price);
+	# Total Paid Price
+	var total_paid_price = Utility.calculate_total_price(transaction_list);
+	emit_signal("CalcualtedTotalPaidPrice", total_paid_price);
+	
+	# Total Sold Price
+	var total_sold_price = Utility.calculate_total_sold_price(transaction_list);
+	emit_signal("CalcualtedTotalSoldPrice", total_sold_price);
+	
+	# Calcualte Percentage Gains
+	if float(total_sold_price) != 0:
+		var percent_gains = String((float(total_gains) / float(total_sold_price)) * 100);
+		emit_signal("CalculatedPercentGains", percent_gains);
 	
 	# Cost Average
 	#var cost_average = Utility.calcualte_cost_average(transaction_list);

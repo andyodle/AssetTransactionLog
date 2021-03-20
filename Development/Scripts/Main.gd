@@ -159,7 +159,7 @@ func save_transactions(file_path_p):
 			temp_data["SoldTransactions"][String(count)]["date_m"] = transaction_view.trans_data.date_m;
 			temp_data["SoldTransactions"][String(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
 			temp_data["SoldTransactions"][String(count)]["exchange_paid_m"] = transaction_view.trans_data.exchange_paid_m;
-			temp_data["SoldTransactions"][String(count)]["total_paid_m"] = transaction_view.trans_data.total_paid_m;
+			temp_data["SoldTransactions"][String(count)]["amount_m"] = transaction_view.trans_data.amount_m;
 			temp_data["SoldTransactions"][String(count)]["exchange_sold_m"] = transaction_view.trans_data.exchange_sold_m;
 	
 	# Save out the transactions.
@@ -191,7 +191,7 @@ func create_sold_transaction_record(sold_trans_data_p):
 	temp_class.sold_trans_m.date_m = sold_trans_data_p["date_m"];
 	temp_class.bought_trans_m.number_of_coins_m = sold_trans_data_p["number_of_coins_m"];
 	temp_class.bought_trans_m.exchange_price_m = sold_trans_data_p["exchange_paid_m"];
-	temp_class.bought_trans_m.amount_m = sold_trans_data_p["total_paid_m"];
+	temp_class.bought_trans_m.amount_m = sold_trans_data_p["amount_m"];
 	temp_class.sold_trans_m.exchange_price_m = sold_trans_data_p["exchange_sold_m"];
 	return temp_class;
 

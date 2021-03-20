@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/SoldTransactionView.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/TimeburnerBold-peGR.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
 [node name="SoldTransactionView" type="Control" groups=[
 "Transaction",
@@ -11,6 +19,7 @@ margin_right = -104.0
 margin_bottom = -540.0
 rect_min_size = Vector2( 920, 60 )
 size_flags_horizontal = 3
+theme = SubResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -133,9 +142,8 @@ autowrap = true
 
 [node name="PercentGains" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 815.0
-margin_top = -1.0
 margin_right = 907.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 92, 52 )
 text = "100.03%"
 align = 1

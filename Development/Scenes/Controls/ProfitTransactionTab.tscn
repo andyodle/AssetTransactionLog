@@ -55,7 +55,7 @@ rect_min_size = Vector2( 920, 72 )
 
 [node name="Title" parent="VBoxContainer/TabTitle/MarginContainer" index="0"]
 margin_right = 904.0
-text = "Active Profit Transactions"
+text = "Profit Transactions"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 72.0
@@ -161,7 +161,6 @@ anchor_bottom = 0.0
 margin_top = 168.0
 margin_right = 920.0
 margin_bottom = 600.0
-rect_min_size = Vector2( 920, 424 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )

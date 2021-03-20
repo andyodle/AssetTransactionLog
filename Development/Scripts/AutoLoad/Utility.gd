@@ -30,6 +30,18 @@ func calculate_total_price(transacion_list_p):
 	
 	return total_price;
 
+# Calcualte the total sold for the coins.
+func calculate_total_sold_price(transacion_list_p):
+	var calculator = Calculator.new();
+	# Get all of the price transactions.
+	var total_price : String = "0.0";
+	var transaction_views = transacion_list_p.get_children();
+	for transaction_view in transaction_views:
+		var trans_data = transaction_view.trans_data;
+		total_price = calculator.add(total_price, trans_data.total_sold_m);
+	
+	return total_price;
+
 # Calcualte the cost average of the purchased coins.
 func calcualte_cost_average(transacion_list_p):
 	var calculator = Calculator.new();
