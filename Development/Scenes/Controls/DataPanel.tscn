@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=4]
-size = 14
 font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=5]
@@ -89,7 +88,7 @@ margin_bottom = 53.0
 custom_constants/separation = 16
 
 [node name="DataLabel" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
-margin_right = 20.0
+margin_right = 23.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 0, 26 )
 rect_clip_content = true

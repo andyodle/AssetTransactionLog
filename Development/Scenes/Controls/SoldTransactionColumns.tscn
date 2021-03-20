@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 14
 font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=2]
@@ -73,7 +72,7 @@ valign = 1
 
 [node name="ExchangePaid" type="Label" parent="CenterContainer/HBoxContainer"]
 margin_left = 295.0
-margin_right = 395.0
+margin_right = 401.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Exchange Paid"
@@ -81,8 +80,8 @@ align = 1
 valign = 1
 
 [node name="TotalPaid" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 399.0
-margin_right = 499.0
+margin_left = 405.0
+margin_right = 505.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Total Paid"
@@ -90,8 +89,8 @@ align = 1
 valign = 1
 
 [node name="ExchangeSold" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 503.0
-margin_right = 603.0
+margin_left = 509.0
+margin_right = 614.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Exchange Sold"
@@ -99,8 +98,8 @@ align = 1
 valign = 1
 
 [node name="TotalSold" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 607.0
-margin_right = 707.0
+margin_left = 618.0
+margin_right = 718.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Total Sold"
@@ -108,8 +107,8 @@ align = 1
 valign = 1
 
 [node name="TotalGains" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 711.0
-margin_right = 811.0
+margin_left = 722.0
+margin_right = 822.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 56 )
 text = "Total Gains"
@@ -117,8 +116,8 @@ align = 1
 valign = 1
 
 [node name="PercentGains" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_left = 815.0
-margin_right = 907.0
+margin_left = 826.0
+margin_right = 918.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 92, 56 )
 text = "%Gain"
