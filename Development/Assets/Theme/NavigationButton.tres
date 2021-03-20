@@ -3,6 +3,7 @@
 [ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
+size = 14
 font_data = ExtResource( 1 )
 
 [resource]

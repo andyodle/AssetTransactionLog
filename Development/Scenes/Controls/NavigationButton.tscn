@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Fonts/TimeburnerBold-peGR.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/NavigationButton.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Theme/Normal-NavigationButton.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/Theme/Hover-NavigationButton.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Theme/Pressed-NavigationButton.tres" type="StyleBox" id=6]
 
-[sub_resource type="DynamicFont" id=1]
-size = 12
+[sub_resource type="DynamicFont" id=4]
+size = 10
 font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
 
 [node name="Button" type="Button" groups=[
 "NavigationButton",
@@ -18,6 +21,7 @@ margin_right = 0.32
 rect_min_size = Vector2( 72, 83 )
 focus_mode = 0
 size_flags_horizontal = 3
+theme = SubResource( 5 )
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/normal = ExtResource( 4 )
@@ -63,16 +67,15 @@ stretch_mode = 1
 [node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 46.0
 margin_right = 72.0
-margin_bottom = 83.0
+margin_bottom = 71.0
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer2"]
-margin_left = 18.0
-margin_right = 53.0
-margin_bottom = 37.0
+margin_left = 21.0
+margin_right = 51.0
+margin_bottom = 25.0
 rect_min_size = Vector2( 0, 12 )
 mouse_filter = 1
-custom_fonts/font = SubResource( 1 )
 text = "Nav 
 Button"
 align = 1
