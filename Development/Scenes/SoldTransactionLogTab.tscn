@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Controls/DataPanel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Controls/TabTitle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/SoldTransactionsLogView.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/SoldTransactionsLogTab.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/SoldTransactionsLog.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="SoldTransactionLogView" type="Control" groups=[
+[node name="SoldTransactionLogTab" type="Control" groups=[
 "Tab",
 ]]
 anchor_right = 1.0
