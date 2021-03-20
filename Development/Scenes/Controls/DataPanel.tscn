@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/DataPanel.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Fonts/TimeburnerBold-peGR.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=4]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
 extra_spacing_char = 2
-extra_spacing_space = 2
 font_data = ExtResource( 3 )
 
 [node name="DataPanel" type="Control"]
@@ -16,6 +22,7 @@ margin_bottom = -508.0
 rect_min_size = Vector2( 214, 92 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = SubResource( 5 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,9 +60,9 @@ size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
 margin_left = 72.0
-margin_top = 10.0
-margin_right = 142.0
-margin_bottom = 66.0
+margin_top = 11.0
+margin_right = 141.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
@@ -64,11 +71,11 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
-margin_right = 70.0
-margin_bottom = 22.0
+margin_right = 69.0
+margin_bottom = 19.0
 rect_min_size = Vector2( 0, 19 )
 rect_clip_content = true
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Subtitle"
 valign = 1
 __meta__ = {
@@ -76,9 +83,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
-margin_top = 30.0
-margin_right = 70.0
-margin_bottom = 56.0
+margin_top = 27.0
+margin_right = 69.0
+margin_bottom = 53.0
 custom_constants/separation = 16
 
 [node name="DataLabel" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]

@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Theme/Hover-RoundedActionButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Theme/Pressed-RoundedActionButton.tres" type="StyleBox" id=2]
 [ext_resource path="res://Assets/Theme/Normal-RoundedActionButton.tres" type="StyleBox" id=3]
-[ext_resource path="res://Assets/Fonts/TimeburnerBold-peGR.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scripts/BaseButton.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]

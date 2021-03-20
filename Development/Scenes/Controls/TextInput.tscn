@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Theme/Normal-TextInput.tres" type="StyleBox" id=1]
-[ext_resource path="res://Assets/Fonts/TimeburnerBold-peGR.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/TextInput.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Theme/Focus-TextInput.tres" type="StyleBox" id=4]
 
