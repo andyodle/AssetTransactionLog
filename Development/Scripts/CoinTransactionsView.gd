@@ -40,6 +40,9 @@ func get_selected_transactions():
 func remove_selected_transactions():
 	transaction_log.remove_selected_transactions();
 	
+	# Hide selection tools.
+	transaction_log.hide_selection_controls();
+	
 	# Recalulate the displayed totals.
 	transaction_log.calculate_toals();
 

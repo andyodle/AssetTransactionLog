@@ -105,10 +105,10 @@ custom_constants/margin_left = 24
 [node name="CenterContainer" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer" index="0"]
 margin_left = 24.0
 margin_right = 396.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
 [node name="Title" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
-margin_top = 40.0
-margin_bottom = 66.0
 text = "Add Active Transaction"
 
 [node name="AddProfitTransaction" parent="." instance=ExtResource( 6 )]
@@ -121,10 +121,10 @@ custom_constants/margin_left = 24
 [node name="CenterContainer" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer" index="0"]
 margin_left = 24.0
 margin_right = 396.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
 [node name="Title" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
-margin_top = 40.0
-margin_bottom = 66.0
 text = "Add Profit Transaction"
 
 [node name="SellTransactionDialog" parent="." instance=ExtResource( 5 )]

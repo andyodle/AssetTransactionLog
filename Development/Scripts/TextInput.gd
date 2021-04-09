@@ -4,6 +4,10 @@ onready var animation_player = $AnimationPlayer;
 
 var has_focus = false;
 
+func set_input_value(value_p):
+	_on_TextInput_focus_entered();
+	self.text = value_p;
+
 func _on_TextInput_focus_entered():
 	if has_focus == false:
 		animation_player.play("ShrinkLabel");

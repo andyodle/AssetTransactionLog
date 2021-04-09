@@ -72,13 +72,16 @@ tracks/1/keys = {
 }
 
 [node name="TextInput" type="TextEdit"]
-rect_min_size = Vector2( 280, 48 )
+margin_right = 76.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 92, 48 )
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_styles/focus = ExtResource( 4 )
 custom_styles/normal = ExtResource( 1 )
 custom_fonts/font = SubResource( 1 )
 custom_constants/line_spacing = 20
+wrap_enabled = true
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,6 +94,7 @@ margin_left = 16.0
 margin_right = -12.0
 mouse_filter = 1
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.745098, 0.258824, 0.0627451, 1 )
 text = "Label"
 valign = 1
 __meta__ = {
