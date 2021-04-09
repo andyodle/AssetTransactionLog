@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baseline_money_off_black_48dp.png-f28fc2c675eada73819125d8c7875c3d.stex"
+path="res://.import/Split.png-6f19e59753900b6cbc021fa35424ca6f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/baseline_money_off_black_48dp.png"
-dest_files=[ "res://.import/baseline_money_off_black_48dp.png-f28fc2c675eada73819125d8c7875c3d.stex" ]
+source_file="res://Assets/Icons/Split.png"
+dest_files=[ "res://.import/Split.png-6f19e59753900b6cbc021fa35424ca6f.stex" ]
 
 [params]
 

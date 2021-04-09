@@ -52,34 +52,27 @@ rect_min_size = Vector2( 404, 532 )
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
 margin_right = 32.0
-margin_bottom = 0.0
 rect_min_size = Vector2( 404, 532 )
 mouse_filter = 2
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
-margin_right = 388.0
 margin_bottom = 532.0
 rect_min_size = Vector2( 372, 532 )
 mouse_filter = 2
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
-margin_left = 0.0
 margin_top = 0.0
-margin_right = 372.0
 margin_bottom = 532.0
 rect_min_size = Vector2( 372, 532 )
 mouse_filter = 2
-custom_constants/separation = 24
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-margin_right = 372.0
 margin_bottom = 110.0
-rect_min_size = Vector2( 284, 110 )
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
-margin_top = 36.0
+margin_top = 40.0
 margin_right = 364.0
-margin_bottom = 69.0
+margin_bottom = 66.0
 
 [node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
 margin_top = 134.0
@@ -99,7 +92,6 @@ margin_bottom = 254.0
 
 [node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 3 )]
 margin_right = 328.0
-margin_bottom = 48.0
 rect_min_size = Vector2( 240, 48 )
 focus_next = NodePath("../../TransactionAmount")
 focus_mode = 1
@@ -156,17 +148,13 @@ text = "Deposit"
 
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="6"]
 margin_top = 422.0
-margin_right = 372.0
 margin_bottom = 532.0
 mouse_filter = 1
 
 [node name="OkButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="0"]
-margin_right = 123.0
 focus_next = NodePath("../CancelButton")
 
 [node name="CancelButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="1"]
-margin_left = 131.0
-margin_right = 254.0
 focus_next = NodePath("../../../NumberOfCoins")
 [connection signal="pressed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/BaseIconButton" to="." method="_on_BaseIconButton_pressed"]
 [connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]

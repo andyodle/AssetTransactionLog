@@ -2,7 +2,8 @@ extends "res://Scripts/DialogWindow.gd"
 
 signal AddSellTransaction;
 
-onready var number_of_coins = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/MarginContainer/NumberOfCoins;
+onready var number_of_coins = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/NumberOfCoins;
+onready var transaction_amount = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/AmountToSell;
 onready var total_coins_data_panel = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins
 onready var total_amount_paid_data_panel = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid;
 onready var cost_average_data_panel = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage;
@@ -45,6 +46,8 @@ func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
 # Calculated total price. Refresh your data.
 func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):
 	if total_amount_paid_data_panel != null:
+		# Prefill the amount paid.
+		transaction_amount.set_input_value(amount_paid_p);
 		total_amount_paid_data_panel.set_data(String("$" + "%3.2f" % float(amount_paid_p)));
 
 # Cost average was calcualted. Refresh your data.
@@ -76,7 +79,7 @@ func calculate_total_gain():
 	
 	# Sold Data
 	var sold_exchange_rate;
-	var sold_total_price = purchased_total_price;
+	var sold_total_price = transaction_amount.text;
 	var sold_number_of_coins = number_of_coins.text;
 	
 	# Left Over Data
@@ -87,14 +90,20 @@ func calculate_total_gain():
 	# Percent Gains
 	var percent_gains;
 	
-	# Make sure we have some coins.
-	if float(sold_number_of_coins) != 0:
-		sold_exchange_rate = calculator.divide(purchased_total_price, sold_number_of_coins);
+	# Make sure we have some coins and a transaction amount.
+	if float(sold_number_of_coins) != 0 and float(sold_total_price) != 0:
+		# Calcualte current exchange rate.
+		sold_exchange_rate = calculator.divide(sold_total_price, sold_number_of_coins);
 		
 		# Calcualte Possible Gains
 		left_over_number_of_coins = calculator.subtract(purchased_number_of_coins, sold_number_of_coins);
 		left_over_exchange_rate = sold_exchange_rate;
-		total_gains = calculator.multiply(left_over_number_of_coins, left_over_exchange_rate);
+		
+		# Check to see if we need to calculate profit by
+		# number of coins or selling price.
+		total_gains = calculator.subtract(sold_total_price, purchased_total_price);
+		if(total_gains == "0"):
+			total_gains = calculator.multiply(left_over_number_of_coins, left_over_exchange_rate);
 		
 		# Display the total gains.
 		total_profit_data_panel.set_data(String("$" + "%3.2f" % float(total_gains)));
@@ -140,6 +149,12 @@ func calculate_total_gain():
 # User entered a number recalulate the possilbe gains.
 func _on_NumberOfCoins_text_changed():
 	# Validate the input text.
+	# Calculate the total possible gain.
+	calculate_total_gain();
+	pass
+
+# User enterd a new sell price.
+func _on_AmountToSell_text_changed():
 	# Calculate the total possible gain.
 	calculate_total_gain();
 	pass

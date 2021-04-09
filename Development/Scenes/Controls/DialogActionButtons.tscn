@@ -6,6 +6,9 @@
 [node name="DialogActionButtons" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -716.0
+margin_bottom = -560.0
+rect_min_size = Vector2( 308, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -24,7 +27,7 @@ __meta__ = {
 [node name="OkButton" parent="HBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 100.0
+margin_right = 150.0
 margin_bottom = 40.0
 
 [node name="Button" parent="HBoxContainer/OkButton/MarginContainer" index="0"]
@@ -33,8 +36,8 @@ text = "OK"
 [node name="CancelButton" parent="HBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 108.0
-margin_right = 208.0
+margin_left = 158.0
+margin_right = 308.0
 margin_bottom = 40.0
 
 [node name="Button" parent="HBoxContainer/CancelButton/MarginContainer" index="0"]
