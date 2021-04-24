@@ -43,7 +43,8 @@ func calculate_toals():
 	
 	# Calcualte Percentage Gains
 	if float(total_sold_price) != 0:
-		var percent_gains = String((float(total_gains) / float(total_sold_price)) * 100);
+		var calculator = Calculator.new();
+		var percent_gains = calculator.multiply(calculator.divide(total_gains, total_sold_price), "100");
 		emit_signal("CalculatedPercentGains", percent_gains);
 	
 	# Cost Average

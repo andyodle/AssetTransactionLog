@@ -68,4 +68,4 @@ func _on_AnimationPlayer_animation_finished(anim_name_p):
 func _on_BaseIconButton_pressed():
 	exchange_price._on_TextInput_focus_entered();
 	var temp_price = Utility.calculate_exchange_rate(transaction_ammount.text, number_of_coins.text);
-	exchange_price.text = String("%3.8f" % float(temp_price));
+	exchange_price.text = temp_price;

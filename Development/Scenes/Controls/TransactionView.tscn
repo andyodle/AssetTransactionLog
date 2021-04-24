@@ -70,9 +70,11 @@ margin_left = 79.0
 margin_right = 202.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 123, 52 )
+size_flags_horizontal = 4
 text = "02/17/2021"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=[
 "NumberOfCoins-Trans",
@@ -81,36 +83,44 @@ margin_left = 206.0
 margin_right = 345.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 139, 52 )
+size_flags_horizontal = 4
 text = "0.001920220"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="ExchangePrice" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 349.0
 margin_right = 476.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 127, 52 )
+size_flags_horizontal = 4
 text = "$52,077.37"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="CreditAmount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 480.0
 margin_right = 603.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 123, 52 )
+size_flags_horizontal = 4
 custom_colors/font_color = Color( 0.352941, 0.729412, 0.278431, 1 )
 text = "$100"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="DebitAmount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 607.0
 margin_right = 729.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 122, 52 )
+size_flags_horizontal = 4
 custom_colors/font_color = Color( 0.913725, 0.129412, 0.152941, 1 )
 text = "$75"
 align = 1
 valign = 1
+autowrap = true
 [connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans" to="." method="_on_SelectedTrans_toggled"]
