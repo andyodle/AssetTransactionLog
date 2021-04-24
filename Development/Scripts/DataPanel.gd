@@ -49,7 +49,7 @@ func get_data():
 
 func set_percent(percent_p):
 	percent_label.visible = true;
-	percent_label.text = String("%3.2f" % float(percent_p)) +  "%";
+	percent_label.text = percent_p + "%";
 
 # Set the panel to the default values.
 func reset_data_panel():

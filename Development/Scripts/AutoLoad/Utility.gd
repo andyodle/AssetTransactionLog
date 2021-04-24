@@ -77,3 +77,9 @@ func calculate_exchange_rate(acquired_price_p, number_of_coins_p):
 		var calculator = Calculator.new();
 		exchange_rate = calculator.divide(acquired_price_p, number_of_coins_p);
 	return exchange_rate;
+
+# Format the decimal number to make 
+# reading easier.
+# Format: %3.8f
+func format_decimal(format_p, number_p):
+	return String(format_p % float(number_p));

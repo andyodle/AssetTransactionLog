@@ -34,19 +34,19 @@ func set_tras_data(sold_transaction_p):
 	if trans_data.date_m != null:
 		date_sold.text = String(trans_data.date_m);
 	# Number of Coins
-	number_of_coins.text = String("%11.9f" % float(trans_data.number_of_coins_m));
+	number_of_coins.text = trans_data.number_of_coins_m;
 	# Exchange Paid
-	exchange_paid.text = String("$" + "%3.2f" % float(trans_data.exchange_paid_m));
+	exchange_paid.text = trans_data.exchange_paid_m;
 	# Total Paid
-	total_paid.text = String("$" + "%3.2f" % float(trans_data.amount_m));
+	total_paid.text = trans_data.amount_m;
 	# Exchange Sold
-	exchange_sold.text = String("$" + "%3.2f" % float(trans_data.exchange_sold_m));
+	exchange_sold.text = trans_data.exchange_sold_m;
 	# Total Sold
-	total_sold.text = String("$" + "%3.2f" % float(trans_data.total_sold_m));
+	total_sold.text = trans_data.total_sold_m;
 	# Total Gains
-	total_gains.text = String("$" + "%3.2f" % float(trans_data.total_gains_m));
+	total_gains.text = trans_data.total_gains_m;
 	# Percent Gains
-	percent_gains.text = String("%3.2f" % float(trans_data.percent_gains_m)) +  "%";
+	percent_gains.text = trans_data.percent_gains_m + "%";
 
 # Flag to check if a row was selected.
 func is_selected():

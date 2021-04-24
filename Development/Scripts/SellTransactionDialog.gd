@@ -41,19 +41,19 @@ func verify_input():
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
 	if total_coins_data_panel != null:
-		total_coins_data_panel.set_data(String("%11.9f" % float(number_of_coins_p)));
+		total_coins_data_panel.set_data(number_of_coins_p);
 		
 # Calculated total price. Refresh your data.
 func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):
 	if total_amount_paid_data_panel != null:
 		# Prefill the amount paid.
 		transaction_amount.set_input_value(amount_paid_p);
-		total_amount_paid_data_panel.set_data(String("$" + "%3.2f" % float(amount_paid_p)));
+		total_amount_paid_data_panel.set_data(amount_paid_p);
 
 # Cost average was calcualted. Refresh your data.
 func _on_TransactionLog_CalculateCostAverage(cost_average_p):
 	if cost_average_data_panel != null:
-		cost_average_data_panel.set_data(String("$" + "%3.2f" % float(cost_average_p)));
+		cost_average_data_panel.set_data(cost_average_p);
 
 # Add new sell transactoin to the proper places.
 func _on_DialogActionButtons_OkClicked():
@@ -97,7 +97,7 @@ func calculate_total_gain():
 		
 		# Calcualte Possible Gains
 		left_over_number_of_coins = calculator.subtract(purchased_number_of_coins, sold_number_of_coins);
-		left_over_exchange_rate = sold_exchange_rate;
+		left_over_exchange_rate = purchased_cost_average;
 		
 		# Check to see if we need to calculate profit by
 		# number of coins or selling price.
@@ -106,11 +106,11 @@ func calculate_total_gain():
 			total_gains = calculator.multiply(left_over_number_of_coins, left_over_exchange_rate);
 		
 		# Display the total gains.
-		total_profit_data_panel.set_data(String("$" + "%3.2f" % float(total_gains)));
+		total_profit_data_panel.set_data(total_gains);
 		
 		# Calcualte Percentage Gains
 		if float(purchased_total_price) != 0:
-			percent_gains = String((float(total_gains) / float(purchased_total_price)) * 100);
+			percent_gains = calculator.multiply(calculator.divide(total_gains, purchased_total_price), "100");
 			# Dispaly the total percent gains.
 			total_profit_data_panel.set_percent(percent_gains);
 		

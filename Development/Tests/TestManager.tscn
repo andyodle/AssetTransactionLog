@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tests/TestManager.gd" type="Script" id=1]
+
+[node name="TestManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 32
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 1008.0
+margin_bottom = 568.0
+custom_constants/separation = 32
+
+[node name="TestConsole" type="ItemList" parent="MarginContainer/VBoxContainer"]
+margin_right = 992.0
+margin_bottom = 456.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 488.0
+margin_right = 992.0
+margin_bottom = 536.0
+rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 3
+
+[node name="RuntTestsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 80, 32 )
+text = "RUN TESTS"
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/RuntTestsButton" to="." method="_on_RuntTestsButton_pressed"]
