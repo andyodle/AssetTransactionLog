@@ -27,11 +27,11 @@ func set_tras_data(transaction_p):
 	if transaction_p.date_m != null:
 		date_acquired.text = String(transaction_p.date_m);
 	number_of_coins.text = Utility.format_decimal("%11.9f", transaction_p.number_of_coins_m);
-	exchange_price.text = transaction_p.exchange_price_m;
+	exchange_price.text = "$" + Utility.format_decimal("%3.2f", transaction_p.exchange_price_m);
 	if(transaction_p.is_credit_m == true):
-		credit_amount.text = transaction_p.amount_m;
+		credit_amount.text = "$" + Utility.format_decimal("%3.2f", transaction_p.amount_m);
 	else:
-		debit_amount.text = transaction_p.amount_m;
+		debit_amount.text = "$" + Utility.format_decimal("%3.2f", transaction_p.amount_m);
 
 # Get the number of coins for the current transaction.
 func get_number_of_coins():

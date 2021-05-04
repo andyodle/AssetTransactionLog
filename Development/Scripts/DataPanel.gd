@@ -3,6 +3,8 @@ extends Control
 onready var data_label = $MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/DataLabel;
 onready var percent_label = $MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/PercentLabel;
 
+var data;
+var percent;
 var red_color : Color = Color("#E92127");
 var green_color : Color = Color("#59B747");
 var white_color : Color = Color("#FFFFFF");
@@ -39,17 +41,18 @@ func update_label_color():
 		# White for zero profit.
 		percent_label.set("custom_colors/font_color", white_color);
 
-func set_data(data_p):
-	data_label.text = data_p;
+func set_data(format_p, data_p):
+	data = data_p;
+	data_label.text = Utility.format_decimal(format_p, data_p);
 	update_label_color();
 
 func get_data():
-	var temp_data = data_label.text.replace("$", "");
-	return temp_data;
+	return data;
 
 func set_percent(percent_p):
+	percent = percent_p;
 	percent_label.visible = true;
-	percent_label.text = percent_p + "%";
+	percent_label.text = Utility.format_decimal("%3.2f", percent_p) + "%";
 
 # Set the panel to the default values.
 func reset_data_panel():
