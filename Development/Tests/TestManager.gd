@@ -39,8 +39,10 @@ func run_tests(current_dir_p):
 	levels_dir.list_dir_end();
 
 # Add a message to the test console.
-func display_test_message(message_p):
-	test_console.add_item(message_p, null, false);
+func display_test_message(message_p, message_type_p):
+	if message_type_p == "failure":
+		test_console.add_item(message_p, null, false);
+	elif message_type_p == "sucess":
 
 # Run all of the tests scripts.
 func _on_RuntTestsButton_pressed():

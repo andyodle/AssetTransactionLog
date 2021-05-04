@@ -49,17 +49,17 @@ func remove_selected_transactions():
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
 	if total_coins_data_panel != null:
-		total_coins_data_panel.set_data(number_of_coins_p);
+		total_coins_data_panel.set_data("", number_of_coins_p);
 
 # Total price was calcualted. Refresh your data.
 func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):
 	if total_amount_paid_data_panel != null:
-		total_amount_paid_data_panel.set_data(amount_paid_p);
+		total_amount_paid_data_panel.set_data("%3.2f", amount_paid_p);
 
 # Cost average was calcualted. Refresh your data.
 func _on_TransactionLog_CalculateCostAverage(cost_average_p):
 	if cost_average_data_panel != null:
-		cost_average_data_panel.set_data(cost_average_p);
+		cost_average_data_panel.set_data("%3.2f", cost_average_p);
 
 # Attempt to open the add transaction dialog.
 func _on_TransactionLog_AddTransactionClick():

@@ -186,13 +186,16 @@ func create_transaction_record(trans_data_p):
 
 # Create a new sold transaction record from json data.
 func create_sold_transaction_record(sold_trans_data_p):
+	var calculator = Calculator.new();
 	var temp_class = preload("res://Scripts/Classes/SoldTransaction.gd").new();
 	temp_class.initalize();
 	temp_class.sold_trans_m.date_m = sold_trans_data_p["date_m"];
+	temp_class.sold_trans_m.exchange_price_m = sold_trans_data_p["exchange_sold_m"];
+	temp_class.sold_trans_m.number_of_coins_m = sold_trans_data_p["number_of_coins_m"];
+	temp_class.sold_trans_m.amount_m = sold_trans_data_p["amount_m"];
 	temp_class.bought_trans_m.number_of_coins_m = sold_trans_data_p["number_of_coins_m"];
 	temp_class.bought_trans_m.exchange_price_m = sold_trans_data_p["exchange_paid_m"];
-	temp_class.bought_trans_m.amount_m = sold_trans_data_p["amount_m"];
-	temp_class.sold_trans_m.exchange_price_m = sold_trans_data_p["exchange_sold_m"];
+	temp_class.bought_trans_m.amount_m = calculator.multiply(sold_trans_data_p["number_of_coins_m"], sold_trans_data_p["exchange_paid_m"]);
 	return temp_class;
 
 # Helper function to load a chosen file.

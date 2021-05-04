@@ -34,7 +34,7 @@ func add_new_transaction(transaction_p):
 		temp_class.date_m = Utility.get_current_date_str();
 	else:
 		temp_class.date_m = transaction_p.sold_trans_m.date_m;
-	temp_class.number_of_coins_m = transaction_p.bought_trans_m.number_of_coins_m;
+	temp_class.number_of_coins_m = transaction_p.sold_trans_m.number_of_coins_m;
 	temp_class.exchange_paid_m = transaction_p.bought_trans_m.exchange_price_m;
 	temp_class.amount_m = transaction_p.bought_trans_m.amount_m;
 	temp_class.exchange_sold_m = transaction_p.sold_trans_m.exchange_price_m;
@@ -52,17 +52,17 @@ func add_new_transaction(transaction_p):
 # Total gains was calcualted. Refresh your data.
 func _on_SoldTransactionsLog_CalculatedTotalGains(total_gains_p):
 	if total_gains_data_panel != null:
-		total_gains_data_panel.set_data(total_gains_p);
+		total_gains_data_panel.set_data("%3.2f", total_gains_p);
 
 # Total price was calcualted. Refresh your data.
 func _on_SoldTransactionsLog_CalcualtedTotalPaidPrice(amount_paid_p):
 	if total_amount_paid_data_panel != null:
-		total_amount_paid_data_panel.set_data(amount_paid_p);
+		total_amount_paid_data_panel.set_data("%3.2f", amount_paid_p);
 
 # Total sold was calcualted. Refresh your data.
 func _on_SoldTransactionsLog_CalcualtedTotalSoldPrice(amount_sold_p):
 	if total_amount_sold_data_panel != null:
-		total_amount_sold_data_panel.set_data(amount_sold_p);
+		total_amount_sold_data_panel.set_data("%3.2f", amount_sold_p);
 
 # Percent gains was calcualted. Refresh your data.
 func _on_SoldTransactionsLog_CalculatedPercentGains(percent_gains_p):
