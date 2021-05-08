@@ -1,1 +1,742 @@
-{"ActiveTransactions":{"0":{"amount_m":"200.00","date_m":"05/03/2021","exchange_price_m":"55966.98156600","is_credit_m":true,"number_of_coins_m":"0.00357354"},"1":{"amount_m":"200.00","date_m":"05/03/2021","exchange_price_m":"57670.74346000","is_credit_m":true,"number_of_coins_m":"0.00346796"},"2":{"amount_m":"200.00","date_m":"05/03/2021","exchange_price_m":"59242.65281000","is_credit_m":true,"number_of_coins_m":"0.00337595"},"3":{"amount_m":"200.00","date_m":"04/17/2021","exchange_price_m":"59983.52554900","is_credit_m":true,"number_of_coins_m":"0.00333425"}},"ProfitTransactions":{"0":{"amount_m":"2.520548256129","date_m":"05/02/2021","exchange_price_m":"56743.544712494644","is_credit_m":true,"number_of_coins_m":"0.00004442"},"1":{"amount_m":"13.81","date_m":"04/30/2021","exchange_price_m":"59869.0770364","is_credit_m":true,"number_of_coins_m":"0.00023067"},"10":{"amount_m":"2.49350498","date_m":"04/05/2021","exchange_price_m":"58629.32","is_credit_m":true,"number_of_coins_m":"0.00004253"},"11":{"amount_m":"7.04","date_m":"03/31/2021","exchange_price_m":"58922.00","is_credit_m":true,"number_of_coins_m":"0.00011948"},"12":{"amount_m":"0.98816983","date_m":"03/30/2021","exchange_price_m":"58161.85","is_credit_m":true,"number_of_coins_m":"0.00001699"},"13":{"amount_m":"1.00671528","date_m":"03/30/2021","exchange_price_m":"57691.42","is_credit_m":true,"number_of_coins_m":"0.00001745"},"14":{"amount_m":"3.23249876","date_m":"03/29/2021","exchange_price_m":"56840.14","is_credit_m":true,"number_of_coins_m":"0.00005687"},"15":{"amount_m":"0.45216084","date_m":"03/26/2021","exchange_price_m":"53258.05","is_credit_m":true,"number_of_coins_m":"0.00000849"},"16":{"amount_m":"0.46165300","date_m":"03/26/2021","exchange_price_m":"53185.83","is_credit_m":true,"number_of_coins_m":"0.00000868"},"17":{"amount_m":"0.63212153","date_m":"03/26/2021","exchange_price_m":"53083.77","is_credit_m":true,"number_of_coins_m":"0.000011908"},"18":{"amount_m":"0.56152012","date_m":"03/26/2021","exchange_price_m":"53083.77","is_credit_m":true,"number_of_coins_m":"0.000010578"},"19":{"amount_m":"0.56258179","date_m":"03/26/2021","exchange_price_m":"53083.77","is_credit_m":true,"number_of_coins_m":"0.000010598"},"2":{"amount_m":"2.008352725423","date_m":"04/30/2021","exchange_price_m":"55479.357055895453","is_credit_m":true,"number_of_coins_m":"0.0000362"},"20":{"amount_m":"0.44845169","date_m":"03/26/2021","exchange_price_m":"53083.77","is_credit_m":true,"number_of_coins_m":"0.000008448"},"21":{"amount_m":"1.38818592","date_m":"03/24/2021","exchange_price_m":"55253.38","is_credit_m":true,"number_of_coins_m":"0.000025124"},"22":{"amount_m":"1.40973474","date_m":"03/24/2021","exchange_price_m":"55253.38","is_credit_m":true,"number_of_coins_m":"0.000025514"},"23":{"amount_m":"1.17159267","date_m":"03/24/2021","exchange_price_m":"55253.38","is_credit_m":true,"number_of_coins_m":"0.000021204"},"24":{"amount_m":"0.78824617","date_m":"03/24/2021","exchange_price_m":"54324.34","is_credit_m":true,"number_of_coins_m":"0.00001451"},"25":{"amount_m":"1.90803648","date_m":"03/22/2021","exchange_price_m":"56551.17","is_credit_m":true,"number_of_coins_m":"0.00003374"},"26":{"amount_m":"0.67615143","date_m":"03/18/2021","exchange_price_m":"57252.45","is_credit_m":true,"number_of_coins_m":"0.00001181"},"27":{"amount_m":"0.91720655","date_m":"03/17/2021","exchange_price_m":"58309.38","is_credit_m":true,"number_of_coins_m":"0.00001573"},"28":{"amount_m":"0.19805444","date_m":"03/17/2021","exchange_price_m":"58080.48","is_credit_m":true,"number_of_coins_m":"0.00000341"},"29":{"amount_m":"5.23251506","date_m":"03/17/2021","exchange_price_m":"56549.39","is_credit_m":true,"number_of_coins_m":"0.00009253"},"3":{"amount_m":"4.600247911661","date_m":"04/30/2021","exchange_price_m":"54654.246307012574","is_credit_m":true,"number_of_coins_m":"0.00008417"},"30":{"amount_m":"1.10871396","date_m":"03/13/2021","exchange_price_m":"57685.43","is_credit_m":true,"number_of_coins_m":"0.00001922"},"31":{"amount_m":"0.77788728","date_m":"03/13/2021","exchange_price_m":"57621.28","is_credit_m":true,"number_of_coins_m":"0.0000135"},"32":{"amount_m":"0.43372048","date_m":"03/11/2021","exchange_price_m":"56547.65","is_credit_m":true,"number_of_coins_m":"0.00000767"},"33":{"amount_m":"0.6560550","date_m":"03/11/2021","exchange_price_m":"56312.65","is_credit_m":true,"number_of_coins_m":"0.00001166"},"34":{"amount_m":"1.25980536","date_m":"03/11/2021","exchange_price_m":"56377.22","is_credit_m":true,"number_of_coins_m":"0.000022346"},"35":{"amount_m":"0.62200987","date_m":"03/11/2021","exchange_price_m":"56377.22","is_credit_m":true,"number_of_coins_m":"0.000011033"},"36":{"amount_m":"0.76746310","date_m":"03/11/2021","exchange_price_m":"56377.22","is_credit_m":true,"number_of_coins_m":"0.000013613"},"37":{"amount_m":"1.12239419","date_m":"03/11/2021","exchange_price_m":"55979.76","is_credit_m":true,"number_of_coins_m":"0.00002005"},"38":{"amount_m":"1.23389494","date_m":"03/11/2021","exchange_price_m":"55832.35","is_credit_m":true,"number_of_coins_m":"0.0000221"},"39":{"amount_m":"0.41384213","date_m":"03/10/2021","exchange_price_m":"54668.71","is_credit_m":true,"number_of_coins_m":"0.00000757"},"4":{"amount_m":"1.42954473","date_m":"04/27/2021","exchange_price_m":"54729.89","is_credit_m":true,"number_of_coins_m":"0.00002612"},"40":{"amount_m":"0.30020559","date_m":"03/10/2021","exchange_price_m":"54385.07","is_credit_m":true,"number_of_coins_m":"0.00000552"},"41":{"amount_m":"1.09977787","date_m":"03/09/2021","exchange_price_m":"53910.68","is_credit_m":true,"number_of_coins_m":"0.0000204"},"42":{"amount_m":"1.40705839","date_m":"03/08/2021","exchange_price_m":"51959.32","is_credit_m":true,"number_of_coins_m":"0.00002708"},"43":{"amount_m":"6.25187777","date_m":"03/08/2021","exchange_price_m":"47280.33","is_credit_m":true,"number_of_coins_m":"0.00013223"},"44":{"amount_m":"2.08834617","date_m":"03/08/2021","exchange_price_m":"47056.02","is_credit_m":true,"number_of_coins_m":"0.00004438"},"45":{"amount_m":"1.67","date_m":"02/28/2021","exchange_price_m":"46209.19","is_credit_m":true,"number_of_coins_m":"0.00003614"},"46":{"amount_m":"1.26686437","date_m":"03/08/2021","exchange_price_m":"49217.73","is_credit_m":true,"number_of_coins_m":"0.00002574"},"47":{"amount_m":"-1.09624041","date_m":"03/08/2021","exchange_price_m":"552351.50","is_credit_m":false,"number_of_coins_m":"-0.00002094"},"48":{"amount_m":"4.29635487","date_m":"03/08/2021","exchange_price_m":"49605.76","is_credit_m":true,"number_of_coins_m":"0.00008661"},"49":{"amount_m":"0.99640408","date_m":"03/08/2021","exchange_price_m":"50221.98","is_credit_m":true,"number_of_coins_m":"0.00001984"},"5":{"amount_m":"3.15241394","date_m":"04/27/2021","exchange_price_m":"55043.043660142233","is_credit_m":true,"number_of_coins_m":"0.00005788"},"50":{"amount_m":"3.44920131","date_m":"03/08/2021","exchange_price_m":"48786.44","is_credit_m":true,"number_of_coins_m":"0.0000707"},"51":{"amount_m":"0.35118032","date_m":"03/08/2021","exchange_price_m":"469493.24","is_credit_m":true,"number_of_coins_m":"0.00000748"},"52":{"amount_m":"0.82071796","date_m":"02/13/2021","exchange_price_m":"47605.45","is_credit_m":true,"number_of_coins_m":"0.00001724"},"6":{"amount_m":"2.62088157","date_m":"04/26/2021","exchange_price_m":"52250.43","is_credit_m":true,"number_of_coins_m":"0.00005016"},"7":{"amount_m":"0.79067931","date_m":"04/23/2021","exchange_price_m":"49603.47","is_credit_m":true,"number_of_coins_m":"0.00001594"},"8":{"amount_m":"3.15624127","date_m":"04/09/2021","exchange_price_m":"57323.67","is_credit_m":true,"number_of_coins_m":"0.00005506"},"9":{"amount_m":"3.37448653","date_m":"04/08/2021","exchange_price_m":"56561.96","is_credit_m":true,"number_of_coins_m":"0.00005966"}},"SoldTransactions":{"0":{"amount_m":"197.479451743871","date_m":"05/02/2021","exchange_paid_m":"56743.544712494644","exchange_sold_m":"57467.796483545535","number_of_coins_m":"0.00348021"},"1":{"amount_m":"897.991647274577","date_m":"04/30/2021","exchange_paid_m":"55479.357055895453","exchange_sold_m":"55603.436292362865","number_of_coins_m":"0.01618605"},"10":{"amount_m":"99.0118253475","date_m":"03/30/2021","exchange_paid_m":"58161.85","exchange_sold_m":"58742.43498000","number_of_coins_m":"0.00170235"},"11":{"amount_m":"98.9932844922","date_m":"03/30/2021","exchange_paid_m":"57691.42","exchange_sold_m":"58277.95926800","number_of_coins_m":"0.00171591"},"12":{"amount_m":"346.767484105","date_m":"03/29/2021","exchange_paid_m":"56840.14","exchange_sold_m":"57370.02766700","number_of_coins_m":"0.00610075"},"13":{"amount_m":"52.8378439855","date_m":"03/26/2021","exchange_paid_m":"53258.05","exchange_sold_m":"53713.65767400","number_of_coins_m":"0.00099211"},"14":{"amount_m":"49.5383457786","date_m":"03/26/2021","exchange_paid_m":"53185.83","exchange_sold_m":"53681.62793900","number_of_coins_m":"0.00093142"},"15":{"amount_m":"49.3679061","date_m":"03/26/2021","exchange_paid_m":"53083.77","exchange_sold_m":"53763.64782300","number_of_coins_m":"0.00093000"},"16":{"amount_m":"49.4385075141","date_m":"03/26/2021","exchange_paid_m":"53083.77","exchange_sold_m":"53686.41012200","number_of_coins_m":"0.00093133"},"17":{"amount_m":"49.4374458387","date_m":"03/26/2021","exchange_paid_m":"53083.77","exchange_sold_m":"53687.91507400","number_of_coins_m":"0.00093131"},"18":{"amount_m":"49.5515759442","date_m":"03/26/2021","exchange_paid_m":"53083.77","exchange_sold_m":"53564.10306900","number_of_coins_m":"0.00093346"},"19":{"amount_m":"98.6118123536","date_m":"03/24/2021","exchange_paid_m":"55253.38","exchange_sold_m":"56031.35306100","number_of_coins_m":"0.00178472"},"2":{"amount_m":"495.399752088339","date_m":"04/30/2021","exchange_paid_m":"54654.246307012574","exchange_sold_m":"55161.761866674024","number_of_coins_m":"0.00906425"},"20":{"amount_m":"98.5902635354","date_m":"03/24/2021","exchange_paid_m":"55253.38","exchange_sold_m":"56043.41247900","number_of_coins_m":"0.00178433"},"21":{"amount_m":"98.8284056032","date_m":"03/24/2021","exchange_paid_m":"55253.38","exchange_sold_m":"55908.55095800","number_of_coins_m":"0.00178864"},"22":{"amount_m":"52.501758393","date_m":"03/24/2021","exchange_paid_m":"54324.34","exchange_sold_m":"55139.97593200","number_of_coins_m":"0.00096645"},"23":{"amount_m":"98.0919629469","date_m":"03/22/2021","exchange_paid_m":"56551.17","exchange_sold_m":"57651.13685900","number_of_coins_m":"0.00173457"},"24":{"amount_m":"199.3238321505","date_m":"03/18/2021","exchange_paid_m":"57252.45","exchange_sold_m":"57446.63170400","number_of_coins_m":"0.00348149"},"25":{"amount_m":"99.0827970588","date_m":"03/17/2021","exchange_paid_m":"58309.38","exchange_sold_m":"58849.06875000","number_of_coins_m":"0.00169926"},"26":{"amount_m":"53.0919475728","date_m":"03/17/2021","exchange_paid_m":"58080.48","exchange_sold_m":"58297.41473300","number_of_coins_m":"0.00091411"},"27":{"amount_m":"344.7674934825","date_m":"03/17/2021","exchange_paid_m":"56549.39","exchange_sold_m":"57407.67126900","number_of_coins_m":"0.00609675"},"28":{"amount_m":"48.8912861965","date_m":"03/13/2021","exchange_paid_m":"57685.43","exchange_sold_m":"58993.77186500","number_of_coins_m":"0.00084755"},"29":{"amount_m":"99.2221155216","date_m":"03/13/2021","exchange_paid_m":"57621.28","exchange_sold_m":"58073.01846900","number_of_coins_m":"0.00172197"},"3":{"amount_m":"198.570455161166","date_m":"04/27/2021","exchange_paid_m":"54729.89428920918","exchange_sold_m":"55123.84720300","number_of_coins_m":"0.00362819"},"30":{"amount_m":"49.566277131","date_m":"03/11/2021","exchange_paid_m":"56547.65","exchange_sold_m":"57042.27486400","number_of_coins_m":"0.00087654"},"31":{"amount_m":"49.343396436","date_m":"03/11/2021","exchange_paid_m":"56312.65","exchange_sold_m":"57061.80953700","number_of_coins_m":"0.00087624"},"32":{"amount_m":"98.7401906524","date_m":"03/11/2021","exchange_paid_m":"56377.22","exchange_sold_m":"57096.42343300","number_of_coins_m":"0.00175142"},"33":{"amount_m":"493.77988137","date_m":"03/11/2021","exchange_paid_m":"56377.22","exchange_sold_m":"57087.31451300","number_of_coins_m":"0.0087585"},"34":{"amount_m":"49.2325349094","date_m":"03/11/2021","exchange_paid_m":"56377.22","exchange_sold_m":"57256.11666200","number_of_coins_m":"0.00087327"},"35":{"amount_m":"48.8776078488","date_m":"03/11/2021","exchange_paid_m":"55979.76","exchange_sold_m":"57265.31469100","number_of_coins_m":"0.00087313"},"36":{"amount_m":"48.7660363365","date_m":"03/11/2021","exchange_paid_m":"55835.35","exchange_sold_m":"57248.04734700","number_of_coins_m":"0.00087339"},"37":{"amount_m":"49.5861600313","date_m":"03/10/2021","exchange_paid_m":"54668.71","exchange_sold_m":"55124.82740200","number_of_coins_m":"0.00090703"},"38":{"amount_m":"49.6997962195","date_m":"03/10/2021","exchange_paid_m":"54385.07","exchange_sold_m":"54713.60916900","number_of_coins_m":"0.00091385"},"39":{"amount_m":"48.9002214008","date_m":"03/09/2021","exchange_paid_m":"53910.68","exchange_sold_m":"55123.11452900","number_of_coins_m":"0.00090706"},"4":{"amount_m":"296.847586126765","date_m":"04/27/2021","exchange_paid_m":"54464.648811944462","exchange_sold_m":"55043.07484500","number_of_coins_m":"0.00545028"},"40":{"amount_m":"51.8829397996","date_m":"03/08/2021","exchange_paid_m":"51959.32","exchange_sold_m":"53368.41970500","number_of_coins_m":"0.00099853"},"41":{"amount_m":"293.7481244148","date_m":"03/05/2021","exchange_paid_m":"47280.28","exchange_sold_m":"48286.53343500","number_of_coins_m":"0.00621291"},"42":{"amount_m":"51.201655362","date_m":"03/01/2021","exchange_paid_m":"47056.02","exchange_sold_m":"48975.20100000","number_of_coins_m":"0.00108810"},"43":{"amount_m":"52.02313004","date_m":"02/24/2021","exchange_paid_m":"49217.72","exchange_sold_m":"50416.31430000","number_of_coins_m":"0.00105700"},"44":{"amount_m":"201.096246405","date_m":"02/19/2021","exchange_paid_m":"52351.50","exchange_sold_m":"52066.14153900","number_of_coins_m":"0.00384127"},"45":{"amount_m":"195.7036522368","date_m":"02/19/2021","exchange_paid_m":"49605.76","exchange_sold_m":"50694.71468100","number_of_coins_m":"0.00394518"},"46":{"amount_m":"199.0035913104","date_m":"02/19/2021","exchange_paid_m":"50221.98","exchange_sold_m":"50473.49156400","number_of_coins_m":"0.00396248"},"47":{"amount_m":"96.550804082","date_m":"02/17/2021","exchange_paid_m":"48786.44","exchange_sold_m":"50529.37419300","number_of_coins_m":"0.00197905"},"48":{"amount_m":"49.6488213","date_m":"02/15/2021","exchange_paid_m":"46949.24","exchange_sold_m":"47281.12087200","number_of_coins_m":"0.00105750"},"49":{"amount_m":"49.179286177","date_m":"02/13/2021","exchange_paid_m":"47605.45","exchange_sold_m":"48399.84297600","number_of_coins_m":"0.00103306"},"5":{"amount_m":"197.379118639817","date_m":"04/26/2021","exchange_paid_m":"52250.425840970602","exchange_sold_m":"52944.17175600","number_of_coins_m":"0.00377756"},"6":{"amount_m":"52.4993205786","date_m":"04/23/2021","exchange_paid_m":"49603.47","exchange_sold_m":"50350.69391500","number_of_coins_m":" 0.00105838"},"7":{"amount_m":"196.843750413","date_m":"04/09/2021","exchange_paid_m":"57323.67","exchange_sold_m":"58242.81071800","number_of_coins_m":"0.00343390"},"8":{"amount_m":"396.6254727708","date_m":"04/08/2021","exchange_paid_m":"56561.96","exchange_sold_m":"57043.20555800","number_of_coins_m":"0.00701223"},"9":{"amount_m":"797.5064978864","date_m":"04/05/2021","exchange_paid_m":"58629.32","exchange_sold_m":"58812.65287200","number_of_coins_m":"0.01360252"}}}
+{
+    "ActiveTransactions": {},
+    "ProfitTransactions": {
+        "0": {
+            "amount_m": "18.018322222417",
+            "date_m": "05/06/2021",
+            "exchange_price_m": "56910.148834266736",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00031661"
+        },
+        "1": {
+            "amount_m": "2.520548256129",
+            "date_m": "05/02/2021",
+            "exchange_price_m": "56743.544712494644",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00004442"
+        },
+        "10": {
+            "amount_m": "3.37448653",
+            "date_m": "04/08/2021",
+            "exchange_price_m": "56561.96",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00005966"
+        },
+        "11": {
+            "amount_m": "2.49350498",
+            "date_m": "04/05/2021",
+            "exchange_price_m": "58629.32",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00004253"
+        },
+        "12": {
+            "amount_m": "7.04",
+            "date_m": "03/31/2021",
+            "exchange_price_m": "58922.00",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00011948"
+        },
+        "13": {
+            "amount_m": "0.98816983",
+            "date_m": "03/30/2021",
+            "exchange_price_m": "58161.85",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001699"
+        },
+        "14": {
+            "amount_m": "1.00671528",
+            "date_m": "03/30/2021",
+            "exchange_price_m": "57691.42",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001745"
+        },
+        "15": {
+            "amount_m": "3.23249876",
+            "date_m": "03/29/2021",
+            "exchange_price_m": "56840.14",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00005687"
+        },
+        "16": {
+            "amount_m": "0.45216084",
+            "date_m": "03/26/2021",
+            "exchange_price_m": "53258.05",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00000849"
+        },
+        "17": {
+            "amount_m": "0.46165300",
+            "date_m": "03/26/2021",
+            "exchange_price_m": "53185.83",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00000868"
+        },
+        "18": {
+            "amount_m": "0.63212153",
+            "date_m": "03/26/2021",
+            "exchange_price_m": "53083.77",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000011908"
+        },
+        "19": {
+            "amount_m": "0.56152012",
+            "date_m": "03/26/2021",
+            "exchange_price_m": "53083.77",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000010578"
+        },
+        "2": {
+            "amount_m": "13.32",
+            "date_m": "04/30/2021",
+            "exchange_price_m": "57750.18",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00023067"
+        },
+        "20": {
+            "amount_m": "0.56258179",
+            "date_m": "03/26/2021",
+            "exchange_price_m": "53083.77",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000010598"
+        },
+        "21": {
+            "amount_m": "0.44845169",
+            "date_m": "03/26/2021",
+            "exchange_price_m": "53083.77",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000008448"
+        },
+        "22": {
+            "amount_m": "1.38818592",
+            "date_m": "03/24/2021",
+            "exchange_price_m": "55253.38",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000025124"
+        },
+        "23": {
+            "amount_m": "1.40973474",
+            "date_m": "03/24/2021",
+            "exchange_price_m": "55253.38",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000025514"
+        },
+        "24": {
+            "amount_m": "1.17159267",
+            "date_m": "03/24/2021",
+            "exchange_price_m": "55253.38",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000021204"
+        },
+        "25": {
+            "amount_m": "0.78824617",
+            "date_m": "03/24/2021",
+            "exchange_price_m": "54324.34",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001451"
+        },
+        "26": {
+            "amount_m": "1.90803648",
+            "date_m": "03/22/2021",
+            "exchange_price_m": "56551.17",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00003374"
+        },
+        "27": {
+            "amount_m": "0.67615143",
+            "date_m": "03/18/2021",
+            "exchange_price_m": "57252.45",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001181"
+        },
+        "28": {
+            "amount_m": "0.91720655",
+            "date_m": "03/17/2021",
+            "exchange_price_m": "58309.38",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001573"
+        },
+        "29": {
+            "amount_m": "0.19805444",
+            "date_m": "03/17/2021",
+            "exchange_price_m": "58080.48",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00000341"
+        },
+        "3": {
+            "amount_m": "2.008352725423",
+            "date_m": "04/30/2021",
+            "exchange_price_m": "55479.357055895453",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.0000362"
+        },
+        "30": {
+            "amount_m": "5.23251506",
+            "date_m": "03/17/2021",
+            "exchange_price_m": "56549.39",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00009253"
+        },
+        "31": {
+            "amount_m": "1.10871396",
+            "date_m": "03/13/2021",
+            "exchange_price_m": "57685.43",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001922"
+        },
+        "32": {
+            "amount_m": "0.77788728",
+            "date_m": "03/13/2021",
+            "exchange_price_m": "57621.28",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.0000135"
+        },
+        "33": {
+            "amount_m": "0.43372048",
+            "date_m": "03/11/2021",
+            "exchange_price_m": "56547.65",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00000767"
+        },
+        "34": {
+            "amount_m": "0.6560550",
+            "date_m": "03/11/2021",
+            "exchange_price_m": "56312.65",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001166"
+        },
+        "35": {
+            "amount_m": "1.25980536",
+            "date_m": "03/11/2021",
+            "exchange_price_m": "56377.22",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000022346"
+        },
+        "36": {
+            "amount_m": "0.62200987",
+            "date_m": "03/11/2021",
+            "exchange_price_m": "56377.22",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000011033"
+        },
+        "37": {
+            "amount_m": "0.76746310",
+            "date_m": "03/11/2021",
+            "exchange_price_m": "56377.22",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.000013613"
+        },
+        "38": {
+            "amount_m": "1.12239419",
+            "date_m": "03/11/2021",
+            "exchange_price_m": "55979.76",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00002005"
+        },
+        "39": {
+            "amount_m": "1.23389494",
+            "date_m": "03/11/2021",
+            "exchange_price_m": "55832.35",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.0000221"
+        },
+        "4": {
+            "amount_m": "4.600247911661",
+            "date_m": "04/30/2021",
+            "exchange_price_m": "54654.246307012574",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00008417"
+        },
+        "40": {
+            "amount_m": "0.41384213",
+            "date_m": "03/10/2021",
+            "exchange_price_m": "54668.71",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00000757"
+        },
+        "41": {
+            "amount_m": "0.30020559",
+            "date_m": "03/10/2021",
+            "exchange_price_m": "54385.07",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00000552"
+        },
+        "42": {
+            "amount_m": "1.09977787",
+            "date_m": "03/09/2021",
+            "exchange_price_m": "53910.68",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.0000204"
+        },
+        "43": {
+            "amount_m": "1.40705839",
+            "date_m": "03/08/2021",
+            "exchange_price_m": "51959.32",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00002708"
+        },
+        "44": {
+            "amount_m": "6.25187777",
+            "date_m": "03/08/2021",
+            "exchange_price_m": "47280.33",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00013223"
+        },
+        "45": {
+            "amount_m": "2.08834617",
+            "date_m": "03/08/2021",
+            "exchange_price_m": "47056.02",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00004438"
+        },
+        "46": {
+            "amount_m": "1.67",
+            "date_m": "02/28/2021",
+            "exchange_price_m": "46209.19",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00003614"
+        },
+        "47": {
+            "amount_m": "1.26686437",
+            "date_m": "03/08/2021",
+            "exchange_price_m": "49217.73",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00002574"
+        },
+        "48": {
+            "amount_m": "-1.09624041",
+            "date_m": "03/08/2021",
+            "exchange_price_m": "552351.50",
+            "is_credit_m": false,
+            "number_of_coins_m": "-0.00002094"
+        },
+        "49": {
+            "amount_m": "4.29635487",
+            "date_m": "03/08/2021",
+            "exchange_price_m": "49605.76",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00008661"
+        },
+        "5": {
+            "amount_m": "1.42954473",
+            "date_m": "04/27/2021",
+            "exchange_price_m": "54729.89",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00002612"
+        },
+        "50": {
+            "amount_m": "0.99640408",
+            "date_m": "03/08/2021",
+            "exchange_price_m": "50221.98",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001984"
+        },
+        "51": {
+            "amount_m": "3.44920131",
+            "date_m": "03/08/2021",
+            "exchange_price_m": "48786.44",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.0000707"
+        },
+        "52": {
+            "amount_m": "0.35118032",
+            "date_m": "03/08/2021",
+            "exchange_price_m": "469493.24",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00000748"
+        },
+        "53": {
+            "amount_m": "0.82071796",
+            "date_m": "02/13/2021",
+            "exchange_price_m": "47605.45",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001724"
+        },
+        "6": {
+            "amount_m": "3.15241394",
+            "date_m": "04/27/2021",
+            "exchange_price_m": "55043.043660142233",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00005788"
+        },
+        "7": {
+            "amount_m": "2.62088157",
+            "date_m": "04/26/2021",
+            "exchange_price_m": "52250.43",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00005016"
+        },
+        "8": {
+            "amount_m": "0.79067931",
+            "date_m": "04/23/2021",
+            "exchange_price_m": "49603.47",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00001594"
+        },
+        "9": {
+            "amount_m": "3.15624127",
+            "date_m": "04/09/2021",
+            "exchange_price_m": "57323.67",
+            "is_credit_m": true,
+            "number_of_coins_m": "0.00005506"
+        }
+    },
+    "SoldTransactions": {
+        "0": {
+            "amount_m": "1181.981677777583",
+            "date_m": "05/06/2021",
+            "exchange_paid_m": "56910.148834266736",
+            "exchange_sold_m": "57777.69646101979",
+            "number_of_coins_m": "0.02076926"
+        },
+        "1": {
+            "amount_m": "197.479451743871",
+            "date_m": "05/02/2021",
+            "exchange_paid_m": "56743.544712494644",
+            "exchange_sold_m": "57467.796483545535",
+            "number_of_coins_m": "0.00348021"
+        },
+        "10": {
+            "amount_m": "797.5064978864",
+            "date_m": "04/05/2021",
+            "exchange_paid_m": "58629.32",
+            "exchange_sold_m": "58812.65287200",
+            "number_of_coins_m": "0.01360252"
+        },
+        "11": {
+            "amount_m": "99.0118253475",
+            "date_m": "03/30/2021",
+            "exchange_paid_m": "58161.85",
+            "exchange_sold_m": "58742.43498000",
+            "number_of_coins_m": "0.00170235"
+        },
+        "12": {
+            "amount_m": "98.9932844922",
+            "date_m": "03/30/2021",
+            "exchange_paid_m": "57691.42",
+            "exchange_sold_m": "58277.95926800",
+            "number_of_coins_m": "0.00171591"
+        },
+        "13": {
+            "amount_m": "346.767484105",
+            "date_m": "03/29/2021",
+            "exchange_paid_m": "56840.14",
+            "exchange_sold_m": "57370.02766700",
+            "number_of_coins_m": "0.00610075"
+        },
+        "14": {
+            "amount_m": "52.8378439855",
+            "date_m": "03/26/2021",
+            "exchange_paid_m": "53258.05",
+            "exchange_sold_m": "53713.65767400",
+            "number_of_coins_m": "0.00099211"
+        },
+        "15": {
+            "amount_m": "49.5383457786",
+            "date_m": "03/26/2021",
+            "exchange_paid_m": "53185.83",
+            "exchange_sold_m": "53681.62793900",
+            "number_of_coins_m": "0.00093142"
+        },
+        "16": {
+            "amount_m": "49.3679061",
+            "date_m": "03/26/2021",
+            "exchange_paid_m": "53083.77",
+            "exchange_sold_m": "53763.64782300",
+            "number_of_coins_m": "0.00093000"
+        },
+        "17": {
+            "amount_m": "49.4385075141",
+            "date_m": "03/26/2021",
+            "exchange_paid_m": "53083.77",
+            "exchange_sold_m": "53686.41012200",
+            "number_of_coins_m": "0.00093133"
+        },
+        "18": {
+            "amount_m": "49.4374458387",
+            "date_m": "03/26/2021",
+            "exchange_paid_m": "53083.77",
+            "exchange_sold_m": "53687.91507400",
+            "number_of_coins_m": "0.00093131"
+        },
+        "19": {
+            "amount_m": "49.5515759442",
+            "date_m": "03/26/2021",
+            "exchange_paid_m": "53083.77",
+            "exchange_sold_m": "53564.10306900",
+            "number_of_coins_m": "0.00093346"
+        },
+        "2": {
+            "amount_m": "897.991647274577",
+            "date_m": "04/30/2021",
+            "exchange_paid_m": "55479.357055895453",
+            "exchange_sold_m": "55603.436292362865",
+            "number_of_coins_m": "0.01618605"
+        },
+        "20": {
+            "amount_m": "98.6118123536",
+            "date_m": "03/24/2021",
+            "exchange_paid_m": "55253.38",
+            "exchange_sold_m": "56031.35306100",
+            "number_of_coins_m": "0.00178472"
+        },
+        "21": {
+            "amount_m": "98.5902635354",
+            "date_m": "03/24/2021",
+            "exchange_paid_m": "55253.38",
+            "exchange_sold_m": "56043.41247900",
+            "number_of_coins_m": "0.00178433"
+        },
+        "22": {
+            "amount_m": "98.8284056032",
+            "date_m": "03/24/2021",
+            "exchange_paid_m": "55253.38",
+            "exchange_sold_m": "55908.55095800",
+            "number_of_coins_m": "0.00178864"
+        },
+        "23": {
+            "amount_m": "52.501758393",
+            "date_m": "03/24/2021",
+            "exchange_paid_m": "54324.34",
+            "exchange_sold_m": "55139.97593200",
+            "number_of_coins_m": "0.00096645"
+        },
+        "24": {
+            "amount_m": "98.0919629469",
+            "date_m": "03/22/2021",
+            "exchange_paid_m": "56551.17",
+            "exchange_sold_m": "57651.13685900",
+            "number_of_coins_m": "0.00173457"
+        },
+        "25": {
+            "amount_m": "199.3238321505",
+            "date_m": "03/18/2021",
+            "exchange_paid_m": "57252.45",
+            "exchange_sold_m": "57446.63170400",
+            "number_of_coins_m": "0.00348149"
+        },
+        "26": {
+            "amount_m": "99.0827970588",
+            "date_m": "03/17/2021",
+            "exchange_paid_m": "58309.38",
+            "exchange_sold_m": "58849.06875000",
+            "number_of_coins_m": "0.00169926"
+        },
+        "27": {
+            "amount_m": "53.0919475728",
+            "date_m": "03/17/2021",
+            "exchange_paid_m": "58080.48",
+            "exchange_sold_m": "58297.41473300",
+            "number_of_coins_m": "0.00091411"
+        },
+        "28": {
+            "amount_m": "344.7674934825",
+            "date_m": "03/17/2021",
+            "exchange_paid_m": "56549.39",
+            "exchange_sold_m": "57407.67126900",
+            "number_of_coins_m": "0.00609675"
+        },
+        "29": {
+            "amount_m": "48.8912861965",
+            "date_m": "03/13/2021",
+            "exchange_paid_m": "57685.43",
+            "exchange_sold_m": "58993.77186500",
+            "number_of_coins_m": "0.00084755"
+        },
+        "3": {
+            "amount_m": "495.399752088339",
+            "date_m": "04/30/2021",
+            "exchange_paid_m": "54654.246307012574",
+            "exchange_sold_m": "55161.761866674024",
+            "number_of_coins_m": "0.00906425"
+        },
+        "30": {
+            "amount_m": "99.2221155216",
+            "date_m": "03/13/2021",
+            "exchange_paid_m": "57621.28",
+            "exchange_sold_m": "58073.01846900",
+            "number_of_coins_m": "0.00172197"
+        },
+        "31": {
+            "amount_m": "49.566277131",
+            "date_m": "03/11/2021",
+            "exchange_paid_m": "56547.65",
+            "exchange_sold_m": "57042.27486400",
+            "number_of_coins_m": "0.00087654"
+        },
+        "32": {
+            "amount_m": "49.343396436",
+            "date_m": "03/11/2021",
+            "exchange_paid_m": "56312.65",
+            "exchange_sold_m": "57061.80953700",
+            "number_of_coins_m": "0.00087624"
+        },
+        "33": {
+            "amount_m": "98.7401906524",
+            "date_m": "03/11/2021",
+            "exchange_paid_m": "56377.22",
+            "exchange_sold_m": "57096.42343300",
+            "number_of_coins_m": "0.00175142"
+        },
+        "34": {
+            "amount_m": "493.77988137",
+            "date_m": "03/11/2021",
+            "exchange_paid_m": "56377.22",
+            "exchange_sold_m": "57087.31451300",
+            "number_of_coins_m": "0.0087585"
+        },
+        "35": {
+            "amount_m": "49.2325349094",
+            "date_m": "03/11/2021",
+            "exchange_paid_m": "56377.22",
+            "exchange_sold_m": "57256.11666200",
+            "number_of_coins_m": "0.00087327"
+        },
+        "36": {
+            "amount_m": "48.8776078488",
+            "date_m": "03/11/2021",
+            "exchange_paid_m": "55979.76",
+            "exchange_sold_m": "57265.31469100",
+            "number_of_coins_m": "0.00087313"
+        },
+        "37": {
+            "amount_m": "48.7660363365",
+            "date_m": "03/11/2021",
+            "exchange_paid_m": "55835.35",
+            "exchange_sold_m": "57248.04734700",
+            "number_of_coins_m": "0.00087339"
+        },
+        "38": {
+            "amount_m": "49.5861600313",
+            "date_m": "03/10/2021",
+            "exchange_paid_m": "54668.71",
+            "exchange_sold_m": "55124.82740200",
+            "number_of_coins_m": "0.00090703"
+        },
+        "39": {
+            "amount_m": "49.6997962195",
+            "date_m": "03/10/2021",
+            "exchange_paid_m": "54385.07",
+            "exchange_sold_m": "54713.60916900",
+            "number_of_coins_m": "0.00091385"
+        },
+        "4": {
+            "amount_m": "198.570455161166",
+            "date_m": "04/27/2021",
+            "exchange_paid_m": "54729.89428920918",
+            "exchange_sold_m": "55123.84720300",
+            "number_of_coins_m": "0.00362819"
+        },
+        "40": {
+            "amount_m": "48.9002214008",
+            "date_m": "03/09/2021",
+            "exchange_paid_m": "53910.68",
+            "exchange_sold_m": "55123.11452900",
+            "number_of_coins_m": "0.00090706"
+        },
+        "41": {
+            "amount_m": "51.8829397996",
+            "date_m": "03/08/2021",
+            "exchange_paid_m": "51959.32",
+            "exchange_sold_m": "53368.41970500",
+            "number_of_coins_m": "0.00099853"
+        },
+        "42": {
+            "amount_m": "293.7481244148",
+            "date_m": "03/05/2021",
+            "exchange_paid_m": "47280.28",
+            "exchange_sold_m": "48286.53343500",
+            "number_of_coins_m": "0.00621291"
+        },
+        "43": {
+            "amount_m": "51.201655362",
+            "date_m": "03/01/2021",
+            "exchange_paid_m": "47056.02",
+            "exchange_sold_m": "48975.20100000",
+            "number_of_coins_m": "0.00108810"
+        },
+        "44": {
+            "amount_m": "52.02313004",
+            "date_m": "02/24/2021",
+            "exchange_paid_m": "49217.72",
+            "exchange_sold_m": "50416.31430000",
+            "number_of_coins_m": "0.00105700"
+        },
+        "45": {
+            "amount_m": "201.096246405",
+            "date_m": "02/19/2021",
+            "exchange_paid_m": "52351.50",
+            "exchange_sold_m": "52066.14153900",
+            "number_of_coins_m": "0.00384127"
+        },
+        "46": {
+            "amount_m": "195.7036522368",
+            "date_m": "02/19/2021",
+            "exchange_paid_m": "49605.76",
+            "exchange_sold_m": "50694.71468100",
+            "number_of_coins_m": "0.00394518"
+        },
+        "47": {
+            "amount_m": "199.0035913104",
+            "date_m": "02/19/2021",
+            "exchange_paid_m": "50221.98",
+            "exchange_sold_m": "50473.49156400",
+            "number_of_coins_m": "0.00396248"
+        },
+        "48": {
+            "amount_m": "96.550804082",
+            "date_m": "02/17/2021",
+            "exchange_paid_m": "48786.44",
+            "exchange_sold_m": "50529.37419300",
+            "number_of_coins_m": "0.00197905"
+        },
+        "49": {
+            "amount_m": "49.6488213",
+            "date_m": "02/15/2021",
+            "exchange_paid_m": "46949.24",
+            "exchange_sold_m": "47281.12087200",
+            "number_of_coins_m": "0.00105750"
+        },
+        "5": {
+            "amount_m": "296.847586126765",
+            "date_m": "04/27/2021",
+            "exchange_paid_m": "54464.648811944462",
+            "exchange_sold_m": "55043.07484500",
+            "number_of_coins_m": "0.00545028"
+        },
+        "50": {
+            "amount_m": "49.179286177",
+            "date_m": "02/13/2021",
+            "exchange_paid_m": "47605.45",
+            "exchange_sold_m": "48399.84297600",
+            "number_of_coins_m": "0.00103306"
+        },
+        "6": {
+            "amount_m": "197.379118639817",
+            "date_m": "04/26/2021",
+            "exchange_paid_m": "52250.425840970602",
+            "exchange_sold_m": "52944.17175600",
+            "number_of_coins_m": "0.00377756"
+        },
+        "7": {
+            "amount_m": "52.4993205786",
+            "date_m": "04/23/2021",
+            "exchange_paid_m": "49603.47",
+            "exchange_sold_m": "50350.69391500",
+            "number_of_coins_m": " 0.00105838"
+        },
+        "8": {
+            "amount_m": "196.843750413",
+            "date_m": "04/09/2021",
+            "exchange_paid_m": "57323.67",
+            "exchange_sold_m": "58242.81071800",
+            "number_of_coins_m": "0.00343390"
+        },
+        "9": {
+            "amount_m": "396.6254727708",
+            "date_m": "04/08/2021",
+            "exchange_paid_m": "56561.96",
+            "exchange_sold_m": "57043.20555800",
+            "number_of_coins_m": "0.00701223"
+        }
+    }
+}
