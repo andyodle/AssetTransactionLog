@@ -14,12 +14,18 @@ func run_test():
 
 # Pass
 func sucess(message_p):
-	message_p = "Sucess: " + message_p;
-	emit_signal("display_message", message_p);
+	message_p = "        Sucess: " + message_p;
+	emit_signal("display_message", message_p, "sucess");
 	pass;
 
 # Fail
 func failure(message_p):
-	message_p = "Failure: " + message_p;
-	emit_signal("display_message", message_p);
+	message_p = "        Failure: " + message_p;
+	emit_signal("display_message", message_p, "failure");
+	pass;
+
+# Warning
+func warning(message_p):
+	message_p = "        Warning: " + message_p;
+	emit_signal("display_message", message_p, "warning");
 	pass;
