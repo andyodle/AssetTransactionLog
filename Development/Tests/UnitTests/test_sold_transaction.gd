@@ -37,21 +37,21 @@ func check_bought_transaction(sold_transaction_class_p):
 	if result != "0.00103306":
 		failure("bought_trans_m.number_of_coins_m: "  + result);
 	else:
-		sucess("bought_trans_m.number_of_coins_m works!");
+		sucess("bought_trans_m.number_of_coins_m: "  + result);
 	
 	# Check exchnage_price_sold
 	result = sold_transaction_class_p.bought_trans_m.exchange_price_m;
 	if result != "47605.45":
 		failure("bought_trans_mexchange_price_m: "  + result);
 	else:
-		sucess("bought_trans_m.exchange_price_m works!");
+		sucess("bought_trans_m.exchange_price_m: "  + result);
 	
 	# Check amount_sold
 	result = sold_transaction_class_p.bought_trans_m.amount_m;
 	if result != "49.179286177":
 		failure("bought_trans_m.amount_m: "  + result);
 	else:
-		sucess("bought_trans_m.amount_m works!");
+		sucess("bought_trans_m.amount_m: "  + result);
 	pass
 
 func check_sold_transaction(sold_transaction_class_p):
@@ -60,21 +60,21 @@ func check_sold_transaction(sold_transaction_class_p):
 	if result != "0.00103306":
 		failure("sold_trans_m.number_of_coins_m: "  + result);
 	else:
-		sucess("sold_trans_m.number_of_coins_m works!");
+		sucess("sold_trans_m.number_of_coins_m: "  + result);
 	
 	# Check exchnage_price_sold
 	result = sold_transaction_class_p.sold_trans_m.exchange_price_m;
 	if result != "48399.899328209402":
 		failure("sold_trans_m.exchange_price_m: "  + result);
 	else:
-		sucess("sold_trans_m.exchange_price_m works!");
+		sucess("sold_trans_m.exchange_price_m: "  + result);
 	
 	# Check amount_sold
 	result = sold_transaction_class_p.sold_trans_m.amount_m;
 	if result != "50.00":
 		failure("sold_trans_m.amount_m: "  + result);
 	else:
-		sucess("sold_trans_m.amount_m works!");
+		sucess("sold_trans_m.amount_m: "  + result);
 	pass
 
 func run_test():

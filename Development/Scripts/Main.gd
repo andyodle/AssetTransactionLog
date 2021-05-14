@@ -7,6 +7,7 @@ onready var settings_tab = $HBoxContainer/TabsContainer/MarginContainer/Settings
 onready var add_active_trans_dialog = $AddActiveTransaction;
 onready var add_profit_trans_dialog = $AddProfitTransaction;
 onready var sell_trans_dialog = $SellTransactionDialog;
+onready var split_transaction_dialog = $SplitTransactionDialog;
 onready var open_file_dialog = $OpenFileDialog;
 onready var safe_file_dialog = $SaveFileDialog;
 
@@ -79,6 +80,25 @@ func _on_ActiveTransactionsTab_SellTransactionClick():
 		
 		# Show the sell transaction dialog.
 		sell_trans_dialog.fade_in();
+
+# Split the selected transaction into multiple smaller ones.
+func _on_ActiveTransactionsTab_SplitTransactionClick():
+	# Reset the dialog for a new split transaction.
+	split_transaction_dialog.reset_dialog();
+	
+	# Get all of the selected transactions.
+	var transaction_views = active_transactions_view.get_selected_transactions();
+	if transaction_views.size() == 1:
+		for transaction_view in transaction_views:
+			if transaction_view.is_selected():
+				pass#sell_trans_dialog.add_sell_transaction(transaction_view.trans_data);
+		
+		# Show the sell transaction dialog.
+		split_transaction_dialog.fade_in();
+
+# Split transactions to add to active tab.
+func _on_SplitTransactionDialog_SplitTransaction(transactions_p):
+	print(transactions_p);
 
 # Add a profit transaction.
 func _on_ProfitTransactionTab_AddTransactoinClick():
