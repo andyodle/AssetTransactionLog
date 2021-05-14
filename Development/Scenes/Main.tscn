@@ -131,8 +131,17 @@ text = "Add Profit Transaction"
 [node name="SellTransactionDialog" parent="." instance=ExtResource( 5 )]
 visible = false
 
-[node name="SplitTransactionDialog" parent="." instance=ExtResource( 12 )]
+[node name="SplitActiveTransactionDialog" parent="." instance=ExtResource( 12 )]
 visible = false
+
+[node name="Title" parent="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
+text = "Split Active Transaction"
+
+[node name="SplitProfitTransactionDialog" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[node name="Title" parent="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
+text = "Split Profit Transaction"
 
 [node name="OpenFileDialog" parent="." instance=ExtResource( 8 )]
 visible = false
@@ -157,10 +166,12 @@ margin_bottom = 218.0
 [connection signal="SplitTransactionClick" from="HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_SplitTransactionClick"]
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_AddTransactoinClick"]
 [connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_SellTransactionClick"]
+[connection signal="SplitTransactionClick" from="HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionsTab_SplitTransactionClick"]
 [connection signal="AddNewTransaction" from="AddActiveTransaction" to="." method="_on_AddActiveTransaction_AddNewTransaction"]
 [connection signal="AddNewTransaction" from="AddProfitTransaction" to="." method="_on_AddProfitTransaction_AddNewTransaction"]
 [connection signal="AddSellTransaction" from="SellTransactionDialog" to="." method="_on_SellTransactionDialog_AddSellTransaction"]
-[connection signal="SplitTransaction" from="SplitTransactionDialog" to="." method="_on_SplitTransactionDialog_SplitTransaction"]
+[connection signal="SplitTransaction" from="SplitActiveTransactionDialog" to="." method="_on_SplitActiveTransactionDialog_SplitTransaction"]
+[connection signal="SplitTransaction" from="SplitProfitTransactionDialog" to="." method="_on_SplitProfitTransactionDialog_SplitTransaction"]
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
 
@@ -175,3 +186,15 @@ margin_bottom = 218.0
 [editable path="AddProfitTransaction/CenterContainer/DialogContainer"]
 
 [editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
+
+[editable path="SplitActiveTransactionDialog"]
+
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer"]
+
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
+
+[editable path="SplitProfitTransactionDialog"]
+
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer"]
+
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
