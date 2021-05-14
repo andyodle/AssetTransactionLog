@@ -171,6 +171,7 @@ anims/FadeIn = SubResource( 1 )
 [connection signal="CalculateCostAverage" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculateCostAverage"]
 [connection signal="CalculatedNumberOfCoins" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculatedNumberOfCoins"]
 [connection signal="SellTransactoinClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_SellTransactoinClick"]
+[connection signal="SplitTransactionClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_SplitTransactionClick"]
 
 [editable path="VBoxContainer/TabTitle"]
 
