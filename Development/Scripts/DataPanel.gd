@@ -43,7 +43,10 @@ func update_label_color():
 
 func set_data(format_p, data_p):
 	data = data_p;
-	data_label.text = Utility.format_decimal(format_p, data_p);
+	var formated_text = Utility.format_decimal(format_p, data_p);
+	if format_p == "%3.2f":
+		formated_text = "$" + formated_text;
+	data_label.text = formated_text;
 	update_label_color();
 
 func get_data():

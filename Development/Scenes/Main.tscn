@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Controls/SettingsTab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Controls/SaveFileDialog.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Controls/ProfitTransactionTab.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Controls/ActiveTransactionsTab.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Controls/SplitTransactionDialog.tscn" type="PackedScene" id=12]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -130,6 +131,9 @@ text = "Add Profit Transaction"
 [node name="SellTransactionDialog" parent="." instance=ExtResource( 5 )]
 visible = false
 
+[node name="SplitTransactionDialog" parent="." instance=ExtResource( 12 )]
+visible = false
+
 [node name="OpenFileDialog" parent="." instance=ExtResource( 8 )]
 visible = false
 anchor_left = 0.5
@@ -150,11 +154,13 @@ margin_bottom = 218.0
 [connection signal="SoldPositionsTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SoldPositionsTransClicked"]
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_AddTransactoinClick"]
 [connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_SellTransactionClick"]
+[connection signal="SplitTransactionClick" from="HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab" to="." method="_on_ActiveTransactionsTab_SplitTransactionClick"]
 [connection signal="AddTransactoinClick" from="HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_AddTransactoinClick"]
 [connection signal="SellTransactionClick" from="HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab" to="." method="_on_ProfitTransactionTab_SellTransactionClick"]
 [connection signal="AddNewTransaction" from="AddActiveTransaction" to="." method="_on_AddActiveTransaction_AddNewTransaction"]
 [connection signal="AddNewTransaction" from="AddProfitTransaction" to="." method="_on_AddProfitTransaction_AddNewTransaction"]
 [connection signal="AddSellTransaction" from="SellTransactionDialog" to="." method="_on_SellTransactionDialog_AddSellTransaction"]
+[connection signal="SplitTransaction" from="SplitTransactionDialog" to="." method="_on_SplitTransactionDialog_SplitTransaction"]
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
 

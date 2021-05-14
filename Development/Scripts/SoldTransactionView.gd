@@ -34,7 +34,7 @@ func set_tras_data(sold_transaction_p):
 	if trans_data.date_m != null:
 		date_sold.text = trans_data.date_m;
 	# Number of Coins
-	number_of_coins.text = Utility.format_decimal("%11.9f", trans_data.number_of_coins_m);
+	number_of_coins.text = Utility.format_decimal("", trans_data.number_of_coins_m);
 	# Exchange Paid
 	exchange_paid.text = "$" + Utility.format_decimal("%3.2f", trans_data.exchange_paid_m);
 	# Total Paid

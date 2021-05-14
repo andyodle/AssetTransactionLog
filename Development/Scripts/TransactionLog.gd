@@ -5,6 +5,7 @@ signal SellTransactoinClick;
 signal CalculatedNumberOfCoins;
 signal CalcualteTotalPrice;
 signal CalculateCostAverage;
+signal SplitTransactionClick;
 
 onready var add_action_button = $AddActionButton;
 onready var sell_action_button = $SellActionButton;
@@ -63,7 +64,8 @@ func show_selection_controls():
 	add_action_button.visible = false;
 	
 	# Show the edit and delete buttons.
-	action_button_container.show_buttons(true);
+	var number_selected = get_selected_transactions().size();
+	action_button_container.show_buttons(true, number_selected);
 	
 	# Show the sell transactoin button.
 	sell_action_button.visible = true;
@@ -79,6 +81,8 @@ func hide_selection_controls():
 		
 		# Show the add transaction button.
 		add_action_button.visible = true;
+	else:
+		show_selection_controls();
 
 # Get all of the transactions.
 func get_transactions():
@@ -130,3 +134,6 @@ func _on_TransactionColumns_SelectAll(pressed_p):
 		else:
 			transaction.selected_trans.pressed = false;
 
+# User wants to split the selected transactions.
+func _on_ActionButtonContainer_SplitClicked():
+	emit_signal("SplitTransactionClick");
