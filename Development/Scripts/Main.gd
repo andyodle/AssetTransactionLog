@@ -146,8 +146,9 @@ func _on_SplitProfitTransactionDialog_SplitTransaction(transactoins_p):
 # Add sell transaction to proper locations.
 func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
 	# Step1: Create a profit transaction.
-	sell_transaction_p.profit_trans_m.date_m = Utility.get_current_date_str();
-	profit_transactions_view.add_new_transaction(sell_transaction_p.profit_trans_m);
+	if sell_transaction_p.profit_trans_m.number_of_coins_m != "0":
+		sell_transaction_p.profit_trans_m.date_m = Utility.get_current_date_str();
+		profit_transactions_view.add_new_transaction(sell_transaction_p.profit_trans_m);
 	
 	# Step2: Create a sold history transaction.
 	sold_transactions_log_view.add_new_transaction(sell_transaction_p);
