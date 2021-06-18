@@ -50,12 +50,17 @@ func calcualte_cost_average(transacion_list_p):
 	var coin_count : String = "0.0";
 	var cost_average : String = "0.0";
 	var transaction_views = transacion_list_p.get_children();
-	for transaction_view in transaction_views:
-		var trans_data = transaction_view.trans_data;
-		total_price = calculator.add(total_price, trans_data.amount_m);
-		coin_count = calculator.add(coin_count, trans_data.number_of_coins_m);
-	if float(coin_count) != 0:
-		cost_average = calculator.divide(total_price, coin_count);
+	if transacion_list_p.get_child_count() > 1:
+		for transaction_view in transaction_views:
+			var trans_data = transaction_view.trans_data;
+			total_price = calculator.add(total_price, trans_data.amount_m);
+			coin_count = calculator.add(coin_count, trans_data.number_of_coins_m);
+		if float(coin_count) != 0:
+			cost_average = calculator.divide(total_price, coin_count);
+	elif transacion_list_p.get_child_count() == 1:
+		# Can't have an average if there is only one result.
+		var trans_data = transaction_views[0].trans_data;
+		cost_average = trans_data.exchange_price_m;
 	return cost_average;
 
 # Calcualte the total gains
