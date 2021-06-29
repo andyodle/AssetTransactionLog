@@ -74,7 +74,7 @@ tracks/1/keys = {
 [node name="TextInput" type="TextEdit"]
 margin_right = 76.0
 margin_bottom = 48.0
-rect_min_size = Vector2( 92, 48 )
+rect_min_size = Vector2( 92, 50 )
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_styles/focus = ExtResource( 4 )

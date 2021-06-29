@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Controls/DialogWindow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Controls/TextInput.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scripts/SplitTransactionDialog.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/TransactionLog.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 resource_local_to_scene = true
@@ -16,37 +17,106 @@ font_data = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="DialogContainer" parent="CenterContainer" index="0"]
-margin_left = 326.0
-margin_top = 150.0
-margin_right = 698.0
-margin_bottom = 450.0
-rect_min_size = Vector2( 372, 300 )
+margin_left = 27.0
+margin_top = 27.0
+margin_right = 995.0
+margin_bottom = 572.0
+rect_min_size = Vector2( 968, 545 )
+
+[node name="BackgroundColor" parent="CenterContainer/DialogContainer" index="0"]
+rect_min_size = Vector2( 968, 545 )
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
+rect_min_size = Vector2( 968, 545 )
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
-margin_bottom = 300.0
+margin_right = 952.0
+margin_bottom = 545.0
+rect_min_size = Vector2( 936, 545 )
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
-margin_top = 50.0
-margin_bottom = 250.0
+margin_left = 8.0
+margin_top = 11.0
+margin_right = 928.0
+margin_bottom = 534.0
+rect_min_size = Vector2( 920, 523 )
+custom_constants/separation = 8
+
+[node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 920.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 920, 41 )
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
-margin_top = 17.0
-margin_right = 364.0
-margin_bottom = 43.0
+margin_top = 31.0
+margin_right = 912.0
+margin_bottom = 57.0
 text = "Split Transaction"
 
 [node name="ReduceTransactionInput" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 2 )]
-margin_top = 88.0
-margin_right = 372.0
-margin_bottom = 136.0
+margin_top = 100.0
+margin_right = 920.0
+margin_bottom = 150.0
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" index="6"]
 custom_fonts/font = SubResource( 1 )
 text = "Amount to Reduce"
 
-[node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2"]
-margin_top = 160.0
-margin_bottom = 200.0
+[node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 158.0
+margin_right = 920.0
+margin_bottom = 422.0
+rect_min_size = Vector2( 920, 264 )
+
+[node name="BackgroundColor" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="0"]
+margin_bottom = 248.0
+
+[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="1"]
+margin_bottom = 248.0
+
+[node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer" index="0"]
+margin_left = 129.0
+margin_right = 791.0
+
+[node name="SelectAll" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="1"]
+visible = false
+
+[node name="DateAcquired" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="2"]
+margin_left = 12.0
+margin_right = 135.0
+
+[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="3"]
+margin_left = 139.0
+margin_right = 278.0
+
+[node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="4"]
+margin_left = 282.0
+margin_right = 409.0
+
+[node name="CreditAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="5"]
+margin_left = 413.0
+margin_right = 536.0
+
+[node name="DebitAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="6"]
+margin_left = 540.0
+margin_right = 662.0
+
+[node name="ScrollContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
+margin_bottom = 240.0
+
+[node name="Trasactions" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
+margin_bottom = 120.0
+
+[node name="AddActionButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="1"]
+visible = false
+
+[node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3"]
+margin_top = 430.0
+margin_right = 920.0
+margin_bottom = 523.0
+[connection signal="text_changed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" to="." method="_on_ReduceTransactionInput_text_changed"]
 [connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]
 [connection signal="OkClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_OkClicked"]
 
@@ -55,3 +125,7 @@ margin_bottom = 200.0
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
 
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog"]
+
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns"]
