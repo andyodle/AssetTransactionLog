@@ -46,13 +46,13 @@ rect_min_size = Vector2( 968, 545 )
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
 margin_right = 952.0
 margin_bottom = 545.0
-rect_min_size = Vector2( 936, 521 )
+rect_min_size = Vector2( 936, 545 )
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
 margin_left = 8.0
-margin_top = 12.0
+margin_top = 11.0
 margin_right = 928.0
-margin_bottom = 533.0
+margin_bottom = 534.0
 custom_constants/separation = 8
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
@@ -71,12 +71,13 @@ text = "Sell Transaction"
 [node name="HBoxInputContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1"]
 margin_top = 49.0
 margin_right = 920.0
-margin_bottom = 97.0
+margin_bottom = 99.0
 rect_min_size = Vector2( 920, 0 )
 custom_constants/separation = 16
 
 [node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer" index="0" instance=ExtResource( 6 )]
 margin_right = 452.0
+margin_bottom = 50.0
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/NumberOfCoins" index="6"]
 custom_fonts/font = SubResource( 1 )
@@ -85,15 +86,16 @@ text = "Number of Coins"
 [node name="AmountToSell" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer" index="1" instance=ExtResource( 6 )]
 margin_left = 468.0
 margin_right = 920.0
+margin_bottom = 50.0
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/AmountToSell" index="6"]
 custom_fonts/font = SubResource( 2 )
 text = "Amount to Sell"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2"]
-margin_top = 105.0
+margin_top = 107.0
 margin_right = 920.0
-margin_bottom = 201.0
+margin_bottom = 203.0
 rect_min_size = Vector2( 920, 96 )
 custom_constants/separation = 16
 
@@ -211,9 +213,9 @@ margin_right = 105.0
 [node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 209.0
+margin_top = 211.0
 margin_right = 920.0
-margin_bottom = 473.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 920, 264 )
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="0"]
@@ -269,9 +271,9 @@ margin_bottom = 120.0
 visible = false
 
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4"]
-margin_top = 481.0
+margin_top = 483.0
 margin_right = 920.0
-margin_bottom = 521.0
+margin_bottom = 523.0
 rect_min_size = Vector2( 920, 40 )
 [connection signal="text_changed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/NumberOfCoins" to="." method="_on_NumberOfCoins_text_changed"]
 [connection signal="text_changed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/AmountToSell" to="." method="_on_AmountToSell_text_changed"]
