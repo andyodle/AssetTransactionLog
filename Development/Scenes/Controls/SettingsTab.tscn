@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Controls/TabTitle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/SettingsTab.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
@@ -61,6 +65,7 @@ margin_right = 920.0
 rect_min_size = Vector2( 920, 72 )
 
 [node name="Title" parent="MarginContainer/VBoxContainer/TabTitle/MarginContainer" index="0"]
+margin_bottom = 56.0
 text = "Settings"
 
 [node name="WraperPanel" type="Control" parent="MarginContainer/VBoxContainer"]
@@ -95,6 +100,27 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 912.0
 margin_bottom = 492.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/WraperPanel/MarginContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/WraperPanel/MarginContainer/Control/VBoxContainer"]
+margin_right = 904.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 904, 460 )
+
+[node name="VersionNumber" type="Label" parent="MarginContainer/VBoxContainer/WraperPanel/MarginContainer/Control/VBoxContainer"]
+margin_top = 468.0
+margin_right = 904.0
+margin_bottom = 484.0
+custom_fonts/font = SubResource( 2 )
+text = "v0.0.1"
+align = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade_in = SubResource( 1 )
