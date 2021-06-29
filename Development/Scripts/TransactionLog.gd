@@ -11,6 +11,7 @@ onready var add_action_button = $AddActionButton;
 onready var sell_action_button = $SellActionButton;
 onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
 onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Trasactions;
+onready var transaction_columns = $MarginContainer/VBoxContainer/TransactionColumns;
 
 var transaction_view = preload("res://Scenes/Controls/TransactionView.tscn");
 

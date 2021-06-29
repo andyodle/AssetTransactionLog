@@ -8,7 +8,7 @@ onready var add_active_trans_dialog = $AddActiveTransaction;
 onready var add_profit_trans_dialog = $AddProfitTransaction;
 onready var sell_trans_dialog = $SellTransactionDialog;
 onready var split_active_transaction_dialog = $SplitActiveTransactionDialog;
-onready var split_profit_transaction_dialog = $SplitActiveTransactionDialog;
+onready var split_profit_transaction_dialog = $SplitProfitTransactionDialog;
 onready var open_file_dialog = $OpenFileDialog;
 onready var safe_file_dialog = $SaveFileDialog;
 
@@ -117,6 +117,7 @@ func _on_SplitActiveTransactionDialog_SplitTransaction(reduced_transaction_p):
 				transaction_view.set_tras_data(temp_class);
 			# Add to the active transaction log.
 		active_transactions_view.add_new_transaction(reduced_transaction_p);
+		active_transactions_view.transaction_log.transaction_columns.emit_signal("SelectAll", false);
 		SnackBar.display_message("Transaction reduced.", "DISMISS");
 
 # Add a profit transaction.
@@ -152,14 +153,33 @@ func _on_ProfitTransactionsTab_SplitTransactionClick():
 	if transaction_views.size() == 1:
 		for transaction_view in transaction_views:
 			if transaction_view.is_selected():
-				pass#sell_trans_dialog.add_sell_transaction(transaction_view.trans_data);
+				split_profit_transaction_dialog.add_transaction_to_split(transaction_view.trans_data);
 		
 		# Show the sell transaction dialog.
 		split_profit_transaction_dialog.fade_in();
 
 # Split transactions to add to profit tab.
-func _on_SplitProfitTransactionDialog_SplitTransaction(transactoins_p):
-	print(transactoins_p);
+func _on_SplitProfitTransactionDialog_SplitTransaction(reduced_transaction_p):
+	# Double Custom Calculator
+	var calculator = Calculator.new();
+	
+	# Get all of the selected transactions.
+	var transaction_views = profit_transactions_view.get_selected_transactions();
+	if transaction_views.size() == 1:
+		for transaction_view in transaction_views:
+			if transaction_view.is_selected():
+				var temp_class : Transaction;
+				temp_class = load("res://Scripts/Classes/Transaction.gd").new();
+				temp_class.date_m = Utility.get_current_date_str();
+				temp_class.number_of_coins_m = calculator.subtract(transaction_view.trans_data.number_of_coins_m, reduced_transaction_p.number_of_coins_m).pad_decimals(8);
+				temp_class.exchange_price_m = transaction_view.trans_data.exchange_price_m;
+				temp_class.amount_m = calculator.subtract(transaction_view.trans_data.amount_m, reduced_transaction_p.amount_m);
+				temp_class.is_credit_m = transaction_view.trans_data.is_credit_m;
+				transaction_view.set_tras_data(temp_class);
+			# Add to the active transaction log.
+		profit_transactions_view.add_new_transaction(reduced_transaction_p);
+		profit_transactions_view.transaction_log.transaction_columns.emit_signal("SelectAll", false);
+		SnackBar.display_message("Transaction reduced.", "DISMISS");
 
 # Add sell transaction to proper locations.
 func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
