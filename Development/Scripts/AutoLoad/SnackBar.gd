@@ -11,9 +11,11 @@ onready var message_label = $Control/MarginContainer/HBoxContainer/MessageLabel;
 func _ready():
 	# Hide the snackbar initialy.
 	control.modulate = Color(1, 1, 1, 0);
+	control.visible = false;
 
 # Display the message to the user.
 func display_message(message_p, action_label_p):
+	control.visible = true;
 	# Set the buttons text to the desired label.
 	button.text = action_label_p;
 	
@@ -38,8 +40,13 @@ func _on_Button_pressed():
 	# Fade out the snackbar message.
 	animation_player.play("fade_out");
 	yield(animation_player, "animation_finished");
+	
+	control.visible = false;
 
 # Hide the message after 4 seconds.
 func _on_Timer_timeout():
+	
 	animation_player.play("fade_out");
 	yield(animation_player, "animation_finished");
+	
+	control.visible = false;

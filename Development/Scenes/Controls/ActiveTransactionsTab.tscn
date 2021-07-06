@@ -161,6 +161,7 @@ margin_bottom = 600.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )
+
 [connection signal="AddTransactionClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_AddTransactionClick"]
 [connection signal="CalcualteTotalPrice" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteTotalPrice"]
 [connection signal="CalculateCostAverage" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculateCostAverage"]
@@ -169,9 +170,6 @@ anims/FadeIn = SubResource( 1 )
 [connection signal="SplitTransactionClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_SplitTransactionClick"]
 
 [editable path="VBoxContainer/TabTitle"]
-
 [editable path="VBoxContainer/HBoxContainer/TotalCoins"]
-
 [editable path="VBoxContainer/HBoxContainer/TotalAmountPaid"]
-
 [editable path="VBoxContainer/HBoxContainer/CostAverage"]

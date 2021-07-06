@@ -108,6 +108,13 @@ func remove_selected_transactions():
 		if transaction.is_selected():
 			transaction_list.remove_child(transaction);
 
+func select_all_transactions(select_transaction_p):
+	for transaction in transaction_list.get_children():
+		if select_transaction_p:
+			transaction.select_transaction(true);
+		else:
+			transaction.select_transaction(false);
+
 # User wants to delete selected items.
 func _on_ActionButtonContainer_DeleteClicked():
 	# Remove the selected items.
@@ -129,11 +136,7 @@ func _on_SellActionButton_pressed():
 
 # User wants to select all of the transactions.
 func _on_TransactionColumns_SelectAll(pressed_p):
-	for transaction in transaction_list.get_children():
-		if pressed_p:
-			transaction.selected_trans.pressed = true;
-		else:
-			transaction.selected_trans.pressed = false;
+	select_all_transactions(pressed_p);
 
 # User wants to split the selected transactions.
 func _on_ActionButtonContainer_SplitClicked():

@@ -171,15 +171,13 @@ margin_bottom = 600.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )
+
 [connection signal="CalcualtedTotalPaidPrice" from="VBoxContainer/SoldTransactionsLog" to="." method="_on_SoldTransactionsLog_CalcualtedTotalPaidPrice"]
 [connection signal="CalcualtedTotalSoldPrice" from="VBoxContainer/SoldTransactionsLog" to="." method="_on_SoldTransactionsLog_CalcualtedTotalSoldPrice"]
 [connection signal="CalculatedPercentGains" from="VBoxContainer/SoldTransactionsLog" to="." method="_on_SoldTransactionsLog_CalculatedPercentGains"]
 [connection signal="CalculatedTotalGains" from="VBoxContainer/SoldTransactionsLog" to="." method="_on_SoldTransactionsLog_CalculatedTotalGains"]
 
 [editable path="VBoxContainer/TabTitle"]
-
 [editable path="VBoxContainer/HBoxContainer/TotalGains"]
-
 [editable path="VBoxContainer/HBoxContainer/TotalAmountPaid"]
-
 [editable path="VBoxContainer/HBoxContainer/TotalAmountSold"]

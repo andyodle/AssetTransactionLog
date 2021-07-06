@@ -10,13 +10,14 @@ onready var split_button = $MarginContainer/HBoxContainer/SplitButton;
 
 # Show and hide action buttons.
 func show_buttons(visible_p, number_selected_p = 0):
-	edit_button.visible = visible_p;
 	delete_button.visible = visible_p;
 	
 	# Make sure only one transaction is selected.
 	if number_selected_p == 1:
+		edit_button.visible = visible_p;
 		split_button.visible = visible_p;
 	else:
+		edit_button.visible = false;
 		split_button.visible = false;
 
 # Hide indivual action buttons.

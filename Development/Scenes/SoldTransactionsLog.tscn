@@ -71,5 +71,6 @@ size_flags_vertical = 3
 margin_right = 920.0
 margin_bottom = 304.0
 rect_min_size = Vector2( 920, 304 )
+
 [connection signal="DeleteClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_DeleteClicked"]
 [connection signal="SelectAll" from="MarginContainer/VBoxContainer/SoldTransactionColumns" to="." method="_on_SoldTransactionColumns_SelectAll"]

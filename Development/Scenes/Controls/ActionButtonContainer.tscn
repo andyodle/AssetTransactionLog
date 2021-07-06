@@ -62,12 +62,11 @@ texture = ExtResource( 4 )
 [node name="DeleteButton" parent="MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 880.0
 margin_right = 920.0
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/SplitButton" to="." method="_on_SplitButton_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/EditButton" to="." method="_on_EditButton_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/DeleteButton" to="." method="_on_BaseIconButton_pressed"]
 
 [editable path="MarginContainer/HBoxContainer/SplitButton"]
-
 [editable path="MarginContainer/HBoxContainer/EditButton"]
-
 [editable path="MarginContainer/HBoxContainer/DeleteButton"]

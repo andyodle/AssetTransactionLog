@@ -106,6 +106,7 @@ margin_bottom = -32.0
 
 [node name="TextureRect" parent="SellActionButton" index="0"]
 texture = ExtResource( 5 )
+
 [connection signal="DeleteClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_DeleteClicked"]
 [connection signal="SplitClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_SplitClicked"]
 [connection signal="SelectAll" from="MarginContainer/VBoxContainer/TransactionColumns" to="." method="_on_TransactionColumns_SelectAll"]
@@ -113,5 +114,7 @@ texture = ExtResource( 5 )
 [connection signal="pressed" from="SellActionButton" to="." method="_on_SellActionButton_pressed"]
 
 [editable path="MarginContainer/VBoxContainer/ActionButtonContainer"]
-
+[editable path="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/SplitButton"]
+[editable path="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton"]
+[editable path="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton"]
 [editable path="SellActionButton"]

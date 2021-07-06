@@ -33,6 +33,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BackgroundColor" type="ColorRect" parent="CenterContainer"]
+visible = false
+margin_top = 2.0
+margin_right = 920.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 920, 56 )
+color = Color( 0.87451, 0.435294, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_right = 920.0
 margin_bottom = 60.0
@@ -54,22 +65,13 @@ __meta__ = {
 }
 
 [node name="BlankSpace" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_right = 8.0
+margin_right = 40.0
 margin_bottom = 52.0
-rect_min_size = Vector2( 8, 52 )
-
-[node name="SelectedTrans" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 12.0
-margin_right = 44.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 32, 52 )
-focus_mode = 0
-enabled_focus_mode = 0
-align = 1
+rect_min_size = Vector2( 40, 52 )
 
 [node name="DateSold" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 48.0
-margin_right = 148.0
+margin_left = 44.0
+margin_right = 144.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "02/17/2021"
@@ -80,8 +82,8 @@ autowrap = true
 [node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=[
 "NumberOfCoins-Trans",
 ]]
-margin_left = 152.0
-margin_right = 291.0
+margin_left = 148.0
+margin_right = 287.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 139, 52 )
 text = "0.001920220"
@@ -90,8 +92,8 @@ valign = 1
 autowrap = true
 
 [node name="ExchangePaid" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 295.0
-margin_right = 395.0
+margin_left = 291.0
+margin_right = 391.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$52,077.37"
@@ -100,8 +102,8 @@ valign = 1
 autowrap = true
 
 [node name="TotalPaid" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 399.0
-margin_right = 499.0
+margin_left = 395.0
+margin_right = 495.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$100"
@@ -110,8 +112,8 @@ valign = 1
 autowrap = true
 
 [node name="ExchangeSold" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 503.0
-margin_right = 603.0
+margin_left = 499.0
+margin_right = 599.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$53,077.37"
@@ -120,8 +122,8 @@ valign = 1
 autowrap = true
 
 [node name="TotalSold" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 607.0
-margin_right = 707.0
+margin_left = 603.0
+margin_right = 703.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$75"
@@ -130,8 +132,8 @@ valign = 1
 autowrap = true
 
 [node name="TotalGains" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 711.0
-margin_right = 811.0
+margin_left = 707.0
+margin_right = 807.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 100, 52 )
 text = "$75"
@@ -140,12 +142,25 @@ valign = 1
 autowrap = true
 
 [node name="PercentGains" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 815.0
-margin_right = 907.0
+margin_left = 811.0
+margin_right = 903.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 92, 52 )
 text = "100.03%"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="SelectedTrans" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 12.0
+margin_right = 44.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 32, 52 )
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+align = 1
+
+[connection signal="gui_input" from="CenterContainer" to="." method="_on_CenterContainer_gui_input"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans" to="." method="_on_SelectedTrans_toggled"]

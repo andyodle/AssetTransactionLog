@@ -94,6 +94,13 @@ func get_selected_transactions():
 			temp_views.append(transaction_view);
 	return temp_views;
 
+func select_all_transactions(select_transaction_p):
+	for transaction in transaction_list.get_children():
+		if select_transaction_p:
+			transaction.select_transaction(true);
+		else:
+			transaction.select_transaction(false);
+
 # User wants to delete selected items.
 func _on_ActionButtonContainer_DeleteClicked():
 	# Remove the selected items.
@@ -107,8 +114,4 @@ func _on_ActionButtonContainer_DeleteClicked():
 
 # User wants to select all of the transactions.
 func _on_SoldTransactionColumns_SelectAll(pressed_p):
-	for transaction in transaction_list.get_children():
-		if pressed_p:
-			transaction.selected_trans.pressed = true;
-		else:
-			transaction.selected_trans.pressed = false;
+	select_all_transactions(pressed_p);
