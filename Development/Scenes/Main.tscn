@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Controls/SettingsTab.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
@@ -12,6 +12,61 @@
 [ext_resource path="res://Scenes/Controls/ProfitTransactionTab.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Controls/ActiveTransactionsTab.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Controls/SplitTransactionDialog.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=3]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=4]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=5]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=6]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=7]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=8]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=9]
+resource_local_to_scene = true
+size = 20
+extra_spacing_char = 2
+extra_spacing_space = 2
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=10]
+resource_local_to_scene = true
+size = 20
+extra_spacing_char = 2
+extra_spacing_space = 2
+font_data = ExtResource( 13 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -112,6 +167,18 @@ size_flags_vertical = 1
 [node name="Title" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
 text = "Add Active Transaction"
 
+[node name="Label" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins" index="6"]
+custom_fonts/font = SubResource( 1 )
+
+[node name="Label" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice" index="6"]
+custom_fonts/font = SubResource( 2 )
+
+[node name="Label" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount" index="6"]
+custom_fonts/font = SubResource( 3 )
+
+[node name="Label" parent="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate" index="6"]
+custom_fonts/font = SubResource( 4 )
+
 [node name="AddProfitTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
 
@@ -128,6 +195,18 @@ size_flags_vertical = 1
 [node name="Title" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
 text = "Add Profit Transaction"
 
+[node name="Label" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins" index="6"]
+custom_fonts/font = SubResource( 5 )
+
+[node name="Label" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice" index="6"]
+custom_fonts/font = SubResource( 6 )
+
+[node name="Label" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount" index="6"]
+custom_fonts/font = SubResource( 7 )
+
+[node name="Label" parent="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate" index="6"]
+custom_fonts/font = SubResource( 8 )
+
 [node name="SellTransactionDialog" parent="." instance=ExtResource( 5 )]
 visible = false
 
@@ -137,11 +216,17 @@ visible = false
 [node name="Title" parent="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
 text = "Split Active Transaction"
 
+[node name="Label" parent="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" index="6"]
+custom_fonts/font = SubResource( 9 )
+
 [node name="SplitProfitTransactionDialog" parent="." instance=ExtResource( 12 )]
 visible = false
 
 [node name="Title" parent="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
 text = "Split Profit Transaction"
+
+[node name="Label" parent="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" index="6"]
+custom_fonts/font = SubResource( 10 )
 
 [node name="OpenFileDialog" parent="." instance=ExtResource( 8 )]
 visible = false
@@ -155,6 +240,7 @@ margin_right = 355.0
 margin_bottom = 218.0
 
 [node name="SaveFileDialog" parent="." instance=ExtResource( 9 )]
+
 [connection signal="ActiveTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ActiveTransClicked"]
 [connection signal="LoadTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_LoadTransClicked"]
 [connection signal="ProfitTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ProfitTransClicked"]
@@ -176,25 +262,48 @@ margin_bottom = 218.0
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
 
 [editable path="AddActiveTransaction"]
-
 [editable path="AddActiveTransaction/CenterContainer/DialogContainer"]
-
 [editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
-
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins"]
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice"]
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/BaseIconButton"]
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount"]
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate"]
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit"]
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
+[editable path="AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]
 [editable path="AddProfitTransaction"]
-
 [editable path="AddProfitTransaction/CenterContainer/DialogContainer"]
-
 [editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
-
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins"]
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice"]
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/BaseIconButton"]
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount"]
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate"]
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit"]
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
+[editable path="AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]
 [editable path="SplitActiveTransactionDialog"]
-
 [editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer"]
-
 [editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
-
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput"]
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog"]
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer"]
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/SplitButton"]
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton"]
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton"]
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns"]
+[editable path="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/SellActionButton"]
 [editable path="SplitProfitTransactionDialog"]
-
 [editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer"]
-
 [editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput"]
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog"]
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer"]
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/SplitButton"]
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton"]
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton"]
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns"]
+[editable path="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/SellActionButton"]

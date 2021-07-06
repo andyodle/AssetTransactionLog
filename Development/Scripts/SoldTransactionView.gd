@@ -2,6 +2,7 @@ extends Control
 
 signal SoldSelectedTransaction;
 
+onready var background_color = $CenterContainer/BackgroundColor;
 onready var selected_trans = $CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans;
 onready var date_sold = $CenterContainer/VBoxContainer/HBoxContainer/DateSold;
 onready var number_of_coins = $CenterContainer/VBoxContainer/HBoxContainer/NumberOfCoins;
@@ -52,6 +53,17 @@ func set_tras_data(sold_transaction_p):
 func is_selected():
 	return selected_trans.pressed;
 
+# Select a transaction.
+func select_transaction(is_selected_p):
+	background_color.visible = is_selected_p;
+	selected_trans.pressed = is_selected_p;
+
 # Selected the individual transaction.
 func _on_SelectedTrans_toggled(button_pressed_p):
 	emit_signal("SoldSelectedTransaction", button_pressed_p);
+
+# User clicked on the whole row.
+func _on_CenterContainer_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			select_transaction(!selected_trans.pressed);

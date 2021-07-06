@@ -25,6 +25,12 @@ func hide_tabs():
 	for trans_tab_view in trans_tab_views:
 		trans_tab_view.visible = false;
 
+# Deselct all transactions.
+func deselect_all_transactions():
+	active_transactions_view.transaction_log.select_all_transactions(false);
+	profit_transactions_view.transaction_log.select_all_transactions(false);
+	sold_transactions_log_view.sold_transaction_log.select_all_transactions(false);
+
 # Add a new active transaction.
 func _on_AddActiveTransaction_AddNewTransaction(transaction_p):
 	# Add to the active transaction log.
@@ -38,18 +44,21 @@ func _on_AddProfitTransaction_AddNewTransaction(transaction_p):
 # Show the active trans tab.
 func _on_SideNavigationRail_ActiveTransClicked():
 	hide_tabs();
+	deselect_all_transactions();
 	active_transactions_view.visible = true;
 	active_transactions_view.fade_in();
 
 # Show the profit trans tab.
 func _on_SideNavigationRail_ProfitTransClicked():
 	hide_tabs();
+	deselect_all_transactions();
 	profit_transactions_view.visible = true;
 	profit_transactions_view.fade_in();
 
 # Show the sold transactions log view.
 func _on_SideNavigationRail_SoldPositionsTransClicked():
 	hide_tabs();
+	deselect_all_transactions();
 	sold_transactions_log_view.visible = true;
 	sold_transactions_log_view.fade_in();
 
