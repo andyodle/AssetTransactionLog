@@ -6,7 +6,8 @@ onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/MarginCont
 onready var settings_tab = $HBoxContainer/TabsContainer/MarginContainer/SettingsTab;
 onready var add_active_trans_dialog = $AddActiveTransaction;
 onready var add_profit_trans_dialog = $AddProfitTransaction;
-onready var sell_trans_dialog = $SellTransactionDialog;
+onready var sell_active_trans_dialog = $SellActiveTransactionDialog;
+onready var sell_profit_trans_dialog = $SellProfitTransactionDialog;
 onready var split_active_transaction_dialog = $SplitActiveTransactionDialog;
 onready var split_profit_transaction_dialog = $SplitProfitTransactionDialog;
 onready var open_file_dialog = $OpenFileDialog;
@@ -79,17 +80,17 @@ func _on_ActiveTransactionsTab_AddTransactoinClick():
 # Calulate the sell transaction.
 func _on_ActiveTransactionsTab_SellTransactionClick():
 	# Reset the dialog for a new trade.
-	sell_trans_dialog.reset_dialog();
+	sell_active_trans_dialog.reset_dialog();
 	
 	# Get all of the selected transactions.
 	var transaction_views = active_transactions_view.get_selected_transactions();
 	if transaction_views.size() > 0:
 		for transaction_view in transaction_views:
 			if transaction_view.is_selected():
-				sell_trans_dialog.add_sell_transaction(transaction_view.trans_data);
+				sell_active_trans_dialog.add_sell_transaction(transaction_view.trans_data);
 		
 		# Show the sell transaction dialog.
-		sell_trans_dialog.fade_in();
+		sell_active_trans_dialog.fade_in();
 
 # Split the selected sell transaction into multiple smaller ones.
 func _on_ActiveTransactionsTab_SplitTransactionClick():
@@ -129,6 +130,24 @@ func _on_SplitActiveTransactionDialog_SplitTransaction(reduced_transaction_p):
 		active_transactions_view.transaction_log.transaction_columns.emit_signal("SelectAll", false);
 		SnackBar.display_message("Transaction reduced.", "DISMISS");
 
+# Add sell transaction to proper locations.
+func _on_SellActiveTransactionDialog_AddSellTransaction(sell_transaction_p):
+	# Step1: Create a profit transaction.
+	if sell_transaction_p.profit_trans_m.number_of_coins_m != "0":
+		sell_transaction_p.profit_trans_m.date_m = Utility.get_current_date_str();
+		profit_transactions_view.add_new_transaction(sell_transaction_p.profit_trans_m);
+	
+	# 
+	
+	# Step2: Create a sold history transaction.
+	sold_transactions_log_view.add_new_transaction(sell_transaction_p);
+	
+	# Step3: Remove previously selected transactions.
+	active_transactions_view.remove_selected_transactions();
+	
+	# Dipslay a messge to the user that we added transactions.
+	SnackBar.display_message("Added profit and sold transactions.", "DISMISS");
+
 # Add a profit transaction.
 func _on_ProfitTransactionTab_AddTransactoinClick():
 	# Reset the form to get it ready for new input.
@@ -140,17 +159,17 @@ func _on_ProfitTransactionTab_AddTransactoinClick():
 # Sell a profit transaction.
 func _on_ProfitTransactionTab_SellTransactionClick():
 	# Reset the dialog for a new trade.
-	sell_trans_dialog.reset_dialog();
+	sell_profit_trans_dialog.reset_dialog();
 	
 	# Get all of the selected transactions.
 	var transaction_views = profit_transactions_view.get_selected_transactions();
 	if transaction_views.size() > 0:
 		for transaction_view in transaction_views:
 			if transaction_view.is_selected():
-				sell_trans_dialog.add_sell_transaction(transaction_view.trans_data);
+				sell_profit_trans_dialog.add_sell_transaction(transaction_view.trans_data);
 		
 		# Show the sell transaction dialog.
-		sell_trans_dialog.fade_in();
+		sell_profit_trans_dialog.fade_in();
 
 # Split the profit transaction.
 func _on_ProfitTransactionsTab_SplitTransactionClick():
@@ -191,7 +210,7 @@ func _on_SplitProfitTransactionDialog_SplitTransaction(reduced_transaction_p):
 		SnackBar.display_message("Transaction reduced.", "DISMISS");
 
 # Add sell transaction to proper locations.
-func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
+func _on_SellProfitTransactionDialog_AddSellTransaction(sell_transaction_p):
 	# Step1: Create a profit transaction.
 	if sell_transaction_p.profit_trans_m.number_of_coins_m != "0":
 		sell_transaction_p.profit_trans_m.date_m = Utility.get_current_date_str();
@@ -201,7 +220,6 @@ func _on_SellTransactionDialog_AddSellTransaction(sell_transaction_p):
 	sold_transactions_log_view.add_new_transaction(sell_transaction_p);
 	
 	# Step3: Remove previously selected transactions.
-	active_transactions_view.remove_selected_transactions();
 	profit_transactions_view.remove_selected_transactions();
 	
 	# Dipslay a messge to the user that we added transactions.
