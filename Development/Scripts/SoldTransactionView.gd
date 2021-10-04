@@ -12,6 +12,7 @@ onready var exchange_sold = $CenterContainer/VBoxContainer/HBoxContainer/Exchang
 onready var total_sold = $CenterContainer/VBoxContainer/HBoxContainer/TotalSold;
 onready var total_gains = $CenterContainer/VBoxContainer/HBoxContainer/TotalGains;
 onready var percent_gains = $CenterContainer/VBoxContainer/HBoxContainer/PercentGains;
+onready var transaction_list = $CenterContainer/VBoxContainer/Transactions;
 
 var trans_data = null;
 
@@ -48,6 +49,16 @@ func set_tras_data(sold_transaction_p):
 	total_gains.text = "$" + Utility.format_decimal("%3.2f", trans_data.total_gains_m);
 	# Percent Gains
 	percent_gains.text = Utility.format_decimal("%3.2f", trans_data.percent_gains_m) + "%";
+
+# Add and keep track of transactions that make up the sold transaction.
+func add_transaction(transaction_p):
+	var transaction_view = load("res://Scenes/Controls/TransactionView.tscn");
+	var temp_trans_view = transaction_view.instance();
+	transaction_list.add_child(temp_trans_view);
+	transaction_list.move_child(temp_trans_view, 0);
+	
+	# Add the transaction to the list.
+	temp_trans_view.set_tras_data(transaction_p);
 
 # Flag to check if a row was selected.
 func is_selected():

@@ -35,9 +35,9 @@ __meta__ = {
 
 [node name="BackgroundColor" type="ColorRect" parent="CenterContainer"]
 visible = false
-margin_top = 2.0
+margin_top = 4.0
 margin_right = 920.0
-margin_bottom = 58.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 920, 56 )
 color = Color( 0.87451, 0.435294, 0.239216, 1 )
 __meta__ = {
@@ -46,7 +46,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_right = 920.0
-margin_bottom = 60.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 920, 60 )
 
 [node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
@@ -153,14 +153,20 @@ autowrap = true
 
 [node name="SelectedTrans" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 visible = false
-margin_left = 12.0
-margin_right = 44.0
+margin_left = 907.0
+margin_right = 939.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 32, 52 )
 focus_mode = 0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
 align = 1
+expand_icon = true
+
+[node name="Transactions" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 920.0
+margin_bottom = 64.0
 
 [connection signal="gui_input" from="CenterContainer" to="." method="_on_CenterContainer_gui_input"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans" to="." method="_on_SelectedTrans_toggled"]

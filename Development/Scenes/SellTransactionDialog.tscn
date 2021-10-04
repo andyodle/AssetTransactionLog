@@ -275,6 +275,7 @@ margin_top = 483.0
 margin_right = 920.0
 margin_bottom = 523.0
 rect_min_size = Vector2( 920, 40 )
+
 [connection signal="text_changed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/NumberOfCoins" to="." method="_on_NumberOfCoins_text_changed"]
 [connection signal="text_changed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/AmountToSell" to="." method="_on_AmountToSell_text_changed"]
 [connection signal="CalcualteTotalPrice" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalcualteTotalPrice"]
@@ -284,23 +285,20 @@ rect_min_size = Vector2( 920, 40 )
 [connection signal="OkClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_OkClicked"]
 
 [editable path="CenterContainer/DialogContainer"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/NumberOfCoins"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/AmountToSell"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog"]
-
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/SplitButton"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns"]
-
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/SellActionButton"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]
