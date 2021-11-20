@@ -19,6 +19,16 @@ func fade_in():
 
 # Reset the transaction list.
 func reset_trasactoins():
+	# Reset total gains.
+	total_gains_data_panel.reset_data_panel();
+	
+	# Reset total amount paid.
+	total_amount_paid_data_panel.reset_data_panel();
+	
+	# Reset total amount sold.
+	total_amount_sold_data_panel.reset_data_panel();
+	
+	# Reset the Transaction log list.
 	sold_transaction_log.reset_trasactoins();
 
 # Get all of the transactions.
