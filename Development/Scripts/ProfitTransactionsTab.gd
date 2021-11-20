@@ -19,6 +19,16 @@ func fade_in():
 
 # Reset the transaction list.
 func reset_trasactoins():
+	# Reset total coins.
+	total_coins_data_panel.reset_data_panel();
+	
+	# Reset total amount paid.
+	total_amount_paid_data_panel.reset_data_panel();
+	
+	# Reset cost average.
+	cost_average_data_panel.reset_data_panel();
+	
+	# Reset the Transaction log list.
 	transaction_log.reset_trasactoins();
 
 # Add the new transactoin to the transaction log.

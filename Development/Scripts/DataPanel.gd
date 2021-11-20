@@ -59,5 +59,6 @@ func set_percent(percent_p):
 
 # Set the panel to the default values.
 func reset_data_panel():
-	data_label.text = "";
+	data_label.text = "0.0";
 	percent_label.visible = false;
+	update_label_color();
