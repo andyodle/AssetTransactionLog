@@ -4,11 +4,10 @@
 [ext_resource path="res://Scripts/SettingsTab.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "fade_in"
+[sub_resource type="Animation" id=2]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -118,11 +117,12 @@ rect_min_size = Vector2( 904, 460 )
 margin_top = 468.0
 margin_right = 904.0
 margin_bottom = 484.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "v0.0.1"
 align = 2
+valign = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/fade_in = SubResource( 1 )
+anims/fade_in = SubResource( 2 )
 
 [editable path="MarginContainer/VBoxContainer/TabTitle"]
