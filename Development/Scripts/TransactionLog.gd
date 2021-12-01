@@ -89,17 +89,17 @@ func hide_selection_controls():
 func get_transactions():
 	var temp_views = [];
 	var transaction_views = transaction_list.get_children();
-	for transaction_view in transaction_views:
-		temp_views.append(transaction_view);
+	for temp_transaction_view in transaction_views:
+		temp_views.append(temp_transaction_view);
 	return temp_views;
 
 # Get the list of selected transactions.
 func get_selected_transactions():
 	var temp_views = [];
 	var transaction_views = transaction_list.get_children();
-	for transaction_view in transaction_views:
-		if transaction_view.is_selected():
-			temp_views.append(transaction_view);
+	for temp_transaction_view in transaction_views:
+		if temp_transaction_view.is_selected():
+			temp_views.append(temp_transaction_view);
 	return temp_views;
 
 # Remove the selected transaction.
