@@ -3,9 +3,7 @@ extends Node
 var main_window_title = "";
 
 func _ready():
-	# Keep track of the window title.
-	main_window_title = ProjectSettings.get("application/config/name");
-	OS.set_window_title(main_window_title);
+	reset_main_window_title();
 
 # Get the current date.
 func get_current_date_str():
@@ -166,6 +164,12 @@ func format_decimal(format_p, number_p):
 	if format_p != "":
 		return String(format_p % float(number_p));
 	return number_p;
+
+# Reset the main window title to a default state.
+func reset_main_window_title():
+	# Keep track of the window title.
+	main_window_title = ProjectSettings.get("application/config/name");
+	OS.set_window_title(main_window_title);
 
 # Helper function to set and keep track of the window title.
 func set_main_window_title(title_p):
