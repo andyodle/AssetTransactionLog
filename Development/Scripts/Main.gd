@@ -34,11 +34,17 @@ func deselect_all_transactions():
 
 # Add a new active transaction.
 func _on_AddActiveTransaction_AddNewTransaction(transaction_p):
+	# Show user that changes need to be saved.
+	Utility.show_save_changes();
+	
 	# Add to the active transaction log.
 	active_transactions_view.add_new_transaction(transaction_p);
 
 # User wants to add a profit transaction.
 func _on_AddProfitTransaction_AddNewTransaction(transaction_p):
+	# Show user that changes need to be saved.
+	Utility.show_save_changes();
+	
 	# Add to the profit transaction log.
 	profit_transactions_view.add_new_transaction(transaction_p);
 
@@ -109,6 +115,9 @@ func _on_ActiveTransactionsTab_SplitTransactionClick():
 
 # Split transactions to add to active tab.
 func _on_SplitActiveTransactionDialog_SplitTransaction(reduced_transaction_p):
+	# Show user that changes need to be saved.
+	Utility.show_save_changes();
+	
 	# Double Custom Calculator
 	var calculator = Calculator.new();
 	
@@ -132,6 +141,9 @@ func _on_SplitActiveTransactionDialog_SplitTransaction(reduced_transaction_p):
 
 # Add sell transaction to proper locations.
 func _on_SellActiveTransactionDialog_AddSellTransaction(sell_transaction_p):
+	# Show user that changes need to be saved.
+	Utility.show_save_changes();
+	
 	# Step1: Create a profit transaction.
 	if sell_transaction_p.profit_trans_m.number_of_coins_m != "0":
 		sell_transaction_p.profit_trans_m.date_m = Utility.get_current_date_str();
@@ -186,6 +198,9 @@ func _on_ProfitTransactionsTab_SplitTransactionClick():
 
 # Split transactions to add to profit tab.
 func _on_SplitProfitTransactionDialog_SplitTransaction(reduced_transaction_p):
+	# Show user that changes need to be saved.
+	Utility.show_save_changes();
+	
 	# Double Custom Calculator
 	var calculator = Calculator.new();
 	
@@ -209,6 +224,9 @@ func _on_SplitProfitTransactionDialog_SplitTransaction(reduced_transaction_p):
 
 # Add sell transaction to proper locations.
 func _on_SellProfitTransactionDialog_AddSellTransaction(sell_transaction_p):
+	# Show user that changes need to be saved.
+	Utility.show_save_changes();
+	
 	# Step1: Create a profit transaction.
 	if sell_transaction_p.profit_trans_m.number_of_coins_m != "0":
 		sell_transaction_p.profit_trans_m.date_m = Utility.get_current_date_str();
@@ -225,6 +243,10 @@ func _on_SellProfitTransactionDialog_AddSellTransaction(sell_transaction_p):
 
 # Helper function to save the users entered transactions.
 func save_transactions(file_path_p):
+	
+	# Set the window title to the current opened file.
+	Utility.set_main_window_title(file_path_p);
+	
 	var temp_data : Dictionary = {};
 	temp_data["ActiveTransactions"] = {};
 	temp_data["ProfitTransactions"] = {};
@@ -306,8 +328,7 @@ func create_sold_transaction_record(sold_trans_data_p):
 func load_transactions(file_path_p):
 	
 	# Set the window title to the current opened file.
-	if file_path_p != null:
-		OS.set_window_title(file_path_p);
+	Utility.set_main_window_title(file_path_p);
 	
 	var temp_data = JsonManager.load_json_file(file_path_p);
 	

@@ -36,6 +36,9 @@ func hide_button(button_to_hide_p):
 
 # Delete Clicked
 func _on_BaseIconButton_pressed():
+	# Show user that changes need to be saved.
+	Utility.show_save_changes();
+	
 	emit_signal("DeleteClicked");
 
 # Edit Clicked
