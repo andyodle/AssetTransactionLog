@@ -22,10 +22,10 @@ func _ready():
 # Clear added transactions.
 func reset_trasactoins():
 	for transaction in transaction_list.get_children():
+		transaction.select_transaction(false);
 		transaction_list.remove_child(transaction);
 	
-	# Hide the action buttons.
-	action_button_container.show_buttons(false);
+	transaction_columns.clear_select_all_button();
 
 # Calcualte the totals for the data panels.
 func calculate_toals():
