@@ -23,6 +23,9 @@ func _ready():
 func reset_trasactoins():
 	for transaction in transaction_list.get_children():
 		transaction_list.remove_child(transaction);
+	
+	# Hide the action buttons.
+	action_button_container.show_buttons(false);
 
 # Calcualte the totals for the data panels.
 func calculate_toals():

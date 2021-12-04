@@ -367,7 +367,8 @@ func load_transactions(file_path_p):
 # Reset the transaction log to a new clean state.
 func _on_SideNavigationRail_NewTransClicked():
 	# Reload the current secen and reset the transactions.
-	get_tree().reload_current_scene();
+	var temp_scene = get_tree()
+	temp_scene.reload_current_scene();
 	
 	# Reset the window title to default.
 	Utility.reset_main_window_title();
