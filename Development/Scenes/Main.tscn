@@ -246,6 +246,7 @@ margin_bottom = 218.0
 
 [connection signal="ActiveTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ActiveTransClicked"]
 [connection signal="LoadTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_LoadTransClicked"]
+[connection signal="NewTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_NewTransClicked"]
 [connection signal="ProfitTransClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_ProfitTransClicked"]
 [connection signal="SaveTrasnClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SaveTrasnClicked"]
 [connection signal="SettingsClicked" from="HBoxContainer/SideNavigationRail" to="." method="_on_SideNavigationRail_SettingsClicked"]

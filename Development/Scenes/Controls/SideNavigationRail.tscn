@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Controls/NavigationButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/SideNavigationRail.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Icons/Save.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Icons/Load.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Icons/Settings.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Icons/New.png" type="Texture" id=9]
 
 [node name="SideNavigationRail" type="Control"]
 anchor_right = 1.0
@@ -40,7 +41,10 @@ anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -36.0
 margin_right = 36.0
-margin_bottom = 344.0
+margin_bottom = 257.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ActiveTransButton" parent="VBoxContainer/TabButtons" instance=ExtResource( 1 )]
 margin_right = 72.0
@@ -78,33 +82,14 @@ margin_right = 72.0
 margin_bottom = 257.0
 toggle_mode = true
 
-[node name="BlankSpace" parent="VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer" index="0"]
-margin_right = 76.0
-
-[node name="CenterContainer" parent="VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer" index="1"]
-margin_right = 76.0
-
-[node name="MarginContainer" parent="VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer/CenterContainer" index="0"]
-margin_left = 26.0
-margin_right = 50.0
-
 [node name="TextureRect" parent="VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 5 )
 
-[node name="CenterContainer2" parent="VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer" index="2"]
-margin_right = 76.0
-
 [node name="Label" parent="VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 14.0
-margin_right = 62.0
+margin_left = 12.0
+margin_right = 60.0
 text = "Sold 
 Positions"
-
-[node name="Button4" parent="VBoxContainer/TabButtons" instance=ExtResource( 1 )]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = 261.0
-margin_right = 72.0
-margin_bottom = 344.0
 
 [node name="RegularButtons" type="VBoxContainer" parent="VBoxContainer"]
 anchor_left = 0.5
@@ -112,12 +97,30 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -36.0
-margin_top = -257.0
+margin_top = -340.0
 margin_right = 36.0
+margin_bottom = 4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="LoadTransButton" parent="VBoxContainer/RegularButtons" instance=ExtResource( 1 )]
+[node name="NewTransButton" parent="VBoxContainer/RegularButtons" instance=ExtResource( 1 )]
 margin_right = 72.0
 margin_bottom = 83.0
+
+[node name="TextureRect" parent="VBoxContainer/RegularButtons/NewTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
+texture = ExtResource( 9 )
+
+[node name="Label" parent="VBoxContainer/RegularButtons/NewTransButton/VBoxContainer/CenterContainer2" index="0"]
+margin_left = 1.0
+margin_right = 70.0
+text = "New
+Transactions"
+
+[node name="LoadTransButton" parent="VBoxContainer/RegularButtons" instance=ExtResource( 1 )]
+margin_top = 87.0
+margin_right = 72.0
+margin_bottom = 170.0
 
 [node name="TextureRect" parent="VBoxContainer/RegularButtons/LoadTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 7 )
@@ -129,9 +132,9 @@ text = "Load
 Transactions"
 
 [node name="SaveTransButton" parent="VBoxContainer/RegularButtons" instance=ExtResource( 1 )]
-margin_top = 87.0
+margin_top = 174.0
 margin_right = 72.0
-margin_bottom = 170.0
+margin_bottom = 257.0
 
 [node name="TextureRect" parent="VBoxContainer/RegularButtons/SaveTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 6 )
@@ -143,9 +146,9 @@ text = "Save
 Transactions"
 
 [node name="SettingsButton" parent="VBoxContainer/RegularButtons" instance=ExtResource( 1 )]
-margin_top = 174.0
+margin_top = 261.0
 margin_right = 72.0
-margin_bottom = 257.0
+margin_bottom = 344.0
 toggle_mode = true
 
 [node name="TextureRect" parent="VBoxContainer/RegularButtons/SettingsButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
@@ -159,21 +162,19 @@ margin_left = 14.0
 margin_right = 57.0
 margin_bottom = 12.0
 text = "Settings"
+
 [connection signal="pressed" from="VBoxContainer/TabButtons/ActiveTransButton" to="." method="_on_ActiveTransButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TabButtons/ProfitTransButton" to="." method="_on_ProfitTransButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TabButtons/SoldPositionsTransButton" to="." method="_on_SoldPositionsTransButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/RegularButtons/NewTransButton" to="." method="_on_NewTransButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/RegularButtons/LoadTransButton" to="." method="_on_LoadTransButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/RegularButtons/SaveTransButton" to="." method="_on_SaveTransButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/RegularButtons/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 
 [editable path="VBoxContainer/TabButtons/ActiveTransButton"]
-
 [editable path="VBoxContainer/TabButtons/ProfitTransButton"]
-
 [editable path="VBoxContainer/TabButtons/SoldPositionsTransButton"]
-
+[editable path="VBoxContainer/RegularButtons/NewTransButton"]
 [editable path="VBoxContainer/RegularButtons/LoadTransButton"]
-
 [editable path="VBoxContainer/RegularButtons/SaveTransButton"]
-
 [editable path="VBoxContainer/RegularButtons/SettingsButton"]

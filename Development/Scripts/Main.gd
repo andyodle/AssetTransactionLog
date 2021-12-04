@@ -364,6 +364,14 @@ func load_transactions(file_path_p):
 	else:
 		SnackBar.display_message("Error: Can not load selected file.", "DISMISS");
 
+# Reset the transaction log to a new clean state.
+func _on_SideNavigationRail_NewTransClicked():
+	# Reload the current secen and reset the transactions.
+	get_tree().reload_current_scene();
+	
+	# Reset the window title to default.
+	Utility.reset_main_window_title();
+
 # Load the transaction log data.
 func _on_SideNavigationRail_LoadTransClicked():
 	# Prompt the user to open a file.

@@ -3,6 +3,7 @@ extends Control
 signal ActiveTransClicked;
 signal ProfitTransClicked;
 signal SoldPositionsTransClicked;
+signal NewTransClicked;
 signal LoadTransClicked;
 signal SaveTrasnClicked;
 signal SettingsClicked;
@@ -27,6 +28,10 @@ func _on_ProfitTransButton_pressed():
 func _on_SoldPositionsTransButton_pressed():
 	toggle_tab_buttons("SoldPositionsTransButton");
 	emit_signal("SoldPositionsTransClicked");
+
+# New Transaction Log Clicked
+func _on_NewTransButton_pressed():
+	emit_signal("NewTransClicked");
 
 # Load Transactions Button Clicked
 func _on_LoadTransButton_pressed():
