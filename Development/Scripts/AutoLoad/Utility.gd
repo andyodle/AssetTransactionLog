@@ -1,5 +1,12 @@
 extends Node
 
+var main_window_title = "";
+
+func _ready():
+	# Keep track of the window title.
+	main_window_title = ProjectSettings.get("application/config/name");
+	OS.set_window_title(main_window_title);
+
 # Get the current date.
 func get_current_date_str():
 	var temp_date_time = OS.get_datetime();
@@ -159,3 +166,13 @@ func format_decimal(format_p, number_p):
 	if format_p != "":
 		return String(format_p % float(number_p));
 	return number_p;
+
+# Helper function to set and keep track of the window title.
+func set_main_window_title(title_p):
+	if title_p != null:
+		main_window_title = title_p;
+		OS.set_window_title(title_p);
+
+# Show the user that there are changes that need to be saved.
+func show_save_changes():
+	set_main_window_title("*" + main_window_title);
