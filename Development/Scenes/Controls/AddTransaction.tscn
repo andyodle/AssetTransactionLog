@@ -67,17 +67,17 @@ rect_min_size = Vector2( 372, 532 )
 mouse_filter = 2
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-margin_bottom = 110.0
+margin_bottom = 107.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
-margin_top = 40.0
+margin_top = 38.0
 margin_right = 364.0
-margin_bottom = 66.0
+margin_bottom = 64.0
 
 [node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
-margin_top = 134.0
+margin_top = 131.0
 margin_right = 372.0
-margin_bottom = 182.0
+margin_bottom = 181.0
 focus_next = NodePath("../HBoxContainer/ExchangePrice")
 focus_mode = 1
 
@@ -86,9 +86,9 @@ custom_fonts/font = SubResource( 1 )
 text = "Number of Coins"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2"]
-margin_top = 206.0
+margin_top = 205.0
 margin_right = 372.0
-margin_bottom = 254.0
+margin_bottom = 253.0
 
 [node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 3 )]
 margin_right = 328.0
@@ -110,9 +110,9 @@ focus_next = NodePath("../../TransactionAmount")
 texture = ExtResource( 7 )
 
 [node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 3 )]
-margin_top = 278.0
+margin_top = 277.0
 margin_right = 372.0
-margin_bottom = 326.0
+margin_bottom = 327.0
 focus_next = NodePath("../TransactionDate")
 focus_mode = 1
 
@@ -121,9 +121,9 @@ custom_fonts/font = SubResource( 3 )
 text = "Transaction Amount"
 
 [node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4" instance=ExtResource( 3 )]
-margin_top = 350.0
+margin_top = 351.0
 margin_right = 372.0
-margin_bottom = 398.0
+margin_bottom = 401.0
 focus_next = NodePath("../DialogActionButtons/HBoxContainer/OkButton")
 focus_mode = 1
 
@@ -147,7 +147,7 @@ margin_bottom = 49.0
 text = "Deposit"
 
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="6"]
-margin_top = 422.0
+margin_top = 425.0
 margin_bottom = 532.0
 mouse_filter = 1
 
@@ -156,25 +156,20 @@ focus_next = NodePath("../CancelButton")
 
 [node name="CancelButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="1"]
 focus_next = NodePath("../../../NumberOfCoins")
+
 [connection signal="pressed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/BaseIconButton" to="." method="_on_BaseIconButton_pressed"]
 [connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]
 [connection signal="OkClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_OkClicked"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="CenterContainer/DialogContainer"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/BaseIconButton"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]

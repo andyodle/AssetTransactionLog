@@ -5,6 +5,7 @@ signal SellTransactoinClick;
 signal CalculatedNumberOfCoins;
 signal CalcualteTotalPrice;
 signal CalculateCostAverage;
+signal EditTransactionClick;
 signal SplitTransactionClick;
 
 onready var add_action_button = $AddActionButton;
@@ -144,3 +145,7 @@ func _on_TransactionColumns_SelectAll(pressed_p):
 # User wants to split the selected transactions.
 func _on_ActionButtonContainer_SplitClicked():
 	emit_signal("SplitTransactionClick");
+
+# User wants to edit the selected transactions.
+func _on_ActionButtonContainer_EditClicked():
+	emit_signal("EditTransactionClick");

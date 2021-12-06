@@ -3,6 +3,7 @@ extends Control
 signal AddTransactoinClick;
 signal SellTransactionClick;
 signal SplitTransactionClick;
+signal EditTransactionClick;
 
 onready var total_coins_data_panel = $VBoxContainer/HBoxContainer/TotalCoins;
 onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
@@ -80,6 +81,10 @@ func _on_TransactionLog_AddTransactionClick():
 func _on_TransactionLog_SellTransactoinClick():
 	emit_signal("SellTransactionClick");
 
-# User wants to split transaction.
+# User wants to split the selected transaction.
 func _on_TransactionLog_SplitTransactionClick():
 	emit_signal("SplitTransactionClick");
+
+# User wants to edit the selected transaction.
+func _on_TransactionLog_EditTransactionClick():
+	emit_signal("EditTransactionClick");
