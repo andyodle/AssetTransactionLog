@@ -108,6 +108,7 @@ margin_bottom = -32.0
 texture = ExtResource( 5 )
 
 [connection signal="DeleteClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_DeleteClicked"]
+[connection signal="EditClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_EditClicked"]
 [connection signal="SplitClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_SplitClicked"]
 [connection signal="SelectAll" from="MarginContainer/VBoxContainer/TransactionColumns" to="." method="_on_TransactionColumns_SelectAll"]
 [connection signal="pressed" from="AddActionButton" to="." method="_on_BaseActionButton_pressed"]

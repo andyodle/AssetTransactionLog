@@ -34,8 +34,10 @@ __meta__ = {
 
 [node name="BackgroundColor" type="ColorRect" parent="CenterContainer"]
 visible = false
-margin_right = 729.0
-margin_bottom = 56.0
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 733.0
+margin_bottom = 58.0
 rect_min_size = Vector2( 729, 56 )
 color = Color( 0.87451, 0.435294, 0.239216, 1 )
 __meta__ = {

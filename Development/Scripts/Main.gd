@@ -6,6 +6,8 @@ onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/MarginCont
 onready var settings_tab = $HBoxContainer/TabsContainer/MarginContainer/SettingsTab;
 onready var add_active_trans_dialog = $AddActiveTransaction;
 onready var add_profit_trans_dialog = $AddProfitTransaction;
+onready var edit_active_trans_dialog = $EditActiveTransaction;
+onready var edit_profit_trans_dialog = $EditProfitTransaction;
 onready var sell_active_trans_dialog = $SellActiveTransactionDialog;
 onready var sell_profit_trans_dialog = $SellProfitTransactionDialog;
 onready var split_active_transaction_dialog = $SplitActiveTransactionDialog;
@@ -112,6 +114,41 @@ func _on_ActiveTransactionsTab_SplitTransactionClick():
 		
 		# Show the sell transaction dialog.
 		split_active_transaction_dialog.fade_in();
+
+# Edit a active transaction.
+func _on_EditActiveTransaction_EditTransaction(transaction_p):
+	# Show user that changes need to be saved.
+	Utility.show_save_changes();
+	
+	# Get all of the selected transactions.
+	var transaction_views = active_transactions_view.get_selected_transactions();
+	if transaction_views.size() == 1:
+		for transaction_view in transaction_views:
+			if transaction_view.is_selected():
+				var temp_class : Transaction;
+				temp_class = load("res://Scripts/Classes/Transaction.gd").new();
+				temp_class.date_m = transaction_p.date_m;
+				temp_class.number_of_coins_m = transaction_p.number_of_coins_m;
+				temp_class.exchange_price_m = transaction_p.exchange_price_m;
+				temp_class.amount_m = transaction_p.amount_m;
+				temp_class.is_credit_m = transaction_p.is_credit_m;
+				transaction_view.set_tras_data(temp_class);
+		SnackBar.display_message("Edited transaction.", "DISMISS");
+
+# Edit the selected transaction.
+func _on_ActiveTransactionsTab_EditTransactionClick():
+	# Reset the form to get it ready for new input.
+	edit_active_trans_dialog.reset_form();
+	
+	# Get all of the selected transactions.
+	var transaction_views = active_transactions_view.get_selected_transactions();
+	if transaction_views.size() == 1:
+		for transaction_view in transaction_views:
+			if transaction_view.is_selected():
+				edit_active_trans_dialog.edit_transaction(transaction_view.trans_data);
+	
+	# Step 1: Show the add transaction dialog.
+	edit_active_trans_dialog.fade_in();
 
 # Split transactions to add to active tab.
 func _on_SplitActiveTransactionDialog_SplitTransaction(reduced_transaction_p):
@@ -221,6 +258,41 @@ func _on_SplitProfitTransactionDialog_SplitTransaction(reduced_transaction_p):
 		profit_transactions_view.add_new_transaction(reduced_transaction_p);
 		profit_transactions_view.transaction_log.transaction_columns.emit_signal("SelectAll", false);
 		SnackBar.display_message("Transaction reduced.", "DISMISS");
+
+# Edit the selected transaction.
+func _on_ProfitTransactionsTab_EditTransactionClick():
+	# Reset the form to get it ready for new input.
+	edit_profit_trans_dialog.reset_form();
+	
+	# Get all of the selected transactions.
+	var transaction_views = profit_transactions_view.get_selected_transactions();
+	if transaction_views.size() == 1:
+		for transaction_view in transaction_views:
+			if transaction_view.is_selected():
+				edit_profit_trans_dialog.edit_transaction(transaction_view.trans_data);
+	
+	# Step 1: Show the add transaction dialog.
+	edit_profit_trans_dialog.fade_in();
+
+# Edit the selected transaction.
+func _on_EditProfitTransaction_EditTransaction(transaction_p):
+	# Show user that changes need to be saved.
+	Utility.show_save_changes();
+	
+	# Get all of the selected transactions.
+	var transaction_views = profit_transactions_view.get_selected_transactions();
+	if transaction_views.size() == 1:
+		for transaction_view in transaction_views:
+			if transaction_view.is_selected():
+				var temp_class : Transaction;
+				temp_class = load("res://Scripts/Classes/Transaction.gd").new();
+				temp_class.date_m = transaction_p.date_m;
+				temp_class.number_of_coins_m = transaction_p.number_of_coins_m;
+				temp_class.exchange_price_m = transaction_p.exchange_price_m;
+				temp_class.amount_m = transaction_p.amount_m;
+				temp_class.is_credit_m = transaction_p.is_credit_m;
+				transaction_view.set_tras_data(temp_class);
+		SnackBar.display_message("Edited transaction.", "DISMISS");
 
 # Add sell transaction to proper locations.
 func _on_SellProfitTransactionDialog_AddSellTransaction(sell_transaction_p):
@@ -385,3 +457,4 @@ func _on_OpenFileDialog_file_selected(path_p):
 # User selected a file to save from the SaveFileDialog.
 func _on_SaveFileDialog_file_selected(path_p):
 	save_transactions(path_p);
+
