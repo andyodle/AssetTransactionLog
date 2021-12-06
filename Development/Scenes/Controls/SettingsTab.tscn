@@ -118,7 +118,7 @@ margin_top = 468.0
 margin_right = 904.0
 margin_bottom = 484.0
 custom_fonts/font = SubResource( 1 )
-text = "v0.0.1"
+text = "v0.0.2"
 align = 2
 valign = 2
 
