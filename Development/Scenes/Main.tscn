@@ -54,6 +54,16 @@ resource_local_to_scene = true
 size = 20
 font_data = ExtResource( 13 )
 
+[sub_resource type="DynamicFont" id=9]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=10]
+resource_local_to_scene = true
+size = 20
+font_data = ExtResource( 13 )
+
 [sub_resource type="DynamicFont" id=11]
 resource_local_to_scene = true
 size = 20
@@ -87,21 +97,11 @@ font_data = ExtResource( 13 )
 [sub_resource type="DynamicFont" id=17]
 resource_local_to_scene = true
 size = 20
-font_data = ExtResource( 13 )
-
-[sub_resource type="DynamicFont" id=18]
-resource_local_to_scene = true
-size = 20
-font_data = ExtResource( 13 )
-
-[sub_resource type="DynamicFont" id=9]
-resource_local_to_scene = true
-size = 20
 extra_spacing_char = 2
 extra_spacing_space = 2
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=18]
 resource_local_to_scene = true
 size = 20
 extra_spacing_char = 2
@@ -254,16 +254,16 @@ visible = false
 text = "Edit Transaction"
 
 [node name="Label" parent="EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins" index="6"]
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 9 )
 
 [node name="Label" parent="EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice" index="6"]
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 10 )
 
 [node name="Label" parent="EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount" index="6"]
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 11 )
 
 [node name="Label" parent="EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate" index="6"]
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 12 )
 
 [node name="EditProfitTransaction" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -272,16 +272,16 @@ visible = false
 text = "Edit Transaction"
 
 [node name="Label" parent="EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins" index="6"]
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 13 )
 
 [node name="Label" parent="EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice" index="6"]
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 14 )
 
 [node name="Label" parent="EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount" index="6"]
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 15 )
 
 [node name="Label" parent="EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate" index="6"]
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 16 )
 
 [node name="SellActiveTransactionDialog" parent="." instance=ExtResource( 5 )]
 visible = false
@@ -296,7 +296,7 @@ visible = false
 text = "Split Active Transaction"
 
 [node name="Label" parent="SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" index="6"]
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 17 )
 
 [node name="SplitProfitTransactionDialog" parent="." instance=ExtResource( 12 )]
 visible = false
@@ -305,7 +305,7 @@ visible = false
 text = "Split Profit Transaction"
 
 [node name="Label" parent="SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" index="6"]
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 18 )
 
 [node name="OpenFileDialog" parent="." instance=ExtResource( 8 )]
 visible = false

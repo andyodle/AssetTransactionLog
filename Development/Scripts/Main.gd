@@ -133,6 +133,9 @@ func _on_EditActiveTransaction_EditTransaction(transaction_p):
 				temp_class.amount_m = transaction_p.amount_m;
 				temp_class.is_credit_m = transaction_p.is_credit_m;
 				transaction_view.set_tras_data(temp_class);
+		# Refresh the calulations.
+		active_transactions_view.recalulate_totals();
+		# Display message to the user.
 		SnackBar.display_message("Edited transaction.", "DISMISS");
 
 # Edit the selected transaction.
@@ -292,6 +295,9 @@ func _on_EditProfitTransaction_EditTransaction(transaction_p):
 				temp_class.amount_m = transaction_p.amount_m;
 				temp_class.is_credit_m = transaction_p.is_credit_m;
 				transaction_view.set_tras_data(temp_class);
+		# Refresh the calulations.
+		profit_transactions_view.recalulate_totals();
+		# Display message to the user.
 		SnackBar.display_message("Edited transaction.", "DISMISS");
 
 # Add sell transaction to proper locations.
