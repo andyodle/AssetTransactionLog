@@ -179,4 +179,5 @@ func set_main_window_title(title_p):
 
 # Show the user that there are changes that need to be saved.
 func show_save_changes():
-	set_main_window_title("*" + main_window_title);
+	if main_window_title[0] != "*":
+		set_main_window_title("*" + main_window_title);
