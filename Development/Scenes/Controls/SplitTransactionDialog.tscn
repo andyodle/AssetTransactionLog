@@ -1,131 +1,174 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://cugwfnjw6j06o"]
 
-[ext_resource path="res://Scenes/Controls/DialogWindow.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Controls/TextInput.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="FontFile" id=3]
-[ext_resource path="res://Scripts/SplitTransactionDialog.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/TransactionLog.tscn" type="PackedScene" id=5]
+[ext_resource type="PackedScene" uid="uid://hxn77kj1d6t" path="res://Scenes/Controls/DialogWindow.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Controls/TextInput.tscn" id="2"]
+[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="3"]
+[ext_resource type="Script" path="res://Scripts/SplitTransactionDialog.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://db8fi77xxhkbp" path="res://Scenes/TransactionLog.tscn" id="5"]
 
-[sub_resource type="FontFile" id=1]
+[sub_resource type="FontFile" id="1"]
 resource_local_to_scene = true
-size = 20
-extra_spacing_char = 2
-extra_spacing_space = 2
-font_data = ExtResource( 3 )
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[node name="SplitTransactionDialog" instance=ExtResource( 1 )]
-script = ExtResource( 4 )
+[sub_resource type="Animation" id="3"]
+resource_name = "GrowLabel"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16, 20]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(252, 20), Vector2(248, 48)]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20, 14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(252, 48), Vector2(252, 20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_abx8s"]
+_data = {
+"GrowLabel": SubResource("3"),
+"ShrinkLabel": SubResource("4")
+}
+
+[node name="SplitTransactionDialog" instance=ExtResource("1")]
+script = ExtResource("4")
 
 [node name="DialogContainer" parent="CenterContainer" index="0"]
-offset_left = 28.0
-offset_top = 27.0
-offset_right = 996.0
-offset_bottom = 572.0
-custom_minimum_size = Vector2( 968, 545 )
+custom_minimum_size = Vector2(968, 545)
 
 [node name="BackgroundColor" parent="CenterContainer/DialogContainer" index="0"]
-custom_minimum_size = Vector2( 968, 545 )
+custom_minimum_size = Vector2(968, 545)
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
-custom_minimum_size = Vector2( 968, 545 )
+custom_minimum_size = Vector2(968, 545)
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
-offset_right = 952.0
-offset_bottom = 545.0
-custom_minimum_size = Vector2( 936, 545 )
+custom_minimum_size = Vector2(936, 545)
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
-offset_left = 8.0
-offset_top = 11.0
-offset_right = 928.0
-offset_bottom = 534.0
-custom_minimum_size = Vector2( 920, 523 )
+custom_minimum_size = Vector2(920, 523)
 theme_override_constants/separation = 8
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-offset_right = 920.0
-offset_bottom = 92.0
-custom_minimum_size = Vector2( 920, 41 )
+custom_minimum_size = Vector2(920, 41)
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle" index="0"]
+layout_mode = 0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
-offset_top = 31.0
-offset_right = 912.0
-offset_bottom = 57.0
+layout_mode = 2
 text = "Split Transaction"
 
-[node name="ReduceTransactionInput" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 2 )]
-offset_top = 100.0
-offset_right = 920.0
-offset_bottom = 150.0
+[node name="ReduceTransactionInput" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource("2")]
+layout_mode = 2
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" index="6"]
-theme_override_fonts/font = SubResource( 1 )
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" index="5"]
+layout_mode = 0
+theme_override_fonts/font = SubResource("1")
 text = "Amount to Reduce"
 
-[node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = 158.0
-offset_right = 920.0
-offset_bottom = 422.0
-custom_minimum_size = Vector2( 920, 264 )
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_abx8s")
+}
 
-[node name="BackgroundColor" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="0"]
-offset_bottom = 248.0
+[node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2" instance=ExtResource("5")]
+custom_minimum_size = Vector2(920, 264)
+layout_mode = 2
 
-[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="1"]
-offset_bottom = 248.0
+[node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns" index="0"]
+layout_mode = 0
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer" index="0"]
-offset_left = 129.0
-offset_right = 791.0
+layout_mode = 2
+
+[node name="BlankSpace" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="0"]
+layout_mode = 2
 
 [node name="SelectAll" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="1"]
 visible = false
+layout_mode = 2
 
 [node name="DateAcquired" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="2"]
-offset_left = 12.0
-offset_right = 135.0
+layout_mode = 2
 
 [node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="3"]
-offset_left = 139.0
-offset_right = 278.0
+layout_mode = 2
 
 [node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="4"]
-offset_left = 282.0
-offset_right = 409.0
+layout_mode = 2
 
 [node name="CreditAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="5"]
-offset_left = 413.0
-offset_right = 536.0
+layout_mode = 2
 
 [node name="DebitAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="6"]
-offset_left = 540.0
-offset_right = 662.0
-
-[node name="ScrollContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
-offset_bottom = 240.0
-
-[node name="Trasactions" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
-offset_bottom = 120.0
+layout_mode = 2
 
 [node name="AddActionButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="1"]
 visible = false
 
-[node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3"]
-offset_top = 430.0
-offset_right = 920.0
-offset_bottom = 523.0
+[node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/SellActionButton" index="0"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+
 [connection signal="text_changed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput" to="." method="_on_ReduceTransactionInput_text_changed"]
 [connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]
 [connection signal="OkClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_OkClicked"]
 
 [editable path="CenterContainer/DialogContainer"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput"]
-
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog"]
-
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/SplitButton"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/SellActionButton"]

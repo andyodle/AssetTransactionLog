@@ -1,19 +1,19 @@
 extends Control
 
-@onready var active_transactions_view = $HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab;
-@onready var profit_transactions_view = $HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab;
-@onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/MarginContainer/SoldTransactionLogTab;
-@onready var settings_tab = $HBoxContainer/TabsContainer/MarginContainer/SettingsTab;
-@onready var add_active_trans_dialog = $AddActiveTransaction;
-@onready var add_profit_trans_dialog = $AddProfitTransaction;
-@onready var edit_active_trans_dialog = $EditActiveTransaction;
-@onready var edit_profit_trans_dialog = $EditProfitTransaction;
-@onready var sell_active_trans_dialog = $SellActiveTransactionDialog;
-@onready var sell_profit_trans_dialog = $SellProfitTransactionDialog;
-@onready var split_active_transaction_dialog = $SplitActiveTransactionDialog;
-@onready var split_profit_transaction_dialog = $SplitProfitTransactionDialog;
-@onready var open_file_dialog = $OpenFileDialog;
-@onready var safe_file_dialog = $SaveFileDialog;
+@onready var active_transactions_view = %ActiveTransactionsTab;
+@onready var profit_transactions_view = %ProfitTransactionsTab;
+@onready var sold_transactions_log_view = %SoldTransactionLogTab;
+@onready var settings_tab = %SettingsTab;
+@onready var add_active_trans_dialog = %AddActiveTransaction;
+@onready var add_profit_trans_dialog = %AddProfitTransaction;
+@onready var edit_active_trans_dialog = %EditActiveTransaction;
+@onready var edit_profit_trans_dialog = %EditProfitTransaction;
+@onready var sell_active_trans_dialog = %SellActiveTransactionDialog;
+@onready var sell_profit_trans_dialog = %SellProfitTransactionDialog;
+@onready var split_active_transaction_dialog = %SplitActiveTransactionDialog;
+@onready var split_profit_transaction_dialog = %SplitProfitTransactionDialog;
+@onready var open_file_dialog = %OpenFileDialog;
+@onready var safe_file_dialog = %SaveFileDialog;
 
 func _ready():
 	# Show the active tab by default.

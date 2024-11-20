@@ -1,175 +1,401 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=21 format=3 uid="uid://b7uuwekbv82l4"]
 
-[ext_resource path="res://Scenes/Controls/DialogWindow.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/AddTransaction.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Controls/TextInput.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="FontFile" id=4]
-[ext_resource path="res://Scenes/Controls/ToggleButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Controls/BaseIconButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Icons/Calculate.png" type="Texture2D" id=7]
+[ext_resource type="PackedScene" uid="uid://hxn77kj1d6t" path="res://Scenes/Controls/DialogWindow.tscn" id="1"]
+[ext_resource type="Script" path="res://Scripts/AddTransaction.gd" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Controls/TextInput.tscn" id="3"]
+[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="4"]
+[ext_resource type="PackedScene" uid="uid://dewa2novwv27m" path="res://Scenes/Controls/ToggleButton.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://cjtjsoiusqce3" path="res://Scenes/Controls/BaseIconButton.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://f5leq4vev4ge" path="res://Assets/Icons/Calculate.png" id="7"]
 
-[sub_resource type="FontFile" id=1]
+[sub_resource type="FontFile" id="1"]
 resource_local_to_scene = true
-size = 20
-font_data = ExtResource( 4 )
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id=2]
+[sub_resource type="Animation" id="3"]
+resource_name = "GrowLabel"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16, 20]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(252, 20), Vector2(248, 48)]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20, 14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(252, 48), Vector2(252, 20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3w8bd"]
+_data = {
+"GrowLabel": SubResource("3"),
+"ShrinkLabel": SubResource("4")
+}
+
+[sub_resource type="FontFile" id="2"]
 resource_local_to_scene = true
-size = 20
-font_data = ExtResource( 4 )
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id=3]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d5bsf"]
+_data = {
+"GrowLabel": SubResource("3"),
+"ShrinkLabel": SubResource("4")
+}
+
+[sub_resource type="FontFile" id="FontFile_5pydp"]
 resource_local_to_scene = true
-size = 20
-font_data = ExtResource( 4 )
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id=4]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11l3n"]
+_data = {
+"GrowLabel": SubResource("3"),
+"ShrinkLabel": SubResource("4")
+}
+
+[sub_resource type="FontFile" id="FontFile_u7vgy"]
 resource_local_to_scene = true
-size = 20
-font_data = ExtResource( 4 )
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[node name="AddTransaction" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ew53"]
+_data = {
+"GrowLabel": SubResource("3"),
+"ShrinkLabel": SubResource("4")
+}
+
+[sub_resource type="Animation" id="Animation_kie20"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v6l6t"]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lft34"]
+_data = {
+"FadeIn": SubResource("Animation_kie20"),
+"FadeOut": SubResource("Animation_v6l6t")
+}
+
+[node name="AddTransaction" instance=ExtResource("1")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2")
 
 [node name="OverlayMaskButton" parent="." index="0"]
-modulate = Color( 0, 0, 0, 0.392157 )
+modulate = Color(0, 0, 0, 0.392157)
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CenterContainer" parent="." index="1"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="DialogContainer" parent="CenterContainer" index="0"]
-offset_left = 326.0
-offset_top = 34.0
-offset_right = 698.0
-offset_bottom = 566.0
-custom_minimum_size = Vector2( 372, 532 )
+custom_minimum_size = Vector2(372, 532)
 mouse_filter = 2
 
 [node name="BackgroundColor" parent="CenterContainer/DialogContainer" index="0"]
+custom_minimum_size = Vector2(404, 532)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_right = 3.05176e-05
-custom_minimum_size = Vector2( 404, 532 )
+offset_bottom = 206.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
+custom_minimum_size = Vector2(404, 532)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_right = 32.0
-custom_minimum_size = Vector2( 404, 532 )
+offset_bottom = 158.0
+grow_horizontal = 1
+grow_vertical = 1
 mouse_filter = 2
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
-offset_bottom = 532.0
-custom_minimum_size = Vector2( 372, 532 )
+custom_minimum_size = Vector2(372, 532)
 mouse_filter = 2
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
-offset_top = 0.0
-offset_bottom = 532.0
-custom_minimum_size = Vector2( 372, 532 )
+custom_minimum_size = Vector2(372, 532)
 mouse_filter = 2
 
-[node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-offset_bottom = 107.0
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle" index="0"]
+layout_mode = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_bottom = 0.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
-offset_top = 38.0
-offset_right = 364.0
-offset_bottom = 64.0
+layout_mode = 2
 
-[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
-offset_top = 131.0
-offset_right = 372.0
-offset_bottom = 181.0
+[node name="FormFields" type="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(372, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields" index="0"]
+custom_minimum_size = Vector2(372, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="0" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
 focus_next = NodePath("../HBoxContainer/ExchangePrice")
 focus_mode = 1
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins" index="6"]
-theme_override_fonts/font = SubResource( 1 )
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/NumberOfCoins" index="5"]
+layout_mode = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+theme_override_fonts/font = SubResource("1")
 text = "Number of Coins"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2"]
-offset_top = 205.0
-offset_right = 372.0
-offset_bottom = 253.0
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/NumberOfCoins" index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_3w8bd")
+}
 
-[node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 3 )]
-offset_right = 328.0
-custom_minimum_size = Vector2( 240, 48 )
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer" index="0" instance=ExtResource("3")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 48)
+layout_mode = 2
 focus_next = NodePath("../../TransactionAmount")
 focus_mode = 1
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice" index="6"]
-theme_override_fonts/font = SubResource( 2 )
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice" index="5"]
+layout_mode = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+theme_override_fonts/font = SubResource("2")
 text = "Exchange Price"
 
-[node name="BaseIconButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 6 )]
-offset_left = 332.0
-offset_right = 372.0
-offset_bottom = 48.0
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice" index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_d5bsf")
+}
+
+[node name="BaseIconButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer" index="1" instance=ExtResource("6")]
+layout_mode = 2
 focus_next = NodePath("../../TransactionAmount")
 
-[node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/BaseIconButton/MarginContainer" index="0"]
-texture = ExtResource( 7 )
+[node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton/MarginContainer" index="0"]
+texture = ExtResource("7")
 
-[node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 3 )]
-offset_top = 277.0
-offset_right = 372.0
-offset_bottom = 327.0
+[node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="2" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
 focus_next = NodePath("../TransactionDate")
 focus_mode = 1
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount" index="6"]
-theme_override_fonts/font = SubResource( 3 )
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount" index="5"]
+layout_mode = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+theme_override_fonts/font = SubResource("FontFile_5pydp")
 text = "Transaction Amount"
 
-[node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4" instance=ExtResource( 3 )]
-offset_top = 351.0
-offset_right = 372.0
-offset_bottom = 401.0
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount" index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_11l3n")
+}
+
+[node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="3" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
 focus_next = NodePath("../DialogActionButtons/HBoxContainer/OkButton")
 focus_mode = 1
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate" index="6"]
-theme_override_fonts/font = SubResource( 4 )
-text = "Date"
-
-[node name="CreditOrDebit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="5" instance=ExtResource( 5 )]
-visible = false
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate" index="5"]
+layout_mode = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_top = 401.0
+offset_left = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+theme_override_fonts/font = SubResource("FontFile_u7vgy")
+text = "Date"
+
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate" index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_5ew53")
+}
+
+[node name="CreditOrDebit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="4" instance=ExtResource("5")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit" index="0"]
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_right = 280.0
-offset_bottom = 450.0
+offset_bottom = 48.0
 
-[node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit/MarginContainer" index="0"]
-offset_bottom = 49.0
-
-[node name="CheckButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit/MarginContainer" index="1"]
-offset_bottom = 49.0
+[node name="CheckButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit/MarginContainer" index="1"]
 text = "Deposit"
 
-[node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="6"]
-offset_top = 425.0
-offset_bottom = 532.0
+[node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2"]
 mouse_filter = 1
 
+[node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" index="0"]
+layout_mode = 0
+
 [node name="OkButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="0"]
+layout_mode = 2
 focus_next = NodePath("../CancelButton")
 
-[node name="CancelButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="1"]
-focus_next = NodePath("../../../NumberOfCoins")
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton" index="0"]
+layout_mode = 0
 
-[connection signal="pressed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/BaseIconButton" to="." method="_on_BaseIconButton_pressed"]
+[node name="Button" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="CancelButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton" index="0"]
+layout_mode = 0
+
+[node name="Button" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_lft34")
+}
+
+[connection signal="pressed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton" to="." method="_on_BaseIconButton_pressed"]
 [connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]
 [connection signal="OkClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_OkClicked"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="CenterContainer/DialogContainer"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/BaseIconButton"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/NumberOfCoins"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]

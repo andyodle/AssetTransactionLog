@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://5pg6vu4w1esl"]
 
-[ext_resource path="res://Scripts/SaveFileDialog.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Scripts/SaveFileDialog.gd" id="1"]
 
 [node name="SaveFileDialog" type="FileDialog"]
-offset_right = 307.0
-offset_bottom = 130.0
-custom_minimum_size = Vector2( 720, 436 )
+mode = 4
+title = "Save Transactions"
+initial_position = 2
+size = Vector2i(1100, 578)
+visible = true
+unresizable = true
 access = 2
-current_dir = "/home/isrelo/Andy/TransRegister-BTC/Development"
-current_path = "/home/isrelo/Andy/TransRegister-BTC/Development/"
-script = ExtResource( 1 )
+script = ExtResource("1")

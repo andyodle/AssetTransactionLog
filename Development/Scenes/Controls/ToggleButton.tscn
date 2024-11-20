@@ -1,52 +1,47 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://dewa2novwv27m"]
 
-[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="FontFile" id=1]
-[ext_resource path="res://Scripts/ToggleButton.gd" type="Script" id=2]
+[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="1"]
+[ext_resource type="Script" path="res://Scripts/ToggleButton.gd" id="2"]
 
-[sub_resource type="FontFile" id=1]
-size = 20
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="ToggleButton" type="Control"]
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -744.0
 offset_bottom = -552.0
-custom_minimum_size = Vector2( 280, 48 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_minimum_size = Vector2( 280, 48 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_right = 12
 theme_override_constants/margin_left = 16
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_constants/margin_right = 12
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-offset_left = 16.0
-offset_right = 268.0
-offset_bottom = 48.0
-custom_minimum_size = Vector2( 252, 48 )
+custom_minimum_size = Vector2(252, 48)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="CheckButton" type="CheckButton" parent="MarginContainer"]
-offset_left = 16.0
-offset_right = 268.0
-offset_bottom = 48.0
+layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = SubResource( 1 )
-pressed = true
-focus_mode = 0
+theme_override_fonts/font = SubResource("1")
 text = "Toggle Button"
-align = 1
