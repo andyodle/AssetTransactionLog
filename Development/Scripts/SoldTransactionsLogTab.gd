@@ -1,10 +1,10 @@
 extends Control
 
-onready var total_gains_data_panel = $VBoxContainer/HBoxContainer/TotalGains;
-onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
-onready var total_amount_sold_data_panel = $VBoxContainer/HBoxContainer/TotalAmountSold;
-onready var sold_transaction_log = $VBoxContainer/SoldTransactionsLog;
-onready var animation_player = $AnimationPlayer;
+@onready var total_gains_data_panel = $VBoxContainer/HBoxContainer/TotalGains;
+@onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
+@onready var total_amount_sold_data_panel = $VBoxContainer/HBoxContainer/TotalAmountSold;
+@onready var sold_transaction_log = $VBoxContainer/SoldTransactionsLog;
+@onready var animation_player = $AnimationPlayer;
 
 var calculator;
 
@@ -15,7 +15,7 @@ func _ready():
 
 func fade_in():
 	animation_player.play("FadeIn");
-	yield(animation_player,"animation_finished");
+	await animation_player.animation_finished;
 
 # Reset the transaction list.
 func reset_trasactoins():

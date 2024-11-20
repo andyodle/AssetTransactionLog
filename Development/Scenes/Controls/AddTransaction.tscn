@@ -3,27 +3,27 @@
 [ext_resource path="res://Scenes/Controls/DialogWindow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/AddTransaction.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Controls/TextInput.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="FontFile" id=4]
 [ext_resource path="res://Scenes/Controls/ToggleButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Controls/BaseIconButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Icons/Calculate.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Icons/Calculate.png" type="Texture2D" id=7]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 resource_local_to_scene = true
 size = 20
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="FontFile" id=2]
 resource_local_to_scene = true
 size = 20
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="FontFile" id=3]
 resource_local_to_scene = true
 size = 20
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="FontFile" id=4]
 resource_local_to_scene = true
 size = 20
 font_data = ExtResource( 4 )
@@ -39,116 +39,116 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="DialogContainer" parent="CenterContainer" index="0"]
-margin_left = 326.0
-margin_top = 34.0
-margin_right = 698.0
-margin_bottom = 566.0
-rect_min_size = Vector2( 372, 532 )
+offset_left = 326.0
+offset_top = 34.0
+offset_right = 698.0
+offset_bottom = 566.0
+custom_minimum_size = Vector2( 372, 532 )
 mouse_filter = 2
 
 [node name="BackgroundColor" parent="CenterContainer/DialogContainer" index="0"]
-margin_right = 3.05176e-05
-rect_min_size = Vector2( 404, 532 )
+offset_right = 3.05176e-05
+custom_minimum_size = Vector2( 404, 532 )
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
-margin_right = 32.0
-rect_min_size = Vector2( 404, 532 )
+offset_right = 32.0
+custom_minimum_size = Vector2( 404, 532 )
 mouse_filter = 2
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
-margin_bottom = 532.0
-rect_min_size = Vector2( 372, 532 )
+offset_bottom = 532.0
+custom_minimum_size = Vector2( 372, 532 )
 mouse_filter = 2
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
-margin_top = 0.0
-margin_bottom = 532.0
-rect_min_size = Vector2( 372, 532 )
+offset_top = 0.0
+offset_bottom = 532.0
+custom_minimum_size = Vector2( 372, 532 )
 mouse_filter = 2
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-margin_bottom = 107.0
+offset_bottom = 107.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
-margin_top = 38.0
-margin_right = 364.0
-margin_bottom = 64.0
+offset_top = 38.0
+offset_right = 364.0
+offset_bottom = 64.0
 
 [node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
-margin_top = 131.0
-margin_right = 372.0
-margin_bottom = 181.0
+offset_top = 131.0
+offset_right = 372.0
+offset_bottom = 181.0
 focus_next = NodePath("../HBoxContainer/ExchangePrice")
 focus_mode = 1
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins" index="6"]
-custom_fonts/font = SubResource( 1 )
+theme_override_fonts/font = SubResource( 1 )
 text = "Number of Coins"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2"]
-margin_top = 205.0
-margin_right = 372.0
-margin_bottom = 253.0
+offset_top = 205.0
+offset_right = 372.0
+offset_bottom = 253.0
 
 [node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 3 )]
-margin_right = 328.0
-rect_min_size = Vector2( 240, 48 )
+offset_right = 328.0
+custom_minimum_size = Vector2( 240, 48 )
 focus_next = NodePath("../../TransactionAmount")
 focus_mode = 1
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice" index="6"]
-custom_fonts/font = SubResource( 2 )
+theme_override_fonts/font = SubResource( 2 )
 text = "Exchange Price"
 
 [node name="BaseIconButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 6 )]
-margin_left = 332.0
-margin_right = 372.0
-margin_bottom = 48.0
+offset_left = 332.0
+offset_right = 372.0
+offset_bottom = 48.0
 focus_next = NodePath("../../TransactionAmount")
 
 [node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/BaseIconButton/MarginContainer" index="0"]
 texture = ExtResource( 7 )
 
 [node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 3 )]
-margin_top = 277.0
-margin_right = 372.0
-margin_bottom = 327.0
+offset_top = 277.0
+offset_right = 372.0
+offset_bottom = 327.0
 focus_next = NodePath("../TransactionDate")
 focus_mode = 1
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount" index="6"]
-custom_fonts/font = SubResource( 3 )
+theme_override_fonts/font = SubResource( 3 )
 text = "Transaction Amount"
 
 [node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4" instance=ExtResource( 3 )]
-margin_top = 351.0
-margin_right = 372.0
-margin_bottom = 401.0
+offset_top = 351.0
+offset_right = 372.0
+offset_bottom = 401.0
 focus_next = NodePath("../DialogActionButtons/HBoxContainer/OkButton")
 focus_mode = 1
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate" index="6"]
-custom_fonts/font = SubResource( 4 )
+theme_override_fonts/font = SubResource( 4 )
 text = "Date"
 
 [node name="CreditOrDebit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="5" instance=ExtResource( 5 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 401.0
-margin_right = 280.0
-margin_bottom = 450.0
+offset_top = 401.0
+offset_right = 280.0
+offset_bottom = 450.0
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit/MarginContainer" index="0"]
-margin_bottom = 49.0
+offset_bottom = 49.0
 
 [node name="CheckButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit/MarginContainer" index="1"]
-margin_bottom = 49.0
+offset_bottom = 49.0
 text = "Deposit"
 
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="6"]
-margin_top = 425.0
-margin_bottom = 532.0
+offset_top = 425.0
+offset_bottom = 532.0
 mouse_filter = 1
 
 [node name="OkButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="0"]

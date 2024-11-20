@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/TransactionView.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="FontFile" id=2]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=2]
@@ -14,9 +14,9 @@ default_font = SubResource( 1 )
 ]]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -447.0
-margin_bottom = -548.0
-rect_min_size = Vector2( 737, 60 )
+offset_right = -447.0
+offset_bottom = -548.0
+custom_minimum_size = Vector2( 737, 60 )
 size_flags_horizontal = 3
 theme = SubResource( 2 )
 script = ExtResource( 1 )
@@ -34,46 +34,46 @@ __meta__ = {
 
 [node name="BackgroundColor" type="ColorRect" parent="CenterContainer"]
 visible = false
-margin_left = 4.0
-margin_top = 2.0
-margin_right = 733.0
-margin_bottom = 58.0
-rect_min_size = Vector2( 729, 56 )
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 733.0
+offset_bottom = 58.0
+custom_minimum_size = Vector2( 729, 56 )
 color = Color( 0.87451, 0.435294, 0.239216, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 6.0
-margin_right = 731.0
-margin_bottom = 60.0
+offset_left = 6.0
+offset_right = 731.0
+offset_bottom = 60.0
 
 [node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
-margin_right = 725.0
-margin_bottom = 4.0
-rect_min_size = Vector2( 725, 4 )
+offset_right = 725.0
+offset_bottom = 4.0
+custom_minimum_size = Vector2( 725, 4 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 8.0
-margin_right = 725.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 584, 52 )
+offset_top = 8.0
+offset_right = 725.0
+offset_bottom = 60.0
+custom_minimum_size = Vector2( 584, 52 )
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BlankSpace" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_right = 71.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 71, 52 )
+offset_right = 71.0
+offset_bottom = 52.0
+custom_minimum_size = Vector2( 71, 52 )
 
 [node name="DateAcquired" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 75.0
-margin_right = 198.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 123, 52 )
+offset_left = 75.0
+offset_right = 198.0
+offset_bottom = 52.0
+custom_minimum_size = Vector2( 123, 52 )
 size_flags_horizontal = 4
 text = "02/17/2021"
 align = 1
@@ -83,10 +83,10 @@ autowrap = true
 [node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=[
 "NumberOfCoins-Trans",
 ]]
-margin_left = 202.0
-margin_right = 341.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 139, 52 )
+offset_left = 202.0
+offset_right = 341.0
+offset_bottom = 52.0
+custom_minimum_size = Vector2( 139, 52 )
 size_flags_horizontal = 4
 text = "0.001920220"
 align = 1
@@ -94,10 +94,10 @@ valign = 1
 autowrap = true
 
 [node name="ExchangePrice" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 345.0
-margin_right = 472.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 127, 52 )
+offset_left = 345.0
+offset_right = 472.0
+offset_bottom = 52.0
+custom_minimum_size = Vector2( 127, 52 )
 size_flags_horizontal = 4
 text = "$52,077.37"
 align = 1
@@ -105,24 +105,24 @@ valign = 1
 autowrap = true
 
 [node name="CreditAmount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 476.0
-margin_right = 599.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 123, 52 )
+offset_left = 476.0
+offset_right = 599.0
+offset_bottom = 52.0
+custom_minimum_size = Vector2( 123, 52 )
 size_flags_horizontal = 4
-custom_colors/font_color = Color( 0.352941, 0.729412, 0.278431, 1 )
+theme_override_colors/font_color = Color( 0.352941, 0.729412, 0.278431, 1 )
 text = "$100"
 align = 1
 valign = 1
 autowrap = true
 
 [node name="DebitAmount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 603.0
-margin_right = 725.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 122, 52 )
+offset_left = 603.0
+offset_right = 725.0
+offset_bottom = 52.0
+custom_minimum_size = Vector2( 122, 52 )
 size_flags_horizontal = 4
-custom_colors/font_color = Color( 0.913725, 0.129412, 0.152941, 1 )
+theme_override_colors/font_color = Color( 0.913725, 0.129412, 0.152941, 1 )
 text = "$75"
 align = 1
 valign = 1
@@ -130,12 +130,12 @@ autowrap = true
 
 [node name="SelectedTrans" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 visible = false
-margin_left = 12.0
-margin_right = 75.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 63, 52 )
+offset_left = 12.0
+offset_right = 75.0
+offset_bottom = 52.0
+custom_minimum_size = Vector2( 63, 52 )
 focus_mode = 0
-enabled_focus_mode = 0
+focus_mode = 0
 align = 1
 
 [connection signal="gui_input" from="CenterContainer" to="." method="_on_CenterContainer_gui_input"]

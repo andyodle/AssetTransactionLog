@@ -2,19 +2,19 @@
 
 [ext_resource path="res://Scenes/Controls/NavigationButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/SideNavigationRail.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Icons/ActiveProfits.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Icons/ActiveTransactions.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Icons/SoldPositions.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Icons/Save.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Icons/Load.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Icons/Settings.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Icons/New.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Icons/ActiveProfits.png" type="Texture2D" id=3]
+[ext_resource path="res://Assets/Icons/ActiveTransactions.png" type="Texture2D" id=4]
+[ext_resource path="res://Assets/Icons/SoldPositions.png" type="Texture2D" id=5]
+[ext_resource path="res://Assets/Icons/Save.png" type="Texture2D" id=6]
+[ext_resource path="res://Assets/Icons/Load.png" type="Texture2D" id=7]
+[ext_resource path="res://Assets/Icons/Settings.png" type="Texture2D" id=8]
+[ext_resource path="res://Assets/Icons/New.png" type="Texture2D" id=9]
 
 [node name="SideNavigationRail" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -952.0
-rect_min_size = Vector2( 72, 0 )
+offset_right = -952.0
+custom_minimum_size = Vector2( 72, 0 )
 mouse_filter = 2
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -39,16 +39,16 @@ size_flags_vertical = 3
 [node name="TabButtons" type="VBoxContainer" parent="VBoxContainer"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -36.0
-margin_right = 36.0
-margin_bottom = 257.0
+offset_left = -36.0
+offset_right = 36.0
+offset_bottom = 257.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ActiveTransButton" parent="VBoxContainer/TabButtons" instance=ExtResource( 1 )]
-margin_right = 72.0
-margin_bottom = 83.0
+offset_right = 72.0
+offset_bottom = 83.0
 toggle_mode = true
 pressed = true
 
@@ -56,38 +56,38 @@ pressed = true
 texture = ExtResource( 4 )
 
 [node name="Label" parent="VBoxContainer/TabButtons/ActiveTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 1.0
-margin_right = 70.0
+offset_left = 1.0
+offset_right = 70.0
 text = "Active
 Transactions"
 
 [node name="ProfitTransButton" parent="VBoxContainer/TabButtons" instance=ExtResource( 1 )]
-margin_top = 87.0
-margin_right = 72.0
-margin_bottom = 170.0
+offset_top = 87.0
+offset_right = 72.0
+offset_bottom = 170.0
 toggle_mode = true
 
 [node name="TextureRect" parent="VBoxContainer/TabButtons/ProfitTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 3 )
 
 [node name="Label" parent="VBoxContainer/TabButtons/ProfitTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 1.0
-margin_right = 70.0
+offset_left = 1.0
+offset_right = 70.0
 text = "Profit
 Transactions"
 
 [node name="SoldPositionsTransButton" parent="VBoxContainer/TabButtons" instance=ExtResource( 1 )]
-margin_top = 174.0
-margin_right = 72.0
-margin_bottom = 257.0
+offset_top = 174.0
+offset_right = 72.0
+offset_bottom = 257.0
 toggle_mode = true
 
 [node name="TextureRect" parent="VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 5 )
 
 [node name="Label" parent="VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 12.0
-margin_right = 60.0
+offset_left = 12.0
+offset_right = 60.0
 text = "Sold 
 Positions"
 
@@ -96,71 +96,71 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -36.0
-margin_top = -340.0
-margin_right = 36.0
-margin_bottom = 4.0
+offset_left = -36.0
+offset_top = -340.0
+offset_right = 36.0
+offset_bottom = 4.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NewTransButton" parent="VBoxContainer/RegularButtons" instance=ExtResource( 1 )]
-margin_right = 72.0
-margin_bottom = 83.0
+offset_right = 72.0
+offset_bottom = 83.0
 
 [node name="TextureRect" parent="VBoxContainer/RegularButtons/NewTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 9 )
 
 [node name="Label" parent="VBoxContainer/RegularButtons/NewTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 1.0
-margin_right = 70.0
+offset_left = 1.0
+offset_right = 70.0
 text = "New
 Transactions"
 
 [node name="LoadTransButton" parent="VBoxContainer/RegularButtons" instance=ExtResource( 1 )]
-margin_top = 87.0
-margin_right = 72.0
-margin_bottom = 170.0
+offset_top = 87.0
+offset_right = 72.0
+offset_bottom = 170.0
 
 [node name="TextureRect" parent="VBoxContainer/RegularButtons/LoadTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 7 )
 
 [node name="Label" parent="VBoxContainer/RegularButtons/LoadTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 1.0
-margin_right = 70.0
+offset_left = 1.0
+offset_right = 70.0
 text = "Load
 Transactions"
 
 [node name="SaveTransButton" parent="VBoxContainer/RegularButtons" instance=ExtResource( 1 )]
-margin_top = 174.0
-margin_right = 72.0
-margin_bottom = 257.0
+offset_top = 174.0
+offset_right = 72.0
+offset_bottom = 257.0
 
 [node name="TextureRect" parent="VBoxContainer/RegularButtons/SaveTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 6 )
 
 [node name="Label" parent="VBoxContainer/RegularButtons/SaveTransButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 1.0
-margin_right = 70.0
+offset_left = 1.0
+offset_right = 70.0
 text = "Save
 Transactions"
 
 [node name="SettingsButton" parent="VBoxContainer/RegularButtons" instance=ExtResource( 1 )]
-margin_top = 261.0
-margin_right = 72.0
-margin_bottom = 344.0
+offset_top = 261.0
+offset_right = 72.0
+offset_bottom = 344.0
 toggle_mode = true
 
 [node name="TextureRect" parent="VBoxContainer/RegularButtons/SettingsButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
 texture = ExtResource( 8 )
 
 [node name="CenterContainer2" parent="VBoxContainer/RegularButtons/SettingsButton/VBoxContainer" index="2"]
-margin_bottom = 58.0
+offset_bottom = 58.0
 
 [node name="Label" parent="VBoxContainer/RegularButtons/SettingsButton/VBoxContainer/CenterContainer2" index="0"]
-margin_left = 14.0
-margin_right = 57.0
-margin_bottom = 12.0
+offset_left = 14.0
+offset_right = 57.0
+offset_bottom = 12.0
 text = "Settings"
 
 [connection signal="pressed" from="VBoxContainer/TabButtons/ActiveTransButton" to="." method="_on_ActiveTransButton_pressed"]

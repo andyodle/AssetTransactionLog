@@ -4,9 +4,9 @@ signal DeleteClicked;
 signal EditClicked;
 signal SplitClicked;
 
-onready var edit_button = $MarginContainer/HBoxContainer/EditButton;
-onready var delete_button = $MarginContainer/HBoxContainer/DeleteButton;
-onready var split_button = $MarginContainer/HBoxContainer/SplitButton;
+@onready var edit_button = $MarginContainer/HBoxContainer/EditButton;
+@onready var delete_button = $MarginContainer/HBoxContainer/DeleteButton;
+@onready var split_button = $MarginContainer/HBoxContainer/SplitButton;
 
 # Show and hide action buttons.
 func show_buttons(visible_p, number_selected_p = 0):

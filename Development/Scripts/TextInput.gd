@@ -1,29 +1,29 @@
 extends TextEdit
 
-onready var animation_player = $AnimationPlayer;
+@onready var animation_player = $AnimationPlayer;
 
-var has_focus = false;
+var is_focused = false;
 
 func set_input_value(value_p):
 	_on_TextInput_focus_entered();
 	self.text = value_p;
 
 func _on_TextInput_focus_entered():
-	if has_focus == false:
+	if is_focused == false:
 		animation_player.play("ShrinkLabel");
-		yield(animation_player, "animation_finished");
-		has_focus = true;
+		await animation_player.animation_finished;
+		is_focused = true;
 
 func _on_TextInput_focus_exited():
-	if has_focus == true:
+	if is_focused == true:
 		if self.text == "":
 			animation_player.play("GrowLabel");
-			yield(animation_player, "animation_finished");
-			has_focus = false;
+			await animation_player.animation_finished;
+			is_focused = false;
 
 func _input(event):
 	# Check to make sure tab doesn't print in the TextEdit.
-	if event.is_action_pressed("ui_focus_next") and has_focus():
-		if focus_next != "":
+	if event.is_action_pressed("ui_focus_next") and is_focused:
+		if str(focus_next) != "":
 			get_node(focus_next).grab_focus()
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()

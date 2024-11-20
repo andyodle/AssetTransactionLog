@@ -1,0 +1,8 @@
+res://default_env.tres
+res://Scenes/Main.tscn
+res://Assets/Theme/MainTheme.tres
+res://Scripts/Main.gd
+res://Scripts/AutoLoad/JsonManager.gd
+res://Scripts/TextInput.gd
+res://Scenes/Controls/ActiveTransactionsTab.tscn
+res://Scenes/TransactionLog.tscn

@@ -1,12 +1,12 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
-#include <string>
-#include "core/reference.h"
+#include "core/object/ref_counted.h"
+#include "core/variant/variant.h"
 
-class Calculator : public Reference{
+class Calculator : public RefCounted{
 
-    GDCLASS(Calculator, Reference);
+    GDCLASS(Calculator, RefCounted);
 
 protected:
     static void _bind_methods();

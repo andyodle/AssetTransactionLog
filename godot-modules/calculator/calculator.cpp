@@ -2,32 +2,32 @@
 
 String Calculator::add(const String &one_p, const String &two_p)
 {
-    double one = one_p.to_double();
-    double two = two_p.to_double();
+    double one = one_p.to_float();
+    double two = two_p.to_float();
     double result = one + two;
     return String::num(result, 12);
 }
 
 String Calculator::subtract(const String &one_p, const String &two_p)
 {
-    double one = one_p.to_double();
-    double two = two_p.to_double();
+    double one = one_p.to_float();
+    double two = two_p.to_float();
     double result = one - two;
     return String::num(result, 12);
 }
 
 String Calculator::multiply(const String &one_p, const String &two_p)
 {
-    double one = one_p.to_double();
-    double two = two_p.to_double();
+    double one = one_p.to_float();
+    double two = two_p.to_float();
     double result = one * two;
     return String::num(result, 12);
 }
 
 String Calculator::divide(const String &one_p, const String &two_p)
 {
-    double one = one_p.to_double();
-    double two = two_p.to_double();
+    double one = one_p.to_float();
+    double two = two_p.to_float();
     double result = one / two;
     return String::num(result, 12);
 }

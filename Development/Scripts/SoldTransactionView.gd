@@ -2,17 +2,17 @@ extends Control
 
 signal SoldSelectedTransaction;
 
-onready var background_color = $CenterContainer/BackgroundColor;
-onready var selected_trans = $CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans;
-onready var date_sold = $CenterContainer/VBoxContainer/HBoxContainer/DateSold;
-onready var number_of_coins = $CenterContainer/VBoxContainer/HBoxContainer/NumberOfCoins;
-onready var exchange_paid = $CenterContainer/VBoxContainer/HBoxContainer/ExchangePaid;
-onready var total_paid = $CenterContainer/VBoxContainer/HBoxContainer/TotalPaid;
-onready var exchange_sold = $CenterContainer/VBoxContainer/HBoxContainer/ExchangeSold;
-onready var total_sold = $CenterContainer/VBoxContainer/HBoxContainer/TotalSold;
-onready var total_gains = $CenterContainer/VBoxContainer/HBoxContainer/TotalGains;
-onready var percent_gains = $CenterContainer/VBoxContainer/HBoxContainer/PercentGains;
-onready var transaction_list = $CenterContainer/VBoxContainer/Transactions;
+@onready var background_color = $CenterContainer/BackgroundColor;
+@onready var selected_trans = $CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans;
+@onready var date_sold = $CenterContainer/VBoxContainer/HBoxContainer/DateSold;
+@onready var number_of_coins = $CenterContainer/VBoxContainer/HBoxContainer/NumberOfCoins;
+@onready var exchange_paid = $CenterContainer/VBoxContainer/HBoxContainer/ExchangePaid;
+@onready var total_paid = $CenterContainer/VBoxContainer/HBoxContainer/TotalPaid;
+@onready var exchange_sold = $CenterContainer/VBoxContainer/HBoxContainer/ExchangeSold;
+@onready var total_sold = $CenterContainer/VBoxContainer/HBoxContainer/TotalSold;
+@onready var total_gains = $CenterContainer/VBoxContainer/HBoxContainer/TotalGains;
+@onready var percent_gains = $CenterContainer/VBoxContainer/HBoxContainer/PercentGains;
+@onready var transaction_list = $CenterContainer/VBoxContainer/Transactions;
 
 var trans_data = null;
 
@@ -53,7 +53,7 @@ func set_tras_data(sold_transaction_p):
 # Add and keep track of transactions that make up the sold transaction.
 func add_transaction(transaction_p):
 	var transaction_view = load("res://Scenes/Controls/TransactionView.tscn");
-	var temp_trans_view = transaction_view.instance();
+	var temp_trans_view = transaction_view.instantiate();
 	transaction_list.add_child(temp_trans_view);
 	transaction_list.move_child(temp_trans_view, 0);
 	
@@ -67,7 +67,7 @@ func is_selected():
 # Select a transaction.
 func select_transaction(is_selected_p):
 	background_color.visible = is_selected_p;
-	selected_trans.pressed = is_selected_p;
+	selected_trans.button_pressed = is_selected_p;
 
 # Selected the individual transaction.
 func _on_SelectedTrans_toggled(button_pressed_p):
@@ -76,5 +76,5 @@ func _on_SelectedTrans_toggled(button_pressed_p):
 # User clicked on the whole row.
 func _on_CenterContainer_gui_input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			select_transaction(!selected_trans.pressed);
