@@ -1,280 +1,350 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=3 uid="uid://cb8w8c1yst5tf"]
 
-[ext_resource path="res://Scenes/Controls/DialogWindow.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/SellTransactionDialog.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Controls/DataPanel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/TransactionLog.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="FontFile" id=5]
-[ext_resource path="res://Scenes/Controls/TextInput.tscn" type="PackedScene" id=6]
+[ext_resource type="PackedScene" uid="uid://hxn77kj1d6t" path="res://Scenes/Controls/DialogWindow.tscn" id="1"]
+[ext_resource type="Script" path="res://Scripts/SellTransactionDialog.gd" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Controls/DataPanel.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://db8fi77xxhkbp" path="res://Scenes/TransactionLog.tscn" id="4"]
+[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="5"]
+[ext_resource type="PackedScene" path="res://Scenes/Controls/TextInput.tscn" id="6"]
 
-[sub_resource type="FontFile" id=1]
+[sub_resource type="FontFile" id="1"]
 resource_local_to_scene = true
-size = 20
-extra_spacing_char = 2
-extra_spacing_space = 2
-font_data = ExtResource( 5 )
+fallbacks = Array[Font]([ExtResource("5")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id=2]
+[sub_resource type="Animation" id="3"]
+resource_name = "GrowLabel"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16, 20]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(252, 20), Vector2(248, 48)]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20, 14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(252, 48), Vector2(252, 20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxa5b"]
+_data = {
+"GrowLabel": SubResource("3"),
+"ShrinkLabel": SubResource("4")
+}
+
+[sub_resource type="FontFile" id="2"]
 resource_local_to_scene = true
-size = 20
-extra_spacing_char = 2
-extra_spacing_space = 2
-font_data = ExtResource( 5 )
+fallbacks = Array[Font]([ExtResource("5")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[node name="SellTransactionDialog" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4w8h1"]
+_data = {
+"GrowLabel": SubResource("3"),
+"ShrinkLabel": SubResource("4")
+}
+
+[node name="SellTransactionDialog" instance=ExtResource("1")]
+script = ExtResource("2")
 
 [node name="OverlayMaskButton" parent="." index="0"]
-modulate = Color( 0, 0, 0, 0.392157 )
+modulate = Color(0, 0, 0, 0.392157)
 
 [node name="DialogContainer" parent="CenterContainer" index="0"]
-offset_left = 28.0
-offset_top = 27.0
-offset_right = 996.0
-offset_bottom = 572.0
-custom_minimum_size = Vector2( 968, 545 )
+custom_minimum_size = Vector2(968, 545)
 
 [node name="BackgroundColor" parent="CenterContainer/DialogContainer" index="0"]
+custom_minimum_size = Vector2(968, 545)
 offset_right = 6.10352e-05
-custom_minimum_size = Vector2( 968, 545 )
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer" index="1"]
+custom_minimum_size = Vector2(968, 545)
 offset_right = 6.10352e-05
 offset_bottom = -16.0
-custom_minimum_size = Vector2( 968, 545 )
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer" index="0"]
-offset_right = 952.0
-offset_bottom = 545.0
-custom_minimum_size = Vector2( 936, 545 )
+custom_minimum_size = Vector2(936, 545)
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer" index="0"]
-offset_left = 8.0
-offset_top = 11.0
-offset_right = 928.0
-offset_bottom = 534.0
 theme_override_constants/separation = 8
 
 [node name="DialogTitle" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-offset_right = 920.0
-offset_bottom = 41.0
-custom_minimum_size = Vector2( 920, 41 )
+custom_minimum_size = Vector2(920, 41)
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle" index="0"]
+layout_mode = 0
 offset_bottom = 0.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
-offset_right = 912.0
-offset_bottom = 34.0
+layout_mode = 2
 text = "Sell Transaction"
 
 [node name="HBoxInputContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-offset_top = 49.0
-offset_right = 920.0
-offset_bottom = 99.0
-custom_minimum_size = Vector2( 920, 0 )
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer" index="0" instance=ExtResource( 6 )]
-offset_right = 452.0
-offset_bottom = 50.0
+[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer" index="0" instance=ExtResource("6")]
+layout_mode = 2
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/NumberOfCoins" index="6"]
-theme_override_fonts/font = SubResource( 1 )
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/NumberOfCoins" index="5"]
+layout_mode = 0
+theme_override_fonts/font = SubResource("1")
 text = "Number of Coins"
 
-[node name="AmountToSell" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer" index="1" instance=ExtResource( 6 )]
-offset_left = 468.0
-offset_right = 920.0
-offset_bottom = 50.0
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/NumberOfCoins" index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_wxa5b")
+}
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/AmountToSell" index="6"]
-theme_override_fonts/font = SubResource( 2 )
+[node name="AmountToSell" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer" index="1" instance=ExtResource("6")]
+layout_mode = 2
+
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/AmountToSell" index="5"]
+layout_mode = 0
+theme_override_fonts/font = SubResource("2")
 text = "Amount to Sell"
 
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/AmountToSell" index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_4w8h1")
+}
+
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2"]
-offset_top = 107.0
-offset_right = 920.0
-offset_bottom = 203.0
-custom_minimum_size = Vector2( 920, 96 )
+custom_minimum_size = Vector2(920, 96)
+layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="TotalCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 218.0
-offset_bottom = 96.0
+[node name="TotalCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins" index="0"]
+layout_mode = 0
 
 [node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="0"]
-offset_right = 218.0
-offset_bottom = 88.0
+layout_mode = 2
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="1"]
-offset_right = 218.0
-offset_bottom = 88.0
+layout_mode = 2
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
-offset_left = 58.0
-offset_top = 13.0
-offset_right = 160.0
-offset_bottom = 66.0
+layout_mode = 2
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-offset_right = 102.0
+layout_mode = 2
 text = "Total Coins"
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-offset_right = 102.0
+layout_mode = 2
 
-[node name="TotalAmountPaid" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 234.0
-offset_right = 452.0
-offset_bottom = 96.0
+[node name="DataLabel" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="PercentLabel" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="TotalAmountPaid" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1" instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid" index="0"]
+layout_mode = 0
 
 [node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="0"]
-offset_right = 218.0
-offset_bottom = 88.0
+layout_mode = 2
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="1"]
-offset_right = 218.0
-offset_bottom = 88.0
+layout_mode = 2
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer" index="0"]
-offset_left = 63.0
-offset_top = 13.0
-offset_right = 155.0
-offset_bottom = 66.0
+layout_mode = 2
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-offset_right = 92.0
+layout_mode = 2
 text = "Total Paid"
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-offset_right = 92.0
+layout_mode = 2
 
-[node name="CostAverage" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="2" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 468.0
-offset_right = 686.0
-offset_bottom = 96.0
+[node name="DataLabel" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="PercentLabel" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="CostAverage" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="2" instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage" index="0"]
+layout_mode = 0
 
 [node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="0"]
-offset_right = 218.0
-offset_bottom = 88.0
+layout_mode = 2
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="1"]
-offset_right = 218.0
-offset_bottom = 88.0
+layout_mode = 2
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer" index="0"]
-offset_left = 49.0
-offset_top = 13.0
-offset_right = 169.0
-offset_bottom = 66.0
+layout_mode = 2
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-offset_right = 120.0
+layout_mode = 2
 text = "Cost Average"
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-offset_right = 120.0
+layout_mode = 2
 
-[node name="TotalProfit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="3" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 702.0
-offset_right = 920.0
-offset_bottom = 96.0
+[node name="DataLabel" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="PercentLabel" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="TotalProfit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="3" instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit" index="0"]
+layout_mode = 0
 
 [node name="ColorRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer" index="0"]
-offset_right = 218.0
-offset_bottom = 88.0
+layout_mode = 2
 
 [node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer" index="1"]
-offset_right = 218.0
-offset_bottom = 88.0
+layout_mode = 2
 
 [node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer" index="0"]
-offset_left = 56.0
-offset_top = 13.0
-offset_right = 161.0
-offset_bottom = 66.0
+layout_mode = 2
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-offset_right = 105.0
+layout_mode = 2
 text = "Total Profit"
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-offset_right = 105.0
+layout_mode = 2
 
-[node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource( 4 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = 211.0
-offset_right = 920.0
-offset_bottom = 475.0
-custom_minimum_size = Vector2( 920, 264 )
+[node name="DataLabel" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="PercentLabel" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/TotalProfit/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="TransactionLog" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="3" instance=ExtResource("4")]
+custom_minimum_size = Vector2(920, 264)
+layout_mode = 2
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="0"]
+custom_minimum_size = Vector2(920, 264)
 offset_right = 0.0
 offset_bottom = 0.0
-custom_minimum_size = Vector2( 920, 264 )
 
-[node name="BackgroundColor" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="0"]
-offset_bottom = 248.0
-
-[node name="VBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer" index="1"]
-offset_bottom = 248.0
+[node name="CenterContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns" index="0"]
+layout_mode = 0
 
 [node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer" index="0"]
-offset_left = 135.0
-offset_right = 785.0
+layout_mode = 2
 
 [node name="BlankSpace" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="0"]
 visible = false
+layout_mode = 2
 
 [node name="SelectAll" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="1"]
 visible = false
-offset_left = 0.0
-offset_right = 63.0
+layout_mode = 2
 
 [node name="DateAcquired" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="2"]
-offset_left = 0.0
-offset_right = 123.0
+layout_mode = 2
 
 [node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="3"]
-offset_left = 127.0
-offset_right = 266.0
+layout_mode = 2
 
 [node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="4"]
-offset_left = 270.0
-offset_right = 397.0
+layout_mode = 2
 
 [node name="CreditAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="5"]
-offset_left = 401.0
-offset_right = 524.0
+layout_mode = 2
 
 [node name="DebitAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns/CenterContainer/HBoxContainer" index="6"]
-offset_left = 528.0
-offset_right = 650.0
-
-[node name="ScrollContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer" index="2"]
-offset_bottom = 240.0
-
-[node name="Trasactions" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
-offset_bottom = 120.0
+layout_mode = 2
 
 [node name="AddActionButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog" index="1"]
 visible = false
 
+[node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/SellActionButton" index="0"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="4"]
-offset_top = 483.0
-offset_right = 920.0
-offset_bottom = 523.0
-custom_minimum_size = Vector2( 920, 40 )
+custom_minimum_size = Vector2(920, 40)
+
+[node name="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" index="0"]
+layout_mode = 0
+
+[node name="OkButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton" index="0"]
+layout_mode = 0
+
+[node name="Button" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="CancelButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton" index="0"]
+layout_mode = 0
+
+[node name="Button" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton/MarginContainer" index="0"]
+layout_mode = 2
 
 [connection signal="text_changed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/NumberOfCoins" to="." method="_on_NumberOfCoins_text_changed"]
 [connection signal="text_changed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxInputContainer/AmountToSell" to="." method="_on_AmountToSell_text_changed"]

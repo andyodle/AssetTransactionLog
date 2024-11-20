@@ -3,11 +3,11 @@ extends "res://Scripts/DialogWindow.gd"
 signal AddNewTransaction;
 signal EditTransaction;
 
-@onready var transaction_ammount = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionAmount;
-@onready var exchange_price = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice;
-@onready var transaction_date = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionDate;
-@onready var number_of_coins = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/NumberOfCoins;
-@onready var credit_or_debit = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/CreditOrDebit;
+@onready var transaction_ammount = %TransactionAmount;
+@onready var exchange_price = %ExchangePrice;
+@onready var transaction_date = %TransactionDate;
+@onready var number_of_coins = %NumberOfCoins;
+@onready var credit_or_debit = %CreditOrDebit;
 
 var old_transaction;
 var is_edit_transaction = false;
