@@ -7,7 +7,7 @@ func _ready():
 
 # Get the current date.
 func get_current_date_str():
-	var temp_date_time = OS.get_datetime();
+	var temp_date_time = Time.get_datetime_dict_from_system();
 	var date_string = String("%02d" % temp_date_time["month"]) + "/" + String("%02d" % temp_date_time["day"]) + "/" + String("%4d" % temp_date_time["year"]);
 	return date_string;
 
@@ -169,13 +169,13 @@ func format_decimal(format_p, number_p):
 func reset_main_window_title():
 	# Keep track of the window title.
 	main_window_title = ProjectSettings.get("application/config/name");
-	OS.set_window_title(main_window_title);
+	get_window().set_title(main_window_title);
 
 # Helper function to set and keep track of the window title.
 func set_main_window_title(title_p):
 	if title_p != null:
 		main_window_title = title_p;
-		OS.set_window_title(title_p);
+		get_window().set_title(title_p);
 
 # Show the user that there are changes that need to be saved.
 func show_save_changes():

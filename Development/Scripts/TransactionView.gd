@@ -2,13 +2,13 @@ extends Control
 
 signal SelectedTransaction;
 
-onready var background_color = $CenterContainer/BackgroundColor;
-onready var date_acquired = $CenterContainer/VBoxContainer/HBoxContainer/DateAcquired;
-onready var number_of_coins = $CenterContainer/VBoxContainer/HBoxContainer/NumberOfCoins;
-onready var exchange_price = $CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice;
-onready var credit_amount = $CenterContainer/VBoxContainer/HBoxContainer/CreditAmount;
-onready var debit_amount = $CenterContainer/VBoxContainer/HBoxContainer/DebitAmount;
-onready var selected_trans = $CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans;
+@onready var background_color = $CenterContainer/BackgroundColor;
+@onready var date_acquired = $CenterContainer/VBoxContainer/HBoxContainer/DateAcquired;
+@onready var number_of_coins = $CenterContainer/VBoxContainer/HBoxContainer/NumberOfCoins;
+@onready var exchange_price = $CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice;
+@onready var credit_amount = $CenterContainer/VBoxContainer/HBoxContainer/CreditAmount;
+@onready var debit_amount = $CenterContainer/VBoxContainer/HBoxContainer/DebitAmount;
+@onready var selected_trans = $CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans;
 
 var trans_data = null;
 
@@ -53,7 +53,7 @@ func is_credit_trans():
 # Select a transaction.
 func select_transaction(is_selected_p):
 	background_color.visible = is_selected_p;
-	selected_trans.pressed = is_selected_p;
+	selected_trans.button_pressed = is_selected_p;
 
 # Selected the individual transaction.
 func _on_SelectedTrans_toggled(button_pressed_p):
@@ -62,5 +62,5 @@ func _on_SelectedTrans_toggled(button_pressed_p):
 # User clicked on the whole row.
 func _on_CenterContainer_gui_input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			select_transaction(!selected_trans.pressed);

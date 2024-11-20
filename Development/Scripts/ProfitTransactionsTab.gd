@@ -5,18 +5,18 @@ signal SellTransactionClick;
 signal SplitTransactionClick;
 signal EditTransactionClick;
 
-onready var total_coins_data_panel = $VBoxContainer/HBoxContainer/TotalCoins;
-onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
-onready var cost_average_data_panel = $VBoxContainer/HBoxContainer/CostAverage;
-onready var transaction_log = $VBoxContainer/TransactionLog;
-onready var animation_player = $AnimationPlayer;
+@onready var total_coins_data_panel = $VBoxContainer/HBoxContainer/TotalCoins;
+@onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
+@onready var cost_average_data_panel = $VBoxContainer/HBoxContainer/CostAverage;
+@onready var transaction_log = $VBoxContainer/TransactionLog;
+@onready var animation_player = $AnimationPlayer;
 
 func _ready():
 	self.modulate = Color(1, 1, 1, 0);
 
 func fade_in():
 	animation_player.play("FadeIn");
-	yield(animation_player,"animation_finished");
+	await animation_player.animation_finished;
 
 # Reset the transaction list.
 func reset_trasactoins():

@@ -1,7 +1,7 @@
 extends "res://Scripts/DialogWindow.gd"
 
-onready var reduce_transaction_input = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput;
-onready var transaction_log = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog;
+@onready var reduce_transaction_input = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput;
+@onready var transaction_log = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog;
 
 signal SplitTransaction;
 
@@ -15,7 +15,7 @@ func verify_input():
 	return true;
 
 # Add selected transactions to the split log.
-func add_transaction_to_split(var transactoin_to_split_p):
+func add_transaction_to_split(transactoin_to_split_p):
 	transaction_log.add_transaction(transactoin_to_split_p, true);
 
 func calculate_split_transaction():

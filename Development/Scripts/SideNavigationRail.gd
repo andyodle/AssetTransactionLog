@@ -12,7 +12,7 @@ func toggle_tab_buttons(active_button_p):
 	var navigation_buttons = get_tree().get_nodes_in_group("NavigationButton");
 	for navigation_button in navigation_buttons:
 		if navigation_button.name != active_button_p:
-			navigation_button.pressed = false;
+			navigation_button.button_pressed = false;
 
 # Active Tab Clicked
 func _on_ActiveTransButton_pressed():

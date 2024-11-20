@@ -8,11 +8,11 @@ signal CalculateCostAverage;
 signal EditTransactionClick;
 signal SplitTransactionClick;
 
-onready var add_action_button = $AddActionButton;
-onready var sell_action_button = $SellActionButton;
-onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
-onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Trasactions;
-onready var transaction_columns = $MarginContainer/VBoxContainer/TransactionColumns;
+@onready var add_action_button = $AddActionButton;
+@onready var sell_action_button = $SellActionButton;
+@onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
+@onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Trasactions;
+@onready var transaction_columns = $MarginContainer/VBoxContainer/TransactionColumns;
 
 var transaction_view = preload("res://Scenes/Controls/TransactionView.tscn");
 
@@ -43,7 +43,7 @@ func calculate_toals():
 	emit_signal("CalculateCostAverage", cost_average);
 
 func add_transaction(transaction_p, hide_select_p):
-	var temp_trans_view = transaction_view.instance();
+	var temp_trans_view = transaction_view.instantiate();
 	transaction_list.add_child(temp_trans_view);
 	transaction_list.move_child(temp_trans_view, 0);
 	
@@ -52,7 +52,7 @@ func add_transaction(transaction_p, hide_select_p):
 		temp_trans_view.selected_trans.visible = false;
 		
 	# Connect the transaction to the selected event.
-	temp_trans_view.connect("SelectedTransaction", self, "transaction_selected");
+	temp_trans_view.connect("SelectedTransaction", Callable(self, "transaction_selected"));
 	
 	# Add the transaction to the list.
 	temp_trans_view.set_tras_data(transaction_p);

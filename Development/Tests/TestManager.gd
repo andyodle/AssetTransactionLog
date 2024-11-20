@@ -2,7 +2,7 @@ extends Control
 
 const TESTS_PATH = "res://Tests/";
 
-onready var test_console = $MarginContainer/VBoxContainer/TestConsole;
+@onready var test_console = $MarginContainer/VBoxContainer/TestConsole;
 
 var test_count = 0;
 var red_color : Color = Color("#E92127");
@@ -14,9 +14,9 @@ var yellow_color : Color = Color("#FEFE33");
 # test script that starts with test_ in the
 # name of the script.
 func run_tests(current_dir_p):
-	var levels_dir = Directory.new();
+	var levels_dir = DirAccess.new();
 	levels_dir.open(current_dir_p);
-	levels_dir.list_dir_begin(true);
+	levels_dir.list_dir_begin() ;# TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 	
 	var file_name = levels_dir.get_next();
 	while file_name != "":
@@ -33,7 +33,7 @@ func run_tests(current_dir_p):
 				
 				# Attempt to load and run the test.
 				var temp_class = load(temp_file_path).new();
-				temp_class.connect("display_message", self, "display_test_message");
+				temp_class.connect("display_message", Callable(self, "display_test_message"));
 				temp_class.initalize_test();
 				display_test_message("    Running " + file_name + " ...");
 				temp_class.run_test();

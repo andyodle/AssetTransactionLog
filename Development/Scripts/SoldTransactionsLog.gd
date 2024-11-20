@@ -5,8 +5,8 @@ signal CalcualtedTotalPaidPrice;
 signal CalcualtedTotalSoldPrice;
 signal CalculatedPercentGains;
 
-onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
-onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Transactions;
+@onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
+@onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Transactions;
 
 var sold_transaction_view = preload("res://Scenes/Controls/SoldTransactionView.tscn");
 
@@ -58,12 +58,12 @@ func remove_selected_transactions():
 			transaction_list.remove_child(transaction);
 
 func add_transaction(sold_transaction_p):
-	var temp_sold_trans_view = sold_transaction_view.instance();
+	var temp_sold_trans_view = sold_transaction_view.instantiate();
 	transaction_list.add_child(temp_sold_trans_view);
 	transaction_list.move_child(temp_sold_trans_view, 0);
 	
 	# Connect the transaction to the selected event.
-	temp_sold_trans_view.connect("SoldSelectedTransaction", self, "sold_transaction_selected");
+	temp_sold_trans_view.connect("SoldSelectedTransaction", Callable(self, "sold_transaction_selected"));
 	
 	# Add the transaction to the list.
 	temp_sold_trans_view.set_tras_data(sold_transaction_p);

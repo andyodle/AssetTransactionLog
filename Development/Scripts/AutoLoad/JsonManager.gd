@@ -1,11 +1,11 @@
 extends Node
 
 func save_json_file(path_to_file_p:String, data_to_save_p:Dictionary):
-	var save_file = File.new();
-	save_file.open(path_to_file_p, File.WRITE);
+	var save_file = null;
+	save_file.open(path_to_file_p, FileAccess.WRITE);
 	
 	# Write the dictonay as a single string to the json file.
-	save_file.store_line(to_json(data_to_save_p));
+	save_file.store_line(JSON.stringify(data_to_save_p));
 	
 	# Close the file when were done with it.
 	save_file.close();
@@ -13,17 +13,19 @@ func save_json_file(path_to_file_p:String, data_to_save_p:Dictionary):
 func load_json_file(path_to_file_p:String):
 	var temp_data = {}
 	
-	var load_file = File.new();
+	var load_file = null;
 	
 	# Check to see if the file actualy exists.
 	if !load_file.file_exists(path_to_file_p):
 		return temp_data;
 	
 	# Open the file for reading.
-	load_file.open(path_to_file_p, File.READ);
+	load_file.open(path_to_file_p, FileAccess.READ);
 	
 	# Parse the json into a dictonary.
-	temp_data = parse_json(load_file.get_as_text());
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(load_file.get_as_text());
+	temp_data = test_json_conv.get_data()
 	
 	# Close the file when were done with it.
 	load_file.close();

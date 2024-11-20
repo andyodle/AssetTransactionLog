@@ -1,19 +1,19 @@
 extends Control
 
-onready var active_transactions_view = $HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab;
-onready var profit_transactions_view = $HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab;
-onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/MarginContainer/SoldTransactionLogTab;
-onready var settings_tab = $HBoxContainer/TabsContainer/MarginContainer/SettingsTab;
-onready var add_active_trans_dialog = $AddActiveTransaction;
-onready var add_profit_trans_dialog = $AddProfitTransaction;
-onready var edit_active_trans_dialog = $EditActiveTransaction;
-onready var edit_profit_trans_dialog = $EditProfitTransaction;
-onready var sell_active_trans_dialog = $SellActiveTransactionDialog;
-onready var sell_profit_trans_dialog = $SellProfitTransactionDialog;
-onready var split_active_transaction_dialog = $SplitActiveTransactionDialog;
-onready var split_profit_transaction_dialog = $SplitProfitTransactionDialog;
-onready var open_file_dialog = $OpenFileDialog;
-onready var safe_file_dialog = $SaveFileDialog;
+@onready var active_transactions_view = $HBoxContainer/TabsContainer/MarginContainer/ActiveTransactionsTab;
+@onready var profit_transactions_view = $HBoxContainer/TabsContainer/MarginContainer/ProfitTransactionsTab;
+@onready var sold_transactions_log_view = $HBoxContainer/TabsContainer/MarginContainer/SoldTransactionLogTab;
+@onready var settings_tab = $HBoxContainer/TabsContainer/MarginContainer/SettingsTab;
+@onready var add_active_trans_dialog = $AddActiveTransaction;
+@onready var add_profit_trans_dialog = $AddProfitTransaction;
+@onready var edit_active_trans_dialog = $EditActiveTransaction;
+@onready var edit_profit_trans_dialog = $EditProfitTransaction;
+@onready var sell_active_trans_dialog = $SellActiveTransactionDialog;
+@onready var sell_profit_trans_dialog = $SellProfitTransactionDialog;
+@onready var split_active_transaction_dialog = $SplitActiveTransactionDialog;
+@onready var split_profit_transaction_dialog = $SplitProfitTransactionDialog;
+@onready var open_file_dialog = $OpenFileDialog;
+@onready var safe_file_dialog = $SaveFileDialog;
 
 func _ready():
 	# Show the active tab by default.
@@ -335,36 +335,36 @@ func save_transactions(file_path_p):
 	if transaction_views.size() > 0:
 		for count in range(0, transaction_views.size()):
 			var transaction_view = transaction_views[count];
-			temp_data["ActiveTransactions"][String(count)] = {};
-			temp_data["ActiveTransactions"][String(count)]["date_m"] = transaction_view.trans_data.date_m;
-			temp_data["ActiveTransactions"][String(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
-			temp_data["ActiveTransactions"][String(count)]["exchange_price_m"] = transaction_view.trans_data.exchange_price_m;
-			temp_data["ActiveTransactions"][String(count)]["amount_m"] = transaction_view.trans_data.amount_m;
-			temp_data["ActiveTransactions"][String(count)]["is_credit_m"] = transaction_view.trans_data.is_credit_m;
+			temp_data["ActiveTransactions"][str(count)] = {};
+			temp_data["ActiveTransactions"][str(count)]["date_m"] = transaction_view.trans_data.date_m;
+			temp_data["ActiveTransactions"][str(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
+			temp_data["ActiveTransactions"][str(count)]["exchange_price_m"] = transaction_view.trans_data.exchange_price_m;
+			temp_data["ActiveTransactions"][str(count)]["amount_m"] = transaction_view.trans_data.amount_m;
+			temp_data["ActiveTransactions"][str(count)]["is_credit_m"] = transaction_view.trans_data.is_credit_m;
 	
 	# Get all of the selected transactions.
 	transaction_views = profit_transactions_view.get_transactions();
 	if transaction_views.size() > 0:
 		for count in range(0, transaction_views.size()):
 			var transaction_view = transaction_views[count];
-			temp_data["ProfitTransactions"][String(count)] = {};
-			temp_data["ProfitTransactions"][String(count)]["date_m"] = transaction_view.trans_data.date_m;
-			temp_data["ProfitTransactions"][String(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
-			temp_data["ProfitTransactions"][String(count)]["exchange_price_m"] = transaction_view.trans_data.exchange_price_m;
-			temp_data["ProfitTransactions"][String(count)]["amount_m"] = transaction_view.trans_data.amount_m;
-			temp_data["ProfitTransactions"][String(count)]["is_credit_m"] = transaction_view.trans_data.is_credit_m;
+			temp_data["ProfitTransactions"][str(count)] = {};
+			temp_data["ProfitTransactions"][str(count)]["date_m"] = transaction_view.trans_data.date_m;
+			temp_data["ProfitTransactions"][str(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
+			temp_data["ProfitTransactions"][str(count)]["exchange_price_m"] = transaction_view.trans_data.exchange_price_m;
+			temp_data["ProfitTransactions"][str(count)]["amount_m"] = transaction_view.trans_data.amount_m;
+			temp_data["ProfitTransactions"][str(count)]["is_credit_m"] = transaction_view.trans_data.is_credit_m;
 	
 	# Get all of the selected transactions.
 	transaction_views = sold_transactions_log_view.get_transactions();
 	if transaction_views.size() > 0:
 		for count in range(0, transaction_views.size()):
 			var transaction_view = transaction_views[count];
-			temp_data["SoldTransactions"][String(count)] = {};
-			temp_data["SoldTransactions"][String(count)]["date_m"] = transaction_view.trans_data.date_m;
-			temp_data["SoldTransactions"][String(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
-			temp_data["SoldTransactions"][String(count)]["exchange_paid_m"] = transaction_view.trans_data.exchange_paid_m;
-			temp_data["SoldTransactions"][String(count)]["amount_m"] = transaction_view.trans_data.amount_m;
-			temp_data["SoldTransactions"][String(count)]["exchange_sold_m"] = transaction_view.trans_data.exchange_sold_m;
+			temp_data["SoldTransactions"][str(count)] = {};
+			temp_data["SoldTransactions"][str(count)]["date_m"] = transaction_view.trans_data.date_m;
+			temp_data["SoldTransactions"][str(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
+			temp_data["SoldTransactions"][str(count)]["exchange_paid_m"] = transaction_view.trans_data.exchange_paid_m;
+			temp_data["SoldTransactions"][str(count)]["amount_m"] = transaction_view.trans_data.amount_m;
+			temp_data["SoldTransactions"][str(count)]["exchange_sold_m"] = transaction_view.trans_data.exchange_sold_m;
 	
 	# Save out the transactions.
 	JsonManager.save_json_file(file_path_p, temp_data);
@@ -417,7 +417,7 @@ func load_transactions(file_path_p):
 		var active_transactions = temp_data["ActiveTransactions"];
 		if active_transactions.size() > 0:
 			for count in range(active_transactions.size(), 0, -1):
-				var temp_trans = create_transaction_record(temp_data["ActiveTransactions"][String(count - 1)]);
+				var temp_trans = create_transaction_record(temp_data["ActiveTransactions"][str(count - 1)]);
 				active_transactions_view.add_new_transaction(temp_trans);
 		
 		# Profit Transactions
@@ -425,7 +425,7 @@ func load_transactions(file_path_p):
 		var profit_transactions = temp_data["ProfitTransactions"];
 		if profit_transactions.size() > 0:
 			for count in range(profit_transactions.size(), 0, -1):
-				var temp_trans = create_transaction_record(temp_data["ProfitTransactions"][String(count - 1)]);
+				var temp_trans = create_transaction_record(temp_data["ProfitTransactions"][str(count - 1)]);
 				profit_transactions_view.add_new_transaction(temp_trans);
 		
 		# Sold Transactions
@@ -433,7 +433,7 @@ func load_transactions(file_path_p):
 		var sold_transactions = temp_data["SoldTransactions"];
 		if sold_transactions.size() > 0:
 			for count in range(sold_transactions.size(), 0, -1):
-				var temp_trans = create_sold_transaction_record(temp_data["SoldTransactions"][String(count - 1)]);
+				var temp_trans = create_sold_transaction_record(temp_data["SoldTransactions"][str(count - 1)]);
 				sold_transactions_log_view.add_new_transaction(temp_trans);
 		
 		# Dipslay a messge to the user that we saved their data.
