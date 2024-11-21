@@ -1,16 +1,15 @@
-[gd_scene load_steps=44 format=3 uid="uid://cuqka2ernha2c"]
+[gd_scene load_steps=43 format=3 uid="uid://cuqka2ernha2c"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Controls/SettingsTab.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dqt8us0ajkcdt" path="res://Scenes/Controls/SettingsTab.tscn" id="1"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="2"]
-[ext_resource type="Theme" uid="uid://dn4jj6ng7dp4k" path="res://Assets/Theme/MainTheme.tres" id="3"]
 [ext_resource type="PackedScene" uid="uid://ct6xcfd4tfrd8" path="res://Scenes/Controls/SideNavigationRail.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://cb8w8c1yst5tf" path="res://Scenes/SellTransactionDialog.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://b7uuwekbv82l4" path="res://Scenes/Controls/AddTransaction.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://Scenes/SoldTransactionLogTab.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://dh24wom2qnn2" path="res://Scenes/SoldTransactionLogTab.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://lolknswcp7dp" path="res://Scenes/Controls/OpenFileDialog.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://5pg6vu4w1esl" path="res://Scenes/Controls/SaveFileDialog.tscn" id="9"]
 [ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="9_p7m3w"]
-[ext_resource type="PackedScene" path="res://Scenes/Controls/ProfitTransactionTab.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://cgrwwtvfuj8tq" path="res://Scenes/Controls/ProfitTransactionTab.tscn" id="10"]
 [ext_resource type="PackedScene" uid="uid://covxr8r8gd3hm" path="res://Scenes/Controls/ActiveTransactionsTab.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://cugwfnjw6j06o" path="res://Scenes/Controls/SplitTransactionDialog.tscn" id="12"]
 
@@ -384,7 +383,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3")
 script = ExtResource("2")
 
 [node name="AddActiveTransaction_CenterContainer_DialogContainer#BackgroundColor" type="ColorRect" parent="."]
@@ -419,7 +417,6 @@ theme_override_constants/separation = 0
 [node name="SideNavigationRail" parent="CenterContainer/MarginContainer/HBoxContainer" instance=ExtResource("4")]
 custom_minimum_size = Vector2(144, 0)
 layout_mode = 2
-size_flags_horizontal = 1
 
 [node name="TabsContainer" type="Control" parent="CenterContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(952, 600)
@@ -435,28 +432,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = -16
+theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = -16
 
 [node name="ActiveTransactionsTab" parent="CenterContainer/MarginContainer/HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource("11")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="ProfitTransactionsTab" parent="CenterContainer/MarginContainer/HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource("10")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="SoldTransactionLogTab" parent="CenterContainer/MarginContainer/HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource("7")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="SettingsTab" parent="CenterContainer/MarginContainer/HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource("1")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="AddActiveTransaction" parent="CenterContainer/MarginContainer" instance=ExtResource("6")]
 unique_name_in_owner = true

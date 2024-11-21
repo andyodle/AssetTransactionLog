@@ -5,8 +5,8 @@ signal CalcualtedTotalPaidPrice;
 signal CalcualtedTotalSoldPrice;
 signal CalculatedPercentGains;
 
-@onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
-@onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Transactions;
+@onready var action_button_container = %ActionButtonContainer;
+@onready var transaction_list = %Transactions;
 
 var sold_transaction_view = preload("res://Scenes/Controls/SoldTransactionView.tscn");
 

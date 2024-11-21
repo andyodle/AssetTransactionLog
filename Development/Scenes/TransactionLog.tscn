@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://db8fi77xxhkbp"]
 
 [ext_resource type="Script" path="res://Scripts/TransactionLog.gd" id="1"]
-[ext_resource type="PackedScene" path="res://Scenes/Controls/TransactionColumns.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bd54rb16g04g4" path="res://Scenes/Controls/TransactionColumns.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://Scenes/Controls/ActionButtonContainer.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://Scenes/Controls/BaseActionButton.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://cl4mrm6xjtno4" path="res://Assets/Icons/Sell.png" id="5"]
@@ -14,6 +14,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -104.0
 offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
@@ -23,8 +25,7 @@ script = ExtResource("1")
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -6.10352e-05
-offset_bottom = 3.05176e-05
+offset_right = -1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_top = 8
@@ -36,8 +37,6 @@ color = Color(0.207843, 0.231373, 0.341176, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="ActionButtonContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("3")]
 layout_mode = 2
@@ -51,39 +50,17 @@ layout_mode = 2
 [node name="SplitButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="0"]
 layout_mode = 2
 
-[node name="MarginContainer" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/SplitButton" index="0"]
-layout_mode = 0
-
-[node name="TextureRect" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/SplitButton/MarginContainer" index="0"]
-layout_mode = 2
-expand_mode = 1
-
 [node name="EditButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="1"]
 layout_mode = 2
 
-[node name="MarginContainer" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton" index="0"]
-layout_mode = 0
-
-[node name="TextureRect" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton/MarginContainer" index="0"]
-layout_mode = 2
-expand_mode = 1
-
 [node name="DeleteButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="2"]
 layout_mode = 2
-
-[node name="MarginContainer" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton" index="0"]
-layout_mode = 0
-
-[node name="TextureRect" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton/MarginContainer" index="0"]
-layout_mode = 2
-expand_mode = 1
 
 [node name="TransactionColumns" parent="MarginContainer/VBoxContainer" instance=ExtResource("2")]
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Trasactions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
@@ -116,6 +93,8 @@ offset_bottom = -32.0
 
 [node name="TextureRect" parent="SellActionButton" index="0"]
 layout_mode = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 texture = ExtResource("5")
 expand_mode = 1
 
