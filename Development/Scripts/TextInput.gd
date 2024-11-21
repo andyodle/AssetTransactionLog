@@ -23,7 +23,7 @@ func _on_TextInput_focus_exited():
 
 func _input(event):
 	# Check to make sure tab doesn't print in the TextEdit.
-	if event.is_action_pressed("ui_focus_next") and is_focused:
+	if event.is_action_pressed("ui_focus_next"):
 		if str(focus_next) != "":
 			get_node(focus_next).grab_focus()
 		get_viewport().set_input_as_handled()

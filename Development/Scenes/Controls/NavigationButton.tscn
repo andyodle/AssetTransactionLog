@@ -20,9 +20,11 @@ cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 default_font = SubResource("1")
 
 [node name="Button" type="Button" groups=["NavigationButton"]]
-custom_minimum_size = Vector2(72, 83)
-offset_right = 0.32
+custom_minimum_size = Vector2(100, 83)
+offset_right = 100.0
+offset_bottom = 83.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 focus_mode = 0
 theme = SubResource("2")
 theme_override_styles/normal = ExtResource("4")
@@ -31,10 +33,13 @@ theme_override_styles/pressed = ExtResource("6")
 script = ExtResource("3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(0, 83)
-layout_mode = 0
+custom_minimum_size = Vector2(100, 83)
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BlankSpace" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 14)
@@ -55,6 +60,7 @@ stretch_mode = 5
 
 [node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer2"]
 custom_minimum_size = Vector2(0, 12)

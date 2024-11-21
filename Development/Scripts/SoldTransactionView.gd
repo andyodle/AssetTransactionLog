@@ -1,20 +1,21 @@
-extends Control
+extends TextureButton
 
 signal SoldSelectedTransaction;
 
-@onready var background_color = $CenterContainer/BackgroundColor;
-@onready var selected_trans = $CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans;
-@onready var date_sold = $CenterContainer/VBoxContainer/HBoxContainer/DateSold;
-@onready var number_of_coins = $CenterContainer/VBoxContainer/HBoxContainer/NumberOfCoins;
-@onready var exchange_paid = $CenterContainer/VBoxContainer/HBoxContainer/ExchangePaid;
-@onready var total_paid = $CenterContainer/VBoxContainer/HBoxContainer/TotalPaid;
-@onready var exchange_sold = $CenterContainer/VBoxContainer/HBoxContainer/ExchangeSold;
-@onready var total_sold = $CenterContainer/VBoxContainer/HBoxContainer/TotalSold;
-@onready var total_gains = $CenterContainer/VBoxContainer/HBoxContainer/TotalGains;
-@onready var percent_gains = $CenterContainer/VBoxContainer/HBoxContainer/PercentGains;
-@onready var transaction_list = $CenterContainer/VBoxContainer/Transactions;
+@onready var background_color = %BackgroundColor;
+@onready var selected_trans = %SelectedTrans;
+@onready var date_sold = %DateSold;
+@onready var number_of_coins = %NumberOfCoins;
+@onready var exchange_paid = %ExchangePaid;
+@onready var total_paid = %TotalPaid;
+@onready var exchange_sold = %ExchangeSold;
+@onready var total_sold = %TotalSold;
+@onready var total_gains = %TotalGains;
+@onready var percent_gains = %PercentGains;
+@onready var transaction_list = %Transactions;
 
 var trans_data = null;
+var transaction_selected = false;
 
 func _ready():
 	clear_data();
@@ -28,6 +29,7 @@ func clear_data():
 	total_sold.text = "";
 	total_gains.text = "";
 	percent_gains.text = "";
+	transaction_selected = false;
 
 # Fill out the transaction.
 func set_tras_data(sold_transaction_p):
@@ -62,19 +64,18 @@ func add_transaction(transaction_p):
 
 # Flag to check if a row was selected.
 func is_selected():
-	return selected_trans.pressed;
+	return transaction_selected;
 
 # Select a transaction.
 func select_transaction(is_selected_p):
 	background_color.visible = is_selected_p;
 	selected_trans.button_pressed = is_selected_p;
+	transaction_selected = is_selected_p;
 
 # Selected the individual transaction.
 func _on_SelectedTrans_toggled(button_pressed_p):
 	emit_signal("SoldSelectedTransaction", button_pressed_p);
 
-# User clicked on the whole row.
-func _on_CenterContainer_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			select_transaction(!selected_trans.pressed);
+# User clicked on whole row.
+func _on_pressed():
+	select_transaction(!transaction_selected);

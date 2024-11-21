@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://covxr8r8gd3hm"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Controls/TabTitle.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c17q6kcx7200a" path="res://Scenes/Controls/TabTitle.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://db8fi77xxhkbp" path="res://Scenes/TransactionLog.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://Scenes/Controls/DataPanel.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://d3r7hcr0u5ldb" path="res://Scenes/Controls/DataPanel.tscn" id="3"]
 [ext_resource type="Script" path="res://Scripts/ActiveTransactionsTab.gd" id="4"]
 
 [sub_resource type="Animation" id="1"]
@@ -42,23 +42,25 @@ script = ExtResource("4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(920, 600)
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -31.9999
-theme_override_constants/separation = 0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
 
 [node name="TabTitle" parent="VBoxContainer" instance=ExtResource("1")]
 custom_minimum_size = Vector2(920, 72)
 layout_mode = 2
 
 [node name="MarginContainer" parent="VBoxContainer/TabTitle" index="0"]
-layout_mode = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
+offset_right = 952.0
+offset_bottom = 72.0
 
 [node name="Title" parent="VBoxContainer/TabTitle/MarginContainer" index="0"]
-layout_mode = 2
 text = "Active Transactions"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -69,92 +71,50 @@ theme_override_constants/separation = 16
 [node name="TotalCoins" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3")]
 layout_mode = 2
 
-[node name="MarginContainer" parent="VBoxContainer/HBoxContainer/TotalCoins" index="0"]
+[node name="MarginContainer" parent="VBoxContainer/HBoxContainer/TotalCoins" index="1"]
 layout_mode = 0
+anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-
-[node name="ColorRect" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="0"]
-layout_mode = 2
-
-[node name="CenterContainer" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer" index="1"]
-layout_mode = 2
-
-[node name="VBoxContainer" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer" index="0"]
-layout_mode = 2
+offset_right = 214.0
+offset_bottom = 92.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Title" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-layout_mode = 2
 text = "Total Coins"
-
-[node name="HBoxContainer" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-layout_mode = 2
-
-[node name="DataLabel" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-layout_mode = 2
-
-[node name="PercentLabel" parent="VBoxContainer/HBoxContainer/TotalCoins/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
-layout_mode = 2
 
 [node name="TotalAmountPaid" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3")]
 layout_mode = 2
 
-[node name="MarginContainer" parent="VBoxContainer/HBoxContainer/TotalAmountPaid" index="0"]
+[node name="MarginContainer" parent="VBoxContainer/HBoxContainer/TotalAmountPaid" index="1"]
 layout_mode = 0
+anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-
-[node name="ColorRect" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="0"]
-layout_mode = 2
-
-[node name="CenterContainer" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer" index="1"]
-layout_mode = 2
-
-[node name="VBoxContainer" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer" index="0"]
-layout_mode = 2
+offset_right = 214.0
+offset_bottom = 92.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Title" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-layout_mode = 2
 text = "Total Paid"
-
-[node name="HBoxContainer" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-layout_mode = 2
-
-[node name="DataLabel" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-layout_mode = 2
-
-[node name="PercentLabel" parent="VBoxContainer/HBoxContainer/TotalAmountPaid/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
-layout_mode = 2
 
 [node name="CostAverage" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3")]
 layout_mode = 2
 
-[node name="MarginContainer" parent="VBoxContainer/HBoxContainer/CostAverage" index="0"]
+[node name="MarginContainer" parent="VBoxContainer/HBoxContainer/CostAverage" index="1"]
 layout_mode = 0
+anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-
-[node name="ColorRect" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="0"]
-layout_mode = 2
-
-[node name="CenterContainer" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer" index="1"]
-layout_mode = 2
-
-[node name="VBoxContainer" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer" index="0"]
-layout_mode = 2
+offset_right = 214.0
+offset_bottom = 92.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Title" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-layout_mode = 2
 text = "Cost Average"
-
-[node name="HBoxContainer" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer" index="1"]
-layout_mode = 2
-
-[node name="DataLabel" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-layout_mode = 2
-
-[node name="PercentLabel" parent="VBoxContainer/HBoxContainer/CostAverage/MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
-layout_mode = 2
 
 [node name="DataPanel4" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3")]
 visible = false

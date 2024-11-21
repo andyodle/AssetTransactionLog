@@ -1,172 +1,126 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://dbxp8hxsjdi0o"]
 
-[ext_resource path="res://Scripts/SoldTransactionView.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="FontFile" id=2]
+[ext_resource type="Script" path="res://Scripts/SoldTransactionView.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="2"]
 
-[sub_resource type="FontFile" id=1]
-font_data = ExtResource( 2 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("2")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 1 )
+[sub_resource type="Theme" id="2"]
+default_font = SubResource("1")
 
-[node name="SoldTransactionView" type="Control" groups=[
-"Transaction",
-]]
+[node name="SoldTransactionView" type="TextureButton" groups=["Transaction"]]
+custom_minimum_size = Vector2(737, 60)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -104.0
-offset_bottom = -540.0
-custom_minimum_size = Vector2( 920, 60 )
+offset_left = -7.0
+offset_right = -111.0
+offset_bottom = -544.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
-theme = SubResource( 2 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme = SubResource("2")
+script = ExtResource("1")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(737, 60)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_minimum_size = Vector2( 920, 60 )
 size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BackgroundColor" type="ColorRect" parent="CenterContainer"]
+unique_name_in_owner = true
 visible = false
-offset_top = 4.0
-offset_right = 920.0
-offset_bottom = 60.0
-custom_minimum_size = Vector2( 920, 56 )
-color = Color( 0.87451, 0.435294, 0.239216, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_minimum_size = Vector2(887, 64)
+layout_mode = 2
+color = Color(0.87451, 0.435294, 0.239216, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-offset_right = 920.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 920, 60 )
+custom_minimum_size = Vector2(737, 60)
+layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
-offset_right = 920.0
-offset_bottom = 4.0
-custom_minimum_size = Vector2( 920, 4 )
+custom_minimum_size = Vector2(737, 4)
+layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-offset_top = 8.0
-offset_right = 920.0
-offset_bottom = 60.0
-custom_minimum_size = Vector2( 920, 52 )
+custom_minimum_size = Vector2(737, 52)
+layout_mode = 2
 size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BlankSpace" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-offset_right = 40.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 40, 52 )
+custom_minimum_size = Vector2(40, 52)
+layout_mode = 2
 
 [node name="DateSold" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-offset_left = 44.0
-offset_right = 144.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 100, 52 )
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 52)
+layout_mode = 2
 text = "02/17/2021"
-align = 1
-valign = 1
-autowrap = true
 
-[node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=[
-"NumberOfCoins-Trans",
-]]
-offset_left = 148.0
-offset_right = 287.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 139, 52 )
+[node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=["NumberOfCoins-Trans"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(139, 52)
+layout_mode = 2
 text = "0.001920220"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="ExchangePaid" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-offset_left = 291.0
-offset_right = 391.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 100, 52 )
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 52)
+layout_mode = 2
 text = "$52,077.37"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="TotalPaid" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-offset_left = 395.0
-offset_right = 495.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 100, 52 )
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 52)
+layout_mode = 2
 text = "$100"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="ExchangeSold" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-offset_left = 499.0
-offset_right = 599.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 100, 52 )
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 52)
+layout_mode = 2
 text = "$53,077.37"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="TotalSold" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-offset_left = 603.0
-offset_right = 703.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 100, 52 )
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 52)
+layout_mode = 2
 text = "$75"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="TotalGains" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-offset_left = 707.0
-offset_right = 807.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 100, 52 )
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 52)
+layout_mode = 2
 text = "$75"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="PercentGains" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-offset_left = 811.0
-offset_right = 903.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 92, 52 )
+unique_name_in_owner = true
+custom_minimum_size = Vector2(92, 52)
+layout_mode = 2
 text = "100.03%"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="SelectedTrans" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 visible = false
-offset_left = 907.0
-offset_right = 939.0
-offset_bottom = 52.0
-custom_minimum_size = Vector2( 32, 52 )
+custom_minimum_size = Vector2(32, 52)
+layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-focus_mode = 0
-align = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 expand_icon = true
 
 [node name="Transactions" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
-offset_top = 64.0
-offset_right = 920.0
-offset_bottom = 64.0
+unique_name_in_owner = true
+layout_mode = 2
 
-[connection signal="gui_input" from="CenterContainer" to="." method="_on_CenterContainer_gui_input"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans" to="." method="_on_SelectedTrans_toggled"]

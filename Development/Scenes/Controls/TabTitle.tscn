@@ -1,43 +1,66 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://c17q6kcx7200a"]
 
-[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="FontFile" id=1]
+[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="1"]
 
-[sub_resource type="FontFile" id=1]
-size = 40
-extra_spacing_char = 2
-extra_spacing_space = 2
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/72/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/48/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/42/0 = Vector2(0, 0)
+cache/0/72/0/ascent = 0.0
+cache/0/72/0/descent = 0.0
+cache/0/72/0/underline_position = 0.0
+cache/0/72/0/underline_thickness = 0.0
+cache/0/72/0/scale = 1.0
+cache/0/72/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/72/0/kerning_overrides/72/0 = Vector2(0, 0)
+cache/0/72/0/kerning_overrides/48/0 = Vector2(0, 0)
+cache/0/72/0/kerning_overrides/42/0 = Vector2(0, 0)
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+cache/0/48/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/48/0/kerning_overrides/72/0 = Vector2(0, 0)
+cache/0/48/0/kerning_overrides/48/0 = Vector2(0, 0)
+cache/0/48/0/kerning_overrides/42/0 = Vector2(0, 0)
+cache/0/42/0/ascent = 0.0
+cache/0/42/0/descent = 0.0
+cache/0/42/0/underline_position = 0.0
+cache/0/42/0/underline_thickness = 0.0
+cache/0/42/0/scale = 1.0
+cache/0/42/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/42/0/kerning_overrides/72/0 = Vector2(0, 0)
+cache/0/42/0/kerning_overrides/48/0 = Vector2(0, 0)
+cache/0/42/0/kerning_overrides/42/0 = Vector2(0, 0)
 
 [node name="TabTitle" type="Control"]
+custom_minimum_size = Vector2(952, 72)
+layout_mode = 3
+anchors_preset = 0
 offset_right = 952.0
 offset_bottom = 72.0
-custom_minimum_size = Vector2( 952, 72 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(952, 72)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_minimum_size = Vector2( 952, 72 )
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_top = 16
 theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Title" type="Label" parent="MarginContainer"]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 936.0
-offset_bottom = 68.0
-custom_minimum_size = Vector2( 0, 40 )
-theme_override_fonts/font = SubResource( 1 )
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 42
 text = "Title"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}

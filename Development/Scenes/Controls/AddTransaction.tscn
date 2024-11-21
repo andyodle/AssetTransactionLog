@@ -341,7 +341,6 @@ libraries = {
 
 [node name="CreditOrDebit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="4" instance=ExtResource("5")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit" index="0"]

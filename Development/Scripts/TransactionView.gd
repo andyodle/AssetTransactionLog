@@ -44,7 +44,7 @@ func get_amount_paid():
 
 # Flag to check if a row was selected.
 func is_selected():
-	return selected_trans.pressed;
+	return selected_trans.button_pressed;
 
 # Get weither the transaction is a credit or debit.
 func is_credit_trans():
@@ -63,4 +63,4 @@ func _on_SelectedTrans_toggled(button_pressed_p):
 func _on_CenterContainer_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			select_transaction(!selected_trans.pressed);
+			select_transaction(!selected_trans.button_pressed);
