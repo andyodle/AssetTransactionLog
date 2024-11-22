@@ -383,6 +383,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2")
 
 [node name="AddActiveTransaction_CenterContainer_DialogContainer#BackgroundColor" type="ColorRect" parent="."]
@@ -399,6 +401,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -56.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -438,7 +442,6 @@ theme_override_constants/margin_bottom = -16
 
 [node name="ActiveTransactionsTab" parent="CenterContainer/MarginContainer/HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource("11")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 0
 
@@ -450,6 +453,7 @@ size_flags_vertical = 0
 
 [node name="SoldTransactionLogTab" parent="CenterContainer/MarginContainer/HBoxContainer/TabsContainer/MarginContainer" instance=ExtResource("7")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 
