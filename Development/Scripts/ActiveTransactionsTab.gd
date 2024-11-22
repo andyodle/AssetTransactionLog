@@ -5,10 +5,14 @@ signal SellTransactionClick;
 signal SplitTransactionClick;
 signal EditTransactionClick;
 
-@onready var total_coins_data_panel = $VBoxContainer/HBoxContainer/TotalCoins;
-@onready var total_amount_paid_data_panel = $VBoxContainer/HBoxContainer/TotalAmountPaid;
-@onready var cost_average_data_panel = $VBoxContainer/HBoxContainer/CostAverage;
-@onready var transaction_log = $VBoxContainer/TransactionLog;
+@onready var total_coins_data_panel = %TotalAssets;
+@onready var total_amount_paid_data_panel = %TotalAmountPaid;
+@onready var cost_average_data_panel = %CostAverage;
+@onready var current_price_panel = %CurrentPrice;
+@onready var profit_or_loss_panel = %ProfitOrLoss;
+@onready var profit_or_loss_percent = %ProfitOrLossPercent;
+@onready var current_asset_value = %CurrentAssetValue;
+@onready var transaction_log = %TransactionLog;
 @onready var animation_player = $AnimationPlayer;
 
 func _ready():
@@ -28,6 +32,18 @@ func reset_trasactoins():
 	
 	# Reset cost average.
 	cost_average_data_panel.reset_data_panel();
+	
+	# Reset current price.
+	current_price_panel.reset_data_panel();
+	
+	# Reset profit or loss.
+	profit_or_loss_panel.reset_data_panel();
+	
+	# Reset profit or loss percent.
+	profit_or_loss_percent.reset_data_panel();
+	
+	# Reset current asset value.
+	current_asset_value.reset_data_panel();
 	
 	# Reset the Transaction log list.
 	transaction_log.reset_trasactoins();
