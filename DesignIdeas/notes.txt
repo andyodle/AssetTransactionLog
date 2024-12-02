@@ -1,0 +1,34 @@
+# Adding New Transaction Flow
+	1.) _on_ActiveTransactionsTab_AddTransactionClick() 
+		- Found in Main.gd
+		- Clears and displays the add active dialog from.
+	2.) _on_DialogActionButtons_OkClicked()
+		- Found in AddTransaction.gd
+		    - Creates a new / edit Transaction data object.
+		    - Emit "AddNewTransaction"  or
+		               "EditTransaction" signal.
+		    - Hides dialog form.
+	2.) _on_AddActiveTransaction_AddNewTransaction(...) 
+		- Found in Main.gd
+		- Updates window title to show unsaved changs.
+		- Calls add_new_transaction(...)
+			- Foud in ActiveTransactionTab.gd
+			- Calls add_transaction(... , ...)
+				- Found in TransactionLog.gd
+				    - Create TransactionView list item.
+				    - Add TransactionView to top of list.
+				    - Connect "SelectedTransaction" event.
+				    - Calls set_tras_data(...)
+				       - Found in TransactionView.gd
+				       - Populates TransactionView list item.
+			- Calls recalulate_totals()
+			    - Found in ActiveTransactionsTab.gd
+			    - Calls calculate_totals()
+			        - Found in TransactionLog.gd
+			        - Calls Utility functions to preform calcs.
+			        - Emit "CalculateNumberOfCoins" signal.
+			        - Emit "CalcualteTotalPrice" signal.
+			        - Emit "CalculateCostAverage" signal.
+	3.) _on_TransactionLog_CalculateNumberOfCoins(...)
+		- Found in ActiveTransactionsTab.gd
+		    - Updates number of coins data panel.
