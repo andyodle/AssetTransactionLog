@@ -93,14 +93,6 @@ layout_mode = 2
 text = "Cost
 Average"
 
-[node name="CurrentPrice" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Title" parent="VBoxContainer/HBoxContainer/CurrentPrice/MarginContainer/CenterContainer/VBoxContainer" index="0"]
-text = "Current
-Price"
-
 [node name="ProfitOrLoss" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3")]
 unique_name_in_owner = true
 layout_mode = 2
@@ -125,6 +117,14 @@ layout_mode = 2
 text = "Current
 Value"
 
+[node name="CurrentPrice" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Title" parent="VBoxContainer/HBoxContainer/CurrentPrice/MarginContainer/CenterContainer/VBoxContainer" index="0"]
+text = "Current
+Price"
+
 [node name="TransactionLog" parent="VBoxContainer" instance=ExtResource("2")]
 unique_name_in_owner = true
 layout_mode = 2
@@ -146,7 +146,7 @@ libraries = {
 [editable path="VBoxContainer/HBoxContainer/TotalAssets"]
 [editable path="VBoxContainer/HBoxContainer/TotalAmountPaid"]
 [editable path="VBoxContainer/HBoxContainer/CostAverage"]
-[editable path="VBoxContainer/HBoxContainer/CurrentPrice"]
 [editable path="VBoxContainer/HBoxContainer/ProfitOrLoss"]
 [editable path="VBoxContainer/HBoxContainer/ProfitOrLossPercent"]
 [editable path="VBoxContainer/HBoxContainer/CurrentAssetValue"]
+[editable path="VBoxContainer/HBoxContainer/CurrentPrice"]
