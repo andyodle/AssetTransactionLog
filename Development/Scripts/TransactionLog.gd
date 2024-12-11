@@ -41,6 +41,8 @@ func calculate_toals():
 	# Cost Average
 	var cost_average = Utility.calcualte_cost_average(transaction_list);
 	emit_signal("CalculateCostAverage", cost_average);
+	
+	Utility.calculate_transaction_values(transaction_list);
 
 func add_transaction(transaction_p, hide_select_p):
 	var temp_trans_view = transaction_view.instantiate();

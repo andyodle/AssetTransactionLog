@@ -57,6 +57,7 @@ func edit_transaction(transaction_to_edit_p):
 
 # Ok Clicked
 func _on_DialogActionButtons_OkClicked():
+	var calculator = Calculator.new();
 	# Step1: Validate User Input.
 	if verify_input():
 		if !is_edit_transaction:
@@ -68,6 +69,9 @@ func _on_DialogActionButtons_OkClicked():
 			temp_class.exchange_price_m = exchange_price.text;
 			temp_class.amount_m = transaction_ammount.text;
 			temp_class.is_credit_m = credit_or_debit.get_checked();
+			if !temp_class.is_credit_m:
+				temp_class.number_of_coins_m = calculator.multiply("-1", temp_class.number_of_coins_m);
+				temp_class.amount_m = calculator.multiply("-1", temp_class.amount_m);
 			
 			# Step3: Emit signal with transaction data.
 			emit_signal("AddNewTransaction", temp_class);
@@ -77,6 +81,9 @@ func _on_DialogActionButtons_OkClicked():
 			old_transaction.exchange_price_m = exchange_price.text;
 			old_transaction.amount_m = transaction_ammount.text;
 			old_transaction.is_credit_m = credit_or_debit.get_checked();
+			if !old_transaction.is_credit_m:
+				old_transaction.number_of_coins_m = calculator.multiply("-1", old_transaction.number_of_coins_m);
+				old_transaction.amount_m = calculator.multiply("-1", old_transaction.amount_m);
 			emit_signal("EditTransaction", old_transaction);
 		
 		self.fade_out();
