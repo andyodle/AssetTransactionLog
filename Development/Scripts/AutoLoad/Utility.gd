@@ -11,6 +11,64 @@ func get_current_date_str():
 	var date_string = String("%02d" % temp_date_time["month"]) + "/" + String("%02d" % temp_date_time["day"]) + "/" + String("%4d" % temp_date_time["year"]);
 	return date_string;
 
+# Calculate Transaction Values
+func calculate_transaction_values(transaction_list_p):
+	var calculator = Calculator.new();
+	# Get the list of transaction list view items.
+	var transaction_views = transaction_list_p.get_children();
+	transaction_views.reverse();
+	var bought_transactions = [];
+	for count in range(0, transaction_views.size() - 1):
+		# Get the current transaction list view item.
+		var trans_view = transaction_views[count];
+		# Get the stored transaction data.
+		var trans_data = trans_view.trans_data;
+		if trans_data.is_credit_m:
+			# Bought Asset / Deposit
+			#print("Bought", trans_data.number_of_coins_m)
+			if !trans_data.is_sold_m:
+				if !bought_transactions.has(trans_data):
+					bought_transactions.append(trans_data);
+		else:
+			print("Sold-Start...", trans_data.number_of_coins_m)
+			# Make srue we actually sold some assets.
+			if trans_data.number_of_coins_m != "0":
+				var total_sold = "0"
+				for bought_count in range(0, bought_transactions.size()):
+					var bought_trans_data = bought_transactions[bought_count];
+					if !bought_trans_data.is_sold_m:
+						# Keep track of how many have been sold.
+						total_sold = calculator.add(total_sold, bought_trans_data.number_of_coins_m);
+						# See if we are selling a partical position.
+						var remainder = abs(float(calculator.divide(total_sold, trans_data.number_of_coins_m)));
+						print("Remainder: ", remainder)
+						if remainder <= 0:
+							# ---- Not selling a partical position. ----
+							bought_trans_data.is_sold_m = true;
+						elif remainder > 1:
+							# ---- Selling a partical position. ----
+							# In Memory Calculation
+							# num_remaining = abs(num_of_sold_assets) - (total_sold_assets - num_current_bought_assets)
+							var num_of_assets = abs(float(trans_data.number_of_coins_m)) - float(calculator.subtract(total_sold, bought_trans_data.number_of_coins_m));
+							var exchange_price = bought_trans_data.exchange_price_m
+							var cost_basis = num_of_assets * float(exchange_price);
+							print("InMemoryCalc:")
+							print("    NumOfCoins: %s, ExchangePrice: %s, CostBasis: %s" % [num_of_assets, exchange_price, cost_basis]);
+			print("Sold-End...", trans_data.number_of_coins_m)
+
+# Calculate Sold Asset
+func calculate_sold_asset_transaction(trans_list_p, prev_sell_trans_idx_p):
+	var trans_views = trans_list_p.get_children();
+	# Reverse transactin list to get oldest transaction first.
+	trans_views.reverse()
+	for count in range(prev_sell_trans_idx_p, trans_views.size() - 1):
+		var trans_view_item = trans_views[count];
+		var trans_data = trans_view_item.trans_data;
+		if trans_data.is_credit_m:
+			print(trans_data.number_of_coins_m)
+		else:
+			break;
+
 # Calcualte the total number of coins acquired.
 func calcualte_total_coins(transacion_list_p):
 	var calculator = Calculator.new();
