@@ -41,8 +41,6 @@ func calculate_toals():
 	# Cost Average
 	var cost_average = Utility.calcualte_cost_average(transaction_list);
 	emit_signal("CalculateCostAverage", cost_average);
-	
-	Utility.calculate_transaction_values(transaction_list);
 
 func add_transaction(transaction_p, hide_select_p):
 	var temp_trans_view = transaction_view.instantiate();
@@ -134,7 +132,14 @@ func _on_ActionButtonContainer_DeleteClicked():
 
 # User wants to add a new transaction.
 func _on_BaseActionButton_pressed():
-	emit_signal("AddTransactionClick");
+	#emit_signal("AddTransactionClick");
+	var sell_trans : SellTransaction;
+	sell_trans = load("res://Scripts/Classes/SellTransaction.gd").new();
+	sell_trans.date_m = "07/31/2024";
+	sell_trans.number_of_coins_m = "-0.0314";
+	sell_trans.exchange_price_m = "920.20";
+	sell_trans.sell_price_m = "28.89"
+	Utility.process_sell_transaction(sell_trans, transaction_list);
 
 # User wants to sell a transaction.
 func _on_SellActionButton_pressed():
