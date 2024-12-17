@@ -63,15 +63,18 @@ func _on_DialogActionButtons_OkClicked():
 		if !is_edit_transaction:
 			# Step2: Create and fillout a Transaction obect.
 			var temp_class : Transaction;
-			temp_class = load("res://Scripts/Classes/Transaction.gd").new();
-			temp_class.date_m = transaction_date.text;
-			temp_class.number_of_coins_m = number_of_coins.text;
-			temp_class.exchange_price_m = exchange_price.text;
-			temp_class.amount_m = transaction_ammount.text;
-			temp_class.is_credit_m = credit_or_debit.get_checked();
-			if !temp_class.is_credit_m:
-				temp_class.number_of_coins_m = calculator.multiply("-1", temp_class.number_of_coins_m);
-				temp_class.amount_m = calculator.multiply("-1", temp_class.amount_m);
+			var number_of_assets = number_of_coins.text;
+			var asset_exchange_price = exchange_price.text;
+			var asset_cost_basis = transaction_ammount.text;
+			var trans_date = transaction_date.text
+			var is_credit = credit_or_debit.get_checked();
+			if !is_credit:
+				# Withdraw / Sell Asset
+				number_of_assets = calculator.multiply("-1", number_of_assets);
+				temp_class = Utility.create_asset_trans(number_of_assets, asset_exchange_price, asset_cost_basis, trans_date, is_credit, true);
+			else:
+				# Deposit / Buy Asset
+				temp_class = Utility.create_asset_trans(number_of_assets, asset_exchange_price, asset_cost_basis, trans_date, is_credit, false);
 			
 			# Step3: Emit signal with transaction data.
 			emit_signal("AddNewTransaction", temp_class);
@@ -83,7 +86,6 @@ func _on_DialogActionButtons_OkClicked():
 			old_transaction.is_credit_m = credit_or_debit.get_checked();
 			if !old_transaction.is_credit_m:
 				old_transaction.number_of_coins_m = calculator.multiply("-1", old_transaction.number_of_coins_m);
-				old_transaction.amount_m = calculator.multiply("-1", old_transaction.amount_m);
 			emit_signal("EditTransaction", old_transaction);
 		
 		self.fade_out();

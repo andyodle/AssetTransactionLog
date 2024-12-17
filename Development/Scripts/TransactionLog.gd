@@ -119,6 +119,19 @@ func select_all_transactions(select_transaction_p):
 		else:
 			transaction.select_transaction(false);
 
+# Flag transactions as already sold.
+func mark_sold_transactions(sold_transactions_p):
+	var trans_list_view = transaction_list.get_children();
+	for sold_trans in sold_transactions_p:
+		# Find and mark sold all matching transactions.
+		for count in range(0, trans_list_view.size()):
+			# Get the transaction view.
+			var trans_view = trans_list_view[count];
+			# Get the stroed tansaction data.
+			var trans_data : Transaction = trans_view.trans_data;
+			if trans_data.index_m == sold_trans.index_m:
+				trans_data.is_sold_m = true;
+
 # User wants to delete selected items.
 func _on_ActionButtonContainer_DeleteClicked():
 	# Remove the selected items.
@@ -132,14 +145,7 @@ func _on_ActionButtonContainer_DeleteClicked():
 
 # User wants to add a new transaction.
 func _on_BaseActionButton_pressed():
-	#emit_signal("AddTransactionClick");
-	var sell_trans : SellTransaction;
-	sell_trans = load("res://Scripts/Classes/SellTransaction.gd").new();
-	sell_trans.date_m = "07/31/2024";
-	sell_trans.number_of_coins_m = "-0.0314";
-	sell_trans.exchange_price_m = "920.20";
-	sell_trans.sell_price_m = "28.89"
-	Utility.process_sell_transaction(sell_trans, transaction_list);
+	emit_signal("AddTransactionClick");
 
 # User wants to sell a transaction.
 func _on_SellActionButton_pressed():

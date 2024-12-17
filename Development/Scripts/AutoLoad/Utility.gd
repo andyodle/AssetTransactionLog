@@ -12,8 +12,8 @@ func get_current_date_str():
 	return date_string;
 
 # Get all unsold transactions.
-func get_unsold_transactions(trans_list_view_p):
-	var trans_views = trans_list_view_p.get_children();
+func get_unsold_transactions(trans_log_p):
+	var trans_views = trans_log_p.get_transactions();
 	# Sort transactions by oldest first.
 	trans_views.reverse();
 	var bought_transactions = [];
@@ -33,10 +33,11 @@ func get_unsold_transactions(trans_list_view_p):
 	return bought_transactions;
 
 # Attempt to sell assets using first in first out.
-func process_sell_transaction(sell_trans_p:SellTransaction, transaction_list_view_p):
+func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
+	var remainder_transactions = [];
 	var calculator = Calculator.new();
 	# Get a list of all unsold transactions.
-	var active_trans = get_unsold_transactions(transaction_list_view_p);
+	var active_trans = get_unsold_transactions(transaction_log_p);
 	# Keep track of witch transactions were sold.
 	var sold_transactions = [];
 	# Keep track of total assets sold
@@ -46,41 +47,65 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_list_vie
 	for count in range(0, active_trans.size()):
 		# Get the transaction data.
 		var trans_data = active_trans[count];
-		# Keep track of how many have been sold.
-		total_sold = calculator.add(total_sold, trans_data.number_of_coins_m);
-		# Check if we are selling a partical position.
-		var remainder = abs(float(calculator.divide(total_sold, sell_trans_p.number_of_coins_m)));
-		print("Remainder: ", remainder)
-		if remainder <= 0:
-			# ---- Not selling a partical position. ----
-			sold_transactions.append(trans_data);
-		elif remainder > 1:
-			# ---- Selling a partical position. ----
-			# In Memory Calculation
-			# num_to_sell = abs(selling_num_of_assets) - (total_sold_assts - num_current_bought_assets)
-			var num_to_sell = abs(float(sell_trans_p.number_of_coins_m)) - float(calculator.subtract(total_sold, trans_data.number_of_coins_m));
-			var sell_exchange_price = trans_data.exchange_price_m;
-			# sell_cost_basis = numb_to_sell * trans_data.exchange_price
-			# round to 2 decimal palces with snappedf
-			var sell_cost_basis = snappedf((num_to_sell * float(sell_exchange_price)), 0.01);
-			print("InMemoryCalc:")
-			print("    NumOfCoins: %s, ExchangePrice: %s, CostBasis: %s" % [num_to_sell, sell_exchange_price, sell_cost_basis])
-			# Number of Remaning Assets Calculation
-			# numb_of_remaning = trans_data.number_of_coins - num_to_sell
-			var num_of_remaning = abs(float(trans_data.number_of_coins_m) - num_to_sell);
-			# cost_basis_remaning = num_of_remaning * trans_data.exchange_price
-			# round to 2 decimal palces with snappedf
-			var cost_basis_remaning = snappedf((num_of_remaning * float(trans_data.exchange_price_m)), 0.01);
-			# exchange_price_remaning = cost_basis_remaning / num_of_remaning
-			# round to 2 decimal palces with snappedf
-			var exchange_price_remaning = snappedf((cost_basis_remaning / num_of_remaning), 0.01);
-			print("RemainingAssets:")
-			print("    NumOfCoins: %s, ExchangePrice: %s, CostBasis: %s" % [num_of_remaning, exchange_price_remaning, cost_basis_remaning])
-			break;
-	# TODO: Check to see if total sold > assets that are not already sold.
-	# TODO: Create remaning asset transaction and add it as credit to transaction log.
-	# TODO: Flag sold transactions as sold including partical sold transaction.
+		# Make sure we have enough assets avaible to sell.
+		if float(total_sold) <= abs(float(sell_trans_p.number_of_coins_m)):
+			# Keep track of how many have been sold.
+			total_sold = calculator.add(total_sold, trans_data.number_of_coins_m);
+			# Check if we are selling a partical position.
+			var remainder = abs(float(calculator.divide(total_sold, sell_trans_p.number_of_coins_m)));
+			print("Remainder: ", remainder)
+			if remainder >= 0 && remainder < 1:
+				# ---- Selling full amount of assets but still need more to sell. ----
+				sold_transactions.append(trans_data);
+			elif remainder == 1:
+				# ---- Selling exact amount of an asset ----
+				sold_transactions.append(trans_data);
+				break;
+			elif remainder > 1:
+				# ---- Selling a partical position. ----
+				# In Memory Calculation
+				# num_to_sell = abs(selling_num_of_assets) - (total_sold_assts - num_current_bought_assets)
+				var num_to_sell = abs(float(sell_trans_p.number_of_coins_m)) - float(calculator.subtract(total_sold, trans_data.number_of_coins_m));
+				var sell_exchange_price = trans_data.exchange_price_m;
+				# sell_cost_basis = numb_to_sell * trans_data.exchange_price
+				# round to 2 decimal palces with snappedf
+				var sell_cost_basis = snappedf((num_to_sell * float(sell_exchange_price)), 0.01);
+				print("InMemoryCalc:")
+				print("    NumOfCoins: %s, ExchangePrice: %s, CostBasis: %s" % [num_to_sell, sell_exchange_price, sell_cost_basis])
+				# Number of Remaning Assets Calculation
+				# numb_of_remaning = trans_data.number_of_coins - num_to_sell
+				var num_of_remaning = abs(float(trans_data.number_of_coins_m) - num_to_sell);
+				# cost_basis_remaning = num_of_remaning * trans_data.exchange_price
+				# round to 2 decimal palces with snappedf
+				var cost_basis_remaning = snappedf((num_of_remaning * float(trans_data.exchange_price_m)), 0.01);
+				# exchange_price_remaning = cost_basis_remaning / num_of_remaning
+				# round to 2 decimal palces with snappedf
+				var exchange_price_remaning = snappedf((cost_basis_remaning / num_of_remaning), 0.01);
+				print("RemainingAssets:")
+				print("    NumOfCoins: %s, ExchangePrice: %s, CostBasis: %s" % [num_of_remaning, exchange_price_remaning, cost_basis_remaning])
+				# Create remander asset transaction.
+				var temp_trans = create_asset_trans(str(num_of_remaning), str(exchange_price_remaning), str(cost_basis_remaning), trans_data.date_m, true, false);
+				remainder_transactions.append(temp_trans);
+				break;
+	
+	# Flag sold transactions as sold including partical sold transaction.
+	transaction_log_p.mark_sold_transactions(sold_transactions);
+	
 	print("Sold-End...")
+	return remainder_transactions;
+
+# Createa a transaction object.
+# Retuns: A filled out transaction object.
+func create_asset_trans(num_of_assets_p:String, exchange_price_p:String, cost_basis_p:String, date_p:String, is_credit_p:bool, is_sold_p:bool) -> Transaction:
+	var asset_trans : Transaction;
+	asset_trans = load("res://Scripts/Classes/Transaction.gd").new();
+	asset_trans.date_m = date_p;
+	asset_trans.number_of_coins_m = num_of_assets_p;
+	asset_trans.exchange_price_m = exchange_price_p;
+	asset_trans.amount_m = cost_basis_p;
+	asset_trans.is_credit_m = is_credit_p;
+	asset_trans.is_sold_m = is_sold_p
+	return asset_trans;
 
 # Calculate Sold Asset
 func calculate_sold_asset_transaction(trans_list_p, prev_sell_trans_idx_p):
