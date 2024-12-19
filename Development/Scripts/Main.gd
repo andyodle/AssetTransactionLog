@@ -335,12 +335,15 @@ func save_transactions(file_path_p):
 	if transaction_views.size() > 0:
 		for count in range(0, transaction_views.size()):
 			var transaction_view = transaction_views[count];
+			var trans_data : Transaction = transaction_view.trans_data;
 			temp_data["ActiveTransactions"][str(count)] = {};
-			temp_data["ActiveTransactions"][str(count)]["date_m"] = transaction_view.trans_data.date_m;
-			temp_data["ActiveTransactions"][str(count)]["number_of_coins_m"] = transaction_view.trans_data.number_of_coins_m;
-			temp_data["ActiveTransactions"][str(count)]["exchange_price_m"] = transaction_view.trans_data.exchange_price_m;
-			temp_data["ActiveTransactions"][str(count)]["amount_m"] = transaction_view.trans_data.amount_m;
-			temp_data["ActiveTransactions"][str(count)]["is_credit_m"] = transaction_view.trans_data.is_credit_m;
+			temp_data["ActiveTransactions"][str(count)]["index_m"] = trans_data.index_m;
+			temp_data["ActiveTransactions"][str(count)]["date_m"] = trans_data.date_m;
+			temp_data["ActiveTransactions"][str(count)]["number_of_coins_m"] = trans_data.number_of_coins_m;
+			temp_data["ActiveTransactions"][str(count)]["exchange_price_m"] = trans_data.exchange_price_m;
+			temp_data["ActiveTransactions"][str(count)]["amount_m"] = trans_data.amount_m;
+			temp_data["ActiveTransactions"][str(count)]["is_credit_m"] = trans_data.is_credit_m;
+			temp_data["ActiveTransactions"][str(count)]["is_sold_m"] = trans_data.is_sold_m;
 	
 	# Get all of the selected transactions.
 	transaction_views = profit_transactions_view.get_transactions();
@@ -381,11 +384,14 @@ func _on_SideNavigationRail_SaveTrasnClicked():
 func create_transaction_record(trans_data_p):
 	var temp_class : Transaction;
 	temp_class = load("res://Scripts/Classes/Transaction.gd").new();
+	temp_class.index_m = trans_data_p["index_m"];
 	temp_class.date_m = trans_data_p["date_m"];
 	temp_class.number_of_coins_m = trans_data_p["number_of_coins_m"];
 	temp_class.exchange_price_m = trans_data_p["exchange_price_m"];
 	temp_class.amount_m = trans_data_p["amount_m"];
 	temp_class.is_credit_m = trans_data_p["is_credit_m"];
+	temp_class.is_sold_m = trans_data_p["is_sold_m"];
+	
 	return temp_class;
 
 # Create a new sold transaction record from json data.
@@ -418,7 +424,7 @@ func load_transactions(file_path_p):
 		if active_transactions.size() > 0:
 			for count in range(active_transactions.size(), 0, -1):
 				var temp_trans = create_transaction_record(temp_data["ActiveTransactions"][str(count - 1)]);
-				active_transactions_view.add_new_transaction(temp_trans);
+				active_transactions_view.add_loaded_transaction(temp_trans);
 		
 		# Profit Transactions
 		profit_transactions_view.reset_trasactoins();
