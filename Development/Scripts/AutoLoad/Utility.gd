@@ -121,26 +121,22 @@ func calculate_sold_asset_transaction(trans_list_p, prev_sell_trans_idx_p):
 			break;
 
 # Calcualte the total number of coins acquired.
-func calcualte_total_coins(transacion_list_p):
+func calcualte_total_coins(active_trans_p):
 	var calculator = Calculator.new();
 	# Get all of the coin transactions.
 	var coin_count : String = "0.0";
-	var transaction_views = transacion_list_p.get_children();
-	for transaction_view in transaction_views:
-		var trans_data = transaction_view.trans_data;
-		coin_count = calculator.add(coin_count, trans_data.number_of_coins_m);
+	for transaction in active_trans_p:
+		coin_count = calculator.add(coin_count, transaction.number_of_coins_m);
 	
 	return coin_count;
 
 # Calcualte the total price paid for the coins.
-func calculate_total_price(transacion_list_p):
+func calculate_total_price(active_trans_p):
 	var calculator = Calculator.new();
 	# Get all of the price transactions.
 	var total_price : String = "0.0";
-	var transaction_views = transacion_list_p.get_children();
-	for transaction_view in transaction_views:
-		var trans_data = transaction_view.trans_data;
-		total_price = calculator.add(total_price, trans_data.amount_m);
+	for transaction in active_trans_p:
+		total_price = calculator.add(total_price, transaction.amount_m);
 	
 	return total_price;
 
@@ -157,25 +153,11 @@ func calculate_total_sold_price(transacion_list_p):
 	return total_price;
 
 # Calcualte the cost average of the purchased coins.
-func calcualte_cost_average(transacion_list_p):
+func calcualte_cost_average(total_paid_p, total_asset_p):
 	var calculator = Calculator.new();
-	# Get all of the price transactions.
-	var total_price : String = "0.0";
-	var coin_count : String = "0.0";
-	var cost_average : String = "0.0";
-	var transaction_views = transacion_list_p.get_children();
-	if transacion_list_p.get_child_count() > 1:
-		for transaction_view in transaction_views:
-			var trans_data = transaction_view.trans_data;
-			total_price = calculator.add(total_price, trans_data.amount_m);
-			coin_count = calculator.add(coin_count, trans_data.number_of_coins_m);
-		if float(coin_count) != 0:
-			cost_average = calculator.divide(total_price, coin_count);
-	elif transacion_list_p.get_child_count() == 1:
-		# Can't have an average if there is only one result.
-		var trans_data = transaction_views[0].trans_data;
-		cost_average = trans_data.exchange_price_m;
-	return cost_average;
+	var cost_average = snappedf(float(calculator.divide(total_paid_p, total_asset_p)), 0.01);
+
+	return str(cost_average);
 
 # Calcualte the total gains
 func calculate_total_gains(transacion_list_p):

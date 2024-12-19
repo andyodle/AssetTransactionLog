@@ -30,16 +30,19 @@ func reset_trasactoins():
 
 # Calcualte the totals for the data panels.
 func calculate_toals():
+	# Get a list of all unsold transactions.
+	var active_trans = Utility.get_unsold_transactions(self);
+	
 	# Total Coins
-	var total_coins = Utility.calcualte_total_coins(transaction_list);
-	emit_signal("CalculatedNumberOfCoins", total_coins);
+	var total_assets = Utility.calcualte_total_coins(active_trans);
+	emit_signal("CalculatedNumberOfCoins", total_assets);
 	
 	# Total Price
-	var total_price = Utility.calculate_total_price(transaction_list);
+	var total_price = Utility.calculate_total_price(active_trans);
 	emit_signal("CalcualteTotalPrice", total_price);
 	
 	# Cost Average
-	var cost_average = Utility.calcualte_cost_average(transaction_list);
+	var cost_average = Utility.calcualte_cost_average(total_price, total_assets);
 	emit_signal("CalculateCostAverage", cost_average);
 
 func add_transaction(transaction_p, hide_select_p):
@@ -73,7 +76,7 @@ func show_selection_controls():
 	action_button_container.show_buttons(true, number_selected);
 	
 	# Show the sell transactoin button.
-	sell_action_button.visible = true;
+	#sell_action_button.visible = true;
 
 func hide_selection_controls():
 	# Check to see if any transactions are still selected.

@@ -48,6 +48,13 @@ func reset_trasactoins():
 	# Reset the Transaction log list.
 	transaction_log.reset_trasactoins();
 
+# Add loaded transaction to list.
+func add_loaded_transaction(transaction_p):
+	# Step 2: Add the transaction to the transaction log.
+	transaction_log.add_transaction(transaction_p, false);
+	
+	recalulate_totals();
+
 # Add the new transactoin to the transaction log.
 func add_new_transaction(transaction_p):
 	# Step 2: Add the transaction to the transaction log.
