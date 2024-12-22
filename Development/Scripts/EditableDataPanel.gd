@@ -1,9 +1,12 @@
 extends Control
 
+signal DataTextChanged(text_p)
+signal PercentTextChanged(text_p)
+
 @export var is_percent : bool = false;
 
-@onready var data_label = $MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/DataLabel;
-@onready var percent_label = $MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/PercentLabel;
+@onready var data_label = %DataInput;
+@onready var percent_label = %PercentInput;
 
 var data;
 var percent;
@@ -59,9 +62,21 @@ func get_data():
 
 func set_percent(percent_p):
 	percent = percent_p;
+	percent_label.visible = true;
 	percent_label.text = Utility.format_decimal("%3.2f", percent_p) + "%";
 
 # Set the panel to the default values.
 func reset_data_panel():
 	data_label.text = "0.0";
+	percent_label.visible = false;
 	update_label_color();
+
+# User Enterd Data.
+func _on_data_input_text_changed(text_p):
+	data = text_p;
+	emit_signal("DataTextChanged", text_p)
+
+# User Enterd Percent
+func _on_percent_input_text_changed(text_p):
+	set_percent(text_p);
+	emit_signal("PercentTextChanged", text_p)
