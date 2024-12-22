@@ -1,0 +1,6 @@
+[Desktop Entry]
+GenericName=Asset Transaction Log
+Comment=Transaction register that can keep track of assets like stocks and crypto.
+Terminal=false
+Type=Application
+Categories=Finance;Records;

@@ -6,6 +6,9 @@
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("3")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -110,7 +113,7 @@ size_flags_vertical = 3
 [node name="VersionNumber" type="Label" parent="MarginContainer/VBoxContainer/WraperPanel/MarginContainer/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("1")
-text = "v0.0.2"
+text = "v0.1.0"
 horizontal_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
