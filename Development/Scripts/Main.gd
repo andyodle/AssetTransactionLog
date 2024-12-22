@@ -469,4 +469,3 @@ func _on_OpenFileDialog_file_selected(path_p):
 # User selected a file to save from the SaveFileDialog.
 func _on_SaveFileDialog_file_selected(path_p):
 	save_transactions(path_p);
-

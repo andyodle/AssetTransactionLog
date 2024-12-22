@@ -1,0 +1,213 @@
+[gd_scene load_steps=12 format=3 uid="uid://cnikcm7hsvyyv"]
+
+[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="1_jxbfa"]
+[ext_resource type="Script" path="res://Scripts/EditableDataPanel.gd" id="2_jyack"]
+[ext_resource type="PackedScene" uid="uid://8jvtccwyc4cc" path="res://Scenes/Controls/TextInput.tscn" id="3_m1lwy"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1_jxbfa")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="2"]
+default_font = SubResource("1")
+
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("1_jxbfa")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/glyphs/0/advance = Vector2(0, 0)
+cache/0/16/0/glyphs/0/offset = Vector2(0, 0)
+cache/0/16/0/glyphs/0/size = Vector2(0, 0)
+cache/0/16/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
+cache/0/16/0/glyphs/0/texture_idx = -1
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_m7dmv"]
+resource_local_to_scene = true
+fallbacks = Array[Font]([ExtResource("1_jxbfa")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_r8gk8"]
+resource_name = "GrowLabel"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/MarginContainer/Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [14, 20]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/MarginContainer/Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_teai8"]
+_data = {
+"GrowLabel": SubResource("Animation_r8gk8"),
+"ShrinkLabel": SubResource("4")
+}
+
+[sub_resource type="FontFile" id="FontFile_d3b1r"]
+resource_local_to_scene = true
+fallbacks = Array[Font]([ExtResource("1_jxbfa")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+
+[node name="EditableDataPanel" type="Control"]
+custom_minimum_size = Vector2(100, 88)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1052.0
+offset_bottom = -560.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("2")
+script = ExtResource("2_jyack")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(100, 88)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.207843, 0.231373, 0.341176, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(100, 92)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 8
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(72, 19)
+layout_mode = 2
+theme_override_fonts/font = SubResource("3")
+text = "Subtitle"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="DataInput" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_m1lwy")]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(40, 38)
+layout_mode = 2
+
+[node name="MarginContainer" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/DataInput/CenterContainer" index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/DataInput/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_m7dmv")
+theme_override_font_sizes/font_size = 20
+text = "0.0"
+
+[node name="AnimationPlayer" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/DataInput" index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_teai8")
+}
+
+[node name="PercentInput" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_m1lwy")]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(40, 38)
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/PercentInput/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_d3b1r")
+theme_override_font_sizes/font_size = 20
+text = "%"
+
+[node name="AnimationPlayer" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/PercentInput" index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_teai8")
+}
+
+[connection signal="TextChanged" from="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/DataInput" to="." method="_on_data_input_text_changed"]
+[connection signal="TextChanged" from="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/PercentInput" to="." method="_on_percent_input_text_changed"]
+
+[editable path="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/DataInput"]
+[editable path="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/PercentInput"]

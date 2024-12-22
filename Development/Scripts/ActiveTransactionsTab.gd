@@ -4,13 +4,14 @@ signal AddTransactoinClick;
 signal SellTransactionClick;
 signal SplitTransactionClick;
 signal EditTransactionClick;
+signal CurrentPriceChange(price_p);
 
 @onready var total_coins_data_panel = %TotalAssets;
 @onready var total_amount_paid_data_panel = %TotalAmountPaid;
 @onready var cost_average_data_panel = %CostAverage;
 @onready var current_price_panel = %CurrentPrice;
 @onready var profit_or_loss_panel = %ProfitOrLoss;
-@onready var profit_or_loss_percent = %ProfitOrLossPercent;
+@onready var profit_or_loss_percent_panel = %ProfitOrLossPercent;
 @onready var current_asset_value = %CurrentAssetValue;
 @onready var transaction_log = %TransactionLog;
 @onready var animation_player = $AnimationPlayer;
@@ -40,7 +41,7 @@ func reset_trasactoins():
 	profit_or_loss_panel.reset_data_panel();
 	
 	# Reset profit or loss percent.
-	profit_or_loss_percent.reset_data_panel();
+	profit_or_loss_percent_panel.reset_data_panel();
 	
 	# Reset current asset value.
 	current_asset_value.reset_data_panel();
@@ -97,6 +98,32 @@ func remove_selected_transactions():
 func recalulate_totals():
 	# Recalulate the displayed totals.
 	transaction_log.calculate_toals();
+	
+	# Calculate Current Asset Value.
+	calculate_current_values();
+
+# Calcualte the assets current value.
+func calculate_current_values():
+	var calculator = Calculator.new();
+	var current_price = current_price_panel.get_data();
+	var total_assets = total_coins_data_panel.get_data();
+	var total_paid = total_amount_paid_data_panel.get_data();
+	# Current Asset Value
+	if current_price:
+		var current_value = calculator.multiply(total_assets, current_price);
+		var profit_loss_value = calculator.subtract(current_value, total_paid);
+		
+		# Update data panels.
+		current_asset_value.set_data("%3.2f", snappedf(float(current_value), 0.01));
+		profit_or_loss_panel.set_data("%3.2f", snappedf(float(profit_loss_value), 0.01));
+		
+		if float(total_paid) != 0:
+			var profit_loss_percent_value = calculator.divide(str(profit_loss_value), total_paid);
+			profit_loss_percent_value = calculator.multiply(profit_loss_percent_value, "100");
+			print(profit_loss_percent_value)
+			# Update data panels.
+			profit_or_loss_percent_panel.set_percent(profit_loss_percent_value);
+	
 
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
@@ -128,3 +155,8 @@ func _on_TransactionLog_SplitTransactionClick():
 # User wants to edit the selected transaction.
 func _on_TransactionLog_EditTransactionClick():
 	emit_signal("EditTransactionClick");
+
+# User changed crurrent price.
+func _on_current_price_data_text_changed(text_p):
+	emit_signal("CurrentPriceChange", text_p);
+	recalulate_totals();
