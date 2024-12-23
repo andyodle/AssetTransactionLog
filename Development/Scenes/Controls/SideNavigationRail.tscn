@@ -61,7 +61,6 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="ActiveTransButton" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons" instance=ExtResource("1")]
-visible = false
 layout_mode = 2
 toggle_mode = true
 
