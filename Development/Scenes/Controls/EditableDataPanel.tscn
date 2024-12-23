@@ -173,7 +173,7 @@ alignment = 1
 [node name="DataInput" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_m1lwy")]
 unique_name_in_owner = true
 clip_contents = true
-custom_minimum_size = Vector2(40, 38)
+custom_minimum_size = Vector2(100, 38)
 layout_mode = 2
 
 [node name="MarginContainer" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/DataInput/CenterContainer" index="0"]
@@ -192,6 +192,7 @@ libraries = {
 
 [node name="PercentInput" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_m1lwy")]
 unique_name_in_owner = true
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(40, 38)
 layout_mode = 2

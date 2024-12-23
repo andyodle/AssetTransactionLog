@@ -110,17 +110,17 @@ func calculate_current_values():
 	var total_paid = total_amount_paid_data_panel.get_data();
 	# Current Asset Value
 	if current_price:
-		var current_value = calculator.multiply(total_assets, current_price);
-		var profit_loss_value = calculator.subtract(current_value, total_paid);
+		var temp_value = calculator.multiply(str(total_assets), current_price)
+		var current_value = Utility.bankers_round(float(calculator.multiply(str(total_assets), current_price)), 3);
+		var profit_loss_value = Utility.bankers_round(float(calculator.subtract(str(current_value), total_paid)), 2);
 		
 		# Update data panels.
-		current_asset_value.set_data("%3.2f", snappedf(float(current_value), 0.01));
-		profit_or_loss_panel.set_data("%3.2f", snappedf(float(profit_loss_value), 0.01));
+		current_asset_value.set_data("%3.2f", current_value);
+		profit_or_loss_panel.set_data("%3.2f", Utility.bankers_round(float(profit_loss_value), 2));
 		
 		if float(total_paid) != 0:
 			var profit_loss_percent_value = calculator.divide(str(profit_loss_value), total_paid);
 			profit_loss_percent_value = calculator.multiply(profit_loss_percent_value, "100");
-			print(profit_loss_percent_value)
 			# Update data panels.
 			profit_or_loss_percent_panel.set_percent(profit_loss_percent_value);
 	

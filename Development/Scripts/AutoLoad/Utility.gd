@@ -107,6 +107,28 @@ func create_asset_trans(num_of_assets_p:String, exchange_price_p:String, cost_ba
 	asset_trans.is_sold_m = is_sold_p
 	return asset_trans;
 
+# Calculate Bankers Rounding Rules
+# 1. Scaling: The input value is multiplied by 10^decimals to shift the decimal point.
+# 2. Rounding: The value is rounded normally.
+# 3. Tie-breaking: 
+#     If the scaled value is exactly halfway between tow intergers
+#     Then check if rounded value is odd.
+#         If valuse is odd.
+#         Then adjust the value to make it even.
+# 4. Return: The scaled and adjusted value is divided by 10^decimals to restore orginal scale.
+func bankers_round(value_p: float, decimals: int = 0) -> float:
+	var factor = pow(10, decimals)
+	var scaled_value = value_p * factor
+	var rounded_value = round(scaled_value)
+	
+	# Check for a tie
+	if abs(scaled_value - rounded_value) == 0.5:
+		# Round towars the nearest even number.
+		if fmod(rounded_value, 2) != 0:
+			rounded_value += (1 if scaled_value > 0 else -1)
+	
+	return rounded_value / factor
+
 # Calculate Sold Asset
 func calculate_sold_asset_transaction(trans_list_p, prev_sell_trans_idx_p):
 	var trans_views = trans_list_p.get_children();
@@ -126,7 +148,7 @@ func calcualte_total_coins(active_trans_p):
 	# Get all of the coin transactions.
 	var coin_count : String = "0.0";
 	for transaction in active_trans_p:
-		coin_count = calculator.add(coin_count, transaction.number_of_coins_m);
+		coin_count = str(Utility.bankers_round(float(calculator.add(coin_count, transaction.number_of_coins_m)), 4));
 	
 	return coin_count;
 
@@ -136,7 +158,7 @@ func calculate_total_price(active_trans_p):
 	# Get all of the price transactions.
 	var total_price : String = "0.0";
 	for transaction in active_trans_p:
-		total_price = calculator.add(total_price, transaction.amount_m);
+		total_price = str(Utility.bankers_round(float(calculator.add(total_price, transaction.amount_m)), 2));
 	
 	return total_price;
 
@@ -155,7 +177,7 @@ func calculate_total_sold_price(transacion_list_p):
 # Calcualte the cost average of the purchased coins.
 func calcualte_cost_average(total_paid_p, total_asset_p):
 	var calculator = Calculator.new();
-	var cost_average = snappedf(float(calculator.divide(total_paid_p, total_asset_p)), 0.01);
+	var cost_average = Utility.bankers_round(float(calculator.divide(total_paid_p, total_asset_p)), 2);
 
 	return str(cost_average);
 
