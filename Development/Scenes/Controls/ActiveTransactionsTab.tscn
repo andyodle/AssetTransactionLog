@@ -10,6 +10,9 @@
 [sub_resource type="FontFile" id="FontFile_dispx"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("5_0jubw")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -28,6 +31,9 @@ cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
 [sub_resource type="FontFile" id="FontFile_4jttq"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("5_0jubw")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
