@@ -62,25 +62,26 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 				sold_transactions.append(trans_data);
 				break;
 			elif remainder > 1:
+				sold_transactions.append(trans_data);
 				# ---- Selling a partical position. ----
 				# In Memory Calculation
 				# num_to_sell = abs(selling_num_of_assets) - (total_sold_assts - num_current_bought_assets)
 				var num_to_sell = abs(float(sell_trans_p.number_of_coins_m)) - float(calculator.subtract(total_sold, trans_data.number_of_coins_m));
 				var sell_exchange_price = trans_data.exchange_price_m;
 				# sell_cost_basis = numb_to_sell * trans_data.exchange_price
-				# round to 2 decimal palces with snappedf
-				var sell_cost_basis = snappedf((num_to_sell * float(sell_exchange_price)), 0.01);
+				# Round to 2 decimal palces.
+				var sell_cost_basis = Utility.bankers_round((num_to_sell * float(sell_exchange_price)), 2);
 				print("InMemoryCalc:")
 				print("    NumOfCoins: %s, ExchangePrice: %s, CostBasis: %s" % [num_to_sell, sell_exchange_price, sell_cost_basis])
 				# Number of Remaning Assets Calculation
 				# numb_of_remaning = trans_data.number_of_coins - num_to_sell
 				var num_of_remaning = abs(float(trans_data.number_of_coins_m) - num_to_sell);
 				# cost_basis_remaning = num_of_remaning * trans_data.exchange_price
-				# round to 2 decimal palces with snappedf
-				var cost_basis_remaning = snappedf((num_of_remaning * float(trans_data.exchange_price_m)), 0.01);
+				# Round to 2 decimal palces.
+				var cost_basis_remaning = Utility.bankers_round((num_of_remaning * float(trans_data.exchange_price_m)), 2);
 				# exchange_price_remaning = cost_basis_remaning / num_of_remaning
-				# round to 2 decimal palces with snappedf
-				var exchange_price_remaning = snappedf((cost_basis_remaning / num_of_remaning), 0.01);
+				# Round to 2 decimal palces.
+				var exchange_price_remaning = Utility.bankers_round((cost_basis_remaning / num_of_remaning), 2);
 				print("RemainingAssets:")
 				print("    NumOfCoins: %s, ExchangePrice: %s, CostBasis: %s" % [num_of_remaning, exchange_price_remaning, cost_basis_remaning])
 				# Create remander asset transaction.
@@ -119,7 +120,7 @@ func create_asset_trans(num_of_assets_p:String, exchange_price_p:String, cost_ba
 func bankers_round(value_p: float, decimals: int = 0) -> float:
 	var factor = pow(10, decimals)
 	var scaled_value = value_p * factor
-	var rounded_value = round(scaled_value)
+	var rounded_value = floor(scaled_value)
 	
 	# Check for a tie
 	if abs(scaled_value - rounded_value) == 0.5:
@@ -200,6 +201,15 @@ func calculate_exchange_rate(acquired_price_p, number_of_coins_p):
 		var calculator = Calculator.new();
 		exchange_rate = calculator.divide(acquired_price_p, number_of_coins_p);
 	return exchange_rate;
+
+# Calculate Total Assets
+func calculate_total_assets(cost_basis_p, exchange_price_p):
+	var total_assets = "";
+	if exchange_price_p != "" and exchange_price_p != "0" and cost_basis_p != "":
+		var calculator = Calculator.new();
+		total_assets = calculator.divide(cost_basis_p, exchange_price_p);
+	
+	return total_assets
 
 # Calculate sold transaction.
 func calculate_sold_transaction(number_of_coins_sold_p, amount_sold_p, number_of_coins_bought_p, amount_paid_p, paid_cost_average_p):

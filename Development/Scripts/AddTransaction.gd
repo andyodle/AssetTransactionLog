@@ -104,3 +104,10 @@ func _on_BaseIconButton_pressed():
 	exchange_price._on_TextInput_focus_entered();
 	var temp_price = Utility.calculate_exchange_rate(transaction_ammount.text, number_of_coins.text);
 	exchange_price.text = temp_price;
+
+
+func _on_NumberOfCoins_BaseIconButton_pressed():
+	number_of_coins._on_TextInput_focus_entered()
+	var temp_numb_assets = Utility.calculate_total_assets(transaction_ammount.text, exchange_price.text)
+	temp_numb_assets = Utility.bankers_round(float(temp_numb_assets), 8)
+	number_of_coins.text = str(temp_numb_assets);
