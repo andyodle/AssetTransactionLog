@@ -8,9 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cjtjsoiusqce3" path="res://Scenes/Controls/BaseIconButton.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://f5leq4vev4ge" path="res://Assets/Icons/Calculate.png" id="7"]
 
-[sub_resource type="FontFile" id="FontFile_dxjlu"]
+[sub_resource type="FontFile" id="FontFile_18u1e"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -19,10 +22,10 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/19/0 = Vector2(0, 0)
 cache/0/20/0/ascent = 0.0
 cache/0/20/0/descent = 0.0
 cache/0/20/0/underline_position = 0.0
@@ -31,10 +34,10 @@ cache/0/20/0/scale = 1.0
 cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/20/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/20/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/19/0 = Vector2(0, 0)
 cache/0/14/0/ascent = 0.0
 cache/0/14/0/descent = 0.0
 cache/0/14/0/underline_position = 0.0
@@ -43,46 +46,10 @@ cache/0/14/0/scale = 1.0
 cache/0/14/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/14/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/14/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/14/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/14/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/14/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/14/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/19/0/ascent = 0.0
-cache/0/19/0/descent = 0.0
-cache/0/19/0/underline_position = 0.0
-cache/0/19/0/underline_thickness = 0.0
-cache/0/19/0/scale = 1.0
-cache/0/19/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/19/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/19/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/19/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/19/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/19/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/19/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/18/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/17/0/ascent = 0.0
-cache/0/17/0/descent = 0.0
-cache/0/17/0/underline_position = 0.0
-cache/0/17/0/underline_thickness = 0.0
-cache/0/17/0/scale = 1.0
-cache/0/17/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/19/0 = Vector2(0, 0)
 cache/0/15/0/ascent = 0.0
 cache/0/15/0/descent = 0.0
 cache/0/15/0/underline_position = 0.0
@@ -91,10 +58,46 @@ cache/0/15/0/scale = 1.0
 cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/15/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/15/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/17/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/18/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/19/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/19/0 = Vector2(0, 0)
 
 [sub_resource type="Animation" id="Animation_1u43o"]
 resource_name = "GrowLabel"
@@ -127,7 +130,7 @@ tracks/0/keys = {
 "values": [20, 14]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3w8bd"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11l3n"]
 _data = {
 "GrowLabel": SubResource("Animation_1u43o"),
 "ShrinkLabel": SubResource("Animation_avhim")
@@ -136,6 +139,9 @@ _data = {
 [sub_resource type="FontFile" id="FontFile_kdk44"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -227,9 +233,12 @@ _data = {
 "ShrinkLabel": SubResource("Animation_avhim")
 }
 
-[sub_resource type="FontFile" id="FontFile_18u1e"]
+[sub_resource type="FontFile" id="FontFile_dxjlu"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -238,10 +247,10 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/18/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
 cache/0/20/0/ascent = 0.0
 cache/0/20/0/descent = 0.0
 cache/0/20/0/underline_position = 0.0
@@ -250,10 +259,10 @@ cache/0/20/0/scale = 1.0
 cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/20/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/18/0 = Vector2(0, 0)
 cache/0/20/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/15/0 = Vector2(0, 0)
 cache/0/14/0/ascent = 0.0
 cache/0/14/0/descent = 0.0
 cache/0/14/0/underline_position = 0.0
@@ -262,46 +271,10 @@ cache/0/14/0/scale = 1.0
 cache/0/14/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/14/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/14/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/14/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/14/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/14/0/kerning_overrides/18/0 = Vector2(0, 0)
 cache/0/14/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/15/0/ascent = 0.0
-cache/0/15/0/descent = 0.0
-cache/0/15/0/underline_position = 0.0
-cache/0/15/0/underline_thickness = 0.0
-cache/0/15/0/scale = 1.0
-cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/15/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/15/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/15/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/15/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/17/0/ascent = 0.0
-cache/0/17/0/descent = 0.0
-cache/0/17/0/underline_position = 0.0
-cache/0/17/0/underline_thickness = 0.0
-cache/0/17/0/scale = 1.0
-cache/0/17/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/17/0/kerning_overrides/19/0 = Vector2(0, 0)
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/18/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/15/0 = Vector2(0, 0)
 cache/0/19/0/ascent = 0.0
 cache/0/19/0/descent = 0.0
 cache/0/19/0/underline_position = 0.0
@@ -310,12 +283,48 @@ cache/0/19/0/scale = 1.0
 cache/0/19/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/19/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/19/0/kerning_overrides/14/0 = Vector2(0, 0)
-cache/0/19/0/kerning_overrides/15/0 = Vector2(0, 0)
-cache/0/19/0/kerning_overrides/17/0 = Vector2(0, 0)
-cache/0/19/0/kerning_overrides/18/0 = Vector2(0, 0)
 cache/0/19/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/18/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/17/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_11l3n"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3w8bd"]
 _data = {
 "GrowLabel": SubResource("Animation_1u43o"),
 "ShrinkLabel": SubResource("Animation_avhim")
@@ -324,6 +333,9 @@ _data = {
 [sub_resource type="FontFile" id="FontFile_gigvt"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -510,6 +522,8 @@ offset_bottom = 0.0
 
 [node name="Title" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Add Transaction"
 
 [node name="FormFields" type="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(372, 0)
@@ -520,23 +534,36 @@ custom_minimum_size = Vector2(372, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="0" instance=ExtResource("3")]
+[node name="CreditOrDebit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="0" instance=ExtResource("5")]
 unique_name_in_owner = true
 layout_mode = 2
-focus_next = NodePath("../HBoxContainer/ExchangePrice")
+
+[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit" index="0"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 280.0
+offset_bottom = 48.0
+
+[node name="CheckButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit/MarginContainer" index="1"]
+text = "Deposit"
+
+[node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="1" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_next = NodePath("../TransactionDate")
 focus_mode = 1
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/NumberOfCoins/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_dxjlu")
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_18u1e")
 theme_override_font_sizes/font_size = 20
-text = "Number of Assets"
+text = "Purchase Price"
 
-[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/NumberOfCoins" index="6"]
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount" index="6"]
 libraries = {
-"": SubResource("AnimationLibrary_3w8bd")
+"": SubResource("AnimationLibrary_11l3n")
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="1"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="2"]
 layout_mode = 2
 
 [node name="ExchangePrice" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer" index="0" instance=ExtResource("3")]
@@ -563,23 +590,33 @@ focus_next = NodePath("../../TransactionAmount")
 [node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton/MarginContainer" index="0"]
 texture = ExtResource("7")
 
-[node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="2" instance=ExtResource("3")]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="NumberOfCoins" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2" index="0" instance=ExtResource("3")]
 unique_name_in_owner = true
 layout_mode = 2
-focus_next = NodePath("../TransactionDate")
+focus_next = NodePath("../../HBoxContainer/ExchangePrice")
 focus_mode = 1
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_18u1e")
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_dxjlu")
 theme_override_font_sizes/font_size = 20
-text = "Purchase Price"
+text = "Number of Assets"
 
-[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount" index="6"]
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins" index="6"]
 libraries = {
-"": SubResource("AnimationLibrary_11l3n")
+"": SubResource("AnimationLibrary_3w8bd")
 }
 
-[node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="3" instance=ExtResource("3")]
+[node name="BaseIconButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2" index="1" instance=ExtResource("6")]
+layout_mode = 2
+focus_next = NodePath("../../TransactionAmount")
+
+[node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton/MarginContainer" index="0"]
+texture = ExtResource("7")
+
+[node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="4" instance=ExtResource("3")]
 unique_name_in_owner = true
 layout_mode = 2
 focus_next = NodePath("../DialogActionButtons/HBoxContainer/OkButton")
@@ -594,19 +631,6 @@ text = "Date"
 libraries = {
 "": SubResource("AnimationLibrary_5ew53")
 }
-
-[node name="CreditOrDebit" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="4" instance=ExtResource("5")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="MarginContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit" index="0"]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 280.0
-offset_bottom = 48.0
-
-[node name="CheckButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit/MarginContainer" index="1"]
-text = "Deposit"
 
 [node name="DialogActionButtons" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer" index="2"]
 mouse_filter = 1
@@ -639,18 +663,20 @@ libraries = {
 }
 
 [connection signal="pressed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton" to="." method="_on_BaseIconButton_pressed"]
+[connection signal="pressed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton" to="." method="_on_NumberOfCoins_BaseIconButton_pressed"]
 [connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]
 [connection signal="OkClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_OkClicked"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="CenterContainer/DialogContainer"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/NumberOfCoins"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]

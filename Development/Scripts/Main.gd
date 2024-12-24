@@ -127,11 +127,13 @@ func _on_EditActiveTransaction_EditTransaction(transaction_p):
 			if transaction_view.is_selected():
 				var temp_class : Transaction;
 				temp_class = load("res://Scripts/Classes/Transaction.gd").new();
+				temp_class.index_m = transaction_p.index_m
 				temp_class.date_m = transaction_p.date_m;
 				temp_class.number_of_coins_m = transaction_p.number_of_coins_m;
 				temp_class.exchange_price_m = transaction_p.exchange_price_m;
 				temp_class.amount_m = transaction_p.amount_m;
 				temp_class.is_credit_m = transaction_p.is_credit_m;
+				temp_class.is_sold_m = transaction_p.is_sold_m;
 				transaction_view.set_tras_data(temp_class);
 		# Refresh the calulations.
 		active_transactions_view.recalulate_totals();
