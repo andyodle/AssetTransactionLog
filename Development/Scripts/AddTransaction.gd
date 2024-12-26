@@ -23,6 +23,12 @@ func reset_form():
 	number_of_coins.text = "";
 	credit_or_debit.set_checked(true);
 
+func _input(event):
+	if event.is_action_pressed("ui_focus_next") and has_focus():
+		if str(focus_next) != "":
+			get_node(focus_next).grab_focus()
+		get_tree().set_input_as_handled();
+
 # Check to see if the user entered valid data.
 # Return true if valid input else false.
 func verify_input():

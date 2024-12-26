@@ -3,6 +3,7 @@ extends TextEdit
 signal TextChanged(text_p)
 
 @onready var animation_player = $AnimationPlayer;
+@onready var credit_or_debit_button = %CreditOrDebit/MarginContainer/CheckButton;
 
 var is_focused = false;
 
@@ -12,6 +13,9 @@ func _ready():
 	invisible_scrollbar_theme.set_stylebox("scroll", "VScrollBar", StyleBoxEmpty.new())
 	invisible_scrollbar_theme.set_stylebox("scroll", "HScrollBar", StyleBoxEmpty.new())
 	self.theme = invisible_scrollbar_theme
+	
+	# Set Focus on First Control
+	credit_or_debit_button.grab_focus.call_deferred();
 
 func set_input_value(value_p):
 	_on_TextInput_focus_entered();
@@ -33,7 +37,7 @@ func _on_TextInput_focus_exited():
 
 func _input(event):
 	# Check to make sure tab doesn't print in the TextEdit.
-	if event.is_action_pressed("ui_focus_next"):
+	if event.is_action_pressed("ui_focus_next") and has_focus():
 		if str(focus_next) != "":
 			get_node(focus_next).grab_focus()
 		get_viewport().set_input_as_handled()
