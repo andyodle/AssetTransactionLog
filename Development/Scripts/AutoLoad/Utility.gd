@@ -57,12 +57,20 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 			if remainder >= 0 && remainder < 1:
 				# ---- Selling full amount of assets but still need more to sell. ----
 				sold_transactions.append(trans_data);
+				# Keep track of sold transactions.
+				sell_trans_p.sold_trans_m.append(trans_data);
 			elif remainder == 1:
 				# ---- Selling exact amount of an asset ----
 				sold_transactions.append(trans_data);
+				# Keep track of sold transactions.
+				sell_trans_p.sold_trans_m.append(trans_data);
 				break;
 			elif remainder > 1:
 				sold_transactions.append(trans_data);
+				
+				# Keep track of sold transactions.
+				sell_trans_p.sold_trans_m.append(trans_data);
+				
 				# ---- Selling a partical position. ----
 				# In Memory Calculation
 				# num_to_sell = abs(selling_num_of_assets) - (total_sold_assts - num_current_bought_assets)
@@ -87,6 +95,10 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 				# Create remander asset transaction.
 				var temp_trans = create_asset_trans(str(num_of_remaning), str(exchange_price_remaning), str(cost_basis_remaning), trans_data.date_m, true, false);
 				remainder_transactions.append(temp_trans);
+				
+				# Keep track of remainder transactions.
+				sell_trans_p.generated_trans_m.append(temp_trans);
+				
 				break;
 	
 	# Flag sold transactions as sold including partical sold transaction.
@@ -100,6 +112,7 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 func create_asset_trans(num_of_assets_p:String, exchange_price_p:String, cost_basis_p:String, date_p:String, is_credit_p:bool, is_sold_p:bool) -> Transaction:
 	var asset_trans : Transaction;
 	asset_trans = load("res://Scripts/Classes/Transaction.gd").new();
+	asset_trans.trans_type_m = Transaction.TransactionType.BUY_TRANS;
 	asset_trans.date_m = date_p;
 	asset_trans.number_of_coins_m = num_of_assets_p;
 	asset_trans.exchange_price_m = exchange_price_p;
@@ -107,6 +120,22 @@ func create_asset_trans(num_of_assets_p:String, exchange_price_p:String, cost_ba
 	asset_trans.is_credit_m = is_credit_p;
 	asset_trans.is_sold_m = is_sold_p
 	return asset_trans;
+
+# Create a auto generated transaction object.
+# Returns: A filled out generated transaction object.
+func create_generated_transaction(transaction_p: Transaction):
+	var generated_transaction : GeneratedTransaction;
+	generated_transaction = load("res://Scripts/Classes/GeneratedTransaction.gd").new();
+	generated_transaction.trans_type_m = Transaction.TransactionType.GENERATED_TRANS;
+	generated_transaction.index_m = transaction_p.index_m;
+	generated_transaction.date_m = transaction_p.date_m;
+	generated_transaction.number_of_coins_m = transaction_p.number_of_coins_m;
+	generated_transaction.exchange_price_m = transaction_p.exchange_price_m;
+	generated_transaction.amount_m = transaction_p.amount_m;
+	generated_transaction.is_credit_m = transaction_p.is_credit_m;
+	generated_transaction.is_sold_m = transaction_p.is_sold_m;
+	
+	return generated_transaction;
 
 # Calculate Bankers Rounding Rules
 # 1. Scaling: The input value is multiplied by 10^decimals to shift the decimal point.
