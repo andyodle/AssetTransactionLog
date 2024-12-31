@@ -19,6 +19,10 @@ func set_checked(checked_p:bool):
 func get_checked():
 	return check_button.button_pressed;
 
+func set_focus():
+	# Set Focus on First Control
+	if check_button:
+		check_button.grab_focus.call_deferred();
 
 func _on_check_button_toggled(toggled_on):
 	set_checked(toggled_on)

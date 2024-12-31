@@ -9,6 +9,7 @@ signal EditTransaction;
 @onready var number_of_coins = %NumberOfCoins;
 @onready var credit_or_debit = %CreditOrDebit;
 
+
 var old_transaction;
 var is_edit_transaction = false;
 
@@ -22,6 +23,8 @@ func reset_form():
 	transaction_date.text = "";
 	number_of_coins.text = "";
 	credit_or_debit.set_checked(true);
+	# Set Focus on First Control
+	credit_or_debit.set_focus();
 
 func _input(event):
 	if event.is_action_pressed("ui_focus_next") and has_focus():
