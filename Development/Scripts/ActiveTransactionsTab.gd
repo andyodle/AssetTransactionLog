@@ -62,18 +62,24 @@ func add_new_transaction(transaction_p):
 	if !transaction_p.is_credit_m:
 		var sell_trans : SellTransaction;
 		sell_trans = load("res://Scripts/Classes/SellTransaction.gd").new();
+		sell_trans.index_m = transaction_p.index_m;
 		sell_trans.trans_type_m = Transaction.TransactionType.SELL_TRANS;
 		sell_trans.date_m = transaction_p.date_m;
 		sell_trans.number_of_coins_m = transaction_p.number_of_coins_m;
 		sell_trans.exchange_price_m = transaction_p.exchange_price_m;
+		sell_trans.amount_m = transaction_p.amount_m;
 		sell_trans.sell_price_m = transaction_p.amount_m;
+		
+		# Calculate sold transactions.
 		var remainder_transactions = Utility.process_sell_transaction(sell_trans, transaction_log);
+		
+		# Add the sell transaction to the transactin log.
+		transaction_log.add_transaction(sell_trans, false);
+		
 		# Add any remaning partical transactions to the log.
 		for count in range(0, remainder_transactions.size()):
 			var remainder_trans = Utility.create_generated_transaction(remainder_transactions[count]);
 			transaction_log.add_transaction(remainder_trans, false);
-		# Add the sell transaction to the transactin log.
-		transaction_log.add_transaction(sell_trans, false);
 	else:
 		# Step 2: Add the transaction to the transaction log.
 		transaction_log.add_transaction(transaction_p, false);
