@@ -321,6 +321,40 @@ func _on_SellProfitTransactionDialog_AddSellTransaction(sell_transaction_p):
 	# Dipslay a messge to the user that we added transactions.
 	SnackBar.display_message("Added profit and sold transactions.", "DISMISS");
 
+func save_transaction_record(trans_data_p: Transaction, trans_index_p: String, trans_type_key_p: String, transactions_data_p: Dictionary):
+	transactions_data_p[trans_type_key_p][trans_index_p] = {};
+	transactions_data_p[trans_type_key_p][trans_index_p]["index_m"] = trans_data_p.index_m;
+	transactions_data_p[trans_type_key_p][trans_index_p]["trans_type_m"] = trans_data_p.trans_type_m;
+	transactions_data_p[trans_type_key_p][trans_index_p]["date_m"] = trans_data_p.date_m;
+	transactions_data_p[trans_type_key_p][trans_index_p]["number_of_coins_m"] = trans_data_p.number_of_coins_m;
+	transactions_data_p[trans_type_key_p][trans_index_p]["exchange_price_m"] = trans_data_p.exchange_price_m;
+	transactions_data_p[trans_type_key_p][trans_index_p]["amount_m"] = trans_data_p.amount_m;
+	transactions_data_p[trans_type_key_p][trans_index_p]["is_credit_m"] = trans_data_p.is_credit_m;
+	transactions_data_p[trans_type_key_p][trans_index_p]["is_sold_m"] = trans_data_p.is_sold_m;
+	
+	# Check if transaction is a sell transaction.
+	if trans_data_p.trans_type_m == Transaction.TransactionType.SELL_TRANS:
+		var temp_sell_trans = trans_data_p as SellTransaction;
+		var temp_sold_data : Dictionary = {};
+		temp_sold_data["SoldTransactions"] = {};
+		temp_sold_data["GeneratedTransactions"] = {}
+		
+		# SoldTransactions
+		for sell_count in range(0, temp_sell_trans.sold_trans_m.size()):
+			var temp_sold_trans : Transaction = temp_sell_trans.sold_trans_m[sell_count];
+			temp_sold_data["SoldTransactions"][str(sell_count)] = {};
+			temp_sold_data["SoldTransactions"][str(sell_count)]["index_m"] = temp_sold_trans.index_m;
+			temp_sold_data["SoldTransactions"][str(sell_count)]["trans_type_m"] = temp_sold_trans.trans_type_m;
+			temp_sold_data["SoldTransactions"][str(sell_count)]["date_m"] = temp_sold_trans.date_m;
+			temp_sold_data["SoldTransactions"][str(sell_count)]["number_of_coins_m"] = temp_sold_trans.number_of_coins_m;
+			temp_sold_data["SoldTransactions"][str(sell_count)]["exchange_price_m"] = temp_sold_trans.exchange_price_m;
+			temp_sold_data["SoldTransactions"][str(sell_count)]["amount_m"] = temp_sold_trans.amount_m;
+			temp_sold_data["SoldTransactions"][str(sell_count)]["is_credit_m"] = temp_sold_trans.is_credit_m;
+			temp_sold_data["SoldTransactions"][str(sell_count)]["is_sold_m"] = temp_sold_trans.is_sold_m;
+		
+		transactions_data_p[trans_type_key_p][trans_index_p]["SoldTransactions"] = temp_sold_data
+		print("Debug2")
+
 # Helper function to save the users entered transactions.
 func save_transactions(file_path_p):
 	
@@ -338,14 +372,15 @@ func save_transactions(file_path_p):
 		for count in range(0, transaction_views.size()):
 			var transaction_view = transaction_views[count];
 			var trans_data : Transaction = transaction_view.trans_data;
-			temp_data["ActiveTransactions"][str(count)] = {};
-			temp_data["ActiveTransactions"][str(count)]["index_m"] = trans_data.index_m;
-			temp_data["ActiveTransactions"][str(count)]["date_m"] = trans_data.date_m;
-			temp_data["ActiveTransactions"][str(count)]["number_of_coins_m"] = trans_data.number_of_coins_m;
-			temp_data["ActiveTransactions"][str(count)]["exchange_price_m"] = trans_data.exchange_price_m;
-			temp_data["ActiveTransactions"][str(count)]["amount_m"] = trans_data.amount_m;
-			temp_data["ActiveTransactions"][str(count)]["is_credit_m"] = trans_data.is_credit_m;
-			temp_data["ActiveTransactions"][str(count)]["is_sold_m"] = trans_data.is_sold_m;
+			save_transaction_record(trans_data, str(count), "ActiveTransactions", temp_data);
+			#temp_data["ActiveTransactions"][str(count)] = {};
+			#temp_data["ActiveTransactions"][str(count)]["index_m"] = trans_data.index_m;
+			#temp_data["ActiveTransactions"][str(count)]["date_m"] = trans_data.date_m;
+			#temp_data["ActiveTransactions"][str(count)]["number_of_coins_m"] = trans_data.number_of_coins_m;
+			#temp_data["ActiveTransactions"][str(count)]["exchange_price_m"] = trans_data.exchange_price_m;
+			#temp_data["ActiveTransactions"][str(count)]["amount_m"] = trans_data.amount_m;
+			#temp_data["ActiveTransactions"][str(count)]["is_credit_m"] = trans_data.is_credit_m;
+			#temp_data["ActiveTransactions"][str(count)]["is_sold_m"] = trans_data.is_sold_m;
 	
 	# Get all of the selected transactions.
 	transaction_views = profit_transactions_view.get_transactions();
