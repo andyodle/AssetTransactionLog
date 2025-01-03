@@ -1,49 +1,41 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://c5wuk5g5iu2wo"]
 
-[ext_resource path="res://Tests/TestManager.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Tests/TestManager.gd" id="1"]
 
 [node name="TestManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("1")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_top = 32
 theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 32
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-offset_left = 16.0
-offset_top = 32.0
-offset_right = 1008.0
-offset_bottom = 568.0
+layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="TestConsole" type="ItemList" parent="MarginContainer/VBoxContainer"]
-offset_right = 992.0
-offset_bottom = 456.0
+unique_name_in_owner = true
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-offset_top = 488.0
-offset_right = 992.0
-offset_bottom = 536.0
-custom_minimum_size = Vector2( 0, 48 )
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="RuntTestsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-offset_right = 80.0
-offset_bottom = 48.0
-custom_minimum_size = Vector2( 80, 32 )
+custom_minimum_size = Vector2(80, 32)
+layout_mode = 2
 text = "RUN TESTS"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/RuntTestsButton" to="." method="_on_RuntTestsButton_pressed"]

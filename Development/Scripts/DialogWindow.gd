@@ -1,5 +1,7 @@
 extends Control
 
+class_name DialogWindow
+
 @onready var animation_player = $AnimationPlayer;
 
 func _ready():

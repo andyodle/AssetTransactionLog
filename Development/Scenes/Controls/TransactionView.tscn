@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs5sn5agkoxds"]
+[gd_scene load_steps=5 format=3 uid="uid://befnya4er1u21"]
 
-[ext_resource type="Script" path="res://Scripts/TransactionView.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="2"]
+[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="1_b4vc1"]
+[ext_resource type="Script" path="res://Scripts/TransactionView.gd" id="2_7n6lv"]
 
 [sub_resource type="FontFile" id="1"]
-fallbacks = Array[Font]([ExtResource("2")])
+fallbacks = Array[Font]([ExtResource("1_b4vc1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -27,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 theme = SubResource("2")
-script = ExtResource("1")
+script = ExtResource("2_7n6lv")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
@@ -36,6 +39,7 @@ anchor_bottom = 1.0
 size_flags_horizontal = 3
 
 [node name="BackgroundColor" type="ColorRect" parent="CenterContainer"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(729, 56)
 layout_mode = 2
@@ -59,24 +63,28 @@ custom_minimum_size = Vector2(71, 52)
 layout_mode = 2
 
 [node name="DateAcquired" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(123, 52)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "02/17/2021"
 
 [node name="NumberOfCoins" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=["NumberOfCoins-Trans"]]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(139, 52)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "0.001920220"
 
 [node name="ExchangePrice" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(127, 52)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "$52,077.37"
 
 [node name="CreditAmount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(123, 52)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -84,6 +92,7 @@ theme_override_colors/font_color = Color(0.352941, 0.729412, 0.278431, 1)
 text = "$100"
 
 [node name="DebitAmount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(122, 52)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -91,6 +100,7 @@ theme_override_colors/font_color = Color(0.913725, 0.129412, 0.152941, 1)
 text = "$75"
 
 [node name="SelectedTrans" type="CheckBox" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(63, 52)
 layout_mode = 2

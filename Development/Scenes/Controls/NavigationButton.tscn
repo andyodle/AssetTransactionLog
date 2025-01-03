@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bjvdv4jip0ylu"]
 
 [ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="1"]
-[ext_resource type="Texture2D" uid="uid://d5r5vbq2bqhe" path="res://icon.png" id="2"]
 [ext_resource type="Script" path="res://Scripts/NavigationButton.gd" id="3"]
 [ext_resource type="StyleBox" path="res://Assets/Theme/Normal-NavigationButton.tres" id="4"]
 [ext_resource type="StyleBox" path="res://Assets/Theme/Hover-NavigationButton.tres" id="5"]
 [ext_resource type="StyleBox" path="res://Assets/Theme/Pressed-NavigationButton.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://cd2lmimsoc6by" path="res://Assets/Icons/ActiveTransactions.png" id="6_wv1tc"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("1")])
@@ -54,7 +54,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/CenterContainer/MarginContainer"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
-texture = ExtResource("2")
+texture = ExtResource("6_wv1tc")
 expand_mode = 1
 stretch_mode = 5
 

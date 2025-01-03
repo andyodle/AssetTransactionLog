@@ -341,16 +341,13 @@ func save_transaction_record(trans_data_p: Transaction, trans_index_p: String, t
 		
 		# SoldTransactions
 		for sell_count in range(0, temp_sell_trans.sold_trans_m.size()):
-			var temp_sold_trans : Transaction = temp_sell_trans.sold_trans_m[sell_count];
 			temp_sold_data["SoldTransactions"][str(sell_count)] = {};
-			temp_sold_data["SoldTransactions"][str(sell_count)]["index_m"] = temp_sold_trans.index_m;
-			temp_sold_data["SoldTransactions"][str(sell_count)]["trans_type_m"] = temp_sold_trans.trans_type_m;
-			temp_sold_data["SoldTransactions"][str(sell_count)]["date_m"] = temp_sold_trans.date_m;
-			temp_sold_data["SoldTransactions"][str(sell_count)]["number_of_coins_m"] = temp_sold_trans.number_of_coins_m;
-			temp_sold_data["SoldTransactions"][str(sell_count)]["exchange_price_m"] = temp_sold_trans.exchange_price_m;
-			temp_sold_data["SoldTransactions"][str(sell_count)]["amount_m"] = temp_sold_trans.amount_m;
-			temp_sold_data["SoldTransactions"][str(sell_count)]["is_credit_m"] = temp_sold_trans.is_credit_m;
-			temp_sold_data["SoldTransactions"][str(sell_count)]["is_sold_m"] = temp_sold_trans.is_sold_m;
+			temp_sold_data["SoldTransactions"][str(sell_count)]["index_m"] = temp_sell_trans.sold_trans_m[sell_count];
+		
+		# GeneratedTransactions
+		for gen_count in range(0, temp_sell_trans.generated_trans_m.size()):
+			temp_sold_data["GeneratedTransactions"][str(gen_count)] = {};
+			temp_sold_data["GeneratedTransactions"][str(gen_count)]["index_m"] = temp_sell_trans.generated_trans_m[gen_count];
 		
 		transactions_data_p[trans_type_key_p][trans_index_p]["SoldTransactions"] = temp_sold_data
 		print("Debug2")
@@ -373,14 +370,6 @@ func save_transactions(file_path_p):
 			var transaction_view = transaction_views[count];
 			var trans_data : Transaction = transaction_view.trans_data;
 			save_transaction_record(trans_data, str(count), "ActiveTransactions", temp_data);
-			#temp_data["ActiveTransactions"][str(count)] = {};
-			#temp_data["ActiveTransactions"][str(count)]["index_m"] = trans_data.index_m;
-			#temp_data["ActiveTransactions"][str(count)]["date_m"] = trans_data.date_m;
-			#temp_data["ActiveTransactions"][str(count)]["number_of_coins_m"] = trans_data.number_of_coins_m;
-			#temp_data["ActiveTransactions"][str(count)]["exchange_price_m"] = trans_data.exchange_price_m;
-			#temp_data["ActiveTransactions"][str(count)]["amount_m"] = trans_data.amount_m;
-			#temp_data["ActiveTransactions"][str(count)]["is_credit_m"] = trans_data.is_credit_m;
-			#temp_data["ActiveTransactions"][str(count)]["is_sold_m"] = trans_data.is_sold_m;
 	
 	# Get all of the selected transactions.
 	transaction_views = profit_transactions_view.get_transactions();
@@ -419,9 +408,28 @@ func _on_SideNavigationRail_SaveTrasnClicked():
 
 # Create a new transaction record from json data.
 func create_transaction_record(trans_data_p):
-	var temp_class : Transaction;
-	temp_class = load("res://Scripts/Classes/Transaction.gd").new();
+	var temp_class;
+		# Determine transaction type.
+	if trans_data_p["trans_type_m"] == Transaction.TransactionType.SELL_TRANS:
+		temp_class = load("res://Scripts/Classes/SellTransaction.gd").new();
+		# Sold Transaction Indexes
+		temp_class.sold_trans_m = [];
+		var temp_sold_indexes = trans_data_p["SoldTransactions"]["SoldTransactions"];
+		for sell_count in range(0, temp_sold_indexes.size()):
+			temp_class.sold_trans_m.append(temp_sold_indexes[str(sell_count)]["index_m"]);
+		# Generated Transaction Indexes
+		temp_class.generated_trans_m = [];
+		var temp_generated_indexes = trans_data_p["SoldTransactions"]["GeneratedTransactions"];
+		for gen_count in range(0, temp_generated_indexes.size()):
+			temp_class.generated_trans_m.append(temp_generated_indexes[str(gen_count)]["index_m"])
+		
+	elif trans_data_p["trans_type_m"] == Transaction.TransactionType.GENERATED_TRANS:
+		temp_class = load("res://Scripts/Classes/GeneratedTransaction.gd").new();
+	elif trans_data_p["trans_type_m"]== Transaction.TransactionType.BUY_TRANS:
+		temp_class = load("res://Scripts/Classes/Transaction.gd").new();
+	
 	temp_class.index_m = trans_data_p["index_m"];
+	temp_class.trans_type_m = trans_data_p["trans_type_m"] as Transaction.TransactionType;
 	temp_class.date_m = trans_data_p["date_m"];
 	temp_class.number_of_coins_m = trans_data_p["number_of_coins_m"];
 	temp_class.exchange_price_m = trans_data_p["exchange_price_m"];
