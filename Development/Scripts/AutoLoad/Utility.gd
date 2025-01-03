@@ -1,5 +1,7 @@
 extends Node
 
+const uuid_util = preload("res://addons/UUID/uuid.gd");
+
 var main_window_title = "";
 
 func _ready():
@@ -58,18 +60,18 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 				# ---- Selling full amount of assets but still need more to sell. ----
 				sold_transactions.append(trans_data);
 				# Keep track of sold transactions.
-				sell_trans_p.sold_trans_m.append(trans_data);
+				sell_trans_p.sold_trans_m.append(trans_data.index_m);
 			elif remainder == 1:
 				# ---- Selling exact amount of an asset ----
 				sold_transactions.append(trans_data);
 				# Keep track of sold transactions.
-				sell_trans_p.sold_trans_m.append(trans_data);
+				sell_trans_p.sold_trans_m.append(trans_data.index_m);
 				break;
 			elif remainder > 1:
 				sold_transactions.append(trans_data);
 				
 				# Keep track of sold transactions.
-				sell_trans_p.sold_trans_m.append(trans_data);
+				sell_trans_p.sold_trans_m.append(trans_data.index_m);
 				
 				# ---- Selling a partical position. ----
 				# In Memory Calculation
@@ -97,7 +99,7 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 				remainder_transactions.append(temp_trans);
 				
 				# Keep track of remainder transactions.
-				sell_trans_p.generated_trans_m.append(temp_trans);
+				sell_trans_p.generated_trans_m.append(temp_trans.index_m);
 				
 				break;
 	
@@ -112,6 +114,7 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 func create_asset_trans(num_of_assets_p:String, exchange_price_p:String, cost_basis_p:String, date_p:String, is_credit_p:bool, is_sold_p:bool) -> Transaction:
 	var asset_trans : Transaction;
 	asset_trans = load("res://Scripts/Classes/Transaction.gd").new();
+	asset_trans.index_m = create_new_uuid();
 	asset_trans.trans_type_m = Transaction.TransactionType.BUY_TRANS;
 	asset_trans.date_m = date_p;
 	asset_trans.number_of_coins_m = num_of_assets_p;
@@ -250,8 +253,8 @@ func calculate_sold_transaction(number_of_coins_sold_p, amount_sold_p, number_of
 	sold_transactoin_class.initalize();
 	
 	# Purchased Data
-	var purchased_total_price;
-	purchased_total_price = amount_paid_p;
+	var _purchased_total_price;
+	_purchased_total_price = amount_paid_p;
 	var purchased_number_of_coins;
 	purchased_number_of_coins = number_of_coins_bought_p;
 	var purchased_cost_average;
@@ -333,3 +336,7 @@ func set_main_window_title(title_p):
 func show_save_changes():
 	if main_window_title[0] != "*":
 		set_main_window_title("*" + main_window_title);
+
+# Generate a new uuid.
+func create_new_uuid():
+	return uuid_util.v4()

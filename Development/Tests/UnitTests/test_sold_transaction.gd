@@ -26,7 +26,7 @@ func test_sold_transaction():
 	sold_transactoin_class = Utility.calculate_sold_transaction(number_of_coins_sold_m, amount_sold_m, number_of_coins_bought_m, amount_paid_m, exchange_rate_paid_m);
 	
 	# Validate expected sold values.
-	check_bought_transaction(sold_transactoin_class);	
+	check_bought_transaction(sold_transactoin_class);
 	check_sold_transaction(sold_transactoin_class);
 	
 	pass

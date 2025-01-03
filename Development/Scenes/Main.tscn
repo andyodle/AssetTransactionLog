@@ -1969,11 +1969,6 @@ offset_bottom = 158.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="MarginContainer" parent="MarginContainer/SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle" index="0"]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_bottom = 0.0
-
 [node name="Label" parent="MarginContainer/SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_63hm3")
 
@@ -1981,10 +1976,6 @@ theme_override_fonts/font = SubResource("FontFile_63hm3")
 libraries = {
 "": SubResource("AnimationLibrary_mvh4u")
 }
-
-[node name="CenterContainer" parent="MarginContainer/SplitActiveTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns" index="0"]
-anchor_right = 0.0
-anchor_bottom = 0.0
 
 [node name="AnimationPlayer" parent="MarginContainer/SplitActiveTransactionDialog" index="2"]
 libraries = {
@@ -2020,11 +2011,6 @@ offset_bottom = 158.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="MarginContainer" parent="MarginContainer/SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle" index="0"]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_bottom = 0.0
-
 [node name="Label" parent="MarginContainer/SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_p21vh")
 
@@ -2032,10 +2018,6 @@ theme_override_fonts/font = SubResource("FontFile_p21vh")
 libraries = {
 "": SubResource("AnimationLibrary_48d2j")
 }
-
-[node name="CenterContainer" parent="MarginContainer/SplitProfitTransactionDialog/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog/MarginContainer/VBoxContainer/TransactionColumns" index="0"]
-anchor_right = 0.0
-anchor_bottom = 0.0
 
 [node name="AnimationPlayer" parent="MarginContainer/SplitProfitTransactionDialog" index="2"]
 libraries = {

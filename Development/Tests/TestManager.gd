@@ -2,7 +2,7 @@ extends Control
 
 const TESTS_PATH = "res://Tests/";
 
-@onready var test_console = $MarginContainer/VBoxContainer/TestConsole;
+@onready var test_console = %TestConsole;
 
 var test_count = 0;
 var red_color : Color = Color("#E92127");
@@ -14,8 +14,7 @@ var yellow_color : Color = Color("#FEFE33");
 # test script that starts with test_ in the
 # name of the script.
 func run_tests(current_dir_p):
-	var levels_dir = DirAccess.new();
-	levels_dir.open(current_dir_p);
+	var levels_dir = DirAccess.open(current_dir_p);
 	levels_dir.list_dir_begin() ;# TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 	
 	var file_name = levels_dir.get_next();
@@ -72,4 +71,4 @@ func _on_RuntTestsButton_pressed():
 	# Finished running the tests.
 	display_test_message("Finished running test scripts...");
 	display_test_message("");
-	display_test_message("Tests Run ( " + String(test_count) + " )");
+	display_test_message("Tests Run ( " + str(test_count) + " )");

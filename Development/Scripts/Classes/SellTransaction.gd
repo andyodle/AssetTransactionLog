@@ -3,8 +3,8 @@ extends Transaction
 class_name SellTransaction
 
 var sell_price_m : String;
-var sold_trans_m : Array[Transaction];
-var generated_trans_m : Array[Transaction];
+var sold_trans_m : Array;
+var generated_trans_m : Array;
 
 func _ready():
 	# Default the transaction type.

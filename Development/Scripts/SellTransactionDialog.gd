@@ -1,4 +1,4 @@
-extends "res://Scripts/DialogWindow.gd"
+extends DialogWindow
 
 signal AddSellTransaction;
 

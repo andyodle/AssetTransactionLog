@@ -119,7 +119,6 @@ func calculate_current_values():
 	var total_paid = total_amount_paid_data_panel.get_data();
 	# Current Asset Value
 	if current_price:
-		var temp_value = calculator.multiply(str(total_assets), current_price)
 		var current_value = Utility.bankers_round(float(calculator.multiply(str(total_assets), current_price)), 3);
 		var profit_loss_value = Utility.bankers_round(float(calculator.subtract(str(current_value), total_paid)), 2);
 		

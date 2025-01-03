@@ -2,13 +2,13 @@ extends Control
 
 signal SelectedTransaction;
 
-@onready var background_color = $CenterContainer/BackgroundColor;
-@onready var date_acquired = $CenterContainer/VBoxContainer/HBoxContainer/DateAcquired;
-@onready var number_of_coins = $CenterContainer/VBoxContainer/HBoxContainer/NumberOfCoins;
-@onready var exchange_price = $CenterContainer/VBoxContainer/HBoxContainer/ExchangePrice;
-@onready var credit_amount = $CenterContainer/VBoxContainer/HBoxContainer/CreditAmount;
-@onready var debit_amount = $CenterContainer/VBoxContainer/HBoxContainer/DebitAmount;
-@onready var selected_trans = $CenterContainer/VBoxContainer/HBoxContainer/SelectedTrans;
+@onready var background_color = %BackgroundColor;
+@onready var date_acquired = %DateAcquired;
+@onready var number_of_coins = %NumberOfCoins;
+@onready var exchange_price = %ExchangePrice;
+@onready var credit_amount = %CreditAmount;
+@onready var debit_amount = %DebitAmount;
+@onready var selected_trans = %SelectedTrans;
 
 var trans_data = null;
 

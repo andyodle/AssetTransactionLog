@@ -1,4 +1,4 @@
-extends "res://Scripts/DialogWindow.gd"
+extends DialogWindow
 
 @onready var reduce_transaction_input = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/ReduceTransactionInput;
 @onready var transaction_log = $CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/TransactionLog;
