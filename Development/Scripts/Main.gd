@@ -349,7 +349,7 @@ func save_transaction_record(trans_data_p: Transaction, trans_index_p: String, t
 			temp_sold_data["GeneratedTransactions"][str(gen_count)] = {};
 			temp_sold_data["GeneratedTransactions"][str(gen_count)]["index_m"] = temp_sell_trans.generated_trans_m[gen_count];
 		
-		transactions_data_p[trans_type_key_p][trans_index_p]["SoldTransactions"] = temp_sold_data
+		transactions_data_p[trans_type_key_p][trans_index_p]["SoldTransData"] = temp_sold_data
 		print("Debug2")
 
 # Helper function to save the users entered transactions.
@@ -414,12 +414,12 @@ func create_transaction_record(trans_data_p):
 		temp_class = load("res://Scripts/Classes/SellTransaction.gd").new();
 		# Sold Transaction Indexes
 		temp_class.sold_trans_m = [];
-		var temp_sold_indexes = trans_data_p["SoldTransactions"]["SoldTransactions"];
+		var temp_sold_indexes = trans_data_p["SoldTransData"]["SoldTransactions"];
 		for sell_count in range(0, temp_sold_indexes.size()):
 			temp_class.sold_trans_m.append(temp_sold_indexes[str(sell_count)]["index_m"]);
 		# Generated Transaction Indexes
 		temp_class.generated_trans_m = [];
-		var temp_generated_indexes = trans_data_p["SoldTransactions"]["GeneratedTransactions"];
+		var temp_generated_indexes = trans_data_p["SoldTransData"]["GeneratedTransactions"];
 		for gen_count in range(0, temp_generated_indexes.size()):
 			temp_class.generated_trans_m.append(temp_generated_indexes[str(gen_count)]["index_m"])
 		
