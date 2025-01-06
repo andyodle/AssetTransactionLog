@@ -79,6 +79,8 @@ func add_new_transaction(transaction_p):
 		# Add any remaning partical transactions to the log.
 		for count in range(0, remainder_transactions.size()):
 			var remainder_trans = Utility.create_generated_transaction(remainder_transactions[count]);
+			# Keep track of wich sell transaction created this partical transaction.
+			remainder_trans.sell_trans_index_m = sell_trans.index_m;
 			transaction_log.add_transaction(remainder_trans, false);
 	else:
 		# Step 2: Add the transaction to the transaction log.

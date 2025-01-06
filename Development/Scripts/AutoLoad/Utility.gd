@@ -51,6 +51,8 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 		var trans_data = active_trans[count];
 		# Make sure we have enough assets avaible to sell.
 		if float(total_sold) <= abs(float(sell_trans_p.number_of_coins_m)):
+			# Keep track of wich sell transaction modifed this transaction.
+			trans_data.sell_trans_index_m = sell_trans_p.index_m;
 			# Keep track of how many have been sold.
 			total_sold = calculator.add(total_sold, trans_data.number_of_coins_m);
 			# Check if we are selling a partical position.
