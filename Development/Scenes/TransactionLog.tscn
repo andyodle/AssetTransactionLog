@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/TransactionLog.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bd54rb16g04g4" path="res://Scenes/Controls/TransactionColumns.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://Scenes/Controls/ActionButtonContainer.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bry7gviwv5ovi" path="res://Scenes/Controls/ActionButtonContainer.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://Scenes/Controls/BaseActionButton.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://cl4mrm6xjtno4" path="res://Assets/Icons/Sell.png" id="5"]
 
@@ -39,21 +39,6 @@ color = Color(0.207843, 0.231373, 0.341176, 1)
 layout_mode = 2
 
 [node name="ActionButtonContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("3")]
-layout_mode = 2
-
-[node name="MarginContainer" parent="MarginContainer/VBoxContainer/ActionButtonContainer" index="0"]
-layout_mode = 0
-
-[node name="HBoxContainer" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer" index="0"]
-layout_mode = 2
-
-[node name="SplitButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="0"]
-layout_mode = 2
-
-[node name="EditButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="1"]
-layout_mode = 2
-
-[node name="DeleteButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="2"]
 layout_mode = 2
 
 [node name="TransactionColumns" parent="MarginContainer/VBoxContainer" instance=ExtResource("2")]

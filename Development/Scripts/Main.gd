@@ -324,6 +324,7 @@ func _on_SellProfitTransactionDialog_AddSellTransaction(sell_transaction_p):
 func save_transaction_record(trans_data_p: Transaction, trans_index_p: String, trans_type_key_p: String, transactions_data_p: Dictionary):
 	transactions_data_p[trans_type_key_p][trans_index_p] = {};
 	transactions_data_p[trans_type_key_p][trans_index_p]["index_m"] = trans_data_p.index_m;
+	transactions_data_p[trans_type_key_p][trans_index_p]["sell_trans_index_m"] = trans_data_p.sell_trans_index_m;
 	transactions_data_p[trans_type_key_p][trans_index_p]["trans_type_m"] = trans_data_p.trans_type_m;
 	transactions_data_p[trans_type_key_p][trans_index_p]["date_m"] = trans_data_p.date_m;
 	transactions_data_p[trans_type_key_p][trans_index_p]["number_of_coins_m"] = trans_data_p.number_of_coins_m;
@@ -429,6 +430,7 @@ func create_transaction_record(trans_data_p):
 		temp_class = load("res://Scripts/Classes/Transaction.gd").new();
 	
 	temp_class.index_m = trans_data_p["index_m"];
+	temp_class.sell_trans_index_m = trans_data_p["sell_trans_index_m"];
 	temp_class.trans_type_m = trans_data_p["trans_type_m"] as Transaction.TransactionType;
 	temp_class.date_m = trans_data_p["date_m"];
 	temp_class.number_of_coins_m = trans_data_p["number_of_coins_m"];

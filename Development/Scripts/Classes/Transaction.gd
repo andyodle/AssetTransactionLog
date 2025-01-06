@@ -9,6 +9,7 @@ enum TransactionType {
 }
 
 var index_m;
+var sell_trans_index_m;
 var trans_type_m : TransactionType;
 var date_m;
 var number_of_coins_m : String;

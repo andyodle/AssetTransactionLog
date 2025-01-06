@@ -7,6 +7,7 @@ signal CalcualteTotalPrice;
 signal CalculateCostAverage;
 signal EditTransactionClick;
 signal SplitTransactionClick;
+signal DeleteTransactionClick;
 
 @onready var add_action_button = $AddActionButton;
 @onready var sell_action_button = $SellActionButton;
@@ -137,6 +138,8 @@ func mark_sold_transactions(sold_transactions_p):
 
 # User wants to delete selected items.
 func _on_ActionButtonContainer_DeleteClicked():
+	emit_signal("DeleteTransactionClick");
+	
 	# Remove the selected items.
 	remove_selected_transactions();
 	
