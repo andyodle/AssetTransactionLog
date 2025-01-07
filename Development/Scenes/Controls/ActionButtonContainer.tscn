@@ -39,7 +39,6 @@ size_flags_vertical = 3
 alignment = 2
 
 [node name="SplitButton" parent="MarginContainer/HBoxContainer" instance=ExtResource("3")]
-visible = false
 layout_mode = 2
 
 [node name="TextureRect" parent="MarginContainer/HBoxContainer/SplitButton/MarginContainer" index="0"]
