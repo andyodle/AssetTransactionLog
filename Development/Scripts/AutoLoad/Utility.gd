@@ -106,7 +106,7 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 				break;
 	
 	# Flag sold transactions as sold including partical sold transaction.
-	transaction_log_p.mark_sold_transactions(sold_transactions);
+	transaction_log_p.mark_sold_transactions(sell_trans_p.sold_trans_m, true);
 	
 	print("Sold-End...")
 	return remainder_transactions;

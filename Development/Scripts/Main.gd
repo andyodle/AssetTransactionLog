@@ -351,7 +351,6 @@ func save_transaction_record(trans_data_p: Transaction, trans_index_p: String, t
 			temp_sold_data["GeneratedTransactions"][str(gen_count)]["index_m"] = temp_sell_trans.generated_trans_m[gen_count];
 		
 		transactions_data_p[trans_type_key_p][trans_index_p]["SoldTransData"] = temp_sold_data
-		print("Debug2")
 
 # Helper function to save the users entered transactions.
 func save_transactions(file_path_p):
