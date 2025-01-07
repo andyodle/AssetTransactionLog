@@ -25,7 +25,12 @@ func clear_data():
 	debit_amount.text = "";
 
 func disalbe_trans():
-	self.modulate = DISABLE_COLOR;
+	date_acquired.modulate = DISABLE_COLOR;
+	number_of_coins.modulate = DISABLE_COLOR;
+	exchange_price.modulate = DISABLE_COLOR;
+	credit_amount.modulate = DISABLE_COLOR;
+	debit_amount.modulate = DISABLE_COLOR;
+	selected_trans.modulate = DISABLE_COLOR;
 
 # Fill out the transaction.
 func set_tras_data(transaction_p):
