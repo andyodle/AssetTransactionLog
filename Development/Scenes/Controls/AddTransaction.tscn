@@ -545,29 +545,39 @@ offset_right = 280.0
 offset_bottom = 48.0
 
 [node name="CheckButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit/MarginContainer" index="1"]
-focus_neighbor_bottom = NodePath("../../../TransactionAmount")
-focus_next = NodePath("../../../TransactionAmount")
+focus_neighbor_bottom = NodePath("../../../HBoxContainer3/TransactionAmount")
+focus_next = NodePath("../../../HBoxContainer3/TransactionAmount")
 focus_previous = NodePath("../../../../../DialogActionButtons/HBoxContainer/CancelButton/MarginContainer/Button")
 focus_mode = 2
 text = "Deposit"
 
-[node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="1" instance=ExtResource("3")]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="TransactionAmount" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3" index="0" instance=ExtResource("3")]
 unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../CreditOrDebit/MarginContainer/CheckButton")
-focus_neighbor_bottom = NodePath("../HBoxContainer/ExchangePrice")
-focus_next = NodePath("../HBoxContainer/ExchangePrice")
-focus_previous = NodePath("../CreditOrDebit/MarginContainer/CheckButton")
+focus_neighbor_top = NodePath("../../CreditOrDebit/MarginContainer/CheckButton")
+focus_neighbor_bottom = NodePath("../../HBoxContainer/ExchangePrice")
+focus_next = NodePath("../../HBoxContainer/ExchangePrice")
+focus_previous = NodePath("../../CreditOrDebit/MarginContainer/CheckButton")
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount/CenterContainer/MarginContainer" index="0"]
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_18u1e")
 theme_override_font_sizes/font_size = 20
 text = "Purchase Price"
 
-[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount" index="6"]
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount" index="6"]
 libraries = {
 "": SubResource("AnimationLibrary_11l3n")
 }
+
+[node name="CalculatePurchasePriceButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3" index="1" instance=ExtResource("6")]
+layout_mode = 2
+focus_next = NodePath("../../TransactionAmount")
+
+[node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/CalculatePurchasePriceButton/MarginContainer" index="0"]
+texture = ExtResource("7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="2"]
 layout_mode = 2
@@ -576,10 +586,10 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(240, 48)
 layout_mode = 2
-focus_neighbor_top = NodePath("../../TransactionAmount")
+focus_neighbor_top = NodePath("../../HBoxContainer3/TransactionAmount")
 focus_neighbor_bottom = NodePath("../../HBoxContainer2/NumberOfCoins")
 focus_next = NodePath("../../HBoxContainer2/NumberOfCoins")
-focus_previous = NodePath("../../TransactionAmount")
+focus_previous = NodePath("../../HBoxContainer3/TransactionAmount")
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_kdk44")
@@ -593,7 +603,7 @@ libraries = {
 
 [node name="BaseIconButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer" index="1" instance=ExtResource("6")]
 layout_mode = 2
-focus_next = NodePath("../../TransactionAmount")
+focus_next = NodePath("../../HBoxContainer3/TransactionAmount")
 
 [node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton/MarginContainer" index="0"]
 texture = ExtResource("7")
@@ -605,8 +615,8 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 focus_neighbor_top = NodePath("../../HBoxContainer/ExchangePrice")
-focus_neighbor_bottom = NodePath("../../TransactionDate")
-focus_next = NodePath("../../TransactionDate")
+focus_neighbor_bottom = NodePath("../../HBoxContainer4/TransactionDate")
+focus_next = NodePath("../../HBoxContainer4/TransactionDate")
 focus_previous = NodePath("../../HBoxContainer/ExchangePrice")
 
 [node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins/CenterContainer/MarginContainer" index="0"]
@@ -621,25 +631,28 @@ libraries = {
 
 [node name="BaseIconButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2" index="1" instance=ExtResource("6")]
 layout_mode = 2
-focus_next = NodePath("../../TransactionAmount")
+focus_next = NodePath("../../HBoxContainer3/TransactionAmount")
 
 [node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton/MarginContainer" index="0"]
 texture = ExtResource("7")
 
-[node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="4" instance=ExtResource("3")]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="TransactionDate" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4" index="0" instance=ExtResource("3")]
 unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../HBoxContainer2/NumberOfCoins")
-focus_neighbor_bottom = NodePath("../../../DialogActionButtons/HBoxContainer/OkButton/MarginContainer/Button")
-focus_next = NodePath("../../../DialogActionButtons/HBoxContainer/OkButton/MarginContainer/Button")
-focus_previous = NodePath("../HBoxContainer2/NumberOfCoins")
+focus_neighbor_top = NodePath("../../HBoxContainer2/NumberOfCoins")
+focus_neighbor_bottom = NodePath("../../../../DialogActionButtons/HBoxContainer/OkButton/MarginContainer/Button")
+focus_next = NodePath("../../../../DialogActionButtons/HBoxContainer/OkButton/MarginContainer/Button")
+focus_previous = NodePath("../../HBoxContainer2/NumberOfCoins")
 
-[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate/CenterContainer/MarginContainer" index="0"]
+[node name="Label" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_gigvt")
 theme_override_font_sizes/font_size = 20
 text = "Date"
 
-[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate" index="6"]
+[node name="AnimationPlayer" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate" index="6"]
 libraries = {
 "": SubResource("AnimationLibrary_5ew53")
 }
@@ -658,11 +671,11 @@ layout_mode = 0
 
 [node name="Button" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton/MarginContainer" index="0"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../../../../../FormFields/VBoxContainer/TransactionDate")
+focus_neighbor_top = NodePath("../../../../../FormFields/VBoxContainer/HBoxContainer4/TransactionDate")
 focus_neighbor_right = NodePath("../../../CancelButton/MarginContainer/Button")
 focus_neighbor_bottom = NodePath("../../../../../FormFields/VBoxContainer/CreditOrDebit/MarginContainer/CheckButton")
 focus_next = NodePath("../../../CancelButton/MarginContainer/Button")
-focus_previous = NodePath("../../../../../FormFields/VBoxContainer/TransactionDate")
+focus_previous = NodePath("../../../../../FormFields/VBoxContainer/HBoxContainer4/TransactionDate")
 focus_mode = 2
 
 [node name="CancelButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer" index="1"]
@@ -674,7 +687,7 @@ layout_mode = 0
 [node name="Button" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton/MarginContainer" index="0"]
 layout_mode = 2
 focus_neighbor_left = NodePath("../../../OkButton/MarginContainer/Button")
-focus_neighbor_top = NodePath("../../../../../FormFields/VBoxContainer/TransactionDate")
+focus_neighbor_top = NodePath("../../../../../FormFields/VBoxContainer/HBoxContainer4/TransactionDate")
 focus_neighbor_right = NodePath("../../../OkButton/MarginContainer/Button")
 focus_neighbor_bottom = NodePath("../../../../../FormFields/VBoxContainer/CreditOrDebit/MarginContainer/CheckButton")
 focus_next = NodePath("../../../../../FormFields/VBoxContainer/CreditOrDebit/MarginContainer/CheckButton")
@@ -686,6 +699,7 @@ libraries = {
 "": SubResource("AnimationLibrary_lft34")
 }
 
+[connection signal="pressed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/CalculatePurchasePriceButton" to="." method="_on_CalculatePurchasePriceButton_pressed"]
 [connection signal="pressed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton" to="." method="_on_BaseIconButton_pressed"]
 [connection signal="pressed" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton" to="." method="_on_NumberOfCoins_BaseIconButton_pressed"]
 [connection signal="CancelClicked" from="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons" to="." method="_on_DialogActionButtons_CancelClicked"]
@@ -695,12 +709,13 @@ libraries = {
 [editable path="CenterContainer/DialogContainer"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/CalculatePurchasePriceButton"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton"]
-[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate"]
+[editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
 [editable path="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]

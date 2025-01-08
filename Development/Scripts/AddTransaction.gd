@@ -108,6 +108,12 @@ func _on_AnimationPlayer_animation_finished(anim_name_p):
 	if anim_name_p == "FadeIn" && !is_edit_transaction:
 		reset_form();
 
+# Calculate purchase price was pressed.
+func _on_CalculatePurchasePriceButton_pressed():
+	transaction_ammount._on_TextInput_focus_entered();
+	var temp_price = Utility.calculate_purchase_price(exchange_price.text, number_of_coins.text);
+	transaction_ammount.text = str(Utility.bankers_round(float(temp_price), 2));
+
 # Calculate button was pressed.
 func _on_BaseIconButton_pressed():
 	exchange_price._on_TextInput_focus_entered();

@@ -228,6 +228,14 @@ func calculate_total_gains(transacion_list_p):
 	
 	return total_gains;
 
+# Calculate purchase price.
+func calculate_purchase_price(exchange_price_p, number_of_coins_p):
+	var purchase_price = "";
+	if number_of_coins_p != "" and number_of_coins_p != "0" and exchange_price_p != "":
+		var calculator = Calculator.new();
+		purchase_price = calculator.multiply(exchange_price_p, number_of_coins_p);
+	return purchase_price;
+
 # Calculate exchange rate.
 func calculate_exchange_rate(acquired_price_p, number_of_coins_p):
 	var exchange_rate = "";
