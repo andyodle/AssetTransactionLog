@@ -108,20 +108,20 @@ func _on_AnimationPlayer_animation_finished(anim_name_p):
 	if anim_name_p == "FadeIn" && !is_edit_transaction:
 		reset_form();
 
-# Calculate purchase price was pressed.
+# Calculate purchase price button was pressed.
 func _on_CalculatePurchasePriceButton_pressed():
 	transaction_ammount._on_TextInput_focus_entered();
-	var temp_price = Utility.calculate_purchase_price(exchange_price.text, number_of_coins.text);
-	transaction_ammount.text = str(Utility.bankers_round(float(temp_price), 2));
+	var temp_purchase_price = Utility.calculate_purchase_price(exchange_price.text, number_of_coins.text);
+	transaction_ammount.text = str(temp_purchase_price);
 
-# Calculate button was pressed.
-func _on_BaseIconButton_pressed():
+# Calculate exchange price button was pressed.
+func _on_CalculateExchangeRateButton_pressed():
 	exchange_price._on_TextInput_focus_entered();
-	var temp_price = Utility.calculate_exchange_rate(transaction_ammount.text, number_of_coins.text);
-	exchange_price.text = temp_price;
+	var temp_exchange_price = Utility.calculate_exchange_rate(transaction_ammount.text, number_of_coins.text);
+	exchange_price.text = str(temp_exchange_price);
 
-
-func _on_NumberOfCoins_BaseIconButton_pressed():
+# Calculate number of assets button was pressed.
+func _on_CalculateNumberOfCoinsButton_pressed():
 	number_of_coins._on_TextInput_focus_entered()
 	var temp_numb_assets = Utility.calculate_total_assets(transaction_ammount.text, exchange_price.text)
 	temp_numb_assets = Utility.bankers_round(float(temp_numb_assets), 8)
