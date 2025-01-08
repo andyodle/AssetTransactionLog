@@ -13,9 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://covxr8r8gd3hm" path="res://Scenes/Controls/ActiveTransactionsTab.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://cugwfnjw6j06o" path="res://Scenes/Controls/SplitTransactionDialog.tscn" id="12"]
 
-[sub_resource type="FontFile" id="FontFile_o068m"]
+[sub_resource type="FontFile" id="FontFile_3cr0j"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("9_p7m3w")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -280,9 +283,12 @@ cache/0/15/0/kerning_overrides/18/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id="FontFile_pjtp6"]
+[sub_resource type="FontFile" id="FontFile_jymi3"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("9_p7m3w")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -406,9 +412,12 @@ _data = {
 "FadeOut": SubResource("2")
 }
 
-[sub_resource type="FontFile" id="FontFile_u5tlk"]
+[sub_resource type="FontFile" id="FontFile_oiwyt"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("9_p7m3w")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -673,9 +682,12 @@ cache/0/15/0/kerning_overrides/18/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id="FontFile_77gvn"]
+[sub_resource type="FontFile" id="FontFile_pghbk"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("9_p7m3w")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -767,9 +779,12 @@ _data = {
 "FadeOut": SubResource("2")
 }
 
-[sub_resource type="FontFile" id="FontFile_atb74"]
+[sub_resource type="FontFile" id="FontFile_l11vi"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("9_p7m3w")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -1034,9 +1049,12 @@ cache/0/15/0/kerning_overrides/18/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id="FontFile_73cpj"]
+[sub_resource type="FontFile" id="FontFile_6srqr"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("9_p7m3w")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -1128,9 +1146,12 @@ _data = {
 "FadeOut": SubResource("2")
 }
 
-[sub_resource type="FontFile" id="FontFile_l02ta"]
+[sub_resource type="FontFile" id="FontFile_l7fqe"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("9_p7m3w")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -1395,9 +1416,12 @@ cache/0/15/0/kerning_overrides/18/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id="FontFile_em180"]
+[sub_resource type="FontFile" id="FontFile_4f7o8"]
 resource_local_to_scene = true
 fallbacks = Array[Font]([ExtResource("9_p7m3w")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -1835,8 +1859,8 @@ layout_mode = 2
 [node name="MarginContainer" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer" index="1"]
 offset_right = 328.0
 
-[node name="Label" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_o068m")
+[node name="Label" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_3cr0j")
 
 [node name="Label" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_1jamm")
@@ -1844,8 +1868,8 @@ theme_override_fonts/font = SubResource("FontFile_1jamm")
 [node name="Label" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_nvy78")
 
-[node name="Label" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_pjtp6")
+[node name="Label" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_jymi3")
 
 [node name="AnimationPlayer" parent="MarginContainer/AddActiveTransaction" index="2"]
 libraries = {
@@ -1860,8 +1884,8 @@ layout_mode = 2
 [node name="MarginContainer" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer" index="1"]
 offset_right = 328.0
 
-[node name="Label" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_u5tlk")
+[node name="Label" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_oiwyt")
 
 [node name="Label" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_tmwdh")
@@ -1869,8 +1893,8 @@ theme_override_fonts/font = SubResource("FontFile_tmwdh")
 [node name="Label" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_3rhfi")
 
-[node name="Label" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_77gvn")
+[node name="Label" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_pghbk")
 
 [node name="AnimationPlayer" parent="MarginContainer/AddProfitTransaction" index="2"]
 libraries = {
@@ -1888,8 +1912,8 @@ offset_right = 328.0
 [node name="Title" parent="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
 text = "Edit Transaction"
 
-[node name="Label" parent="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_atb74")
+[node name="Label" parent="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_l11vi")
 
 [node name="Label" parent="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_yfnp2")
@@ -1897,8 +1921,8 @@ theme_override_fonts/font = SubResource("FontFile_yfnp2")
 [node name="Label" parent="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_d74q1")
 
-[node name="Label" parent="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_73cpj")
+[node name="Label" parent="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_6srqr")
 
 [node name="AnimationPlayer" parent="MarginContainer/EditActiveTransaction" index="2"]
 libraries = {
@@ -1913,8 +1937,8 @@ layout_mode = 2
 [node name="MarginContainer" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer" index="1"]
 offset_right = 328.0
 
-[node name="Label" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_l02ta")
+[node name="Label" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_l7fqe")
 
 [node name="Label" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_ixjdb")
@@ -1922,8 +1946,8 @@ theme_override_fonts/font = SubResource("FontFile_ixjdb")
 [node name="Label" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_l64fy")
 
-[node name="Label" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate/CenterContainer/MarginContainer" index="0"]
-theme_override_fonts/font = SubResource("FontFile_em180")
+[node name="Label" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate/CenterContainer/MarginContainer" index="0"]
+theme_override_fonts/font = SubResource("FontFile_4f7o8")
 
 [node name="AnimationPlayer" parent="MarginContainer/EditProfitTransaction" index="2"]
 libraries = {
@@ -2064,12 +2088,13 @@ show_hidden_files = true
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer"]
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit"]
-[editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount"]
+[editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount"]
+[editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/CalculatePurchasePriceButton"]
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice"]
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton"]
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins"]
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton"]
-[editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate"]
+[editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate"]
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
 [editable path="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]
@@ -2077,12 +2102,13 @@ show_hidden_files = true
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer"]
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit"]
-[editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount"]
+[editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount"]
+[editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/CalculatePurchasePriceButton"]
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice"]
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton"]
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins"]
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton"]
-[editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate"]
+[editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate"]
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
 [editable path="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]
@@ -2090,12 +2116,13 @@ show_hidden_files = true
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer"]
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit"]
-[editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount"]
+[editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount"]
+[editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/CalculatePurchasePriceButton"]
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice"]
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton"]
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins"]
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton"]
-[editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate"]
+[editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate"]
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
 [editable path="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]
@@ -2103,12 +2130,13 @@ show_hidden_files = true
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer"]
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle"]
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/CreditOrDebit"]
-[editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionAmount"]
+[editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount"]
+[editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/CalculatePurchasePriceButton"]
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/ExchangePrice"]
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/BaseIconButton"]
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/NumberOfCoins"]
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/BaseIconButton"]
-[editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/TransactionDate"]
+[editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer4/TransactionDate"]
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons"]
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/OkButton"]
 [editable path="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogActionButtons/HBoxContainer/CancelButton"]
