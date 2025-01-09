@@ -131,9 +131,11 @@ func _on_EditActiveTransaction_EditTransaction(update_trans_p, old_transaction_p
 		
 		# Check if sell transaction.
 		if update_trans_p.trans_type_m == Transaction.TransactionType.SELL_TRANS: 
-			# Undo the previous sell transaction.
-			active_transactions_view.undo_sell_trans_changes(old_transaction_p);
-			print("Undo")
+			# Delete the old unmatched transaction.
+			active_transactions_view.remove_selected_transactions();
+			
+			# No longer editing old trans create a new one.
+			active_transactions_view.add_new_transaction(update_trans_p);
 	else:
 		# Delete the old unmatched transaction.
 		active_transactions_view.remove_selected_transactions();
