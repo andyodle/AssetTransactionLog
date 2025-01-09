@@ -116,29 +116,36 @@ func _on_ActiveTransactionsTab_SplitTransactionClick():
 		split_active_transaction_dialog.fade_in();
 
 # Edit a active transaction.
-func _on_EditActiveTransaction_EditTransaction(transaction_p):
+func _on_EditActiveTransaction_EditTransaction(update_trans_p, old_transaction_p):
 	# Show user that changes need to be saved.
 	Utility.show_save_changes();
 	
-	# Get all of the selected transactions.
-	var transaction_views = active_transactions_view.get_selected_transactions();
-	if transaction_views.size() == 1:
-		for transaction_view in transaction_views:
-			if transaction_view.is_selected():
-				var temp_class : Transaction;
-				temp_class = load("res://Scripts/Classes/Transaction.gd").new();
-				temp_class.index_m = transaction_p.index_m
-				temp_class.date_m = transaction_p.date_m;
-				temp_class.number_of_coins_m = transaction_p.number_of_coins_m;
-				temp_class.exchange_price_m = transaction_p.exchange_price_m;
-				temp_class.amount_m = transaction_p.amount_m;
-				temp_class.is_credit_m = transaction_p.is_credit_m;
-				temp_class.is_sold_m = transaction_p.is_sold_m;
-				transaction_view.set_tras_data(temp_class);
-		# Refresh the calulations.
-		active_transactions_view.recalulate_totals();
-		# Display message to the user.
-		SnackBar.display_message("Edited transaction.", "DISMISS");
+	# Get the old transaction.
+	var old_trans_view = active_transactions_view.get_transaction(old_transaction_p.index_m);
+	
+	# Check if old and updated transaction are the same type.
+	if update_trans_p.trans_type_m == old_transaction_p.trans_type_m:
+		# Check if buy transaction.
+		if update_trans_p.trans_type_m == Transaction.TransactionType.BUY_TRANS:
+			old_trans_view.set_trans_data(update_trans_p);
+		
+		# Check if sell transaction.
+		if update_trans_p.trans_type_m == Transaction.TransactionType.SELL_TRANS: 
+			# Undo the previous sell transaction.
+			active_transactions_view.undo_sell_trans_changes(old_transaction_p);
+			print("Undo")
+	else:
+		# Delete the old unmatched transaction.
+		active_transactions_view.remove_selected_transactions();
+		
+		# No longer editing old trans create a new one.
+		active_transactions_view.add_new_transaction(update_trans_p);
+	
+	# Refresh the calulations.
+	active_transactions_view.recalulate_totals();
+		
+	# Display message to the user.
+	SnackBar.display_message("Edited transaction.", "DISMISS");
 
 # Edit the selected transaction.
 func _on_ActiveTransactionsTab_EditTransactionClick():
@@ -175,7 +182,7 @@ func _on_SplitActiveTransactionDialog_SplitTransaction(reduced_transaction_p):
 				temp_class.exchange_price_m = transaction_view.trans_data.exchange_price_m;
 				temp_class.amount_m = calculator.subtract(transaction_view.trans_data.amount_m, reduced_transaction_p.amount_m);
 				temp_class.is_credit_m = transaction_view.trans_data.is_credit_m;
-				transaction_view.set_tras_data(temp_class);
+				transaction_view.set_trans_data(temp_class);
 			# Add to the active transaction log.
 		active_transactions_view.add_new_transaction(reduced_transaction_p);
 		active_transactions_view.transaction_log.transaction_columns.emit_signal("SelectAll", false);
@@ -258,7 +265,7 @@ func _on_SplitProfitTransactionDialog_SplitTransaction(reduced_transaction_p):
 				temp_class.exchange_price_m = transaction_view.trans_data.exchange_price_m;
 				temp_class.amount_m = calculator.subtract(transaction_view.trans_data.amount_m, reduced_transaction_p.amount_m);
 				temp_class.is_credit_m = transaction_view.trans_data.is_credit_m;
-				transaction_view.set_tras_data(temp_class);
+				transaction_view.set_trans_data(temp_class);
 			# Add to the active transaction log.
 		profit_transactions_view.add_new_transaction(reduced_transaction_p);
 		profit_transactions_view.transaction_log.transaction_columns.emit_signal("SelectAll", false);
@@ -296,7 +303,7 @@ func _on_EditProfitTransaction_EditTransaction(transaction_p):
 				temp_class.exchange_price_m = transaction_p.exchange_price_m;
 				temp_class.amount_m = transaction_p.amount_m;
 				temp_class.is_credit_m = transaction_p.is_credit_m;
-				transaction_view.set_tras_data(temp_class);
+				transaction_view.set_trans_data(temp_class);
 		# Refresh the calulations.
 		profit_transactions_view.recalulate_totals();
 		# Display message to the user.

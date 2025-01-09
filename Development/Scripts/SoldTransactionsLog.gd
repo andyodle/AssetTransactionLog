@@ -66,7 +66,7 @@ func add_transaction(sold_transaction_p):
 	temp_sold_trans_view.connect("SoldSelectedTransaction", Callable(self, "sold_transaction_selected"));
 	
 	# Add the transaction to the list.
-	temp_sold_trans_view.set_tras_data(sold_transaction_p);
+	temp_sold_trans_view.set_trans_data(sold_transaction_p);
 
 # User selected a transaction.
 func sold_transaction_selected(pressed_p):

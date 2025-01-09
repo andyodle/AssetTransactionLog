@@ -1,7 +1,7 @@
 extends "res://Scripts/DialogWindow.gd"
 
 signal AddNewTransaction;
-signal EditTransaction;
+signal EditTransaction(update_trans_p, old_trans_p);
 
 @onready var transaction_ammount = %TransactionAmount;
 @onready var exchange_price = %ExchangePrice;
@@ -58,11 +58,14 @@ func edit_transaction(transaction_to_edit_p):
 	old_transaction = transaction_to_edit_p;
 	
 	# Populate form with previously entred data.
-	transaction_date.set_input_value(transaction_to_edit_p.date_m);
-	number_of_coins.set_input_value(transaction_to_edit_p.number_of_coins_m);
-	exchange_price.set_input_value(transaction_to_edit_p.exchange_price_m);
-	transaction_ammount.set_input_value(transaction_to_edit_p.amount_m);
+	transaction_date.text = transaction_to_edit_p.date_m;
+	number_of_coins.text = str(abs(float(transaction_to_edit_p.number_of_coins_m)));
+	exchange_price.text = transaction_to_edit_p.exchange_price_m;
+	transaction_ammount.text = transaction_to_edit_p.amount_m;
 	credit_or_debit.set_checked(transaction_to_edit_p.is_credit_m);
+	
+	# Set Focus on First Control
+	credit_or_debit.set_focus();
 
 # Ok Clicked
 func _on_DialogActionButtons_OkClicked():
@@ -88,14 +91,19 @@ func _on_DialogActionButtons_OkClicked():
 			# Step3: Emit signal with transaction data.
 			emit_signal("AddNewTransaction", temp_class);
 		else:
-			old_transaction.date_m = transaction_date.text;
-			old_transaction.number_of_coins_m = number_of_coins.text;
-			old_transaction.exchange_price_m = exchange_price.text;
-			old_transaction.amount_m = transaction_ammount.text;
-			old_transaction.is_credit_m = credit_or_debit.get_checked();
-			if !old_transaction.is_credit_m:
-				old_transaction.number_of_coins_m = calculator.multiply("-1", old_transaction.number_of_coins_m);
-			emit_signal("EditTransaction", old_transaction);
+			var update_trans : Transaction;
+			update_trans = load("res://Scripts/Classes/Transaction.gd").new();
+			update_trans.index_m = old_transaction.index_m;
+			update_trans.is_credit_m = credit_or_debit.get_checked();
+			update_trans.amount_m = transaction_ammount.text;
+			update_trans.exchange_price_m = exchange_price.text;
+			update_trans.number_of_coins_m = number_of_coins.text;
+			update_trans.date_m = transaction_date.text;
+			if !update_trans.is_credit_m:
+				update_trans.trans_type_m = Transaction.TransactionType.SELL_TRANS;
+				update_trans.number_of_coins_m = calculator.multiply("-1", update_trans.number_of_coins_m);
+			
+			emit_signal("EditTransaction", update_trans, old_transaction);
 		
 		self.fade_out();
 

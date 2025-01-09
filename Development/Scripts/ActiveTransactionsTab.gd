@@ -23,31 +23,21 @@ func fade_in():
 	animation_player.play("FadeIn");
 	await animation_player.animation_finished;
 
-# Reset the transaction list.
-func reset_trasactoins():
-	# Reset total coins.
-	total_coins_data_panel.reset_data_panel();
-	
-	# Reset total amount paid.
-	total_amount_paid_data_panel.reset_data_panel();
-	
-	# Reset cost average.
-	cost_average_data_panel.reset_data_panel();
-	
-	# Reset current price.
-	current_price_panel.reset_data_panel();
-	
-	# Reset profit or loss.
-	profit_or_loss_panel.reset_data_panel();
-	
-	# Reset profit or loss percent.
-	profit_or_loss_percent_panel.reset_data_panel();
-	
-	# Reset current asset value.
-	current_asset_value.reset_data_panel();
-	
-	# Reset the Transaction log list.
-	transaction_log.reset_trasactoins();
+# Get the specified transaction.
+func get_transaction(trans_index_p):
+	return transaction_log.get_transaction(trans_index_p);
+
+# Get all of the current transactions.
+func get_transactions():
+	return transaction_log.get_transactions();
+
+# Get the list of selected transactions.
+func get_selected_transactions():
+	return transaction_log.get_selected_transactions();
+
+# Atempt to remove a transaction from the log.
+func delete_transaction(trans_index_p):
+	transaction_log.delete_transaction(trans_index_p);
 
 # Add loaded transaction to list.
 func add_loaded_transaction(transaction_p):
@@ -61,14 +51,8 @@ func add_new_transaction(transaction_p):
 	# Check if trying to sell assets.
 	if !transaction_p.is_credit_m:
 		var sell_trans : SellTransaction;
-		sell_trans = load("res://Scripts/Classes/SellTransaction.gd").new();
+		sell_trans = Utility.create_sell_transaction(transaction_p.number_of_coins_m, transaction_p.exchange_price_m, transaction_p.amount_m, transaction_p.date_m)
 		sell_trans.index_m = transaction_p.index_m;
-		sell_trans.trans_type_m = Transaction.TransactionType.SELL_TRANS;
-		sell_trans.date_m = transaction_p.date_m;
-		sell_trans.number_of_coins_m = transaction_p.number_of_coins_m;
-		sell_trans.exchange_price_m = transaction_p.exchange_price_m;
-		sell_trans.amount_m = transaction_p.amount_m;
-		sell_trans.sell_price_m = transaction_p.amount_m;
 		
 		# Calculate sold transactions.
 		var remainder_transactions = Utility.process_sell_transaction(sell_trans, transaction_log);
@@ -88,14 +72,6 @@ func add_new_transaction(transaction_p):
 	
 	recalulate_totals();
 
-# Get all of the current transactions.
-func get_transactions():
-	return transaction_log.get_transactions();
-
-# Get the list of selected transactions.
-func get_selected_transactions():
-	return transaction_log.get_selected_transactions();
-
 # Remove the selected transactions.
 func remove_selected_transactions():
 	transaction_log.remove_selected_transactions();
@@ -104,6 +80,10 @@ func remove_selected_transactions():
 	transaction_log.hide_selection_controls();
 	
 	recalulate_totals();
+
+# Rollback the previous changes made by the sell transaction.
+func undo_sell_trans_changes(sell_trans_p: SellTransaction):
+	transaction_log.undo_sell_trans_changes(sell_trans_p);
 
 # Recalulate the displayed totals after a change.
 func recalulate_totals():
@@ -133,7 +113,32 @@ func calculate_current_values():
 			profit_loss_percent_value = calculator.multiply(profit_loss_percent_value, "100");
 			# Update data panels.
 			profit_or_loss_percent_panel.set_percent(profit_loss_percent_value);
+
+# Reset the transaction list.
+func reset_trasactoins():
+	# Reset total coins.
+	total_coins_data_panel.reset_data_panel();
 	
+	# Reset total amount paid.
+	total_amount_paid_data_panel.reset_data_panel();
+	
+	# Reset cost average.
+	cost_average_data_panel.reset_data_panel();
+	
+	# Reset current price.
+	current_price_panel.reset_data_panel();
+	
+	# Reset profit or loss.
+	profit_or_loss_panel.reset_data_panel();
+	
+	# Reset profit or loss percent.
+	profit_or_loss_percent_panel.reset_data_panel();
+	
+	# Reset current asset value.
+	current_asset_value.reset_data_panel();
+	
+	# Reset the Transaction log list.
+	transaction_log.reset_trasactoins();
 
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):

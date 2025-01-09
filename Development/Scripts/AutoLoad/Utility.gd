@@ -111,8 +111,8 @@ func process_sell_transaction(sell_trans_p:SellTransaction, transaction_log_p):
 	print("Sold-End...")
 	return remainder_transactions;
 
-# Createa a transaction object.
-# Retuns: A filled out transaction object.
+# Createa a Transaction object.
+# Retuns: A filled out Transaction object.
 func create_asset_trans(num_of_assets_p:String, exchange_price_p:String, cost_basis_p:String, date_p:String, is_credit_p:bool, is_sold_p:bool) -> Transaction:
 	var asset_trans : Transaction;
 	asset_trans = load("res://Scripts/Classes/Transaction.gd").new();
@@ -126,8 +126,8 @@ func create_asset_trans(num_of_assets_p:String, exchange_price_p:String, cost_ba
 	asset_trans.is_sold_m = is_sold_p
 	return asset_trans;
 
-# Create a auto generated transaction object.
-# Returns: A filled out generated transaction object.
+# Create a auto GeneratedTransaction object.
+# Returns: A filled out GeneratedTransaction object.
 func create_generated_transaction(transaction_p: Transaction):
 	var generated_transaction : GeneratedTransaction;
 	generated_transaction = load("res://Scripts/Classes/GeneratedTransaction.gd").new();
@@ -141,6 +141,21 @@ func create_generated_transaction(transaction_p: Transaction):
 	generated_transaction.is_sold_m = transaction_p.is_sold_m;
 	
 	return generated_transaction;
+
+# Create a SellTransaction object
+# Returns: A filled out SellTransaction objec.
+func create_sell_transaction(num_of_assets_p:String, exchange_price_p:String, cost_basis_p:String, date_p:String) -> SellTransaction:
+	var sell_trans : SellTransaction;
+	sell_trans = load("res://Scripts/Classes/SellTransaction.gd").new();
+	sell_trans.trans_type_m = Transaction.TransactionType.SELL_TRANS;
+	sell_trans.amount_m = cost_basis_p;
+	sell_trans.sell_price_m = cost_basis_p;
+	sell_trans.exchange_price_m = exchange_price_p
+	sell_trans.number_of_coins_m = num_of_assets_p;	
+	sell_trans.date_m = date_p;
+	sell_trans.is_credit_m = false;
+	
+	return sell_trans;
 
 # Calculate Bankers Rounding Rules
 # 1. Scaling: The input value is multiplied by 10^decimals to shift the decimal point.
