@@ -32,7 +32,7 @@ func clear_data():
 	transaction_selected = false;
 
 # Fill out the transaction.
-func set_tras_data(sold_transaction_p):
+func set_trans_data(sold_transaction_p):
 	trans_data = sold_transaction_p;
 	# Date Sold
 	if trans_data.date_m != null:
@@ -60,7 +60,7 @@ func add_transaction(transaction_p):
 	transaction_list.move_child(temp_trans_view, 0);
 	
 	# Add the transaction to the list.
-	temp_trans_view.set_tras_data(transaction_p);
+	temp_trans_view.set_trans_data(transaction_p);
 
 # Flag to check if a row was selected.
 func is_selected():

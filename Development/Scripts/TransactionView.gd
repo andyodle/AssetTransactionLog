@@ -46,7 +46,7 @@ func disalbe_trans():
 	selected_trans.modulate = DISABLE_COLOR;
 
 # Fill out the transaction.
-func set_tras_data(transaction_p):
+func set_trans_data(transaction_p):
 	# Enable the transaction.
 	enable_trans();
 	

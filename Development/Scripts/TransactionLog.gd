@@ -21,13 +21,33 @@ func _ready():
 	# Hide the action buttons.
 	action_button_container.show_buttons(false);
 
-# Clear added transactions.
-func reset_trasactoins():
-	for transaction in transaction_list.get_children():
-		transaction.select_transaction(false);
-		transaction_list.remove_child(transaction);
-	
-	transaction_columns.clear_select_all_button();
+# Ger the specified transaction.
+func get_transaction(trans_index_p):
+	var temp_trans;
+	var transaction_views = get_transactions();
+	for trans_view in transaction_views:
+		var trans_data = trans_view.trans_data;
+		if trans_data.index_m == trans_index_p:
+			temp_trans = trans_view;
+			break;
+	return temp_trans;
+
+# Get all of the transactions.
+func get_transactions():
+	var temp_views = [];
+	var transaction_views = transaction_list.get_children();
+	for temp_transaction_view in transaction_views:
+		temp_views.append(temp_transaction_view);
+	return temp_views;
+
+# Get the list of selected transactions.
+func get_selected_transactions():
+	var temp_views = [];
+	var transaction_views = transaction_list.get_children();
+	for temp_transaction_view in transaction_views:
+		if temp_transaction_view.is_selected():
+			temp_views.append(temp_transaction_view);
+	return temp_views;
 
 # Calcualte the totals for the data panels.
 func calculate_toals():
@@ -59,7 +79,7 @@ func add_transaction(transaction_p, hide_select_p):
 	temp_trans_view.connect("SelectedTransaction", Callable(self, "transaction_selected"));
 	
 	# Add the transaction to the list.
-	temp_trans_view.set_tras_data(transaction_p);
+	temp_trans_view.set_trans_data(transaction_p);
 
 # User selected a transaction.
 func transaction_selected(pressed_p, trans_view_p):
@@ -95,22 +115,14 @@ func hide_selection_controls():
 	else:
 		show_selection_controls();
 
-# Get all of the transactions.
-func get_transactions():
-	var temp_views = [];
-	var transaction_views = transaction_list.get_children();
-	for temp_transaction_view in transaction_views:
-		temp_views.append(temp_transaction_view);
-	return temp_views;
-
-# Get the list of selected transactions.
-func get_selected_transactions():
-	var temp_views = [];
-	var transaction_views = transaction_list.get_children();
-	for temp_transaction_view in transaction_views:
-		if temp_transaction_view.is_selected():
-			temp_views.append(temp_transaction_view);
-	return temp_views;
+# Rollback the previous changes made by the sell transaction.
+func undo_sell_trans_changes(sell_trans_p: SellTransaction):
+	# Delete any auto generated transactions.
+	for gen_trans_index in sell_trans_p.generated_trans_m:
+		delete_transaction(gen_trans_index);
+	
+	# Mark sold transactions as not sold.
+	mark_sold_transactions(sell_trans_p.sold_trans_m, false);
 
 # Remove the selected transaction.
 func remove_selected_transactions():
@@ -123,13 +135,9 @@ func remove_selected_transactions():
 		
 		# Check if deleting a sold transaction.
 		if trans_data.trans_type_m == Transaction.TransactionType.SELL_TRANS:
+			# Rollback sell tranaction changes.
 			var sell_trans : SellTransaction = trans_data as SellTransaction;
-			# Delete any auto generated transactions.
-			for gen_trans_index in sell_trans.generated_trans_m:
-				delete_transaction(gen_trans_index);
-			
-			# Mark sold transactions as not sold.
-			mark_sold_transactions(sell_trans.sold_trans_m, false);
+			undo_sell_trans_changes(sell_trans);
 			
 			# Remove sell transaction from the log.
 			transaction_list.remove_child(transaction);
@@ -164,7 +172,15 @@ func mark_sold_transactions(sold_transactions_p, is_sold_p: bool):
 			var trans_data : Transaction = trans_view.trans_data;
 			if trans_data.index_m == sold_trans_index:
 				trans_data.is_sold_m = is_sold_p;
-				trans_view.set_tras_data(trans_data);
+				trans_view.set_trans_data(trans_data);
+
+# Clear added transactions.
+func reset_trasactoins():
+	for transaction in transaction_list.get_children():
+		transaction.select_transaction(false);
+		transaction_list.remove_child(transaction);
+	
+	transaction_columns.clear_select_all_button();
 
 # User wants to delete selected items.
 func _on_ActionButtonContainer_DeleteClicked():
