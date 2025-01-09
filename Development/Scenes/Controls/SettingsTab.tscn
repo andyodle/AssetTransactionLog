@@ -150,7 +150,7 @@ text = "© 2021-Present BlackLightCoders"
 [node name="VersionNumber" type="Label" parent="MarginContainer/VBoxContainer/WraperPanel/MarginContainer/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("1")
-text = "v0.1.0"
+text = "v0.1.1"
 horizontal_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
