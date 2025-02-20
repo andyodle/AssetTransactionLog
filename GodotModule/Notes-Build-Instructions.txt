@@ -1,6 +1,9 @@
 # Install scons
 sudo apt-get install scons
 
+# Configure MinGW postix
+sudo update-alternatives --config x86_64-w64-mingw32-g++
+
 # Figure out witch platform.
 scons platform=list
 
