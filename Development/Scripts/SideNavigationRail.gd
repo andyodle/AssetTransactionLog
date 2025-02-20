@@ -19,16 +19,6 @@ func _on_ActiveTransButton_pressed():
 	toggle_tab_buttons("ActiveTransButton");
 	emit_signal("ActiveTransClicked");
 
-# Profit Tab Clicked
-func _on_ProfitTransButton_pressed():
-	toggle_tab_buttons("ProfitTransButton");
-	emit_signal("ProfitTransClicked");
-
-# Sold Position Tab Clicked
-func _on_SoldPositionsTransButton_pressed():
-	toggle_tab_buttons("SoldPositionsTransButton");
-	emit_signal("SoldPositionsTransClicked");
-
 # New Transaction Log Clicked
 func _on_NewTransButton_pressed():
 	emit_signal("NewTransClicked");

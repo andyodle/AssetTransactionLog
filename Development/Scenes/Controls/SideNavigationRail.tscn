@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ct6xcfd4tfrd8"]
+[gd_scene load_steps=7 format=3 uid="uid://ct6xcfd4tfrd8"]
 
 [ext_resource type="PackedScene" uid="uid://bjvdv4jip0ylu" path="res://Scenes/Controls/NavigationButton.tscn" id="1"]
 [ext_resource type="Script" path="res://Scripts/SideNavigationRail.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://cg64brer3k4de" path="res://Assets/Icons/ActiveProfits.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://dtxgv4oax21qa" path="res://Assets/Icons/SoldPositions.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://c8tanjpaycpt0" path="res://Assets/Icons/Save.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://4tlm2n31wx7h" path="res://Assets/Icons/Load.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://dm04p44juubp0" path="res://Assets/Icons/Settings.png" id="8"]
@@ -75,48 +73,6 @@ grow_vertical = 1
 [node name="Label" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ActiveTransButton/VBoxContainer/CenterContainer2" index="0"]
 text = "Active
 Transactions"
-
-[node name="ProfitTransButton" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons" instance=ExtResource("1")]
-visible = false
-layout_mode = 2
-toggle_mode = true
-
-[node name="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ProfitTransButton" index="0"]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 72.0
-offset_bottom = 83.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="TextureRect" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ProfitTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
-texture = ExtResource("3")
-
-[node name="Label" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ProfitTransButton/VBoxContainer/CenterContainer2" index="0"]
-text = "Profit
-Transactions"
-
-[node name="SoldPositionsTransButton" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons" instance=ExtResource("1")]
-visible = false
-layout_mode = 2
-toggle_mode = true
-
-[node name="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons/SoldPositionsTransButton" index="0"]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 72.0
-offset_bottom = 83.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="TextureRect" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
-texture = ExtResource("5")
-
-[node name="Label" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons/SoldPositionsTransButton/VBoxContainer/CenterContainer2" index="0"]
-text = "Sold 
-Positions"
 
 [node name="RegularButtons" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -198,16 +154,12 @@ texture = ExtResource("8")
 text = "Settings"
 
 [connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ActiveTransButton" to="." method="_on_ActiveTransButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ProfitTransButton" to="." method="_on_ProfitTransButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/TabButtons/SoldPositionsTransButton" to="." method="_on_SoldPositionsTransButton_pressed"]
 [connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/RegularButtons/NewTransButton" to="." method="_on_NewTransButton_pressed"]
 [connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/RegularButtons/LoadTransButton" to="." method="_on_LoadTransButton_pressed"]
 [connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/RegularButtons/SaveTransButton" to="." method="_on_SaveTransButton_pressed"]
 [connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/RegularButtons/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 
 [editable path="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ActiveTransButton"]
-[editable path="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ProfitTransButton"]
-[editable path="CenterContainer/MarginContainer/VBoxContainer/TabButtons/SoldPositionsTransButton"]
 [editable path="CenterContainer/MarginContainer/VBoxContainer/RegularButtons/NewTransButton"]
 [editable path="CenterContainer/MarginContainer/VBoxContainer/RegularButtons/LoadTransButton"]
 [editable path="CenterContainer/MarginContainer/VBoxContainer/RegularButtons/SaveTransButton"]
