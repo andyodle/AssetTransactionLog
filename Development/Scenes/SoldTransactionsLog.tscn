@@ -46,9 +46,6 @@ layout_mode = 0
 [node name="HBoxContainer" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer" index="0"]
 layout_mode = 2
 
-[node name="SplitButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="0"]
-layout_mode = 2
-
 [node name="EditButton" parent="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer" index="1"]
 layout_mode = 2
 
@@ -72,6 +69,5 @@ size_flags_vertical = 3
 [connection signal="SelectAll" from="MarginContainer/VBoxContainer/SoldTransactionColumns" to="." method="_on_SoldTransactionColumns_SelectAll"]
 
 [editable path="MarginContainer/VBoxContainer/ActionButtonContainer"]
-[editable path="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/SplitButton"]
 [editable path="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton"]
 [editable path="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton"]

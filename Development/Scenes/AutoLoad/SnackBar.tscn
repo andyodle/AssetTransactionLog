@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource path="res://Scripts/AutoLoad/SnackBar.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" type="FontFile" id=2]
+[ext_resource type="Script" path="res://Scripts/AutoLoad/SnackBar.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://dgymwmbvmmhm7" path="res://Assets/Fonts/JosefinSansRegular-x3LYV.ttf" id="2"]
 
 [sub_resource type="FontFile" id=1]
 size = 14

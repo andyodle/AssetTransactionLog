@@ -10,8 +10,6 @@ extends Control
 @onready var edit_profit_trans_dialog = %EditProfitTransaction;
 @onready var sell_active_trans_dialog = %SellActiveTransactionDialog;
 @onready var sell_profit_trans_dialog = %SellProfitTransactionDialog;
-@onready var split_active_transaction_dialog = %SplitActiveTransactionDialog;
-@onready var split_profit_transaction_dialog = %SplitProfitTransactionDialog;
 @onready var open_file_dialog = %OpenFileDialog;
 @onready var safe_file_dialog = %SaveFileDialog;
 
@@ -99,21 +97,6 @@ func _on_ActiveTransactionsTab_SellTransactionClick():
 		
 		# Show the sell transaction dialog.
 		sell_active_trans_dialog.fade_in();
-
-# Split the selected sell transaction into multiple smaller ones.
-func _on_ActiveTransactionsTab_SplitTransactionClick():
-	# Reset the dialog for a new split transaction.
-	split_active_transaction_dialog.reset_dialog();
-	
-	# Get all of the selected transactions.
-	var transaction_views = active_transactions_view.get_selected_transactions();
-	if transaction_views.size() == 1:
-		for transaction_view in transaction_views:
-			if transaction_view.is_selected():
-				split_active_transaction_dialog.add_transaction_to_split(transaction_view.trans_data);
-		
-		# Show the sell transaction dialog.
-		split_active_transaction_dialog.fade_in();
 
 # Edit a active transaction.
 func _on_EditActiveTransaction_EditTransaction(update_trans_p, old_transaction_p):
@@ -231,47 +214,6 @@ func _on_ProfitTransactionTab_SellTransactionClick():
 		
 		# Show the sell transaction dialog.
 		sell_profit_trans_dialog.fade_in();
-
-# Split the profit transaction.
-func _on_ProfitTransactionsTab_SplitTransactionClick():
-	# Reset the dialog for a new split transaction.
-	split_profit_transaction_dialog.reset_dialog();
-	
-	# Get all of the selected transactions.
-	var transaction_views = profit_transactions_view.get_selected_transactions();
-	if transaction_views.size() == 1:
-		for transaction_view in transaction_views:
-			if transaction_view.is_selected():
-				split_profit_transaction_dialog.add_transaction_to_split(transaction_view.trans_data);
-		
-		# Show the sell transaction dialog.
-		split_profit_transaction_dialog.fade_in();
-
-# Split transactions to add to profit tab.
-func _on_SplitProfitTransactionDialog_SplitTransaction(reduced_transaction_p):
-	# Show user that changes need to be saved.
-	Utility.show_save_changes();
-	
-	# Double Custom Calculator
-	var calculator = Calculator.new();
-	
-	# Get all of the selected transactions.
-	var transaction_views = profit_transactions_view.get_selected_transactions();
-	if transaction_views.size() == 1:
-		for transaction_view in transaction_views:
-			if transaction_view.is_selected():
-				var temp_class : Transaction;
-				temp_class = load("res://Scripts/Classes/Transaction.gd").new();
-				temp_class.date_m = Utility.get_current_date_str();
-				temp_class.number_of_coins_m = calculator.subtract(transaction_view.trans_data.number_of_coins_m, reduced_transaction_p.number_of_coins_m).pad_decimals(8);
-				temp_class.exchange_price_m = transaction_view.trans_data.exchange_price_m;
-				temp_class.amount_m = calculator.subtract(transaction_view.trans_data.amount_m, reduced_transaction_p.amount_m);
-				temp_class.is_credit_m = transaction_view.trans_data.is_credit_m;
-				transaction_view.set_trans_data(temp_class);
-			# Add to the active transaction log.
-		profit_transactions_view.add_new_transaction(reduced_transaction_p);
-		profit_transactions_view.transaction_log.transaction_columns.emit_signal("SelectAll", false);
-		SnackBar.display_message("Transaction reduced.", "DISMISS");
 
 # Edit the selected transaction.
 func _on_ProfitTransactionsTab_EditTransactionClick():

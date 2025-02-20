@@ -2,7 +2,6 @@ extends Control
 
 signal AddTransactoinClick;
 signal SellTransactionClick;
-signal SplitTransactionClick;
 signal EditTransactionClick;
 signal CurrentPriceChange(price_p);
 
@@ -162,10 +161,6 @@ func _on_TransactionLog_AddTransactionClick():
 # User wants to sell transactions.
 func _on_TransactionLog_SellTransactoinClick():
 	emit_signal("SellTransactionClick");
-
-# User wants to split the selected transaction.
-func _on_TransactionLog_SplitTransactionClick():
-	emit_signal("SplitTransactionClick");
 
 # User wants to edit the selected transaction.
 func _on_TransactionLog_EditTransactionClick():

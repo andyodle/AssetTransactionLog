@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ct6xcfd4tfrd8"]
+[gd_scene load_steps=9 format=3 uid="uid://ct6xcfd4tfrd8"]
 
 [ext_resource type="PackedScene" uid="uid://bjvdv4jip0ylu" path="res://Scenes/Controls/NavigationButton.tscn" id="1"]
 [ext_resource type="Script" path="res://Scripts/SideNavigationRail.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://cg64brer3k4de" path="res://Assets/Icons/ActiveProfits.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://cd2lmimsoc6by" path="res://Assets/Icons/ActiveTransactions.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://dtxgv4oax21qa" path="res://Assets/Icons/SoldPositions.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://c8tanjpaycpt0" path="res://Assets/Icons/Save.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://4tlm2n31wx7h" path="res://Assets/Icons/Load.png" id="7"]
@@ -72,9 +71,6 @@ offset_right = 72.0
 offset_bottom = 83.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="TextureRect" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ActiveTransButton/VBoxContainer/CenterContainer/MarginContainer" index="0"]
-texture = ExtResource("4")
 
 [node name="Label" parent="CenterContainer/MarginContainer/VBoxContainer/TabButtons/ActiveTransButton/VBoxContainer/CenterContainer2" index="0"]
 text = "Active

@@ -6,14 +6,13 @@ signal CalculatedNumberOfCoins;
 signal CalcualteTotalPrice;
 signal CalculateCostAverage;
 signal EditTransactionClick;
-signal SplitTransactionClick;
 signal DeleteTransactionClick;
 
 @onready var add_action_button = $AddActionButton;
 @onready var sell_action_button = $SellActionButton;
-@onready var action_button_container = $MarginContainer/VBoxContainer/ActionButtonContainer;
-@onready var transaction_list = $MarginContainer/VBoxContainer/ScrollContainer/Trasactions;
-@onready var transaction_columns = $MarginContainer/VBoxContainer/TransactionColumns;
+@onready var action_button_container = %ActionButtonContainer;
+@onready var transaction_list = %Trasactions;
+@onready var transaction_columns = %TransactionColumns;
 
 var transaction_view = preload("res://Scenes/Controls/TransactionView.tscn");
 
@@ -206,10 +205,6 @@ func _on_SellActionButton_pressed():
 # User wants to select all of the transactions.
 func _on_TransactionColumns_SelectAll(pressed_p):
 	select_all_transactions(pressed_p);
-
-# User wants to split the selected transactions.
-func _on_ActionButtonContainer_SplitClicked():
-	emit_signal("SplitTransactionClick");
 
 # User wants to edit the selected transactions.
 func _on_ActionButtonContainer_EditClicked():

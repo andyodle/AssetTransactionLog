@@ -38,10 +38,15 @@ color = Color(0.207843, 0.231373, 0.341176, 1)
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="ActionButtonContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("3")]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ActionButtonContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TransactionColumns" parent="MarginContainer/VBoxContainer" instance=ExtResource("2")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
@@ -49,6 +54,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Trasactions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -83,15 +89,13 @@ anchor_bottom = 0.0
 texture = ExtResource("5")
 expand_mode = 1
 
-[connection signal="DeleteClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_DeleteClicked"]
-[connection signal="EditClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_EditClicked"]
-[connection signal="SplitClicked" from="MarginContainer/VBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_SplitClicked"]
+[connection signal="DeleteClicked" from="MarginContainer/VBoxContainer/HBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_DeleteClicked"]
+[connection signal="EditClicked" from="MarginContainer/VBoxContainer/HBoxContainer/ActionButtonContainer" to="." method="_on_ActionButtonContainer_EditClicked"]
 [connection signal="SelectAll" from="MarginContainer/VBoxContainer/TransactionColumns" to="." method="_on_TransactionColumns_SelectAll"]
 [connection signal="pressed" from="AddActionButton" to="." method="_on_BaseActionButton_pressed"]
 [connection signal="pressed" from="SellActionButton" to="." method="_on_SellActionButton_pressed"]
 
-[editable path="MarginContainer/VBoxContainer/ActionButtonContainer"]
-[editable path="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/SplitButton"]
-[editable path="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton"]
-[editable path="MarginContainer/VBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton"]
+[editable path="MarginContainer/VBoxContainer/HBoxContainer/ActionButtonContainer"]
+[editable path="MarginContainer/VBoxContainer/HBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/EditButton"]
+[editable path="MarginContainer/VBoxContainer/HBoxContainer/ActionButtonContainer/MarginContainer/HBoxContainer/DeleteButton"]
 [editable path="SellActionButton"]

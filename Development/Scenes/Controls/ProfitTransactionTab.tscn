@@ -136,7 +136,6 @@ libraries = {
 [connection signal="CalculatedNumberOfCoins" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_CalculatedNumberOfCoins"]
 [connection signal="EditTransactionClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_EditTransactionClick"]
 [connection signal="SellTransactoinClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_SellTransactoinClick"]
-[connection signal="SplitTransactionClick" from="VBoxContainer/TransactionLog" to="." method="_on_TransactionLog_SplitTransactionClick"]
 
 [editable path="VBoxContainer/TabTitle"]
 [editable path="VBoxContainer/HBoxContainer/TotalCoins"]

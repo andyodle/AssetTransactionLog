@@ -574,6 +574,7 @@ libraries = {
 
 [node name="CalculatePurchasePriceButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3" index="1" instance=ExtResource("6")]
 layout_mode = 2
+tooltip_text = "Calculate Purchase Price"
 focus_next = NodePath("../../TransactionAmount")
 
 [node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/CalculatePurchasePriceButton/MarginContainer" index="0"]
@@ -603,6 +604,7 @@ libraries = {
 
 [node name="CalculateExchangePriceButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer" index="1" instance=ExtResource("6")]
 layout_mode = 2
+tooltip_text = "Calculate Exchange Price"
 focus_next = NodePath("../../HBoxContainer3/TransactionAmount")
 
 [node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer/CalculateExchangePriceButton/MarginContainer" index="0"]
@@ -631,6 +633,7 @@ libraries = {
 
 [node name="CalculateNumberOfAssetsButton" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2" index="1" instance=ExtResource("6")]
 layout_mode = 2
+tooltip_text = "Calculate Number of Assets"
 focus_next = NodePath("../../HBoxContainer3/TransactionAmount")
 
 [node name="TextureRect" parent="CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer2/CalculateNumberOfAssetsButton/MarginContainer" index="0"]
