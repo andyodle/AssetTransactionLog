@@ -1,11 +1,14 @@
 #! /bin/bash
-#set -x #echo on
+set -x #echo on
 
 godot_engine_version=$1
 godot_source_path="godot-$godot_engine_version-stable"
 
+# Create place to hold godot engine.
+mkdir -p GodotEngineSource/
+
 # Download the godot engine source code.
-#wget -O ./GodotEngineSource/$godot_engine_version-stable.zip https://github.com/godotengine/godot/archive/refs/tags/$godot_engine_version-stable.zip
+wget -O ./GodotEngineSource/$godot_engine_version-stable.zip https://github.com/godotengine/godot/archive/refs/tags/$godot_engine_version-stable.zip
 
 # Extract godot engine source code.
 unzip -o ./GodotEngineSource/$godot_engine_version-stable.zip -d "./GodotEngineSource/"

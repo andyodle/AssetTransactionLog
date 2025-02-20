@@ -37,6 +37,3 @@ scons platform=windows target=template_release arch=x86_64
 # Move target build into template directory.
 mv ./bin/godot.windows.template_release.x86_64.console.exe "../Template/$godot_engine_ver_num/windows_release_x86_64_console.exe"
 mv ./bin/godot.windows.template_release.x86_64.exe "../Template/$godot_engine_ver_num/windows_release_x86_64.exe"
-
-
-

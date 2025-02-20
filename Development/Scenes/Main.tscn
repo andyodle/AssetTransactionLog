@@ -1603,6 +1603,9 @@ layout_mode = 2
 [node name="MarginContainer" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer" index="1"]
 offset_right = 328.0
 
+[node name="Title" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
+vertical_alignment = 1
+
 [node name="Label" parent="MarginContainer/AddActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_3cr0j")
 
@@ -1627,6 +1630,9 @@ layout_mode = 2
 
 [node name="MarginContainer" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer" index="1"]
 offset_right = 328.0
+
+[node name="Title" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
+vertical_alignment = 1
 
 [node name="Label" parent="MarginContainer/AddProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_oiwyt")
@@ -1655,6 +1661,7 @@ offset_right = 328.0
 
 [node name="Title" parent="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
 text = "Edit Transaction"
+vertical_alignment = 1
 
 [node name="Label" parent="MarginContainer/EditActiveTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_l11vi")
@@ -1680,6 +1687,9 @@ layout_mode = 2
 
 [node name="MarginContainer" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer" index="1"]
 offset_right = 328.0
+
+[node name="Title" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/DialogTitle/MarginContainer" index="0"]
+vertical_alignment = 1
 
 [node name="Label" parent="MarginContainer/EditProfitTransaction/CenterContainer/DialogContainer/MarginContainer/CenterContainer/VBoxContainer/FormFields/VBoxContainer/HBoxContainer3/TransactionAmount/CenterContainer/MarginContainer" index="0"]
 theme_override_fonts/font = SubResource("FontFile_l7fqe")
