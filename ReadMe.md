@@ -3,7 +3,7 @@
 </p>
 
 # AssetTransactionLog
-An application to help keep track of fractional assets bought and sold. This application allows efficiently tracking and manageing bought and sold fractional assets records. Offering a clear and organized history with an intuitive user interface. Ideal for those involved in fractional stocks or crypto asset markets.  
+An application to help keep track of fractional assets bought and sold. This application allows efficiently tracking and managing bought and sold fractional assets records. Offering a clear and organized history with an intuitive user interface. Ideal for those involved in fractional stocks or crypto asset markets.  
 
 This project was build using.
 * Python
