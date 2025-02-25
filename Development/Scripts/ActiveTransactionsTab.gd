@@ -142,7 +142,7 @@ func reset_trasactoins():
 # Number of coins was calculated. Refresh your data.
 func _on_TransactionLog_CalculatedNumberOfCoins(number_of_coins_p):
 	if total_coins_data_panel != null:
-		total_coins_data_panel.set_data("%3.4f", number_of_coins_p);
+		total_coins_data_panel.set_data("%3.8f", number_of_coins_p);
 
 # Total price was calcualted. Refresh your data.
 func _on_TransactionLog_CalcualteTotalPrice(amount_paid_p):

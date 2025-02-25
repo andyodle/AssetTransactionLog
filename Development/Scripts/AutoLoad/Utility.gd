@@ -198,7 +198,7 @@ func calcualte_total_coins(active_trans_p):
 	# Get all of the coin transactions.
 	var coin_count : String = "0.0";
 	for transaction in active_trans_p:
-		coin_count = str(Utility.bankers_round(float(calculator.add(coin_count, transaction.number_of_coins_m)), 4));
+		coin_count = str(Utility.bankers_round(float(calculator.add(coin_count, transaction.number_of_coins_m)), 8));
 	
 	return coin_count;
 
